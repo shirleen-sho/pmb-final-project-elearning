@@ -15,6 +15,9 @@ module.exports = {
           400: "#6d80f4",
           500: "#5667eb",
         },
+        secondary: {
+        
+        },
         success: {
           base: "#81e052",
           hover: "#67d92a",

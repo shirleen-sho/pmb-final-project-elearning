@@ -1,6 +1,7 @@
 import Buttons from "../Components/Buttons";
 import InputFields from "../Components/InputFields";
 import Layout from "../Components/Layout";
+import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
 
 export default function Home() {
@@ -37,24 +38,28 @@ export default function Home() {
           </p>
         </div>
       </Layout>
+      <div className="">
+        <Selects placeholder="Home"/>
+      </div>
       <div className="m-5">
-        <InputFields type="text" placeholder="Name" />
-        <InputFields type="date" />
-        <InputFields type="textarea" />
+        <InputFields type="text" placeholder="Name" size="w-full" />
+        <InputFields type="text" placeholder="Name" size="w-3/4"/>
+        <InputFields type="text" placeholder="Name" size="w-1/5"/>
+        <InputFields type="text" placeholder="Name" size="w-2/4"/>
+        <InputFields type="date" size="w-full" style="uppercase"/>
         <TextArea />
       </div>
       <div className='m-5'>
-        <Buttons classColor="btn-primary">Primary</Buttons>
-        <Buttons classColor="btn-secondary">Secondary</Buttons>
-        <Buttons classColor="btn-light">Light</Buttons>
-        <Buttons classColor="btn-dark">Dark</Buttons>
-        <Buttons classColor="btn-info">Info</Buttons>
-        <Buttons classColor="btn-success">Success</Buttons>
-        <Buttons classColor="btn-warning">Warning</Buttons>
-        <Buttons classColor="btn-danger">Danger</Buttons>
-        <Buttons classColor="btn-link">Print</Buttons>
+        <Buttons classColor="btn-primary" size="btn-xs">Primary</Buttons>
+        <Buttons classColor="btn-secondary" size="btn-xs">Secondary</Buttons>
+        <Buttons classColor="btn-light" size="btn-xs">Light</Buttons>
+        <Buttons classColor="btn-dark" size="btn-xs">Dark</Buttons>
+        <Buttons classColor="btn-info" size="btn-xs">Info</Buttons>
+        <Buttons classColor="btn-success" size="btn-xs">Success</Buttons>
+        <Buttons classColor="btn-warning" size="btn-xs">Warning</Buttons>
+        <Buttons classColor="btn-danger" size="btn-xs">Danger</Buttons>
+        <Buttons classColor="btn-link" size="btn-xs">Print</Buttons>
       </div>
-      
     </>
   );
 }

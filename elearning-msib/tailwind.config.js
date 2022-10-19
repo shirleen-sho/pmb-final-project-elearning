@@ -5,7 +5,36 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          50: "#eceefe",
+          100: "#ced3fb",
+          200: "#acb7f9",
+          300: "#899af7",
+          400: "#6d80f4",
+          500: "#5667eb",
+        },
+        success: {
+          base: "#81e052",
+          hover: "#67d92a",
+        },
+        error: {
+          base: "#ee2b2b",
+          hover: "#dc1e25",
+        },
+        warning: {
+          base: "#f8bc54",
+          hover: "#f7ad31",
+        },
+        neutral: {
+          1: "#F2F2F3",
+          2: "#C8CDD0",
+          3: "#415058",
+          4: "#1F292E",
+        },
+      },
+    },
   },
   plugins: [],
-}
+};

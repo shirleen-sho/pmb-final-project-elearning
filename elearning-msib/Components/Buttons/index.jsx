@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ type = "submit", classColor = "", size,processing, children }) => {
+const Buttons = ({ type = "submit", classColor = "", size,processing, children }) => {
   return (
     <button
       type={type}
@@ -16,4 +16,4 @@ const Button = ({ type = "submit", classColor = "", size,processing, children })
   );
 };
 
-export default Button;
+export default Buttons;

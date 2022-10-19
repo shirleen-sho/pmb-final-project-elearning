@@ -1,37 +1,19 @@
-export default function Buttons({ children, Variant }) {
-  let style =
-    "bg-[#FFDC39] px-12 py-2 rounded-full outline-0 cursor-pointer text-lg shadow-2xl m-5 transition-all ";
+import React from "react";
 
-  // if(Variant === 'Primary'){
-  //   style ={
-  //     ...style,
-  //     backgroundColor: '#transparent',
-  //     color : ''
-  //   }
-  // }
-  // else if (Variant === 'Secondary'){
-  //   style ={
-  //     ...style,
-  //     backgroundColor: '#transparent',
-  //     color : ''
-  //   }
-  // }else if (Variant === 'Print'){
-  //   style ={
-  //     ...style,
-  //     backgroundColor: '#transparent',
-  //     color : ''
-  //   }
-  // }else if (Variant === 'Save   '){
-  //   style ={
-  //     ...style,
-  //     backgroundColor: '#transparent',
-  //     color : ''
-  //   }
-  // }
-
+const Button = ({ type = "submit", classColor = "", size,processing, children }) => {
   return (
-    <>
-      <button className={style}>{children}</button>
-    </>
+    <button
+      type={type}
+      size={size}
+      className={
+        `inline-flex items-center px-4 py-2 rounded text-xs uppercase transition ease-in-out duration-500
+        ${processing} ` + classColor
+      }
+      disabled={processing}
+    >
+      {children}
+    </button>
   );
-}
+};
+
+export default Button;

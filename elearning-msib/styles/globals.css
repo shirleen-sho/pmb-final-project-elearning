@@ -4,32 +4,37 @@
 
 @layer components {
   .btn-primary{
-    @apply bg-[#889AF9] outline-none text-white
+    @apply bg-[#889AF9] outline-none text-white hover:bg-[#757AFF] 
   }
   .btn-secondary{
-    @apply bg-[#858796] text-white
+    @apply bg-[#9F9F9F] text-white hover:bg-[#7C7C7C]
   }
   .btn-light{
-    @apply bg-white border border-[#889AF9] text-black
+    @apply bg-white border border-[#889AF9] text-black hover:bg-gray-400 hover:border-[#757AFF]
   }
   .btn-dark{
-    @apply bg-black text-white
+    @apply bg-slate-600 text-white hover:bg-slate-900 
   }
   .btn-warning{
-    @apply bg-[#f6c23e] text-white
+    @apply bg-[#F6C23E] text-white hover:bg-[#F4B412]
   }
   .btn-danger{
-    @apply bg-[#e74a3b] text-white
+    @apply bg-[#E74A3B] text-white hover:bg-[#8A1E14]
   }
   .btn-info{
-    @apply bg-[#00B5EE] outline-none text-white
+    @apply bg-[#00B5EE] text-white hover:bg-[#1392B8]
   }
   .btn-success{
-    @apply bg-[#1cc88a] outline-none text-white
+    @apply bg-[#1CC88A] text-white hover:bg-[#159465]
   }
-  
   .btn-link{
     @apply hover:underline
+  }
+  .btn-xs{
+    @apply py-2 px-4 text-xs
+  }
+  .btn-lg{
+    @apply py-3 px-6 text-lg
   }
 
 }

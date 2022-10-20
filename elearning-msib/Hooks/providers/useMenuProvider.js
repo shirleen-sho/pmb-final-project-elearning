@@ -3,10 +3,18 @@ import { useState } from "react";
 export const useMenuProvider = () => {
   const list_menu = [
     {
-      menu: { route: "/", name: "Dashboard" },
+      menu: {
+        route: "/",
+        name: "Dashboard",
+        icon: "icon dashboard.png",
+      },
     },
     {
-      menu: { route: "/data_master", name: "Data Master" },
+      menu: {
+        route: "/data_master",
+        name: "Data Master",
+        icon: "icon data master.png",
+      },
       sub_menu: [
         { route: "/data_master/identitas_sekolah", name: "Identitas Sekolah" },
         { route: "/data_master/tahun_akademik", name: "Tahun Akademik" },
@@ -19,17 +27,29 @@ export const useMenuProvider = () => {
       ],
     },
     {
-      menu: { route: "/kepegawaian", name: "Kepegawaian" },
+      menu: {
+        route: "/kepegawaian",
+        name: "Kepegawaian",
+        icon: "icon kepegawaian.png",
+      },
       sub_menu: [
         { route: "/kepegawaian/staff", name: "Staff" },
         { route: "/kepegawaian/guru", name: "Guru" },
       ],
     },
     {
-      menu: { route: "/kesiswaan", name: "Kesiswaan" },
+      menu: {
+        route: "/kesiswaan",
+        name: "Kesiswaan",
+        icon: "icon kesiswaan.png",
+      },
     },
     {
-      menu: { route: "/data_akademik", name: "Data Akademik" },
+      menu: {
+        route: "/data_akademik",
+        name: "Data Akademik",
+        icon: "icon data akademik.png",
+      },
       sub_menu: [
         { route: "/data_akademik/mata_pelajaran", name: "Mata Pelajaran" },
         { route: "/data_akademik/jadwal_pelajaran", name: "Jadwal Pelajaran" },
@@ -38,31 +58,74 @@ export const useMenuProvider = () => {
       ],
     },
     {
-      menu: { route: "/elearning", name: "E-Learning" },
+      menu: {
+        route: "/elearning",
+        name: "E-Learning",
+        icon: "icon elearning.png",
+      },
     },
     {
-      menu: { route: "/data_absensi", name: "Data Absensi" },
+      menu: {
+        route: "/data_absensi",
+        name: "Data Absensi",
+        icon: "icon absensi.png",
+      },
     },
     {
-      menu: { route: "/ujian", name: "Ujian" },
+      menu: {
+        route: "/ujian",
+        name: "Ujian",
+        icon: "icon ujian.png",
+      },
     },
     {
-      menu: { route: "/pengumuman", name: "Pengumuman" },
+      menu: {
+        route: "/pengumuman",
+        name: "Pengumuman",
+        icon: "icon pengumuman.png",
+      },
     },
     {
-      menu: { route: "/epayment", name: "E-Payment" },
+      menu: {
+        route: "/epayment",
+        name: "E-Payment",
+        icon: "icon e-payment.png",
+      },
     },
     {
-      menu: { route: "/raport", name: "Raport" },
+      menu: {
+        route: "/raport",
+        name: "Raport",
+        icon: "icon raport.png",
+      },
     },
     {
-      menu: { route: "/keuangan_sekolah", name: "Keuangan Sekolah" },
+      menu: {
+        route: "/keuangan_sekolah",
+        name: "Keuangan Sekolah",
+        icon: "icon keuangan sekolah.png",
+      },
     },
     {
-      menu: { route: "/logout", name: "Log Out" },
+      menu: {
+        route: "/log_activity",
+        name: "Log Activity",
+        icon: "icon log activity.png",
+      },
     },
     {
-      menu: { route: "/settings", name: "Settings" },
+      menu: {
+        route: "/logout",
+        name: "Log Out",
+        icon: "icon log out.png",
+      },
+    },
+    {
+      menu: {
+        route: "/settings",
+        name: "Settings",
+        icon: "icon settings.png",
+      },
     },
   ];
 

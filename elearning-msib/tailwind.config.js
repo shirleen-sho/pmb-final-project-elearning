@@ -14,10 +14,12 @@ module.exports = {
           300: "#899af7",
           400: "#6d80f4",
           500: "#5667eb",
+          600: "#505edf",
+          700: "#4753d2",
+          800: "#4048c5",
+          900: "#3534ae",
         },
-        secondary: {
-        
-        },
+        secondary: {},
         success: {
           base: "#81e052",
           hover: "#67d92a",

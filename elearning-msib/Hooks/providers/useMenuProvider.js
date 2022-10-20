@@ -16,7 +16,11 @@ export const useMenuProvider = () => {
         icon: "icon data master.png",
       },
       sub_menu: [
-        { route: "/data_master/identitas_sekolah", name: "Identitas Sekolah" },
+        {
+          route: "/data_master/identitas_sekolah",
+          name: "Identitas Sekolah",
+          detail: "Update your photo and school details here!",
+        },
         { route: "/data_master/tahun_akademik", name: "Tahun Akademik" },
         { route: "/data_master/gedung", name: "Gedung" },
         { route: "/data_master/ruangan", name: "Ruangan" },
@@ -136,15 +140,16 @@ export const useMenuProvider = () => {
   const res1 = menus.find((i) => selectedMenu === i.menu.route);
   let currentMenu = {
     title: res1.menu.name,
-    detail: res1.menu.name + " details here", // nanti diganti data langsung dari object
+    detail: res1.menu.detail,
   };
   if (selectedSubmenu !== "") {
     const res2 = res1.sub_menu.find((i) => selectedSubmenu === i.route);
     currentMenu = {
       title: res2.name,
-      detail: res2.name + " details here", // nanti diganti data langsung dari object
+      detail: res2.detail,
     };
   }
+  console.log(currentMenu);
 
   return {
     menus,

@@ -6,34 +6,40 @@ const Header = () => {
   const { currentMenu } = menu;
   const { user_info } = user;
   return (
-    <div className="flex flex-row justify-between items-center py-5 border-b border-neutral-2">
+    <div className="flex flex-row justify-between items-center h-[120px] border-b border-neutral-2">
       <div className="flex flex-col gap-2">
         <div className="font-bold text-3xl">{currentMenu.title}</div>
-        <div className="font-medium text-sm">{currentMenu.detail}</div>
+        {currentMenu.detail && (
+          <div className="font-medium text-sm">{currentMenu.detail}</div>
+        )}
       </div>
       <div id="icons" className="flex flex-row items-center gap-4">
         <div
           id="icon-notification"
-          className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-500 hover:font-bold"
+          className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-400 hover:font-bold"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-            />
-          </svg>
+          <div className="relative flex flex-row">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+              />
+            </svg>
+            <span class="bg-primary-400 h-2 w-2 rounded-full absolute -right-1 -top-1"></span>
+          </div>
         </div>
+
         <div
           id="icon-settings"
-          className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-500 hover:font-bold"
+          className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-400"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

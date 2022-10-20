@@ -14,13 +14,13 @@ const Header = () => {
       <div id="icons" className="flex flex-row items-center gap-4">
         <div
           id="icon-notification"
-          className="bg-white p-4 rounded-full hover:cursor-pointer hover:text-primary-500 hover:font-bold"
+          className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-500 hover:font-bold"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
             className="w-6 h-6"
           >
@@ -33,13 +33,13 @@ const Header = () => {
         </div>
         <div
           id="icon-settings"
-          className="bg-white p-4 rounded-full hover:cursor-pointer hover:text-primary-500 hover:font-bold"
+          className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-500 hover:font-bold"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
             className="w-6 h-6"
           >
@@ -55,9 +55,21 @@ const Header = () => {
             />
           </svg>
         </div>
-        <div className="flex flex-col gap-1 items-center px-4">
-          <div className="font-semibold text-sm">{user_info.name}</div>
-          <div className="font-normal text-sm">{user_info.role}</div>
+        <div className="flex flex-col gap-1 justify-center items-end px-4">
+          <div className="font-semibold text-sm text-neutral-4">
+            {user_info.name}
+          </div>
+          <div className="font-normal text-sm text-neutral-3">
+            {user_info.role}
+          </div>
+        </div>
+        <div id="profile_pic" className="bg-primary-300 w-14 h-14 rounded-full">
+          {user_info.photo && (
+            <img
+              src={`/images/${user_info.photo}`}
+              className="object-cover h-full w-auto rounded-full"
+            />
+          )}
         </div>
       </div>
     </div>

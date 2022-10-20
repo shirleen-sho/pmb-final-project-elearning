@@ -44,8 +44,8 @@ const SideMenu = () => {
                     <img
                       src={
                         menu.icon
-                          ? `/images/${menu.icon}`
-                          : "/images/icon settings.png"
+                          ? `/images/icon/${menu.icon}`
+                          : "/images/icon/icon settings.png"
                       }
                       alt="icon"
                       className="w-4 h-auto"

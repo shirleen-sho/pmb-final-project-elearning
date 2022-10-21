@@ -21,11 +21,27 @@ export const useMenuProvider = () => {
           name: "Identitas Sekolah",
           detail: "Update your photo and school details here!",
         },
-        { route: "/data_master/tahun_akademik", name: "Tahun Akademik" },
-        { route: "/data_master/gedung", name: "Gedung" },
-        { route: "/data_master/ruangan", name: "Ruangan" },
+        {
+          route: "/data_master/tahun_akademik",
+          name: "Tahun Akademik",
+          detail: "See tahun akademik details here!",
+        },
+        {
+          route: "/data_master/gedung",
+          name: "Gedung",
+          detail: "See gedung details here!",
+        },
+        {
+          route: "/data_master/ruangan",
+          name: "Ruangan",
+          detail: "See ruangan details here!",
+        },
         { route: "/data_master/tingkatan", name: "Tingkatan" },
-        { route: "/data_master/kelas", name: "Kelas" },
+        {
+          route: "/data_master/kelas",
+          name: "Kelas",
+          detail: "See kelas details here!",
+        },
         { route: "/data_master/kalender_akademik", name: "Kalender Akademik" },
         { route: "/data_master/jam_pembelajaran", name: "Jam Pembelajaran" },
       ],
@@ -37,8 +53,16 @@ export const useMenuProvider = () => {
         icon: "icon kepegawaian.png",
       },
       sub_menu: [
-        { route: "/kepegawaian/staff", name: "Staff" },
-        { route: "/kepegawaian/guru", name: "Guru" },
+        {
+          route: "/kepegawaian/staff",
+          name: "Staff Management",
+          detail: "See list of staff here!",
+        },
+        {
+          route: "/kepegawaian/guru",
+          name: "Guru Management",
+          detail: "See list of teachers here!",
+        },
       ],
     },
     {
@@ -149,7 +173,6 @@ export const useMenuProvider = () => {
       detail: res2.detail,
     };
   }
-  console.log(currentMenu);
 
   return {
     menus,

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
 const SideMenu = () => {
@@ -12,14 +13,36 @@ const SideMenu = () => {
     setSelectedSubmenu,
   } = menu;
 
+  const location = useRouter();
+  const path = location.pathname;
+  const pathMenu = "/" + path.split("/")[1];
+
+  useEffect(() => {
+    // fungsi untuk memastikan state menu terupdate sesuai dengan location
+    // misalnya ketika user mengakses page dari route secara manual tanpa menekan submenu
+    if (path !== selectedMenu) {
+      menus.map((m) => {
+        if (m.sub_menu) {
+          const findSubMenu = m.sub_menu.find((i) => path === i.route);
+          if (findSubMenu !== undefined) {
+            setSelectedMenu(pathMenu);
+            setSelectedSubmenu(path);
+          } else {
+            setSelectedMenu(pathMenu);
+          }
+        }
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-primary-100 flex flex-col gap-10 px-2 py-14 rounded-3xl min-h-screen h-fit min-w-fit">
       <div className="flex flex-row justify-center">
         <img src="/images/logo.png" className="h-14 w-auto" alt="icon school" />
       </div>
-      <div className="flex flex-col gap-1">
-        {menus.map(({ menu, sub_menu }, index) => (
-          <>
+      <div>
+        {menus.map(({ menu, sub_menu }) => (
+          <div className="flex flex-col gap-1" key={menu.route}>
             <Link
               href={sub_menu ? sub_menu[0].route : menu.route}
               key={menu.route}
@@ -97,7 +120,7 @@ const SideMenu = () => {
                 </div>
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>

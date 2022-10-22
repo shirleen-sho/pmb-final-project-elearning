@@ -47,7 +47,7 @@ export default function Home() {
         <InputFields type="text" placeholder="Name" size="w-1/5"/>
         <InputFields type="text" placeholder="Name" size="w-2/4"/>
         <InputFields type="date" size="w-full" style="uppercase"/>
-        <TextArea />
+        <TextArea placeholder="Massage" />
       </div>
       <div className='m-5'>
         <Buttons classColor="btn-primary" size="btn-xs">Primary</Buttons>

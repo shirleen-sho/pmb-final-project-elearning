@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Buttons = ({type = "submit", classColor = "", size, processing, children, ...props}) => {
+const Buttons = ({type = "submit", classColor = "", size, processing, children,}) => {
+
   return (
     <button
       type={type}
@@ -9,7 +10,6 @@ const Buttons = ({type = "submit", classColor = "", size, processing, children, 
         ${processing} ${size} ` + classColor 
       }
       disabled={processing}
-      {...props}
     >
       {children}
     </button>

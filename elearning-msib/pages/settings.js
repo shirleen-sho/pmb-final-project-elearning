@@ -8,20 +8,18 @@ const Settings = () => {
   const { list1, list2 } = dummy;
   return (
     <Layout>
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-col gap-6">
         <Table
           data={list1}
-          className="text-xs w-full h-full"
-          classNameHead="bg-red-100"
-          classNameBody="bg-red-50"
-          classNameCell="px-4 py-2"
+          textAlign="left"
+          borderCell="border-l"
+          action="archive-edit"
         />
         <Table
           data={list2}
-          className="text-xs w-full h-full"
-          classNameHead="bg-sky-100"
-          classNameBody="bg-sky-50"
-          classNameCell="px-4 py-2"
+          textAlign="center"
+          borderCell="border-b"
+          action=""
         />
       </div>
     </Layout>

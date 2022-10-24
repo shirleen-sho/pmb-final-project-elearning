@@ -157,22 +157,54 @@ export const useMenuProvider = () => {
     },
   ];
 
+  const additional_menu = [
+    {
+      menu: {
+        route: "/profile",
+        name: "Your Profile",
+        detail: "Update your photo and details here!",
+      },
+    },
+    {
+      menu: {
+        route: "/password",
+        name: "Password",
+        detail: "Update your Password here!",
+      },
+    },
+  ];
+
   const [menus, setMenus] = useState(list_menu);
   const [selectedMenu, setSelectedMenu] = useState("/");
   const [selectedSubmenu, setSelectedSubmenu] = useState("");
 
+  let currentMenu;
+
   const res1 = menus.find((i) => selectedMenu === i.menu.route);
-  let currentMenu = {
-    title: res1.menu.name,
-    detail: res1.menu.detail,
-  };
-  if (selectedSubmenu !== "") {
-    const res2 = res1.sub_menu.find((i) => selectedSubmenu === i.route);
+
+  console.log("res1", res1);
+
+  if (res1 === undefined) {
+    const res = additional_menu.find((i) => selectedMenu === i.menu.route);
     currentMenu = {
-      title: res2.name,
-      detail: res2.detail,
+      title: res.menu.name,
+      detail: res.menu.detail,
     };
+  } else {
+    currentMenu = {
+      title: res1.menu.name,
+      detail: res1.menu.detail,
+    };
+    if (selectedSubmenu !== "") {
+      const res2 = res1.sub_menu.find((i) => selectedSubmenu === i.route);
+      currentMenu = {
+        title: res2.name,
+        detail: res2.detail,
+      };
+    }
   }
+
+  console.log(currentMenu);
 
   return {
     menus,

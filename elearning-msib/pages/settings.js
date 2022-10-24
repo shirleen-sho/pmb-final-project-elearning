@@ -4,8 +4,8 @@ import Table from "../Components/Table";
 import { useAppContext } from "../Hooks/useAppContext";
 
 const Settings = () => {
-  const { user } = useAppContext();
-  const { list1, list2 } = user;
+  const { dummy } = useAppContext();
+  const { list1, list2 } = dummy;
   return (
     <Layout>
       <div className="flex flex-row gap-6">

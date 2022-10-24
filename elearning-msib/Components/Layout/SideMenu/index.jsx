@@ -46,6 +46,7 @@ const SideMenu = () => {
               key={menu.route}
             >
               <a
+                title={!showSidemenu && menu.name}
                 className={
                   selectedMenu === menu.route
                     ? `font-semibold text-xs ${paddingMenu} bg-primary-200 rounded-full`

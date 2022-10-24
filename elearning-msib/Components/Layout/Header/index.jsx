@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
@@ -6,6 +6,11 @@ const Header = () => {
   const { menu, user } = useAppContext();
   const { setSelectedMenu, setSelectedSubmenu, currentMenu } = menu;
   const { user_info } = user;
+
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const handleToggleProfileDropdown = () => {
+    setShowProfileDropdown(!showProfileDropdown);
+  };
   return (
     <div className="flex flex-row justify-between items-center h-[120px] border-b border-neutral-2">
       <div className="flex flex-col gap-2">
@@ -68,13 +73,10 @@ const Header = () => {
             </svg>
           </a>
         </Link>
-        <Link href="/profile">
-          <a
+        <div className="flex flex-col items-end relative">
+          <button
             className="flex flex-row items-center gap-4"
-            onClick={() => {
-              setSelectedMenu("/profile");
-              setSelectedSubmenu("");
-            }}
+            onClick={handleToggleProfileDropdown}
           >
             <div className="flex flex-col gap-1 justify-center items-end px-4">
               <div className="font-semibold text-sm text-neutral-4">
@@ -106,8 +108,67 @@ const Header = () => {
                 </svg>
               </div>
             )}
-          </a>
-        </Link>
+          </button>
+          {showProfileDropdown && (
+            <div
+              className="absolute top-20 z-20 w-[260px] bg-white
+              divide-y divide-gray-200 rounded-lg drop-shadow-xl"
+              id="user-dropdown"
+            >
+              <div className="px-4 py-4 text-2xs font-semibold cursor-default">
+                Signed in as {user_info.name}
+              </div>
+              <div className="py-2.5 flex flex-col cursor-default">
+                <Link href="/profile">
+                  <a
+                    className="px-4 py-2 text-xs font-medium hover:text-primary-900"
+                    onClick={() => {
+                      setSelectedMenu("/profile");
+                      setSelectedSubmenu("");
+                    }}
+                  >
+                    Profile
+                  </a>
+                </Link>
+                <Link href="/password">
+                  <a
+                    className="px-4 py-2 text-2xs hover:text-primary-900"
+                    onClick={() => {
+                      setSelectedMenu("/password");
+                      setSelectedSubmenu("");
+                    }}
+                  >
+                    Password
+                  </a>
+                </Link>
+              </div>
+              <div className="py-2.5 flex flex-col">
+                <Link href="/settings">
+                  <a
+                    className="px-4 py-2 text-2xs hover:text-primary-900"
+                    onClick={() => {
+                      setSelectedMenu("/settings");
+                      setSelectedSubmenu("");
+                    }}
+                  >
+                    Settings
+                  </a>
+                </Link>
+                <Link href="/logout">
+                  <a
+                    className="px-4 py-2 text-2xs hover:text-primary-900"
+                    onClick={() => {
+                      setSelectedMenu("/logout");
+                      setSelectedSubmenu("");
+                    }}
+                  >
+                    Log Out
+                  </a>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

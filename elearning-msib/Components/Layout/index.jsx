@@ -23,14 +23,13 @@ const Layout = ({ children }) => {
     // misalnya ketika user mengakses page dari route secara manual tanpa menekan submenu
     if (path !== selectedMenu) {
       menus.map((m) => {
-        if (m.sub_menu) {
+        if (m.sub_menu !== undefined) {
           const findSubMenu = m.sub_menu.find((i) => path === i.route);
           if (findSubMenu !== undefined) {
             setSelectedMenu(pathMenu);
             setSelectedSubmenu(path);
           } else {
             setSelectedMenu(pathMenu);
-            setSelectedSubmenu("");
           }
         }
       });

@@ -4,7 +4,7 @@ import { useAppContext } from "../../../Hooks/useAppContext";
 
 const Header = () => {
   const { menu, user } = useAppContext();
-  const { currentMenu } = menu;
+  const { setSelectedMenu, setSelectedSubmenu, currentMenu } = menu;
   const { user_info } = user;
   return (
     <div className="flex flex-row justify-between items-center h-[120px] border-b border-neutral-2">
@@ -42,6 +42,10 @@ const Header = () => {
           <a
             id="icon-settings"
             className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-400"
+            onClick={() => {
+              setSelectedMenu("/settings");
+              setSelectedSubmenu("");
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +69,13 @@ const Header = () => {
           </a>
         </Link>
         <Link href="/profile">
-          <a className="flex flex-row items-center gap-4">
+          <a
+            className="flex flex-row items-center gap-4"
+            onClick={() => {
+              setSelectedMenu("/profile");
+              setSelectedSubmenu("");
+            }}
+          >
             <div className="flex flex-col gap-1 justify-center items-end px-4">
               <div className="font-semibold text-sm text-neutral-4">
                 {user_info.name}

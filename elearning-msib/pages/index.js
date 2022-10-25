@@ -60,7 +60,7 @@ export default function Home() {
         <TextArea placeholder="Massage" />
       </div>
       <div className='m-5'>
-        <Buttons classColor="btn-primary" size="btn-xs">Primary</Buttons>
+        <Buttons classColor="btn-primary" size="btn-xs" link="/api/hello">Primary</Buttons>
         <Buttons classColor="btn-secondary" size="btn-xs">Secondary</Buttons>
         <Buttons classColor="btn-light" size="btn-xs">Light</Buttons>
         <Buttons classColor="btn-dark" size="btn-xs">Dark</Buttons>
@@ -70,6 +70,7 @@ export default function Home() {
         <Buttons classColor="btn-danger" size="btn-xs">Danger</Buttons>
         <Buttons classColor="btn-link" size="btn-xs">Print</Buttons>
       </div>
+      
     </>
   );
 }

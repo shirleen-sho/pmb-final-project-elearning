@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link"
 
-const Buttons = ({type = "submit", classColor = "", size, processing, children,}) => {
-
+const Buttons = ({type = "submit", classColor = "", size, processing, children, link=""}) => {
   return (
     <button
       type={type}
       className={
-        `inline-flex items-center rounded text-xs shadow uppercase transition ease-in-out duration-500 m-2
-        ${processing} ${size} ` + classColor 
+        `inline-flex items-center rounded text-bases shadow uppercase transition ease-in-out duration-500 font-semibold
+        ${processing} ${size} ${classColor } `
       }
-      disabled={processing}
     >
-      {children}
+        <Link href={link || ""}>
+          <a>{children}</a>
+        </Link>
     </button>
   );
 };

@@ -1,10 +1,16 @@
 import Buttons from "../Components/Buttons";
 import InputFields from "../Components/InputFields";
 import Layout from "../Components/Layout";
+import Notifikasi from "../Components/Notifikasi";
 import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
 
 export default function Home() {
+  const list =[
+    {name: "pendi"},
+    {name : "geovaldo"},
+    {name : "Joko"}
+  ]
   return (
     <>
       <Layout>
@@ -38,8 +44,12 @@ export default function Home() {
           </p>
         </div>
       </Layout>
-      <div className="">
-        <Selects placeholder="Home"/>
+      <Notifikasi />
+      <div className="m-5">
+        <Selects list={list} size="w-2/4" description="Home"/>
+        <Selects list={list} size="w-3/4" description="Home"/>
+        <Selects list={list} size="w-1/5" description="Home"/>
+        <Selects list={list} size="w-full" description="Home"/>
       </div>
       <div className="m-5">
         <InputFields type="text" placeholder="Name" size="w-full" />

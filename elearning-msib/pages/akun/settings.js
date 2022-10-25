@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../Components/Layout";
-import Table from "../Components/Table";
-import { useAppContext } from "../Hooks/useAppContext";
+import Layout from "../../Components/Layout";
+import Table from "../../Components/Table";
+import { useAppContext } from "../../Hooks/useAppContext";
 
 const Settings = () => {
   const { dummy } = useAppContext();

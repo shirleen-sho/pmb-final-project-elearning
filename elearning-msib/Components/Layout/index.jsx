@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   } = menu;
 
   const location = useRouter();
-  const path = location.pathname;
+  const path = location.asPath;
   const pathMenu = "/" + path.split("/")[1];
 
   useEffect(() => {

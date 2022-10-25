@@ -2,6 +2,25 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  env: {
+    appName: "Starling School",
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/profile",
+        destination: "/akun/profile",
+      },
+      {
+        source: "/password",
+        destination: "/akun/password",
+      },
+      {
+        source: "/settings",
+        destination: "/akun/settings",
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

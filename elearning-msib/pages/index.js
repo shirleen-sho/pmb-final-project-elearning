@@ -1,4 +1,4 @@
-import Buttons from "../Components/Buttons";
+import Button from "../Components/Buttons";
 import InputFields from "../Components/InputFields";
 import Layout from "../Components/Layout";
 import Notifikasi from "../Components/Notifikasi";
@@ -44,7 +44,13 @@ export default function Home() {
           </p>
         </div>
       </Layout>
-      <Notifikasi />
+      <div className="m-5">
+        <Notifikasi type="Success"/>
+        <Notifikasi type="Danger"/>
+        <Notifikasi type="Warning"/>
+        <Notifikasi type="Info"/>
+        <Notifikasi type="Dark"/>
+      </div>
       <div className="m-5">
         <Selects list={list} size="w-2/4" description="Home"/>
         <Selects list={list} size="w-3/4" description="Home"/>
@@ -60,15 +66,15 @@ export default function Home() {
         <TextArea placeholder="Massage" />
       </div>
       <div className='m-5'>
-        <Buttons classColor="btn-primary" size="btn-xs" link="/api/hello">Primary</Buttons>
-        <Buttons classColor="btn-secondary" size="btn-xs">Secondary</Buttons>
-        <Buttons classColor="btn-light" size="btn-xs">Light</Buttons>
-        <Buttons classColor="btn-dark" size="btn-xs">Dark</Buttons>
-        <Buttons classColor="btn-info" size="btn-xs">Info</Buttons>
-        <Buttons classColor="btn-success" size="btn-xs">Success</Buttons>
-        <Buttons classColor="btn-warning" size="btn-xs">Warning</Buttons>
-        <Buttons classColor="btn-danger" size="btn-xs">Danger</Buttons>
-        <Buttons classColor="btn-link" size="btn-xs">Print</Buttons>
+        <Button type="success" link="/api/hello">Primary</Button>
+        <Button type="secondary" >Secondary</Button>
+        <Button type="light">Light</Button>
+        <Button type="dark">Dark</Button>
+        <Button type="info">Info</Button>
+        <Button type="success">Success</Button>
+        <Button type="warning" >Warning</Button>
+        <Button type="danger">Danger</Button>
+        <Button type="link">Print</Button>
       </div>
       
     </>

@@ -2,42 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn-primary{
-    @apply bg-[#889AF9] outline-none text-white hover:bg-[#757AFF] 
-  }
-  .btn-secondary{
-    @apply bg-[#9F9F9F] text-white hover:bg-[#7C7C7C]
-  }
-  .btn-light{
-    @apply bg-white border border-[#889AF9] text-black hover:bg-gray-400 hover:border-[#757AFF]
-  }
-  .btn-dark{
-    @apply bg-slate-600 text-white hover:bg-slate-900 
-  }
-  .btn-warning{
-    @apply bg-[#F6C23E] text-white hover:bg-[#F4B412]
-  }
-  .btn-danger{
-    @apply bg-[#E74A3B] text-white hover:bg-[#8A1E14]
-  }
-  .btn-info{
-    @apply bg-[#00B5EE] text-white hover:bg-[#1392B8]
-  }
-  .btn-success{
-    @apply bg-[#1CC88A] text-white hover:bg-[#159465]
-  }
-  .btn-link{
-    @apply hover:underline
-  }
-  .btn-xs{
-    @apply py-2 px-4 text-xs
-  }
-  .btn-lg{
-    @apply py-3 px-6 text-lg
-  }
-}
-
+@layer components {}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 html,

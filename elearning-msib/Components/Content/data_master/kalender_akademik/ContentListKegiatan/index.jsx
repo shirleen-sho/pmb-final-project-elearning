@@ -9,12 +9,8 @@ const ContentListKegiatan = () => {
   return (
     <div className="w-full h-full py-3">
       <div className="flex flex-row justify-center gap-3 absolute top-0 right-0">
-        <Buttons classColor="btn-secondary" size="btn-xs h-full">
-          O
-        </Buttons>
-        <Buttons classColor="btn-primary" size="btn-xs h-full">
-          Add Kegiatan
-        </Buttons>
+        <Buttons type="secondary">O</Buttons>
+        <Buttons type="primary">Add Kegiatan</Buttons>
       </div>
       <Table
         data={list_kegiatan}

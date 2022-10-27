@@ -6,12 +6,8 @@ const AddKegiatan = () => {
   return (
     <Layout>
       <div className="flex flex-row justify-end gap-5">
-        <Buttons classColor="btn-secondary" size="btn-xs m-0">
-          Cancel
-        </Buttons>
-        <Buttons classColor="btn-primary" size="btn-xs m-0">
-          Save
-        </Buttons>
+        <Buttons type="secondary">Cancel</Buttons>
+        <Buttons type="primary">Save</Buttons>
       </div>
     </Layout>
   );

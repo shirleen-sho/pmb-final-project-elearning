@@ -101,12 +101,8 @@ const Profile = () => {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Buttons classColor="btn-secondary" size="btn-xs m-0">
-            Back
-          </Buttons>
-          <Buttons classColor="btn-primary" size="btn-xs m-0">
-            Update
-          </Buttons>
+          <Buttons type="secondary">Back</Buttons>
+          <Buttons type="primary">Update</Buttons>
         </div>
       </div>
     </Layout>

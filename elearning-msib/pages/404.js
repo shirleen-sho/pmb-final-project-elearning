@@ -1,5 +1,5 @@
 import React from 'react'
-import Buttons from '../Components/Buttons'
+import Button from '../Components/Buttons'
 
 export default function Page404() {
     return (
@@ -8,8 +8,8 @@ export default function Page404() {
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg pb-8">
                     <div class="border-t border-gray-200 text-center pt-8 pb-8 px-12">
                         <h1 class="text-9xl font-bold text-primary-400">404</h1>
-                        <h1 class="text-6xl font-medium py-10">oops! Page not found</h1>
-                        <Buttons classColor="btn-primary" size="btn-xs" link="/">Home</Buttons>
+                        <h1 class="text-6xl font-medium pb-10">Oops! Page not found</h1>
+                        <Button type="primary" link="/">Home</Button>
                     </div>
                 </div>
             </div>

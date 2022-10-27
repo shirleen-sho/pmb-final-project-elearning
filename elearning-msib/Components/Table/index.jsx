@@ -1,17 +1,41 @@
 import React from "react";
 import Link from "next/link";
+import Button from "../Buttons";
+import InputFields from "../InputFields";
 
-const Table = ({ data, textAlign, borderCell, action }) => {
+const Table = ({
+  data,
+  textAlign,
+  borderCell,
+  action,
+  topNavigation,
+  buttonAddLink,
+  buttonAddText,
+}) => {
   let table_head = [];
   Object.keys(data[0]).forEach((key) => table_head.push(key));
 
   const paddingCell = "px-3 py-3";
   const heightCell = "h-14";
   const fontHead = "font-semibold";
-  const colorHead = "bg-gradient-to-r from-primary-50/50 to-primary-100";
+  let colorHead;
+
+  if (!topNavigation) {
+    colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
+  } else {
+    colorHead = "top-[72px] border-b";
+  }
 
   return (
-    <div className="relative border border-gray-200 z-0 bg-white rounded-[30px] p-6 shadow-lg w-full h-full">
+    <div className="relative border border-gray-200 top z-0 bg-white rounded-[30px] p-6 shadow-lg w-full h-full">
+      {topNavigation && (
+        <div className="mb-3 flex flex-row justify-between gap-5">
+          <Button type="primary" link={buttonAddLink}>
+            {buttonAddText || "Add"}
+          </Button>
+          <InputFields type="text" placeholder="Search" />
+        </div>
+      )}
       <table className={`table-auto text-xs w-full h-full text-${textAlign}`}>
         <thead>
           <tr>
@@ -75,7 +99,7 @@ const Table = ({ data, textAlign, borderCell, action }) => {
       </table>
       {/* background table head */}
       <div
-        className={`${colorHead} absolute w-[100%-24px] h-14 top-6 left-6 right-6 -z-10 rounded-l-2xl rounded-r-2xl`}
+        className={`${colorHead} absolute w-[100%-24px] h-14 left-6 right-6 -z-10 rounded-l-2xl rounded-r-2xl`}
         id="thead-background"
       ></div>
       {/* bottom navigation table */}

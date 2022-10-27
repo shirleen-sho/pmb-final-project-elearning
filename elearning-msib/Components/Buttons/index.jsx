@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-const Button = ({type ,classColor, size, children, link}) => {
-  switch (size) {
-    case "btn-lg":
-      size = "py-3 px-6 text-lg"
+const Button = ({ type, classColor, variant, style, children, link }) => {
+  switch (variant) {
+    case "icon":
+      style = "p-2 rounded-full";
       break;
     default:
-      size = "py-2 px-4 text-xs"
+      style = "py-2 px-4 text-xs rounded ";
       break;
   }
 
@@ -19,7 +19,8 @@ const Button = ({type ,classColor, size, children, link}) => {
       classColor = "bg-[#9F9F9F] text-white hover:bg-[#7C7C7C]";
       break;
     case "light":
-      classColor = "bg-white border border-[#757AFF] text-[#757AFF] hover:border-[#889AF9]";
+      classColor =
+        "bg-white border border-[#757AFF] text-[#757AFF] hover:border-[#889AF9]";
       break;
     case "dark":
       classColor = " bg-slate-600 text-white hover:bg-slate-900";
@@ -39,19 +40,24 @@ const Button = ({type ,classColor, size, children, link}) => {
     case "link":
       classColor = "hover:underline text-[#252525]";
       break;
+    case "icon":
+      classColor = "bg-gray-100 hover:bg-gray-300";
+      break;
     default:
-      classColor = ""
+      classColor = "";
       break;
   }
   return (
-    <button
-      type={type}
-      className={`inline-flex items-center rounded text-bases shadow uppercase transition ease-in-out duration-500 font-semibold ${size} ${classColor} `}
-    >
-      <Link href={link || ""}>
-        <a>{children}</a>
-      </Link>
-    </button>
+    <Link href={link || ""}>
+      <a>
+        <button
+          type={type}
+          className={`inline-flex items-center  text-bases shadow uppercase transition ease-in-out duration-500 font-semibold ${style} ${classColor} `}
+        >
+          {children}
+        </button>
+      </a>
+    </Link>
   );
 };
 

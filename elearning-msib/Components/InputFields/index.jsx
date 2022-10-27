@@ -7,7 +7,13 @@ const InputFields = ({type, size, placeholder, style}) => {
   }
   return (
     <>
-        <input type={type} value={value} onChange={handleValue} className={`border border-gray-200 bg-white shadow rounded px-3 last:text-base text-lg py-1.5 outline-none ${size} ${style}`} placeholder={placeholder}/>
+        <input 
+        type={type} 
+        value={value}
+        onChange={handleValue} 
+        className={`border border-gray-200 bg-white shadow rounded px-4 last:text-base text-lg py-2 outline-none ${size} ${style}`} 
+        placeholder={placeholder}
+        />
     </>
   )
 }

@@ -4,6 +4,7 @@ import Layout from "../Components/Layout";
 import Notifikasi from "../Components/Notifikasi";
 import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
+import { FaSearch } from "react-icons/fa";
 
 export default function Home() {
   const list =[
@@ -52,10 +53,10 @@ export default function Home() {
         <Notifikasi type="Dark"/>
       </div>
       <div className="m-5">
-        <Selects list={list} size="w-2/4" description="Home"/>
-        <Selects list={list} size="w-3/4" description="Home"/>
-        <Selects list={list} size="w-1/5" description="Home"/>
-        <Selects list={list} size="w-full" description="Home"/>
+        <Selects list={list} style="w-2/4" description="Home"/>
+        <Selects list={list} style="w-3/4" description="Home"/>
+        <Selects list={list} style="w-1/5" description="Home"/>
+        <Selects list={list} style="w-full" description="Home"/>
       </div>
       <div className="m-5">
         <InputFields type="text" placeholder="Name" size="w-full" />
@@ -66,7 +67,7 @@ export default function Home() {
         <TextArea placeholder="Massage" />
       </div>
       <div className='m-5'>
-        <Button type="success" link="/api/hello">Primary</Button>
+        <Button type="primary" link="/api/hello">Primary</Button>
         <Button type="secondary" >Secondary</Button>
         <Button type="light">Light</Button>
         <Button type="dark">Dark</Button>
@@ -75,6 +76,7 @@ export default function Home() {
         <Button type="warning" >Warning</Button>
         <Button type="danger">Danger</Button>
         <Button type="link">Print</Button>
+        <Button type="icon" variant="icon"><FaSearch/></Button>
       </div>
       
     </>

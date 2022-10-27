@@ -128,8 +128,217 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const list_tahun_akademik = [
+    {
+      "Kode Tahun Akademik": 202223,
+      "Nama Tahun": "Semester Ganjil 2022/2023",
+      Semester: 1,
+      Status: "Aktif",
+    },
+    {
+      "Kode Tahun Akademik": 202425,
+      "Nama Tahun": "Semester Genap 2024/2025",
+      Semester: 2,
+      Status: "Tidak Aktif",
+    },
+    {
+      "Kode Tahun Akademik": 202526,
+      "Nama Tahun": "Semester Ganjil 2025/2026",
+      Semester: 1,
+      Status: "Tidak Aktif",
+    },
+    {
+      "Kode Tahun Akademik": 202728,
+      "Nama Tahun": "Semester Ganjil 2027/2028",
+      Semester: 1,
+      Status: "Tidak Aktif",
+    },
+  ];
+
+  const list_gedung = [
+    {
+      "Kode Gedung": "G001",
+      "Nama Gedung": "Gedung Alpha",
+      "Jumlah Lantai": "8 lantai",
+      Panjang: "50 m",
+      Tinggi: "100 m",
+      Lebar: "25 m",
+      Status: "Aktif",
+    },
+    {
+      "Kode Gedung": "G002",
+      "Nama Gedung": "Gedung Beta",
+      "Jumlah Lantai": "4 lantai",
+      Panjang: "100 m",
+      Tinggi: "200 m",
+      Lebar: "50 m",
+      Status: "Tidak Aktif",
+    },
+    {
+      "Kode Gedung": "G003",
+      "Nama Gedung": "Gedung Kuning",
+      "Jumlah Lantai": "2 lantai",
+      Panjang: "150 m",
+      Tinggi: "300 m",
+      Lebar: "75 m",
+      Status: "Tidak Aktif",
+    },
+  ];
+
+  const list_ruangan = [
+    {
+      "Kode Ruangan": "RG1",
+      "Nama Gedung": "Gedung Alpha",
+      "Nama Ruangan": "Ruang Guru",
+      Kapasitas: "20 orang",
+      Status: "Tidak Aktif",
+    },
+    {
+      "Kode Ruangan": "RB1",
+      "Nama Gedung": "Gedung Beta",
+      "Nama Ruangan": "Ruang Guru",
+      Kapasitas: "20 orang",
+      Status: "Aktif",
+    },
+    {
+      "Kode Ruangan": "RKS1",
+      "Nama Gedung": "Gedung Kuning",
+      "Nama Ruangan": "Yellow01",
+      Kapasitas: "20 orang",
+      Status: "Aktif",
+    },
+    {
+      "Kode Ruangan": "RB2",
+      "Nama Gedung": "Gedung Beta",
+      "Nama Ruangan": "Beta01",
+      Kapasitas: "20 orang",
+      Status: "Aktif",
+    },
+    {
+      "Kode Ruangan": "RG2",
+      "Nama Gedung": "Gedung Alpha",
+      "Nama Ruangan": "Alpha01",
+      Kapasitas: "20 orang",
+      Status: "Aktif",
+    },
+  ];
+
+  const list_tingkatan = [
+    {
+      "Kode Tingkatan": "JU01",
+      "Nama Tingkatan": "I",
+    },
+    {
+      "Kode Tingkatan": "JU02",
+      "Nama Tingkatan": "II",
+    },
+    {
+      "Kode Tingkatan": "JU03",
+      "Nama Tingkatan": "III",
+    },
+    {
+      "Kode Tingkatan": "JU04",
+      "Nama Tingkatan": "IV",
+    },
+  ];
+
+  const list_kelas = [
+    {
+      "Kode Kelas": "K1",
+      "Nama Kelas": "IV A",
+      "Wali Kelas": "Wali Kelas",
+      Ruangan: "Alpha01",
+      Gedung: "Gedung Alpha",
+      "Jumlah Siswa": 20,
+      "Max Siswa": 30,
+    },
+    {
+      "Kode Kelas": "K2",
+      "Nama Kelas": "V C",
+      "Wali Kelas": "Wali Kelas",
+      Ruangan: "Yellow01",
+      Gedung: "Gedung Kuning",
+      "Jumlah Siswa": 15,
+      "Max Siswa": 40,
+    },
+    {
+      "Kode Kelas": "K3",
+      "Nama Kelas": "VII B",
+      "Wali Kelas": "Wali Kelas",
+      Ruangan: "Yellow02",
+      Gedung: "Gedung Kuning",
+      "Jumlah Siswa": 23,
+      "Max Siswa": 35,
+    },
+    {
+      "Kode Kelas": "K4",
+      "Nama Kelas": "I A",
+      "Wali Kelas": "Wali Kelas",
+      Ruangan: "Beta01",
+      Gedung: "Gedung Beta",
+      "Jumlah Siswa": 22,
+      "Max Siswa": 25,
+    },
+  ];
+
+  const list_kegiatan = [
+    {
+      "Tanggal Mulai": "18 August 2022",
+      "Tanggal Akhir": "30 December 2022",
+      Keterangan: "Program Magang MBKM",
+    },
+    {
+      "Tanggal Mulai": "16 March 2022",
+      "Tanggal Akhir": "28 April 2022",
+      Keterangan: "Ujian Akhir Semester",
+    },
+    {
+      "Tanggal Mulai": "5 January 2022",
+      "Tanggal Akhir": "19 January 2022",
+      Keterangan: "Ujian Akhir Semester",
+    },
+  ];
+
+  const list_jam_pembelajaran = [
+    {
+      KD: "JP01",
+      Sesi: "I",
+      "Jam Mulai": "07.30",
+      "Jam Selesai": "08.15",
+      Durasi: "45 menit",
+    },
+    {
+      KD: "JP02",
+      Sesi: "II",
+      "Jam Mulai": "08.15",
+      "Jam Selesai": "08.50",
+      Durasi: "45 menit",
+    },
+    {
+      KD: "JP03",
+      Sesi: "III",
+      "Jam Mulai": "08.50",
+      "Jam Selesai": "09.25",
+      Durasi: "45 menit",
+    },
+    {
+      KD: "JP04",
+      Sesi: "Istirahat",
+      "Jam Mulai": "09.25",
+      "Jam Selesai": "10.00",
+      Durasi: "45 menit",
+    },
+  ];
+
   return {
     list1,
     list2,
+    list_tahun_akademik,
+    list_gedung,
+    list_ruangan,
+    list_tingkatan,
+    list_kelas,
+    list_kegiatan,
+    list_jam_pembelajaran,
   };
 };

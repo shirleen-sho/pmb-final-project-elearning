@@ -24,7 +24,7 @@ const SideMenu = () => {
   } = menu;
 
   return (
-    <div className="relative bg-primary-100 flex flex-col gap-10 px-2 py-14 rounded-3xl min-h-screen h-fit min-w-fit">
+    <div className="relative bg-primary-100 flex flex-col gap-10 px-2 py-14 rounded-lg min-h-screen h-fit min-w-fit">
       <div className="flex flex-row justify-center h-14">
         <img
           src={showSidemenu ? "/images/logo.png" : "/images/icon/school.png"}
@@ -33,7 +33,7 @@ const SideMenu = () => {
         />
         <button
           onClick={handleToggleSidemenu}
-          className="absolute -top-2 -right-2 bg-primary-50 shadow-sm w-7 h-7 rounded-full"
+          className="absolute -top-2 -right-2 bg-primary-50 shadow-sm w-7 h-7 rounded-lg"
         >
           {showSidemenu ? "<" : ">"}
         </button>

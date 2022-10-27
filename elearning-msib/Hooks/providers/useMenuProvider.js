@@ -172,6 +172,20 @@ export const useMenuProvider = () => {
         detail: "Update your Password here!",
       },
     },
+    {
+      menu: {
+        route: "/data_master/kalender_akademik?tab=2",
+        name: "Kegiatan",
+        detail: "See Kegiatan details here!",
+      },
+    },
+    {
+      menu: {
+        route: "/data_master/kalender_akademik/add",
+        name: "Kegiatan",
+        detail: "See Kegiatan details here!",
+      },
+    },
   ];
 
   const [menus, setMenus] = useState(list_menu);
@@ -179,10 +193,7 @@ export const useMenuProvider = () => {
   const [selectedSubmenu, setSelectedSubmenu] = useState("");
 
   let currentMenu;
-
   const res1 = menus.find((i) => selectedMenu === i.menu.route);
-
-  console.log("res1", res1);
 
   if (res1 === undefined) {
     const res = additional_menu.find((i) => selectedMenu === i.menu.route);

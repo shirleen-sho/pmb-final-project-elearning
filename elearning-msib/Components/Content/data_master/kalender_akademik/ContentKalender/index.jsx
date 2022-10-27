@@ -12,7 +12,9 @@ const ContentKalender = () => {
   return (
     <div className="flex flex-col gap-5">
       <div id="top-content-kalender" className="flex flex-row justify-between">
-        <Buttons type="primary">Add Kegiatan</Buttons>
+        <Buttons type="primary" link="/data_master/kalender_akademik/add">
+          Add Kegiatan
+        </Buttons>
         <div className="flex flex-row items-center absolute top-0 right-40">
           <div className="">Tahun Akademik</div>
           <Selects

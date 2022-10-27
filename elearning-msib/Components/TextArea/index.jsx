@@ -7,7 +7,7 @@ const TextArea = ({placeholder}) => {
   }
   return (
     <>
-      <textarea value={value} onChange={handleValue} placeholder={placeholder} className='w-full border shadow bg-white m-2 h-fit px-2 py-2 rounded outline-none'/>
+      <textarea value={value} onChange={handleValue} placeholder={placeholder} className='w-full border shadow bg-white h-fit px-3 py-1.5 rounded outline-none'/>
     </>
   )
 }

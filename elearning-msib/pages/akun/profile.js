@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../Components/Buttons";
 import FormItem from "../../Components/FormItem";
 import InputFields from "../../Components/InputFields";
 import Layout from "../../Components/Layout";
 import Selects from "../../Components/Selects";
 import TextArea from "../../Components/TextArea";
+import ImageUploading from "react-images-uploading";
 
 const Profile = () => {
+  const [image, setImage] = useState(null);
+
+  const handleChangeImage = (currentImage, addUpdateIndex) => {
+    console.log("image", currentImage);
+    console.log("addUpdateIndex", addUpdateIndex);
+    setImage(currentImage);
+  };
+
   return (
     <Layout>
       <div className="flex flex-col gap-5">
@@ -16,14 +25,79 @@ const Profile = () => {
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
             <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
-              <div className="w-full h-40 bg-primary-50 flex flex-row gap-10">
-                <div className="w-40 h-full rounded-full bg-primary-100"></div>
-                <div className="flex flex-col gap-2">
-                  <button className="font-semibold">Delete</button>
-                  <button className="font-semibold text-primary-300">
-                    Insert
-                  </button>
-                </div>
+              <div className="w-full h-40">
+                <ImageUploading
+                  value={image}
+                  onChange={handleChangeImage}
+                  dataURLKey="data_url"
+                >
+                  {({
+                    imageList,
+                    onImageUpload,
+                    // onImageRemoveAll,
+                    onImageUpdate,
+                    onImageRemove,
+                    isDragging,
+                    dragProps,
+                  }) => {
+                    let classBtn = "";
+                    if (isDragging) {
+                      classBtn = "bg-primary-50";
+                    } else {
+                      classBtn = "text-gray-400";
+                    }
+                    return (
+                      <div className="flex flex-row justify-between w-full h-full pr-8">
+                        {imageList.length === 0 ? (
+                          <button
+                            className={`w-40 h-full rounded-full border shadow-md flex justify-center items-center ${classBtn}`}
+                            onClick={onImageUpload}
+                            {...dragProps}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1.5}
+                              stroke="currentColor"
+                              className="w-10 h-10"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                              />
+                            </svg>
+                          </button>
+                        ) : (
+                          imageList.map((image, index) => (
+                            <img
+                              src={image["data_url"]}
+                              alt=""
+                              key={"image" + index}
+                              className="object-cover w-40 h-full rounded-full shadow-lg"
+                            />
+                          ))
+                        )}
+                        <div className="flex flex-col gap-2 items-end">
+                          <button
+                            onClick={() => onImageRemove(0)}
+                            className="text-red-400 font-semibold disabled:text-gray-300"
+                            disabled={imageList.length === 0 ? true : false}
+                          >
+                            Delete
+                          </button>
+                          <button
+                            onClick={() => onImageUpdate(0)}
+                            className="text-primary-400 font-semibold"
+                          >
+                            Upload
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  }}
+                </ImageUploading>
               </div>
             </FormItem>
             <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">

@@ -1,6 +1,6 @@
 import React from "react";
-import Buttons from "../../Components/Buttons";
-import FormLabel from "../../Components/FormLabel";
+import Button from "../../Components/Buttons";
+import FormItem from "../../Components/FormItem";
 import InputFields from "../../Components/InputFields";
 import Layout from "../../Components/Layout";
 import Selects from "../../Components/Selects";
@@ -10,99 +10,117 @@ const Profile = () => {
   return (
     <Layout>
       <div className="flex flex-col gap-5">
-        <div className="grid grid-cols-9 grid-rows-6 gap-x-7 gap-y-5">
-          <span className="col-start-1 col-span-1 row-start-1 row-span-full font-bold">
-            Account
-          </span>
-          <FormLabel className="col-start-2 col-span-1 row-start-1 row-span-3">
-            Foto
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-4 row-span-1">
-            Nama
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-5 row-span-1">
-            NPS
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-6 row-span-1">
-            Jenis Kelamin
-          </FormLabel>
-          <div className="col-start-3 col-span-3 row-start-1 row-span-3 bg-primary-50">
-            <div className="flex flex-row gap-10 h-full">
-              <div className="w-2/3 h-auto rounded-full bg-primary-100"></div>
-              <div className="flex flex-col gap-2">
-                <button>
-                  <FormLabel>Delete</FormLabel>
-                </button>
-                <button>
-                  <FormLabel className="text-primary-300">Insert</FormLabel>
-                </button>
+        <div className="grid grid-cols-9 gap-x-7">
+          <div className="col-start-1 col-span-1">
+            <FormItem label="Account" labelType="label-md" />
+          </div>
+          <div className="col-start-2 col-span-4 flex flex-col gap-5">
+            <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
+              <div className="w-full h-40 bg-primary-50 flex flex-row gap-10">
+                <div className="w-40 h-full rounded-full bg-primary-100"></div>
+                <div className="flex flex-col gap-2">
+                  <button className="font-semibold">Delete</button>
+                  <button className="font-semibold text-primary-300">
+                    Insert
+                  </button>
+                </div>
               </div>
-            </div>
+            </FormItem>
+            <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
+              <InputFields type="text" placeholder="Nama" size="w-full" />
+            </FormItem>
+            <FormItem label="NPS" labelType="label-sm" labelWidth="w-1/3">
+              <InputFields type="text" placeholder="NPS" size="w-full" />
+            </FormItem>
+            <FormItem
+              label="Jenis Kelamin"
+              labelType="label-sm"
+              labelWidth="w-1/3"
+            >
+              <Selects
+                list={[{ name: "Pria" }, { name: "Wanita" }]}
+                style="w-full"
+                description="Pilih Jenis Kelamin"
+              />
+            </FormItem>
           </div>
-          <div className="col-start-3 col-span-3 row-start-4 row-span-1 bg-primary-50"></div>
-          <div className="col-start-3 col-span-3 row-start-5 row-span-1 bg-primary-50"></div>
-          <div className="col-start-3 col-span-3 row-start-6 row-span-1 bg-primary-50">
-            <Selects
-              list={[{ name: "Pria" }, { name: "Wanita" }]}
-              size="w-full"
-              description="-- Pilih Jenis Kelamin --"
-            />
+          <div className="col-start-6 col-span-4 flex flex-col gap-5">
+            <FormItem
+              label="No.Telp/WA"
+              labelType="label-sm"
+              labelWidth="w-1/3"
+            >
+              <InputFields type="text" placeholder="No.Telp/WA" size="w-full" />
+            </FormItem>
+            <FormItem
+              label="Tempat Lahir"
+              labelType="label-sm"
+              labelWidth="w-1/3"
+            >
+              <InputFields
+                type="text"
+                placeholder="Tempat lahir"
+                size="w-full"
+              />
+            </FormItem>
+            <FormItem
+              label="Tanggal Lahir"
+              labelType="label-sm"
+              labelWidth="w-1/3"
+            >
+              <InputFields
+                type="text"
+                placeholder="Tanggal lahir"
+                size="w-full"
+              />
+            </FormItem>
+            <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
+              <InputFields type="text" placeholder="Email" size="w-full" />
+            </FormItem>
+            <FormItem label="Level" labelType="label-sm" labelWidth="w-1/3">
+              <Selects
+                list={[{ name: "Admin" }, { name: "Security" }]}
+                style="w-full"
+                description="Pilih Level"
+              />
+            </FormItem>
           </div>
-          <FormLabel className="col-start-6 col-span-1 row-start-1 row-span-1">
-            No.Telp/WA
-          </FormLabel>
-          <FormLabel className="col-start-6 col-span-1 row-start-2 row-span-1">
-            Tempat Lahir
-          </FormLabel>
-          <FormLabel className="col-start-6 col-span-1 row-start-3 row-span-1">
-            Tanggal Lahir
-          </FormLabel>
-          <FormLabel className="col-start-6 col-span-1 row-start-4 row-span-1">
-            Email
-          </FormLabel>
-          <FormLabel className="col-start-6 col-span-1 row-start-5 row-span-1">
-            Level
-          </FormLabel>
-          <div className="col-start-7 col-span-3 row-start-1 row-span-1 bg-primary-50"></div>
-          <div className="col-start-7 col-span-3 row-start-2 row-span-1 bg-primary-50"></div>
-          <div className="col-start-7 col-span-3 row-start-3 row-span-1 bg-primary-50"></div>
-          <div className="col-start-7 col-span-3 row-start-4 row-span-1 bg-primary-50"></div>
-          <div className="col-start-7 col-span-3 row-start-5 row-span-1 bg-primary-50"></div>
         </div>
         <div className="border-b border-neutral-2" />
-        <div className="grid grid-cols-9 grid-rows-6 gap-x-7 gap-y-5">
-          <span className="col-start-1 col-span-1 row-start-1 row-span-full font-bold">
-            Address
-          </span>
-          <FormLabel className="col-start-2 col-span-1 row-start-1 row-span-2">
-            Alamat
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-3 row-span-1">
-            Kecamatan
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-4 row-span-1">
-            Kode Pos
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-5 row-span-1">
-            Kota
-          </FormLabel>
-          <FormLabel className="col-start-2 col-span-1 row-start-6 row-span-1">
-            Provinsi
-          </FormLabel>
-          <div className="col-start-3 col-span-6 row-start-1 row-span-2 bg-primary-50">
-            <TextArea placeholder="Massage" />
+        <div className="grid grid-cols-9 gap-x-7">
+          <div className="col-start-1 col-span-1">
+            <FormItem label="Address" labelType="label-md" />
           </div>
-          <div className="col-start-3 col-span-3 row-start-3 row-span-1 bg-primary-50"></div>
-          <div className="col-start-3 col-span-3 row-start-4 row-span-1 bg-primary-50"></div>
-          <div className="col-start-3 col-span-3 row-start-5 row-span-1 bg-primary-50"></div>
-          <div className="col-start-3 col-span-3 row-start-6 row-span-1 bg-primary-50">
-            <InputFields type="text" placeholder="Provinsi" size="w-full" />
+          <div className="col-start-2 col-span-full flex flex-col gap-5">
+            <FormItem label="Alamat" labelType="label-sm" labelWidth="w-1/5">
+              <TextArea placeholder="Alamat" />
+            </FormItem>
+            <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/5">
+              <InputFields type="text" placeholder="Kecamatan" size="w-1/3" />
+            </FormItem>
+            <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/5">
+              <InputFields type="text" placeholder="Kode Pos" size="w-1/3" />
+            </FormItem>
+            <FormItem
+              label="Kabupaten / Kota"
+              labelType="label-sm"
+              labelWidth="w-1/5"
+            >
+              <InputFields
+                type="text"
+                placeholder="Kabupaten / Kota"
+                size="w-1/3"
+              />
+            </FormItem>
+            <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/5">
+              <InputFields type="text" placeholder="Provinsi" size="w-1/3" />
+            </FormItem>
           </div>
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Buttons type="secondary">Back</Buttons>
-          <Buttons type="primary">Update</Buttons>
+          <Button type="secondary">Back</Button>
+          <Button type="primary">Update</Button>
         </div>
       </div>
     </Layout>

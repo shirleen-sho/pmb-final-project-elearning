@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { SketchPicker } from "react-color";
-import Buttons from "../../../Components/Buttons";
+import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
-import FormBanner from "../../../Components/FormBanner";
-import FormLabel from "../../../Components/FormLabel";
 import InputFields from "../../../Components/InputFields";
 import Selects from "../../../Components/Selects";
 import Link from "next/link";
-import FormRow from "../../../Components/FormRow";
+import FormItem from "../../../Components/FormItem";
 
 const AddKegiatan = () => {
   const tahun_akademik = [
@@ -25,38 +23,46 @@ const AddKegiatan = () => {
   return (
     <Layout>
       <div>
-        <FormBanner>Fill Kegiatan details here!</FormBanner>
-        <div className="flex flex-col py-5">
+        <FormItem label="Fill Kegiatan details here!" labelType="banner" />
+        <div className="flex flex-col py-5 gap-5">
           {/* KODE KALENDER */}
-          <FormRow label="Kode Kalender" span={3}>
+          <FormItem
+            label="Kode Kalender"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
             <InputFields
               type="text"
               placeholder="Kode Kalender otomatis"
               size="w-full"
             />
-          </FormRow>
+          </FormItem>
 
           {/* TAHUN AKADEMIK */}
-          <FormRow label="Tahun Akademik" span={3}>
+          <FormItem
+            label="Tahun Akademik"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
             <Selects
               list={tahun_akademik}
-              size="w-full"
+              style="w-full"
               description={tahun_akademik[0].name}
             />
-          </FormRow>
+          </FormItem>
 
           {/* KETERANGAN */}
-          <FormRow label="Keterangan" span={3}>
+          <FormItem label="Keterangan" labelType="label-sm" labelWidth="w-1/4">
             <InputFields
               type="text"
               placeholder="Tulis keterangan kegiatan"
               size="w-full"
             />
-          </FormRow>
+          </FormItem>
 
           {/* WARNA */}
-          <FormRow label="Warna" span={3}>
-            <div className="relative">
+          <FormItem label="Warna" labelType="label-sm" labelWidth="w-1/4">
+            <div className="relative py-2">
               {/* preview warna terpilih */}
               <div className="flex flex-row items-center gap-4">
                 <div
@@ -100,21 +106,29 @@ const AddKegiatan = () => {
                 </div>
               )}
             </div>
-          </FormRow>
+          </FormItem>
 
           {/* TANGGAL MULAI */}
-          <FormRow label="Tanggal Mulai" span={1}>
-            <InputFields type="date" size="w-full" style="uppercase" />
-          </FormRow>
+          <FormItem
+            label="Tanggal Mulai"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
+            <InputFields type="date" size="w-1/3" style="uppercase" />
+          </FormItem>
 
           {/* TANGGAL SELESAI */}
-          <FormRow label="Tanggal Selesai" span={1}>
-            <InputFields type="date" size="w-full" style="uppercase" />
-          </FormRow>
+          <FormItem
+            label="Tanggal Selesai"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
+            <InputFields type="date" size="w-1/3" style="uppercase" />
+          </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Buttons type="secondary">Cancel</Buttons>
-          <Buttons type="primary">Save</Buttons>
+          <Button type="secondary">Cancel</Button>
+          <Button type="primary">Save</Button>
         </div>
       </div>
     </Layout>

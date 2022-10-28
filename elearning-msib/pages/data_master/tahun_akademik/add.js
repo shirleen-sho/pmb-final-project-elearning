@@ -2,17 +2,10 @@ import React, { useState } from "react";
 import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import InputFields from "../../../Components/InputFields";
-import Selects from "../../../Components/Selects";
 import Link from "next/link";
 import FormItem from "../../../Components/FormItem";
 
-const AddKelas = () => {
-  const tahun_akademik = [
-    { name: "Semester Ganjil 2022/2023" },
-    { name: "Semester Genap 2021/2022" },
-    { name: "Semester Ganjil 2021/2022" },
-  ];
-
+const AddTahunAkademik = () => {
   const pilihan_status = [
     { label: "Aktif", value: "aktif" },
     { label: "Tidak Aktif", value: "nonaktif" },
@@ -24,55 +17,32 @@ const AddKelas = () => {
   return (
     <Layout>
       <div>
-        <FormItem label="Fill Kelas details here!" labelType="banner" />
+        <FormItem
+          label="Fill Tahun Akademik details here!"
+          labelType="banner"
+        />
         <div className="flex flex-col py-5 gap-5">
-          {/* KODE KELAS */}
-          <FormItem label="Kode Kelas" labelType="label-sm" labelWidth="w-1/4">
+          {/* KODE TAHUN */}
+          <FormItem label="Kode Tahun" labelType="label-sm" labelWidth="w-1/4">
             <InputFields
               type="text"
-              placeholder="Kode Kelas otomatis"
+              placeholder="Kode Tahun otomatis"
               size="w-full"
             />
           </FormItem>
 
-          {/* NAMA GEDUNG */}
-          <FormItem label="Nama Gedung" labelType="label-sm" labelWidth="w-1/4">
-            <Selects
-              list={tahun_akademik}
-              style="w-full"
-              description="Pilih Gedung"
-            />
-          </FormItem>
-
-          {/* NAMA RUANGAN */}
-          <FormItem
-            label="Nama Ruangan"
-            labelType="label-sm"
-            labelWidth="w-1/4"
-          >
-            <Selects
-              list={tahun_akademik}
-              style="w-full"
-              description="Pilih Ruangan"
-            />
-          </FormItem>
-
-          {/* NAMA KELAS */}
-          <FormItem label="Nama Kelas" labelType="label-sm" labelWidth="w-1/4">
+          {/* NAMA TAHUN */}
+          <FormItem label="Nama Tahun" labelType="label-sm" labelWidth="w-1/4">
             <InputFields
               type="text"
-              placeholder="Tulis nama kelas"
+              placeholder="Tulis nama tahun"
               size="w-full"
             />
           </FormItem>
 
-          {/* MAXIMUM PEOPLE */}
-          <FormItem
-            label="Maximum People"
-            labelType="label-sm"
-            labelWidth="w-1/4"
-          >
-            <InputFields type="number" placeholder="0" size="w-1/3" />
+          {/* SEMESTER */}
+          <FormItem label="Semester" labelType="label-sm" labelWidth="w-1/4">
+            <InputFields type="number" placeholder="1" size="w-full" />
           </FormItem>
 
           {/* STATUS */}
@@ -93,7 +63,7 @@ const AddKelas = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="secondary" link="/data_master/kelas">
+          <Button type="secondary" link="/data_master/tahun_akademik">
             Cancel
           </Button>
           <Button type="primary">Save</Button>
@@ -103,4 +73,4 @@ const AddKelas = () => {
   );
 };
 
-export default AddKelas;
+export default AddTahunAkademik;

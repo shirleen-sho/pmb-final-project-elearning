@@ -3,8 +3,8 @@ import React from "react";
 const FormItem = ({ label, labelType, labelWidth, children }) => {
   switch (labelType) {
     case "banner":
-      labelType = "font-semibold text-lg bg-primary-100 rounded-md px-5 py-3";
-      labelWidth = "w-full";
+      labelType = "font-semibold text-lg bg-primary-100 rounded-md px-5 py-3 w-full";
+      labelWidth = "";
       break;
     case "label-sm":
       labelType = "font-semibold text-[13px] leading-5";

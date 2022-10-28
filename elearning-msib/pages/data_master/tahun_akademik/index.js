@@ -3,24 +3,24 @@ import Layout from "../../../Components/Layout";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const Ruangan = () => {
+const TahunAkademik = () => {
   const { dummy } = useAppContext();
-  const { list_ruangan } = dummy;
+  const { list_tahun_akademik } = dummy;
   return (
     <Layout>
       <div className="w-full h-full">
         <Table
-          data={list_ruangan}
+          data={list_tahun_akademik}
           textAlign="center"
           action="archive-edit"
           topNavigation={true}
-          tableTitle="Daftar Ruangan"
-          buttonAddLink="/data_master/ruangan/add"
-          buttonAddText="Add Ruangan"
+          tableTitle="Daftar Tahun Akademik"
+          buttonAddLink="/data_master/tahun_akademik/add"
+          buttonAddText="Add Tahun Akademik"
         />
       </div>
     </Layout>
   );
 };
 
-export default Ruangan;
+export default TahunAkademik;

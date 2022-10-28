@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Buttons from "../../../Components/Buttons";
+import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
-import FormBanner from "../../../Components/FormBanner";
 import InputFields from "../../../Components/InputFields";
 import Selects from "../../../Components/Selects";
 import Link from "next/link";
-import FormRow from "../../../Components/FormRow";
+import FormItem from "../../../Components/FormItem";
 
 const AddRuangan = () => {
   const tahun_akademik = [
@@ -25,43 +24,55 @@ const AddRuangan = () => {
   return (
     <Layout>
       <div>
-        <FormBanner>Fill Ruangan details here!</FormBanner>
-        <div className="flex flex-col py-5">
+        <FormItem label="Fill Ruangan details here!" labelType="banner" />
+        <div className="flex flex-col py-5 gap-5">
           {/* KODE RUANGAN */}
-          <FormRow label="Kode Ruangan" span="full">
+          <FormItem
+            label="Kode Ruangan"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
             <InputFields
               type="text"
               placeholder="Kode Ruangan otomatis"
               size="w-full"
             />
-          </FormRow>
+          </FormItem>
 
           {/* NAMA GEDUNG */}
-          <FormRow label="Nama Gedung" span="full">
+          <FormItem label="Nama Gedung" labelType="label-sm" labelWidth="w-1/4">
             <Selects
               list={tahun_akademik}
-              size="w-full"
+              style="w-full"
               description="Pilih Gedung"
             />
-          </FormRow>
+          </FormItem>
 
           {/* NAMA RUANGAN */}
-          <FormRow label="Nama Ruangan" span="full">
+          <FormItem
+            label="Nama Ruangan"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
             <InputFields
               type="text"
               placeholder="Tulis nama ruangan"
               size="w-full"
             />
-          </FormRow>
+          </FormItem>
 
           {/* MAXIMUM PEOPLE */}
-          <FormRow label="Maximum People" span={1}>
-            <InputFields type="number" placeholder="0" size="w-full" />
-          </FormRow>
+          <FormItem
+            label="Maximum People"
+            labelType="label-sm"
+            labelWidth="w-1/4"
+          >
+            <InputFields type="number" placeholder="0" size="w-1/3" />
+          </FormItem>
 
           {/* STATUS */}
-          <FormRow label="Status" span={1}>
-            <div className="flex flex-row gap-6">
+          <FormItem label="Status" labelType="label-sm" labelWidth="w-1/4">
+            <div className="flex flex-row gap-6 w-1/3">
               {pilihan_status.map((i) => (
                 <div className="radio flex flex-row gap-2">
                   <input
@@ -74,13 +85,13 @@ const AddRuangan = () => {
                 </div>
               ))}
             </div>
-          </FormRow>
+          </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Buttons type="secondary" link="/data_master/ruangan">
+          <Button type="secondary" link="/data_master/ruangan">
             Cancel
-          </Buttons>
-          <Buttons type="primary">Save</Buttons>
+          </Button>
+          <Button type="primary">Save</Button>
         </div>
       </div>
     </Layout>

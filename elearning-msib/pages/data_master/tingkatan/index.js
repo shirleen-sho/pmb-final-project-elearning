@@ -3,24 +3,24 @@ import Layout from "../../../Components/Layout";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const Ruangan = () => {
+const Tingkatan = () => {
   const { dummy } = useAppContext();
-  const { list_ruangan } = dummy;
+  const { list_tingkatan } = dummy;
   return (
     <Layout>
       <div className="w-full h-full">
         <Table
-          data={list_ruangan}
+          data={list_tingkatan}
           textAlign="center"
           action="archive-edit"
           topNavigation={true}
-          tableTitle="Daftar Ruangan"
-          buttonAddLink="/data_master/ruangan/add"
-          buttonAddText="Add Ruangan"
+          tableTitle="Daftar Tingkatan"
+          buttonAddLink="/data_master/tingkatan/add"
+          buttonAddText="Add Tingkatan"
         />
       </div>
     </Layout>
   );
 };
 
-export default Ruangan;
+export default Tingkatan;

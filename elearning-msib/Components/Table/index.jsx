@@ -8,6 +8,7 @@ const Table = ({
   textAlign,
   borderCell,
   action,
+  tableTitle,
   topNavigation,
   buttonAddLink,
   buttonAddText,
@@ -23,17 +24,21 @@ const Table = ({
   if (!topNavigation) {
     colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
   } else {
-    colorHead = "top-[72px] border-b";
+    colorHead = "top-20 border-b";
   }
 
   return (
-    <div className="relative border border-gray-200 top z-0 bg-white rounded-[30px] p-6 shadow-lg w-full h-full">
+    <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full h-full">
+      {/* top navigation table */}
       {topNavigation && (
-        <div className="mb-3 flex flex-row justify-between gap-5">
-          <Button type="primary" link={buttonAddLink}>
-            {buttonAddText || "Add"}
-          </Button>
-          <InputFields type="text" placeholder="Search" />
+        <div className="mb-3 flex flex-row justify-between items-center">
+          <div className="font-semibold text-xl">{tableTitle || ""}</div>
+          <div className="flex flex-row items-center gap-5">
+            <InputFields type="text" placeholder="Search" />
+            <Button type="primary" link={buttonAddLink}>
+              {buttonAddText || "Add"}
+            </Button>
+          </div>
         </div>
       )}
       <table className={`table-auto text-xs w-full h-full text-${textAlign}`}>

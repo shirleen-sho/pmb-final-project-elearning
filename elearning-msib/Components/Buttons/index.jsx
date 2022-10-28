@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Button = ({ type, classColor, variant, style, children, link }) => {
+const Button = ({ type, classColor, variant, style, children, link, handleClick }) => {
   switch (variant) {
     case "icon":
       style = "p-2 rounded-full";
@@ -12,9 +12,6 @@ const Button = ({ type, classColor, variant, style, children, link }) => {
   }
 
   switch (type) {
-    case "primary":
-      classColor = "bg-[#889AF9] outline-none text-white hover:bg-[#757AFF]";
-      break;
     case "secondary":
       classColor = "bg-[#9F9F9F] text-white hover:bg-[#7C7C7C]";
       break;
@@ -44,7 +41,7 @@ const Button = ({ type, classColor, variant, style, children, link }) => {
       classColor = "bg-gray-100 hover:bg-gray-300";
       break;
     default:
-      classColor = "";
+      classColor = "bg-[#889AF9] outline-none text-white hover:bg-[#757AFF]";
       break;
   }
   return (
@@ -53,6 +50,7 @@ const Button = ({ type, classColor, variant, style, children, link }) => {
         <button
           type={type}
           className={`inline-flex items-center  text-bases shadow uppercase transition ease-in-out duration-500 font-semibold ${style} ${classColor} `}
+          onClick={handleClick}
         >
           {children}
         </button>

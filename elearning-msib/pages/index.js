@@ -12,6 +12,8 @@ export default function Home() {
     {name : "geovaldo"},
     {name : "Joko"}
   ]
+
+  const show = () => alert()
   return (
     <>
       <Layout>
@@ -67,7 +69,7 @@ export default function Home() {
         <TextArea placeholder="Massage" />
       </div>
       <div className='m-5'>
-        <Button type="primary" link="/api/hello">Primary</Button>
+        <Button type="primary" link="/data_master/kalender_akademik" handleClick={()=>show()}>Primary</Button>
         <Button type="secondary" >Secondary</Button>
         <Button type="light">Light</Button>
         <Button type="dark">Dark</Button>

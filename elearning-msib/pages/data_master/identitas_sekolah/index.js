@@ -169,7 +169,7 @@ const IdentitasSekolah = () => {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Button type="secondary">Back</Button>
+          <Button type="light">Back</Button>
           <Button type="primary">Update</Button>
         </div>
       </div>

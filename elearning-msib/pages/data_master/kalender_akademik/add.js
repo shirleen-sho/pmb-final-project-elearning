@@ -127,7 +127,7 @@ const AddKegiatan = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="secondary">Cancel</Button>
+          <Button type="light">Cancel</Button>
           <Button type="primary">Save</Button>
         </div>
       </div>

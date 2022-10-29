@@ -38,7 +38,7 @@ const AddTingkatan = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="secondary" link="/data_master/tingkatan">
+          <Button type="light" link="/data_master/tingkatan">
             Cancel
           </Button>
           <Button type="primary">Save</Button>

@@ -4,8 +4,12 @@ import TabHead from "./TabHead";
 import TabBody from "./TabBody";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAppContext } from "../../Hooks/useAppContext";
 
 const Tabs = ({ list, pathName }) => {
+  const { menu } = useAppContext();
+  const { menus, selectedMenu, setSelectedMenu } = menu;
+
   const router = useRouter();
   const { query: { tab } = {} } = router;
   const [tabList, setTabList] = useState(list);
@@ -15,6 +19,7 @@ const Tabs = ({ list, pathName }) => {
       return i.id === id ? { ...i, selected: true } : { ...i, selected: false };
     });
     setTabList(updatedList);
+    setSelectedMenu(pathName + "?tab=" + id);
   };
 
   useEffect(() => {

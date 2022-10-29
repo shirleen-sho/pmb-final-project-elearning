@@ -12,7 +12,7 @@ const InputFields = ({type, size, placeholder, style, disabled}) => {
         type={type} 
         value={value}
         onChange={handleValue} 
-        className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none ${size} ${style}`} 
+        className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none capitalize ${size} ${style}`} 
         placeholder={placeholder || null}
         disabled={disabled || false}
         />

@@ -14,7 +14,7 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
   if (!topNavigation) {
     colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
   } else {
-    colorHead = "top-20 border-b";
+    colorHead = "top-[68px] border-b";
   }
 
   return (

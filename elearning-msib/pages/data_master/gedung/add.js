@@ -85,7 +85,7 @@ const AddGedung = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="secondary" link="/data_master/gedung">
+          <Button type="light" link="/data_master/gedung">
             Cancel
           </Button>
           <Button type="primary">Save</Button>

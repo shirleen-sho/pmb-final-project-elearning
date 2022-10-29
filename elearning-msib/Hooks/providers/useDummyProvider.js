@@ -330,6 +330,17 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const list_level_staff = [
+    {
+      "Kode Level": "S001",
+      "Level Staff": "Staff TU",
+    },
+    {
+      "Kode Level": "S002",
+      "Level Staff": "Guru",
+    },
+  ];
+
   return {
     list1,
     list2,
@@ -340,5 +351,6 @@ export const useDummyProvider = () => {
     list_kelas,
     list_kegiatan,
     list_jam_pembelajaran,
+    list_level_staff,
   };
 };

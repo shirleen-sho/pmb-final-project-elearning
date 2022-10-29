@@ -11,11 +11,11 @@ const ContentKalender = () => {
   ];
   return (
     <div className="flex flex-col gap-5">
-      <div id="top-content-kalender" className="flex flex-row justify-between">
-        <Buttons type="primary" link="/data_master/kalender_akademik/add">
-          Add Kegiatan
-        </Buttons>
-        <div className="flex flex-row items-center absolute top-0 right-40">
+      <div
+        id="top-content-kalender"
+        className="flex flex-row items-center gap-20 absolute top-0 right-0"
+      >
+        <div className="flex flex-row items-center gap-4">
           <div className="">Tahun Akademik</div>
           <Selects
             list={tahun_akademik}
@@ -23,10 +23,7 @@ const ContentKalender = () => {
             description={tahun_akademik[0].name}
           />
         </div>
-        <div className="flex flex-col items-end gap-3 absolute top-0 right-0">
-          <Buttons type="link">Print</Buttons>
-          <Buttons type="info">Download</Buttons>
-        </div>
+        <Buttons type="warning">Print</Buttons>
       </div>
       <div
         id="middle-content-kalender"
@@ -84,9 +81,39 @@ const ContentKalender = () => {
             </div>
           </div>
         </div>
-        <div className="">
-          <Buttons type="light">{"<"}</Buttons>
-          <Buttons type="light">{">"}</Buttons>
+        <div className="flex flex-row gap-4">
+          <Buttons type="light" variant="icon" name="page-previous">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </Buttons>
+          <Buttons type="light" variant="icon" name="page-next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </Buttons>
         </div>
       </div>
     </div>

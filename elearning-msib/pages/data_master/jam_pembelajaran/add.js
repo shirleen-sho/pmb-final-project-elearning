@@ -39,7 +39,7 @@ const AddJamPembelajaran = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="secondary" link="/data_master/jam_pembelajaran">
+          <Button type="light" link="/data_master/jam_pembelajaran">
             Cancel
           </Button>
           <Button type="primary">Save</Button>

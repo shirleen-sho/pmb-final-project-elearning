@@ -11,12 +11,10 @@ const Gedung = () => {
       <div className="w-full h-full">
         <Table
           data={list_gedung}
-          textAlign="center"
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Gedung"
           buttonAddLink="/data_master/gedung/add"
-          buttonAddText="Add Gedung"
         />
       </div>
     </Layout>

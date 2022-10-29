@@ -174,6 +174,12 @@ export const useMenuProvider = () => {
     },
     {
       menu: {
+        route: "/data_master/kalender_akademik?tab=1",
+        name: "Kalender",
+      },
+    },
+    {
+      menu: {
         route: "/data_master/kalender_akademik?tab=2",
         name: "Kegiatan",
         detail: "See Kegiatan details here!",
@@ -184,6 +190,18 @@ export const useMenuProvider = () => {
         route: "/data_master/kalender_akademik/add",
         name: "Kegiatan",
         detail: "See Kegiatan details here!",
+      },
+    },
+    {
+      menu: {
+        route: "/settings?tab=1",
+        name: "Pengaturan",
+      },
+    },
+    {
+      menu: {
+        route: "/settings?tab=2",
+        name: "Pengaturan",
       },
     },
   ];

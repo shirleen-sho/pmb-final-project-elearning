@@ -1,95 +1,69 @@
 import React from "react";
 
 const KalenderBulan = ({ bulan, tahun }) => {
+  const styleCell = "h-8 text-center";
+  const selected = "bg-primary-100";
+
+  const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+
   return (
-    <table className="table table-fixed border border-collapse w-[270px] text-2xs font-light">
-      <thead>
-        <tr>
-          <th className="px-2 py-1.5 border text-xs font-normal" colSpan={9}>
-            {bulan + " - " + tahun}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Sunday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Monday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Tuesday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Wednesday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Thursday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Friday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-        <tr>
-          <td className="px-2 py-1.5 border text-xs font-normal" colSpan={3}>
-            Saturday
-          </td>
-          <td className="px-2 py-1.5 border">1</td>
-          <td className="px-2 py-1.5 border">2</td>
-          <td className="px-2 py-1.5 border">3</td>
-          <td className="px-2 py-1.5 border">4</td>
-          <td className="px-2 py-1.5 border">5</td>
-          <td className="px-2 py-1.5 border">6</td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="w-full max-w-[280px] text-xs bg-white border-[1.25px] rounded-2xl shadow-md p-7 flex flex-col justify-center items-center gap-3">
+      <div className="flex flex-row justify-center w-full border-b border-neutral-2 pb-4 text-sm font-semibold">
+        {bulan + " " + tahun}
+      </div>
+      <table className="table-fixed max-w-[224px] h-full">
+        <thead>
+          <tr>
+            {days.map((day) => (
+              <th
+                className={`${styleCell} w-8 text-2xs font-medium text-[#7E818C]`}
+              >
+                {day}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {/* masih manual */}
+          <tr>
+            <td className={`${styleCell}`}>1</td>
+            <td className={`${styleCell}`}>2</td>
+            <td className={`${styleCell}`}>3</td>
+            <td className={`${styleCell}`}>4</td>
+            <td className={`${styleCell}`}>5</td>
+            <td className={`${styleCell}`}>6</td>
+            <td className={`${styleCell}`}>7</td>
+          </tr>
+          <tr>
+            <td className={`${styleCell}`}>1</td>
+            <td className={`${styleCell} ${selected}`}>2</td>
+            <td className={`${styleCell} ${selected}`}>3</td>
+            <td className={`${styleCell} ${selected}`}>4</td>
+            <td className={`${styleCell} ${selected}`}>5</td>
+            <td className={`${styleCell}`}>6</td>
+            <td className={`${styleCell}`}>7</td>
+          </tr>
+          <tr>
+            <td className={`${styleCell}`}>1</td>
+            <td className={`${styleCell}`}>2</td>
+            <td className={`${styleCell}`}>3</td>
+            <td className={`${styleCell}`}>4</td>
+            <td className={`${styleCell}`}>5</td>
+            <td className={`${styleCell}`}>6</td>
+            <td className={`${styleCell}`}>7</td>
+          </tr>
+          <tr>
+            <td className={`${styleCell}`}>1</td>
+            <td className={`${styleCell}`}>2</td>
+            <td className={`${styleCell}`}>3</td>
+            <td className={`${styleCell}`}>4</td>
+            <td className={`${styleCell}`}>5</td>
+            <td className={`${styleCell}`}>6</td>
+            <td className={`${styleCell}`}>7</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

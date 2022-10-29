@@ -10,7 +10,7 @@ const ContentKalender = () => {
     { name: "Semester Ganjil 2021/2022" },
   ];
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 py-2">
       <div
         id="top-content-kalender"
         className="flex flex-row items-center gap-20 absolute top-0 right-0"
@@ -27,14 +27,26 @@ const ContentKalender = () => {
       </div>
       <div
         id="middle-content-kalender"
-        className="flex flex-row justify-between items-center gap-7 flex-wrap"
+        className="grid grid-cols-3 grid-flow-row gap-8"
       >
-        <KalenderBulan bulan="January" tahun="2022" />
-        <KalenderBulan bulan="February" tahun="2022" />
-        <KalenderBulan bulan="March" tahun="2022" />
-        <KalenderBulan bulan="April" tahun="2022" />
-        <KalenderBulan bulan="May" tahun="2022" />
-        <KalenderBulan bulan="June" tahun="2022" />
+        <div className="flex justify-center items-center">
+          <KalenderBulan bulan="January" tahun="2022" />
+        </div>
+        <div className="flex justify-center items-center">
+          <KalenderBulan bulan="February" tahun="2022" />
+        </div>
+        <div className="flex justify-center items-center">
+          <KalenderBulan bulan="March" tahun="2022" />
+        </div>
+        <div className="flex justify-center items-center">
+          <KalenderBulan bulan="April" tahun="2022" />
+        </div>
+        <div className="flex justify-center items-center">
+          <KalenderBulan bulan="May" tahun="2022" />
+        </div>
+        <div className="flex justify-center items-center">
+          <KalenderBulan bulan="June" tahun="2022" />
+        </div>
       </div>
       <div
         id="bottom-content-kalender"

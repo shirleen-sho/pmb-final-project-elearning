@@ -16,7 +16,12 @@ const AddJamPembelajaran = () => {
         <div className="flex flex-col py-5 gap-5">
           {/* KODE */}
           <FormItem label="KD" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields type="text" placeholder="Kode" size="w-full" />
+            <InputFields
+              type="text"
+              placeholder="Kode"
+              size="w-full"
+              disabled={true}
+            />
           </FormItem>
 
           {/* SESI */}

@@ -21,6 +21,7 @@ const AddTingkatan = () => {
               type="text"
               placeholder="Kode Tingkatan otomatis"
               size="w-full"
+              disabled={true}
             />
           </FormItem>
 

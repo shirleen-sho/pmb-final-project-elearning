@@ -28,6 +28,7 @@ const AddTahunAkademik = () => {
               type="text"
               placeholder="Kode Tahun otomatis"
               size="w-full"
+              disabled={true}
             />
           </FormItem>
 

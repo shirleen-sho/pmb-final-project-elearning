@@ -32,6 +32,7 @@ const AddKelas = () => {
               type="text"
               placeholder="Kode Kelas otomatis"
               size="w-full"
+              disabled={true}
             />
           </FormItem>
 

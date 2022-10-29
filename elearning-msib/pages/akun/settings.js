@@ -1,27 +1,28 @@
 import React from "react";
 import Layout from "../../Components/Layout";
-import Table from "../../Components/Table";
-import { useAppContext } from "../../Hooks/useAppContext";
+import Tabs from "../../Components/Tabs";
+import ContentLevelStaff from "../../Components/Content/data_master/settings/ContentLevelStaff";
+import ContentPengaturanOtorisasi from "../../Components/Content/data_master/settings/ContentPengaturanOtorisasi";
 
 const Settings = () => {
-  const { dummy } = useAppContext();
-  const { list1, list2 } = dummy;
+  const list = [
+    {
+      id: 1,
+      name: "Level Staff",
+      selected: true,
+      content: ContentLevelStaff(),
+    },
+    {
+      id: 2,
+      name: "Pengaturan Otorisasi",
+      selected: false,
+      content: ContentPengaturanOtorisasi(),
+    },
+  ];
+
   return (
     <Layout>
-      <div className="flex flex-col gap-6">
-        {/* <Table
-          data={list1}
-          textAlign="left"
-          borderCell="border-l"
-          action="archive-edit"
-        />
-        <Table
-          data={list2}
-          textAlign="center"
-          borderCell="border-b"
-          action=""
-        /> */}
-      </div>
+      <Tabs list={list} pathName="/settings" />
     </Layout>
   );
 };

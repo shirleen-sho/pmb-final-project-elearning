@@ -11,12 +11,10 @@ const Tingkatan = () => {
       <div className="w-full h-full">
         <Table
           data={list_tingkatan}
-          textAlign="center"
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Tingkatan"
           buttonAddLink="/data_master/tingkatan/add"
-          buttonAddText="Add Tingkatan"
         />
       </div>
     </Layout>

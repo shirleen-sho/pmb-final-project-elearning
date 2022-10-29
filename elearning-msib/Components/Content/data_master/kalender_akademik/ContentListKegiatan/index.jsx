@@ -14,12 +14,7 @@ const ContentListKegiatan = () => {
           Add Kegiatan
         </Buttons>
       </div>
-      <Table
-        data={list_kegiatan}
-        textAlign="center"
-        borderCell="border-b"
-        action="archive-edit"
-      />
+      <Table data={list_kegiatan} action="archive-edit" />
     </div>
   );
 };

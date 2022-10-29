@@ -9,7 +9,7 @@ const Settings = () => {
   return (
     <Layout>
       <div className="flex flex-col gap-6">
-        <Table
+        {/* <Table
           data={list1}
           textAlign="left"
           borderCell="border-l"
@@ -20,7 +20,7 @@ const Settings = () => {
           textAlign="center"
           borderCell="border-b"
           action=""
-        />
+        /> */}
       </div>
     </Layout>
   );

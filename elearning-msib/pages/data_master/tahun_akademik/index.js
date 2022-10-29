@@ -11,12 +11,10 @@ const TahunAkademik = () => {
       <div className="w-full h-full">
         <Table
           data={list_tahun_akademik}
-          textAlign="center"
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Tahun Akademik"
           buttonAddLink="/data_master/tahun_akademik/add"
-          buttonAddText="Add Tahun Akademik"
         />
       </div>
     </Layout>

@@ -11,12 +11,10 @@ const Kelas = () => {
       <div className="w-full h-full">
         <Table
           data={list_kelas}
-          textAlign="center"
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Kelas"
           buttonAddLink="/data_master/kelas/add"
-          buttonAddText="Add Kelas"
         />
       </div>
     </Layout>

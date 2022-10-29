@@ -3,21 +3,11 @@ import Link from "next/link";
 import Button from "../Buttons";
 import InputFields from "../InputFields";
 
-const Table = ({
-  data,
-  textAlign,
-  borderCell,
-  action,
-  tableTitle,
-  topNavigation,
-  buttonAddLink,
-  buttonAddText,
-}) => {
+const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
   let table_head = [];
   Object.keys(data[0]).forEach((key) => table_head.push(key));
 
-  const paddingCell = "px-3 py-3";
-  const heightCell = "h-14";
+  const defaultCellStyle = "px-3 py-3 h-14";
   const fontHead = "font-semibold";
   let colorHead;
 
@@ -36,29 +26,24 @@ const Table = ({
           <div className="flex flex-row items-center gap-5">
             <InputFields type="text" placeholder="Search" />
             <Button type="primary" link={buttonAddLink}>
-              {buttonAddText || "Add"}
+              Add
             </Button>
           </div>
         </div>
       )}
-      <table className={`table-auto text-xs w-full h-full text-${textAlign}`}>
+      <table className={`table-auto text-xs w-full h-full text-justify`}>
         <thead>
           <tr>
-            <th className={`${fontHead} ${paddingCell} ${heightCell} w-14`}>
+            <th className={`${fontHead} ${defaultCellStyle} text-center`}>
               No
             </th>
             {table_head.map((head) => (
-              <th
-                key={head}
-                className={`${fontHead} ${paddingCell} ${heightCell} ${borderCell}`}
-              >
+              <th key={head} className={`${fontHead} ${defaultCellStyle}`}>
                 {head}
               </th>
             ))}
             {action && (
-              <th
-                className={`${fontHead} ${paddingCell} ${heightCell} ${borderCell} w-28`}
-              >
+              <th className={`${fontHead} ${defaultCellStyle} text-center`}>
                 Aksi
               </th>
             )}
@@ -67,31 +52,40 @@ const Table = ({
         <tbody>
           {data.map((item, index) => (
             <tr key={"item" + index}>
-              <td className={`${paddingCell} ${heightCell}`}>{index + 1}</td>
+              <td className={`${defaultCellStyle} border-b text-center`}>
+                {index + 1}
+              </td>
               {table_head.map((head) => (
                 <td
                   key={"item" + head + index}
-                  className={`${paddingCell} ${heightCell} ${borderCell}`}
+                  className={`${defaultCellStyle} border-b`}
                 >
                   {item[head]}
                 </td>
               ))}
               {action && (
-                <td className={`${paddingCell} ${heightCell} ${borderCell}`}>
+                <td className={`${defaultCellStyle} border-b text-center`}>
                   {action === "archive-edit" && (
-                    <div className="w-full flex flex-row gap-4 border bg-white shadow-md px-4 py-2 rounded-md">
+                    <div className="w-full flex flex-row justify-center gap-4">
                       <button>
                         <img
                           src="/images/icon/archive icon.png"
-                          className="w-5"
+                          className="w-[18px]"
                           alt="archive"
                         />
                       </button>
                       <button>
                         <img
-                          src="/images/icon/Edit icon.png"
-                          className="w-5"
+                          src="/images/icon/edit icon.png"
+                          className="w-[18px]"
                           alt="edit"
+                        />
+                      </button>
+                      <button>
+                        <img
+                          src="/images/icon/view icon.png"
+                          className="w-[18px]"
+                          alt="view"
                         />
                       </button>
                     </div>
@@ -117,6 +111,7 @@ const Table = ({
           <span className="font-medium text-gray-700">{data.length}</span> of{" "}
           {data.length} entries
         </span>
+        {/* pagination */}
         <div className="flex flex-row items-center gap-4 text-xs">
           <Link href="/">
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">

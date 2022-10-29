@@ -35,6 +35,7 @@ const AddKegiatan = () => {
               type="text"
               placeholder="Kode Kalender otomatis"
               size="w-full"
+              disabled={true}
             />
           </FormItem>
 

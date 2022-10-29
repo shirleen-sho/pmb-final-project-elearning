@@ -31,6 +31,7 @@ const AddGedung = () => {
               type="text"
               placeholder="Kode Gedung otomatis"
               size="w-full"
+              disabled={true}
             />
           </FormItem>
 

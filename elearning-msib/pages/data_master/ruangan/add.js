@@ -36,6 +36,7 @@ const AddRuangan = () => {
               type="text"
               placeholder="Kode Ruangan otomatis"
               size="w-full"
+              disabled={true}
             />
           </FormItem>
 

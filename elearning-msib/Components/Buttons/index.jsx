@@ -37,7 +37,7 @@ const Button = ({ type, classColor, variant, style, children, link, handleClick 
       classColor = "hover:underline text-[#252525]";
       break;
     case "icon":
-      classColor = "bg-gray-100 hover:bg-gray-300";
+      classColor = "bg-transparent hover:bg-gray-300";
       break;
     default:
       classColor = "bg-[#889AF9] outline-none text-white hover:bg-[#757AFF]";
@@ -48,7 +48,7 @@ const Button = ({ type, classColor, variant, style, children, link, handleClick 
       <a>
         <button
           type={type}
-          className={`inline-flex items-center  text-bases shadow uppercase transition ease-in-out duration-500 font-semibold ${style} ${classColor}`}
+          className={`inline-flex items-center shadow uppercase transition ease-in-out duration-500 font-semibold ${style} ${classColor}`}
           onClick={handleClick}
         >
           {children}

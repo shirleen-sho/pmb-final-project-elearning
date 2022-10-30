@@ -5,6 +5,7 @@ import Notifikasi from "../Components/Notifikasi";
 import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
 import { FaSearch } from "react-icons/fa";
+import Search from "../Components/Search";
 
 export default function Home() {
   const list =[
@@ -13,7 +14,7 @@ export default function Home() {
     {name : "Joko"}
   ]
 
-  const show = () => alert()
+  const show = () => alert("Hellow")
   return (
     <>
       <Layout>
@@ -55,17 +56,17 @@ export default function Home() {
         <Notifikasi type="Dark"/>
       </div>
       <div className="m-5">
-        <Selects list={list} style="w-2/4" description="Home"/>
-        <Selects list={list} style="w-3/4" description="Home"/>
-        <Selects list={list} style="w-1/5" description="Home"/>
-        <Selects list={list} style="w-full" description="Home"/>
+        <Selects list={list} size="w-2/4" description="Home"/>
+        <Selects list={list} size="w-3/4" description="Home"/>
+        <Selects list={list} size="w-1/5" description="Home"/>
+        <Selects list={list} size="w-full" description="Home"/>
       </div>
       <div className="m-5">
         <InputFields type="text" placeholder="Name" size="w-full" disabled/>
         <InputFields type="text" placeholder="Name" size="w-3/4"/>
         <InputFields type="text" placeholder="Name" size="w-1/5"/>
         <InputFields type="text" placeholder="Name" size="w-2/4"/>
-        <InputFields type="date" size="w-full" style="uppercase"/>
+        <InputFields type="date" size="w-full"/>
         <TextArea placeholder="Massage" />
       </div>
       <div className='m-5'>
@@ -80,6 +81,9 @@ export default function Home() {
         <Button type="link">Print</Button>
         <Button type="icon" variant="icon"><FaSearch/></Button>
       </div> 
+      <div className="m-5">
+        <Search/>
+      </div>
     </>
   );
 }

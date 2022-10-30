@@ -1,63 +1,58 @@
-import React, { useEffect, useState } from "react";
-import Tab from "./Tab";
-import TabHead from "./TabHead";
-import TabBody from "./TabBody";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAppContext } from "../../Hooks/useAppContext";
 
-const Tabs = ({ list, pathName }) => {
+const Tabs = ({ list, pathName, children }) => {
   const { menu } = useAppContext();
-  const { menus, selectedMenu, setSelectedMenu } = menu;
+  const {
+    menus,
+    selectedMenu,
+    selectedSubmenu,
+    setSelectedMenu,
+    setSelectedSubmenu,
+  } = menu;
 
-  const router = useRouter();
-  const { query: { tab } = {} } = router;
-  const [tabList, setTabList] = useState(list);
-
-  const handleClickTab = (id) => {
-    const updatedList = tabList.map((i) => {
-      return i.id === id ? { ...i, selected: true } : { ...i, selected: false };
-    });
-    setTabList(updatedList);
-    setSelectedMenu(pathName + "?tab=" + id);
-  };
+  const location = useRouter();
+  const path = location.asPath;
+  const pathMenu = "/" + path.split("/")[1];
 
   useEffect(() => {
-    // untuk memastikan content yang terbuka sesuai dengan tab pada query path
-    if (tab) {
-      const updatedList = tabList.map((i) => {
-        return i.id === parseInt(tab)
-          ? { ...i, selected: true }
-          : { ...i, selected: false };
+    // fungsi untuk memastikan state menu terupdate sesuai dengan location
+    // misalnya ketika user mengakses page dari route secara manual
+    if (path !== selectedMenu) {
+      menus.map((m) => {
+        if (m.sub_menu !== undefined) {
+          const findSubMenu = m.sub_menu.find((i) => path === i.route);
+          if (findSubMenu !== undefined) {
+            setSelectedMenu(pathMenu);
+            setSelectedSubmenu(path);
+          } else {
+            setSelectedMenu(pathMenu);
+          }
+        }
       });
-      setTabList(updatedList);
     }
-  }, [tab]);
+  }, []);
 
   return (
     <div className="w-full h-full text-sm relative">
-      <TabHead>
-        {tabList.map((i) => {
+      {/* Tab Head */}
+      <div className="flex text-gray-400 font-medium w-fit">
+        {list.map((i) => {
+          let selected = "";
+          if (path === `${pathName}${i.tab}`) {
+            selected = "border-b-2";
+          }
           return (
-            <Tab selected={i.selected}>
-              <Link
-                href={{
-                  pathname: pathName,
-                  query: { tab: i.id },
-                }}
-              >
-                <a onClick={() => handleClickTab(i.id)}>{i.name}</a>
-              </Link>
-            </Tab>
+            <div className={`px-5 py-2 ${selected}`} key={i.tab}>
+              <Link href={`${pathName}/${i.tab}`}>{i.name}</Link>
+            </div>
           );
         })}
-      </TabHead>
-      <TabBody>
-        {tab === undefined && <>{tabList[0].content}</>}
-        {tabList.map((i) => {
-          return parseInt(tab) === i.id && <>{i.content}</>;
-        })}
-      </TabBody>
+      </div>
+      {/* Tab Body */}
+      <div className="h-full py-5">{children}</div>
     </div>
   );
 };

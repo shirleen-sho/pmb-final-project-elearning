@@ -10,7 +10,6 @@ const Button = ({ type, classColor, variant, style, children, link, handleClick 
       style = "py-2 px-4 text-xs rounded ";
       break;
   }
-
   switch (type) {
     case "secondary":
       classColor = "bg-[#9F9F9F] text-white hover:bg-[#7C7C7C]";
@@ -49,7 +48,7 @@ const Button = ({ type, classColor, variant, style, children, link, handleClick 
       <a>
         <button
           type={type}
-          className={`inline-flex items-center  text-bases shadow uppercase transition ease-in-out duration-500 font-semibold ${style} ${classColor} `}
+          className={`inline-flex items-center  text-bases shadow uppercase transition ease-in-out duration-500 font-semibold ${style} ${classColor}`}
           onClick={handleClick}
         >
           {children}

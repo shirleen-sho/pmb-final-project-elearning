@@ -61,7 +61,7 @@ export default function Home() {
         <Selects list={list} style="w-full" description="Home"/>
       </div>
       <div className="m-5">
-        <InputFields type="text" placeholder="Name" size="w-full" disabled="true"/>
+        <InputFields type="text" placeholder="Name" size="w-full" disabled/>
         <InputFields type="text" placeholder="Name" size="w-3/4"/>
         <InputFields type="text" placeholder="Name" size="w-1/5"/>
         <InputFields type="text" placeholder="Name" size="w-2/4"/>
@@ -79,8 +79,8 @@ export default function Home() {
         <Button type="danger">Danger</Button>
         <Button type="link">Print</Button>
         <Button type="icon" variant="icon"><FaSearch/></Button>
-      </div>
-      
+      </div> 
     </>
   );
 }
+ 

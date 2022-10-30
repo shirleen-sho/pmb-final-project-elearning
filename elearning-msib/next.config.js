@@ -15,10 +15,6 @@ const nextConfig = {
         source: "/password",
         destination: "/akun/password",
       },
-      {
-        source: "/settings",
-        destination: "/akun/settings",
-      },
     ];
   },
 };

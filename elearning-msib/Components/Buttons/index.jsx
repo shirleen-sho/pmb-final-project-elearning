@@ -44,7 +44,7 @@ const Button = ({ type, classColor, variant, style, children, link, handleClick 
       break;
   }
   return (
-    <Link href={link || ""}>
+    <Link href={link || ""} legacyBehavior>
       <a>
         <button
           type={type}

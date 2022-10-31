@@ -43,7 +43,7 @@ const SideMenu = () => {
           <div className="flex flex-col gap-1" key={menu.route}>
             <Link
               href={sub_menu ? sub_menu[0].route : menu.route}
-              key={menu.route}
+              key={menu.route} legacyBehavior
             >
               <a
                 title={showSidemenu ? "" : menu.name}
@@ -104,7 +104,7 @@ const SideMenu = () => {
                 <div className="bg-primary-50 flex flex-col w-4/5">
                   {sub_menu.length > 0 &&
                     sub_menu.map((sub) => (
-                      <Link href={sub.route} key={sub.route}>
+                      <Link href={sub.route} key={sub.route} legacyBehavior>
                         <a
                           className={
                             selectedSubmenu === sub.route

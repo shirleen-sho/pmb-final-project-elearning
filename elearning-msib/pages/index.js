@@ -17,6 +17,7 @@ export default function Home() {
   const show = () => alert("Hellow")
   return (
     <>
+      <div>Pendi</div>
       <Layout>
         <div className="flex flex-col gap-4 text-sm text-justify">
           <p>
@@ -81,9 +82,9 @@ export default function Home() {
         <Button type="link">Print</Button>
         <Button type="icon" variant="icon"><FaSearch/></Button>
       </div> 
-      <div className="m-5">
+      {/* <div className="m-5">
         <Search/>
-      </div>
+      </div> */}
     </>
   );
 }

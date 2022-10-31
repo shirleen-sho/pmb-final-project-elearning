@@ -43,7 +43,7 @@ const Header = () => {
           </div>
         </div>
 
-        <Link href="/settings">
+        <Link href="/settings" legacyBehavior>
           <a
             id="icon-settings"
             className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-400"
@@ -72,7 +72,7 @@ const Header = () => {
               />
             </svg>
           </a>
-        </Link>
+        </Link >
         <div className="flex flex-col items-end relative">
           <button
             className="flex flex-row items-center gap-4"
@@ -119,7 +119,7 @@ const Header = () => {
                 Signed in as {user_info.name}
               </div>
               <div className="py-2.5 flex flex-col cursor-default">
-                <Link href="/profile">
+                <Link href="/profile" legacyBehavior>
                   <a
                     className="px-4 py-2 text-xs font-medium hover:text-primary-900"
                     onClick={() => {
@@ -130,7 +130,7 @@ const Header = () => {
                     Profile
                   </a>
                 </Link>
-                <Link href="/password">
+                <Link href="/password" legacyBehavior>
                   <a
                     className="px-4 py-2 text-2xs hover:text-primary-900"
                     onClick={() => {
@@ -143,7 +143,7 @@ const Header = () => {
                 </Link>
               </div>
               <div className="py-2.5 flex flex-col">
-                <Link href="/settings">
+                <Link href="/settings" legacyBehavior>
                   <a
                     className="px-4 py-2 text-2xs hover:text-primary-900"
                     onClick={() => {
@@ -154,7 +154,7 @@ const Header = () => {
                     Settings
                   </a>
                 </Link>
-                <Link href="/logout">
+                <Link href="/logout" legacyBehavior>
                   <a
                     className="px-4 py-2 text-2xs hover:text-primary-900"
                     onClick={() => {

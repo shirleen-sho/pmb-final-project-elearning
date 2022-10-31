@@ -47,7 +47,7 @@ const Profile = () => {
                       classBtn = "text-gray-400";
                     }
                     return (
-                      <div className="flex flex-row justify-between w-full h-full pr-8">
+                      <div className="flex flex-row gap-8 w-full h-full">
                         {imageList.length === 0 ? (
                           <button
                             className={`w-40 h-full rounded-full border shadow-md flex justify-center items-center ${classBtn}`}
@@ -91,7 +91,7 @@ const Profile = () => {
                             onClick={() => onImageUpdate(0)}
                             className="text-primary-400 font-semibold"
                           >
-                            Upload
+                            {imageList.length === 0 ? "Upload" : "Change"}
                           </button>
                         </div>
                       </div>

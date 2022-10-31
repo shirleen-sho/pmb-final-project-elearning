@@ -27,7 +27,7 @@ const IdentitasSekolah = () => {
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
             <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
-              <div className="w-full h-[50px]">
+              <div className="w-full h-16">
                 <ImageUploading
                   value={image}
                   onChange={handleChangeImage}
@@ -49,10 +49,10 @@ const IdentitasSekolah = () => {
                       classBtn = "text-gray-400";
                     }
                     return (
-                      <div className="flex flex-row justify-between w-full h-full pr-8">
+                      <div className="flex flex-row gap-8 w-full h-full">
                         {imageList.length === 0 ? (
                           <button
-                            className={`w-[50px] h-full rounded-full border shadow-md flex justify-center items-center ${classBtn}`}
+                            className={`w-16 h-full rounded-full border shadow-md flex justify-center items-center ${classBtn}`}
                             onClick={onImageUpload}
                             {...dragProps}
                           >
@@ -77,16 +77,16 @@ const IdentitasSekolah = () => {
                               src={image["data_url"]}
                               alt=""
                               key={"image" + index}
-                              className="object-cover w-[50px] h-full rounded-full shadow-lg"
+                              className="object-cover w-16 h-full rounded-full shadow-lg"
                             />
                           ))
                         )}
-                        <div className="flex flex-row gap-7 items-center">
+                        <div className="flex flex-row gap-5 items-center">
                           <button
                             onClick={() => onImageUpdate(0)}
                             className="text-primary-400 font-semibold"
                           >
-                            Upload
+                            {imageList.length === 0 ? "Upload" : "Change"}
                           </button>
                           <button
                             onClick={() => onImageRemove(0)}

@@ -113,7 +113,7 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
         </span>
         {/* pagination */}
         <div className="flex flex-row items-center gap-4 text-xs">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">
               <svg
                 className="w-4 h-4"
@@ -130,7 +130,7 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
               </svg>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a
               aria-current="page"
               className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-primary-300 border border-primary-300 text-white"
@@ -138,27 +138,27 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
               1
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">
               2
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">
               3
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">
               ...
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">
               100
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100">
               <svg
                 className="w-4 h-4"

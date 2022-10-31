@@ -46,7 +46,7 @@ const Tabs = ({ list, pathName, children }) => {
           }
           return (
             <div className={`px-5 py-2 ${selected}`} key={i.tab}>
-              <Link href={`${pathName}/${i.tab}`}>{i.name}</Link>
+              <Link href={`${pathName}/${i.tab}`} legacyBehavior>{i.name}</Link>
             </div>
           );
         })}

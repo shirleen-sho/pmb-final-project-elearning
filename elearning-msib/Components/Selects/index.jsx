@@ -22,8 +22,8 @@ const Selects = ({ list, size, description }) => {
         {list.map((value) => (
           <li
             key={value.name}
-            className={`px-4 py-2 text-sm hover:bg-gray-400 hover:text-white capitalize 
-            ${value.name === selected && "bg-sky-600 text-white"}`}
+            className={`mx-2 rounded px-4 py-2 text-sm hover:bg-gray-200 capitalize 
+            ${value.name === selected && "bg-gray-200"}`}
             onClick={() => {
               if (value.name !== selected) {
                 setSelected(value.name);

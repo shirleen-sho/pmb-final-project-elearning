@@ -6,6 +6,8 @@ import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
 import { FaSearch } from "react-icons/fa";
 import Search from "../Components/Search";
+import Card from "../Components/Card";
+import { use } from "react";
 
 export default function Home() {
   const list =[
@@ -13,11 +15,15 @@ export default function Home() {
     {name : "geovaldo"},
     {name : "Joko"}
   ]
+  
+  const users = [
+    {name: "Pendi" , image: "/images/profile.jpg" , desc:"vercel" ,link :"/data_master/kalender_akademik"},
+    {name: "Johan" , image: "/images/profile.jpg", desc: "Logo",link:"/data_master/kalender_akademik"}
+  ]
 
   const show = () => alert("Hellow")
   return (
     <>
-      <div>Pendi</div>
       <Layout>
         <div className="flex flex-col gap-4 text-sm text-justify">
           <p>
@@ -49,6 +55,9 @@ export default function Home() {
           </p>
         </div>
       </Layout>
+      <div className="m-5">
+        <Card users={users} link= "/data_master/kalender_akademik"/>
+      </div>
       <div className="m-5">
         <Notifikasi type="Success"/>
         <Notifikasi type="Danger"/>

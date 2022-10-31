@@ -24,15 +24,23 @@ const PengaturanOtorisasi = () => {
         <div className="w-full h-full flex flex-col gap-5">
           <div
             id="top-content-kalender"
-            className="flex flex-row items-center gap-10"
+            className="flex flex-row items-center justify-between"
           >
-            <div className="flex flex-row items-center gap-4 px-4">
-              <div className="">Staff Level</div>
-              <Selects list={level} description="Pilih Staff Level" />
+            <div className="relative flex flex-row items-center w-full">
+              <div className="h-8 flex flex-row items-center font-medium">
+                Staff Level
+              </div>
+              <div className="z-10 absolute top-0 left-0 right-0 ml-28 mr-auto w-1/3">
+                <Selects
+                  list={level}
+                  description="Pilih Staff Level"
+                  style="w-full"
+                />
+              </div>
             </div>
             <Button type="primary">Simpan</Button>
           </div>
-          <Table data={list_level_staff} />
+          <Table data={level} />
         </div>
       </Tabs>
     </Layout>

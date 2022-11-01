@@ -14,5 +14,7 @@ export default function Page404() {
             </Button>
           </div>
         </div>
+      </div>
+    </div>
   );
 }

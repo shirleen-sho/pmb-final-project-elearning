@@ -41,7 +41,12 @@ const KalenderBulan = ({ bulan, tahun }) => {
           {calendar.map((week, i) => (
             <tr key={bulan + "-" + week}>
               {week.map((date) => (
-                <td className={`${styleCell}`} key={date.format("DD/MM/YY")}>
+                <td
+                  className={`${styleCell} ${
+                    parseInt(date.format("M")) === bulan ? "" : "text-gray-300"
+                  }`}
+                  key={date.format("DD/MM/YY")}
+                >
                   {date.format("D").toString()}
                 </td>
               ))}

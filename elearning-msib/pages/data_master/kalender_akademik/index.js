@@ -5,6 +5,7 @@ import Button from "../../../Components/Buttons";
 import KalenderBulan from "../../../Components/KalenderBulan";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import moment from "moment";
+import Selects from "../../../Components/Selects";
 
 const KalenderAkademik = () => {
   const list = [
@@ -69,6 +70,7 @@ const KalenderAkademik = () => {
           <div className="flex flex-row items-center gap-16 absolute top-0 right-0">
             <div className="flex flex-row items-center gap-4">
               <div className="">Tahun Akademik</div>
+              {/* <Selects list={tahun_akademik} description="Pilih Tahun Akademik" size="w-64"/> */}
               <select
                 className="outline-none px-4 py-2 font-normal border rounded transition ease-in-out inline-flex items-center text-xs shadow capitalize w-fit"
                 onChange={handleSelectedTahunAkademik}

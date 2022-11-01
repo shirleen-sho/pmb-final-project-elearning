@@ -7,13 +7,13 @@ export default function Card({ users }) {
   return (
     <>
       {users.map((value) => (
-      <div className="flex flex-col justify-center py-6 border w-64 h-64 shadow-xl rounded-xl m-5 ">
+      <div className="flex flex-col justify-center py-6 border w-80 h-96 shadow-xl rounded-xl m-5 ">
         <Image
               src={value.image}
-              width={50}
-              height={50}
               alt={value.desc}
-              className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+              className="w-48 h-48 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+              width={1000}
+              height={1000}
             />
         <div className="space-y-4 text-center divide-y ">
           <div className="my-2 space-y-1">

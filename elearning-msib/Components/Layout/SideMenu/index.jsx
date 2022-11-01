@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAppContext } from "../../../Hooks/useAppContext";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 
 const SideMenu = () => {
   const [showSidemenu, setShowSidemenu] = useState(true);
@@ -43,7 +44,8 @@ const SideMenu = () => {
           <div className="flex flex-col gap-1" key={menu.route}>
             <Link
               href={sub_menu ? sub_menu[0].route : menu.route}
-              key={menu.route} legacyBehavior
+              key={menu.route}
+              legacyBehavior
             >
               <a
                 title={showSidemenu ? "" : menu.name}
@@ -77,25 +79,13 @@ const SideMenu = () => {
                     />
                     {showSidemenu && menu.name}
                   </div>
-                  {
-                    /* icon dropdown */
-                    showSidemenu && sub_menu && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                        />
-                      </svg>
-                    )
-                  }
+                  {sub_menu &&
+                    showSidemenu &&
+                    (selectedMenu === menu.route ? (
+                      <HiChevronUp size={16} />
+                    ) : (
+                      <HiChevronDown size={16} />
+                    ))}
                 </div>
               </a>
             </Link>

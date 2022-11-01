@@ -3,6 +3,7 @@ import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
 import Button from "../../../Components/Buttons";
 import KalenderBulan from "../../../Components/KalenderBulan";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const KalenderAkademik = ({ children }) => {
   const list = [
@@ -103,36 +104,10 @@ const KalenderAkademik = ({ children }) => {
                 {/* container bottom : buttons */}
                 <div className="flex flex-row gap-4">
                   <Button type="light" variant="icon" name="page-previous">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-4 h-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15.75 19.5L8.25 12l7.5-7.5"
-                      />
-                    </svg>
+                    <HiChevronLeft size={14} />
                   </Button>
                   <Button type="light" variant="icon" name="page-next">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-4 h-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
+                    <HiChevronRight size={14} />
                   </Button>
                 </div>
               </div>

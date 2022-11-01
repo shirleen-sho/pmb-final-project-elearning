@@ -2,6 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Button from "../Buttons";
 import InputFields from "../InputFields";
+import {
+  HiOutlineArchive,
+  HiOutlinePencil,
+  HiOutlineEye,
+  HiChevronLeft,
+  HiChevronRight,
+} from "react-icons/hi";
 
 const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
   let table_head = [];
@@ -67,26 +74,17 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
                 <td className={`${defaultCellStyle} border-b text-center`}>
                   {action === "archive-edit" && (
                     <div className="w-full flex flex-row justify-center gap-4">
-                      <button>
-                        <img
-                          src="/images/icon/archive icon.png"
-                          className="w-[18px]"
-                          alt="archive"
-                        />
+                      <button className="hover:text-primary-600" title="View">
+                        <HiOutlineEye size={18} />
                       </button>
-                      <button>
-                        <img
-                          src="/images/icon/edit icon.png"
-                          className="w-[18px]"
-                          alt="edit"
-                        />
+                      <button
+                        className="hover:text-primary-600"
+                        title="Archive"
+                      >
+                        <HiOutlineArchive size={18} />
                       </button>
-                      <button>
-                        <img
-                          src="/images/icon/view icon.png"
-                          className="w-[18px]"
-                          alt="view"
-                        />
+                      <button className="hover:text-primary-600" title="Edit">
+                        <HiOutlinePencil size={18} />
                       </button>
                     </div>
                   )}
@@ -112,73 +110,49 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
           {data.length} entries
         </span>
         {/* pagination */}
-        <div className="flex flex-row items-center gap-4 text-xs">
+        <div className="flex flex-row items-center gap-4 text-xs h-8">
           <Link
             href="/"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
           >
-            <svg
-              className="w-4 h-4"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
+            <HiChevronLeft size={14} />
           </Link>
           <Link
             href="/"
             aria-current="page"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-primary-300 border border-primary-300 text-white"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-primary-300 border border-primary-300 text-white"
           >
             1
           </Link>
           <Link
             href="/"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
           >
             2
           </Link>
           <Link
             href="/"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
           >
             3
           </Link>
           <Link
             href="/"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
           >
             ...
           </Link>
           <Link
             href="/"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
           >
             100
           </Link>
           <Link
             href="/"
-            className="font-medium px-1.5 py-1.5 w-8 flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
           >
-            <svg
-              className="w-4 h-4"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
+            <HiChevronRight size={14} />
           </Link>
         </div>
       </div>

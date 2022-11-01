@@ -6,6 +6,7 @@ import InputFields from "../../../Components/InputFields";
 import Selects from "../../../Components/Selects";
 import Link from "next/link";
 import FormItem from "../../../Components/FormItem";
+import { HiXMark } from "react-icons/hi2";
 
 const AddKegiatan = () => {
   const tahun_akademik = [
@@ -87,22 +88,9 @@ const AddKegiatan = () => {
                   />
                   <button
                     onClick={handleClosePicker}
-                    className="absolute -top-3 -right-3 bg-white border shadow-sm w-6 h-6 rounded-full"
+                    className="absolute -top-3 -right-3 bg-white border shadow-sm w-6 h-6 rounded-full flex justify-center items-center"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-3 h-3 m-auto"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
+                    <HiXMark size={14} />
                   </button>
                 </div>
               )}

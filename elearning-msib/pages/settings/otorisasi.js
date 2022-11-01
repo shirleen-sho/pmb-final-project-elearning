@@ -27,16 +27,14 @@ const PengaturanOtorisasi = () => {
             className="flex flex-row items-center justify-between"
           >
             <div className="relative flex flex-row items-center w-full">
-              <div className="h-8 flex flex-row items-center font-medium">
+              <span className="h-8 flex flex-row items-center font-medium mx-5">
                 Staff Level
-              </div>
-              <div className="z-10 absolute top-0 left-0 right-0 ml-28 mr-auto w-1/3">
-                <Selects
-                  list={level}
-                  description="Pilih Staff Level"
-                  style="w-full"
-                />
-              </div>
+              </span>
+              <Selects
+                list={level}
+                description="Pilih Staff Level"
+                size="w-1/3"
+              />
             </div>
             <Button type="primary">Simpan</Button>
           </div>

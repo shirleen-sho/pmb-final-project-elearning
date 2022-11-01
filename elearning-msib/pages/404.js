@@ -14,7 +14,5 @@ export default function Page404() {
                 </div>
             </div>
         </div>
-      </div>
-    </div>
   );
 }

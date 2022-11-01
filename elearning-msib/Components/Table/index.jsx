@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Button from "../Buttons";
 import InputFields from "../InputFields";
+import Search from "../Search";
 import {
   HiOutlineArchive,
   HiOutlinePencil,
@@ -31,7 +32,7 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
         <div className="mb-3 flex flex-row justify-between items-center">
           <div className="font-semibold text-xl">{tableTitle || ""}</div>
           <div className="flex flex-row items-center gap-5">
-            <InputFields type="text" placeholder="Search" />
+            <Search />
             <Button type="primary" link={buttonAddLink}>
               Add
             </Button>

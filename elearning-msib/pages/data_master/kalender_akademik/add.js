@@ -6,7 +6,7 @@ import InputFields from "../../../Components/InputFields";
 import Selects from "../../../Components/Selects";
 import Link from "next/link";
 import FormItem from "../../../Components/FormItem";
-import { HiXMark } from "react-icons/hi2";
+import ColorPicker from "../../../Components/ColorPicker";
 
 const AddKegiatan = () => {
   const tahun_akademik = [
@@ -80,19 +80,11 @@ const AddKegiatan = () => {
               </div>
               {/* picker warna */}
               {showPicker && (
-                <div className="absolute top-0 left-36">
-                  <SketchPicker
-                    color={choosenColor}
-                    onChange={handleChangeColor}
-                    className="relative"
-                  />
-                  <button
-                    onClick={handleClosePicker}
-                    className="absolute -top-3 -right-3 bg-white border shadow-sm w-6 h-6 rounded-full flex justify-center items-center"
-                  >
-                    <HiXMark size={14} />
-                  </button>
-                </div>
+                <ColorPicker
+                  choosenColor={choosenColor}
+                  handleChangeColor={handleChangeColor}
+                  handleClosePicker={handleClosePicker}
+                />
               )}
             </div>
           </FormItem>

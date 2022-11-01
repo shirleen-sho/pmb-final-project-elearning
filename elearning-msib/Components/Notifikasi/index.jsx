@@ -24,9 +24,7 @@ const Notifikasi = ({ type, colorClass, description }) => {
         "text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800";
       description = "Warning Alert !";
       break;
-    default:
-      "Dark";
-      
+    default:"Dark";
       colorClass =
         "text-gray-700 bg-gray-100 rounded-lg dark:bg-gray-700 dark:text-gray-300";
       description = "Dark Alert";

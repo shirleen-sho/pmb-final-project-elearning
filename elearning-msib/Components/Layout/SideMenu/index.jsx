@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAppContext } from "../../../Hooks/useAppContext";
-import { HiChevronDown, HiChevronUp } from "react-icons/hi";
+import {
+  HiChevronDown,
+  HiChevronUp,
+  HiChevronLeft,
+  HiChevronRight,
+} from "react-icons/hi";
 
 const SideMenu = () => {
   const [showSidemenu, setShowSidemenu] = useState(true);
@@ -34,9 +39,13 @@ const SideMenu = () => {
         />
         <button
           onClick={handleToggleSidemenu}
-          className="absolute -top-2 -right-2 bg-primary-50 shadow-sm w-7 h-7 rounded-lg"
+          className="absolute -top-2 -right-2 bg-primary-50 shadow-sm w-7 h-7 rounded-lg flex justify-center items-center"
         >
-          {showSidemenu ? "<" : ">"}
+          {showSidemenu ? (
+            <HiChevronLeft size={14} />
+          ) : (
+            <HiChevronRight size={14} />
+          )}
         </button>
       </div>
       <div className="flex flex-col gap-1">

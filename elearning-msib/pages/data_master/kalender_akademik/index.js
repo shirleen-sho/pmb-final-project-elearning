@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
 import Button from "../../../Components/Buttons";
 import KalenderBulan from "../../../Components/KalenderBulan";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import moment from "moment";
 
-const KalenderAkademik = ({ children }) => {
+const KalenderAkademik = () => {
   const list = [
     { id: 1, name: "Kalender", tab: "" },
     { id: 2, name: "List Kegiatan", tab: "/list_kegiatan" },
@@ -33,6 +34,24 @@ const KalenderAkademik = ({ children }) => {
     }
     setSelectedTahun(parseInt(tahun));
   };
+
+  useEffect(() => {
+    // default kalender akademik
+    const today = moment();
+    const bulan = today.format("MM");
+    const tahun = today.format("YYYY");
+    let semester;
+    if (bulan >= 7 && bulan <= 12) {
+      semester = "ganjil";
+      setSelectedBulan([7, 8, 9, 10, 11, 12]);
+    } else {
+      semester = "genap";
+      setSelectedBulan([1, 2, 3, 4, 5, 6]);
+    }
+    const terpilih = semester + "-" + tahun;
+    setSelectedTahunAkademik(terpilih);
+    setSelectedTahun(parseInt(tahun));
+  }, []);
 
   const keterangan = [
     { color: "#FDE047", nama: "Pembelajaran" },

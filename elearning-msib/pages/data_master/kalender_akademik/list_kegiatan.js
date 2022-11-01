@@ -2,9 +2,9 @@ import React from "react";
 import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
 import Button from "../../../Components/Buttons";
-import InputFields from "../../../Components/InputFields";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
+import Search from "../../../Components/Search";
 
 const ListKegiatan = () => {
   const list = [
@@ -20,7 +20,7 @@ const ListKegiatan = () => {
       <Tabs list={list} pathName="/data_master/kalender_akademik">
         <div className="w-full h-full py-3">
           <div className="flex flex-row justify-center items-center gap-3 absolute top-0 right-0">
-            <InputFields type="text" placeholder="Search" />
+            <Search />
             <Button type="primary" link="/data_master/kalender_akademik/add">
               Add
             </Button>

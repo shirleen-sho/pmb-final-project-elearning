@@ -7,6 +7,7 @@ import Selects from "../../../Components/Selects";
 import TextArea from "../../../Components/TextArea";
 import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
+import Image from "next/image";
 
 const IdentitasSekolah = () => {
   const [image, setImage] = useState(null);
@@ -61,12 +62,15 @@ const IdentitasSekolah = () => {
                           </button>
                         ) : (
                           imageList.map((image, index) => (
-                            <img
-                              src={image["data_url"]}
-                              alt=""
-                              key={"image" + index}
-                              className="object-cover w-16 h-full rounded-full shadow-lg"
-                            />
+                            <div className="w-16 h-full relative">
+                              <Image
+                                src={image["data_url"]}
+                                alt=""
+                                key={"image" + index}
+                                className="object-cover rounded-full shadow-lg"
+                                fill
+                              />
+                            </div>
                           ))
                         )}
                         <div className="flex flex-row gap-5 items-center">

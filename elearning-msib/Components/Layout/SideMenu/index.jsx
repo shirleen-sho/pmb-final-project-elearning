@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import {
   HiChevronDown,
@@ -32,11 +33,15 @@ const SideMenu = () => {
   return (
     <div className="relative bg-primary-100 flex flex-col gap-10 px-2 py-14 rounded-lg min-h-screen h-fit min-w-fit">
       <div className="flex flex-row justify-center h-14">
-        <img
-          src={showSidemenu ? "/images/logo.png" : "/images/icon/school.png"}
-          className={showSidemenu ? "h-full" : "h-7"}
-          alt="icon school"
-        />
+        <div
+          className={showSidemenu ? "h-14 w-40 relative" : "h-7 w-7 relative"}
+        >
+          <Image
+            src={showSidemenu ? "/images/logo.png" : "/images/icon/school.png"}
+            alt="icon school"
+            fill
+          />
+        </div>
         <button
           onClick={handleToggleSidemenu}
           className="absolute -top-2 -right-2 bg-primary-50 shadow-sm w-7 h-7 rounded-lg flex justify-center items-center"
@@ -77,14 +82,15 @@ const SideMenu = () => {
               >
                 <div className="flex flex-row justify-between items-center gap-4">
                   <div className="flex flex-row gap-4">
-                    <img
+                    <Image
                       src={
                         menu.icon
                           ? `/images/icon/${menu.icon}`
                           : "/images/icon/icon settings.png"
                       }
                       alt="icon"
-                      className="w-4 h-auto"
+                      width={16}
+                      height={16}
                     />
                     {showSidemenu && menu.name}
                   </div>

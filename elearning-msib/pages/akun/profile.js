@@ -7,6 +7,7 @@ import Selects from "../../Components/Selects";
 import TextArea from "../../Components/TextArea";
 import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
+import Image from "next/image";
 
 const Profile = () => {
   const [image, setImage] = useState(null);
@@ -59,12 +60,15 @@ const Profile = () => {
                           </button>
                         ) : (
                           imageList.map((image, index) => (
-                            <img
-                              src={image["data_url"]}
-                              alt=""
-                              key={"image" + index}
-                              className="object-cover w-40 h-full rounded-full shadow-lg"
-                            />
+                            <div className="w-32 h-full relative">
+                              <Image
+                                src={image["data_url"]}
+                                alt=""
+                                key={"image" + index}
+                                className="object-cover rounded-full shadow-lg"
+                                fill
+                              />
+                            </div>
                           ))
                         )}
                         <div className="flex flex-col gap-2 items-end">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import { HiOutlineBell, HiOutlineCog } from "react-icons/hi";
+import Image from "next/image";
 
 const Header = () => {
   const { menu, user } = useAppContext();
@@ -57,10 +58,13 @@ const Header = () => {
               </div>
             </div>
             {user_info.photo ? (
-              <img
-                src={`/images/${user_info.photo}`}
-                className="object-cover h-14 w-14 rounded-full"
-              />
+              <div className="h-14 w-14 relative">
+                <Image
+                  src={`/images/${user_info.photo}`}
+                  className="object-cover rounded-full"
+                  fill
+                />
+              </div>
             ) : (
               // image placeholder
               <div className="overflow-hidden relative w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-600">

@@ -332,18 +332,253 @@ export const useDummyProvider = () => {
 
   const list_level_staff = [
     {
-      "Kode Level": "S001",
-      "Level Staff": "Staff TU",
+      kode_level: "S001",
+      staff_level: "Staff TU",
     },
     {
-      "Kode Level": "S002",
-      "Level Staff": "Guru",
+      kode_level: "S002",
+      staff_level: "Guru",
+    },
+  ];
+
+  const list_pengaturan_otorisasi = [
+    {
+      kode_level: "S001",
+      otorisasi: [
+        {
+          menu: "Data Master",
+          tambah: false,
+          lihat: false,
+          edit: false,
+          hapus: false,
+        },
+        {
+          menu: "Kepegawaian",
+          tambah: false,
+          lihat: false,
+          edit: false,
+          hapus: false,
+        },
+        {
+          menu: "Kesiswaan",
+          tambah: false,
+          lihat: false,
+          edit: false,
+          hapus: false,
+        },
+        {
+          menu: "Data Akademik",
+          tambah: false,
+          lihat: false,
+          edit: false,
+          hapus: false,
+        },
+      ],
+    },
+    {
+      kode_level: "S002",
+      otorisasi: [
+        {
+          menu: "Data Master",
+          tambah: false,
+          lihat: true,
+          edit: false,
+          hapus: false,
+        },
+        {
+          menu: "Kepegawaian",
+          tambah: false,
+          lihat: true,
+          edit: false,
+          hapus: false,
+        },
+        {
+          menu: "Kesiswaan",
+          tambah: false,
+          lihat: true,
+          edit: false,
+          hapus: false,
+        },
+        {
+          menu: "Data Akademik",
+          tambah: true,
+          lihat: true,
+          edit: true,
+          hapus: true,
+        },
+      ],
+    },
+  ];
+
+  const dataDummyTrial1 = [
+    {
+      kode_ruangan: "RG1",
+      nama_gedung: "Gedung Alpha 1",
+      nama_ruangan: {
+        nama_ruangan_1: "Kantin A",
+      },
+      kapasitas: 100,
+    },
+    {
+      kode_ruangan: "RG2",
+      nama_gedung: "Gedung Alpha 2",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Komputer 01",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG3",
+      nama_gedung: "Gedung Alpha 3",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Biologi",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG4",
+      nama_gedung: "Gedung Alpha 4",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Fisika",
+      },
+      kapasitas: 100,
+    },
+  ];
+
+  const dataDummyTrial2 = [
+    {
+      kode_ruangan: "RG1",
+      nama_gedung: "Gedung Alpha 1",
+      nama_ruangan: {
+        nama_ruangan_1: "Kantin A",
+        nama_ruangan_2: "Kantin B",
+      },
+      kapasitas: 100,
+    },
+    {
+      kode_ruangan: "RG2",
+      nama_gedung: "Gedung Alpha 2",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Komputer 01",
+        nama_ruangan_2: "Ruang Komputer 02",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG3",
+      nama_gedung: "Gedung Alpha 3",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Biologi",
+        nama_ruangan_2: "Ruang Lab Kimia",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG4",
+      nama_gedung: "Gedung Alpha 4",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Fisika",
+        nama_ruangan_2: "Ruang Serbaguna",
+      },
+      kapasitas: 100,
+    },
+  ];
+
+  const dataDummyTrial3 = [
+    {
+      kode_ruangan: "RG1",
+      nama_gedung: "Gedung Alpha 1",
+      nama_ruangan: {
+        nama_ruangan_1: "Kantin A",
+        nama_ruangan_2: "Kantin B",
+        nama_ruangan_3: "Ruang UKS",
+      },
+      kapasitas: 100,
+    },
+    {
+      kode_ruangan: "RG2",
+      nama_gedung: "Gedung Alpha 2",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Komputer 01",
+        nama_ruangan_2: "Ruang Komputer 02",
+        nama_ruangan_3: "Gudang",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG3",
+      nama_gedung: "Gedung Alpha 3",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Biologi",
+        nama_ruangan_2: "Ruang Lab Kimia",
+        nama_ruangan_3: "Gudang",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG4",
+      nama_gedung: "Gedung Alpha 4",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Fisika",
+        nama_ruangan_2: "Ruang Serbaguna",
+        nama_ruangan_3: "Gudang",
+      },
+      kapasitas: 100,
+    },
+  ];
+
+  const dataDummyTrial4 = [
+    {
+      kode_ruangan: "RG1",
+      nama_gedung: "Gedung Alpha 1",
+      nama_ruangan: {
+        nama_ruangan_1: "Kantin A",
+        nama_ruangan_2: "Kantin B",
+        nama_ruangan_3: "Dapur",
+        nama_ruangan_4: "Ruang UKS",
+      },
+      kapasitas: 100,
+    },
+    {
+      kode_ruangan: "RG2",
+      nama_gedung: "Gedung Alpha 2",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Komputer 01",
+        nama_ruangan_2: "Ruang Komputer 02",
+        nama_ruangan_3: "Ruang Arsip",
+        nama_ruangan_4: "Gudang",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG3",
+      nama_gedung: "Gedung Alpha 3",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Biologi",
+        nama_ruangan_2: "Ruang Lab Kimia",
+        nama_ruangan_3: "Perpustakaan",
+        nama_ruangan_4: "Gudang",
+      },
+      kapasitas: 50,
+    },
+    {
+      kode_ruangan: "RG4",
+      nama_gedung: "Gedung Alpha 4",
+      nama_ruangan: {
+        nama_ruangan_1: "Ruang Lab Fisika",
+        nama_ruangan_2: "Ruang Serbaguna",
+        nama_ruangan_3: "Ruang Serbaguna",
+        nama_ruangan_4: "Gudang",
+      },
+      kapasitas: 100,
     },
   ];
 
   return {
     list1,
     list2,
+    list_belum_submit_tugas,
+    list_belum_lunas,
     list_tahun_akademik,
     list_gedung,
     list_ruangan,
@@ -352,5 +587,10 @@ export const useDummyProvider = () => {
     list_kegiatan,
     list_jam_pembelajaran,
     list_level_staff,
+    list_pengaturan_otorisasi,
+    dataDummyTrial1,
+    dataDummyTrial2,
+    dataDummyTrial3,
+    dataDummyTrial4,
   };
 };

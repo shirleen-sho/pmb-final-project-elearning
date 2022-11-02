@@ -47,5 +47,6 @@ module.exports = {
       },
     },
   },
+  safelist: [{ pattern: /grid-cols-./ }, { pattern: /col-span-./ }],
   plugins: [],
 };

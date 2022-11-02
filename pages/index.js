@@ -15,15 +15,15 @@ export default function Home() {
   const users = [
     {
       name: "Pendi",
+      nuptk:"NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      link: "/data_master/kalender_akademik",
     },
     {
-      name: "Johan",
+      name: "Pendi",
+      nuptk:"NUPTK 219887370203223",
       image: "/images/profile.jpg",
-      desc: "Logo",
-      link: "/data_master/kalender_akademik",
+      desc: "vercel",
     },
   ];
 

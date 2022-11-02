@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { FaCamera, FaPhone } from "react-icons/fa";
+import {FaPhone } from "react-icons/fa";
+import {MdEmail } from "react-icons/md";
 
 export default function Card({ users }) {
   return (
@@ -14,7 +15,7 @@ export default function Card({ users }) {
               className="w-48 h-48 mx-auto rounded-full dark:bg-gray-500 aspect-square"
               width={1000}
               height={1000}
-            />
+        />
         <div className="space-y-4 text-center divide-y ">
           <div className="my-2 space-y-1">
             <h2 className="text-xl font-semibold sm:text-2xl">{value.name}</h2>
@@ -26,11 +27,13 @@ export default function Card({ users }) {
           <Link href={value.link} legacyBehavior>
                 <a>
                   <FaPhone />
+                  {value.FaPhone}
                 </a>
               </Link>
               <Link href={value.link} legacyBehavior>
                 <a>
-                  <FaCamera />
+                  <MdEmail/>
+                  {value.Email}
                 </a>
               </Link>
           </div>

@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "../../../Components/Layout";
+import Buttons from "../../../Components/Buttons";
 
 const Staff = () => {
   return (
     <Layout>
-      <div></div>
+      <Buttons link="/kepegawaian/staff/add">Add</Buttons>
     </Layout>
   );
 };

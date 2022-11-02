@@ -7,7 +7,6 @@ import TextArea from "../Components/TextArea";
 import { FaSearch } from "react-icons/fa";
 import Search from "../Components/Search";
 import Card from "../Components/Card";
-import { use } from "react";
 import KalenderBulan from "../Components/KalenderBulan";
 
 export default function Home() {
@@ -126,9 +125,9 @@ export default function Home() {
           <FaSearch />
         </Button>
       </div>
-      {/* <div className="m-5">
+      <div className="m-5">
         <Search/>
-      </div> */}
+      </div>
     </>
   );
 }

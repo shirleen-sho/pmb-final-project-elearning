@@ -5,7 +5,7 @@ import Buttons from "../../../Components/Buttons";
 const Guru = () => {
   return (
     <Layout>
-      <Buttons link="/kepegawaian/guru/add"></Buttons>
+      <Buttons link="/kepegawaian/guru/add">add</Buttons>
     </Layout>
   );
 };

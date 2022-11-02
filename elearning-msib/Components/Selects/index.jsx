@@ -31,7 +31,7 @@ const Selects = ({ list, size, description , handleChange ,value}) => {
                 setOpen(false);
               }
             }}
-            value={value}
+            value={value.name}
           >
             {value.name}
           </li>

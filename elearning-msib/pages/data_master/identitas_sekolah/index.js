@@ -65,7 +65,7 @@ const IdentitasSekolah = () => {
                             <div className="w-16 h-full relative">
                               <Image
                                 src={image["data_url"]}
-                                alt=""
+                                alt="image"
                                 key={"image" + index}
                                 className="object-cover rounded-full shadow-lg"
                                 fill

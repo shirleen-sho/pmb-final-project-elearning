@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../../Components/Layout'
 
-const Staff = () => {
+const addGuru = () => {
   return (
     <Layout>
         
@@ -9,4 +9,4 @@ const Staff = () => {
   )
 }
 
-export default Staff
+export default addGuru

@@ -38,8 +38,9 @@ const SideMenu = () => {
         >
           <Image
             src={showSidemenu ? "/images/logo.png" : "/images/icon/school.png"}
+            height={200}
+            width={200}
             alt="icon school"
-            fill
           />
         </div>
         <button

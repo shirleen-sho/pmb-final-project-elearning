@@ -62,7 +62,8 @@ const Header = () => {
                 <Image
                   src={`/images/${user_info.photo}`}
                   className="object-cover rounded-full"
-                  fill
+                  width={50}
+                  height={50}
                 />
               </div>
             ) : (

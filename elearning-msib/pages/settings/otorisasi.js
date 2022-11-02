@@ -3,8 +3,8 @@ import Layout from "../../Components/Layout";
 import Tabs from "../../Components/Tabs";
 import Button from "../../Components/Buttons";
 import Selects from "../../Components/Selects";
-import Table from "../../Components/Table";
 import { useAppContext } from "../../Hooks/useAppContext";
+import TableOtorisasi from "../../Components/Table/otorisasi";
 
 const PengaturanOtorisasi = () => {
   const list = [
@@ -13,9 +13,9 @@ const PengaturanOtorisasi = () => {
   ];
 
   const { dummy } = useAppContext();
-  const { list_level_staff } = dummy;
+  const { list_level_staff, list_pengaturan_otorisasi } = dummy;
   const level = list_level_staff.map((i) => {
-    return { name: i["Level Staff"] };
+    return { name: i.staff_level };
   });
 
   return (
@@ -40,7 +40,12 @@ const PengaturanOtorisasi = () => {
             </div>
             <Button type="primary">Simpan</Button>
           </div>
-          <Table data={level} />
+          {list_pengaturan_otorisasi.map((setting, index) => (
+            <TableOtorisasi
+              data={setting.otorisasi}
+              key={"tableOtorisasi" + index}
+            />
+          ))}
         </div>
       </Tabs>
     </Layout>

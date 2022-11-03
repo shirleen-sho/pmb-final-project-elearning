@@ -4,7 +4,12 @@ import Button from "../../Components/Buttons";
 import KalenderBulan from "../../Components/KalenderBulan";
 import Layout from "../../Components/Layout";
 import { useAppContext } from "../../Hooks/useAppContext";
-import { HiChevronLeft, HiOutlineMail, HiOutlinePlus } from "react-icons/hi";
+import {
+  HiChevronLeft,
+  HiChevronRight,
+  HiOutlineMail,
+  HiOutlinePlus,
+} from "react-icons/hi";
 import Image from "next/image";
 
 const Dashboard = () => {
@@ -83,7 +88,7 @@ const Dashboard = () => {
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-row justify-between items-center">
                     <h2 className="font-bold text-xl">Information</h2>
-                    <Button type="info" variant="icon" link="/pengumuman/add">
+                    <Button type="icon" variant="icon" link="/pengumuman/add">
                       <HiOutlinePlus />
                     </Button>
                   </div>
@@ -121,7 +126,14 @@ const Dashboard = () => {
                   <div className="border rounded-lg text-xs p-3 bg-white">
                     <div className="grid grid-rows-2 grid-cols-12 gap-x-3 gap-y-0.5">
                       <div className="row-start-1 row-span-2 col-start-1 col-span-2 flex items-center">
-                        <div className="bg-primary-100 rounded-lg min-h-6 min-w-6 h-10 w-10"></div>
+                        <div className="rounded-lg min-h-6 min-w-6 h-10 w-10 relative">
+                          <Image
+                            src="/images/profile.jpg"
+                            className="object-cover rounded-lg"
+                            alt="profile"
+                            fill
+                          />
+                        </div>
                       </div>
                       <div className="row-start-1 row-span-1 col-start-3 col-span-3 flex items-center">
                         <h5 className="text-xs font-semibold">{i.name}</h5>
@@ -215,7 +227,14 @@ const Dashboard = () => {
                   <div className="border rounded-lg text-xs p-3 bg-white">
                     <div className="grid grid-rows-2 grid-cols-8 gap-x-3 gap-y-0.5">
                       <div className="row-start-1 row-span-2 col-start-1 col-span-2 flex items-center">
-                        <div className="bg-primary-100 rounded-lg min-h-6 min-w-6 h-10 w-10"></div>
+                        <div className="rounded-lg min-h-6 min-w-6 h-10 w-10 relative">
+                          <Image
+                            src="/images/profile.jpg"
+                            className="object-cover rounded-lg"
+                            alt="profile"
+                            fill
+                          />
+                        </div>
                       </div>
                       <div className="row-start-1 row-span-1 col-start-3 col-span-3 flex items-center">
                         <h5 className="text-xs font-semibold">{i.name}</h5>

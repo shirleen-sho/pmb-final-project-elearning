@@ -21,7 +21,6 @@ const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => 
       placeholder = null
       break;
     default:
-      style=''
       break;
   }
 
@@ -34,7 +33,7 @@ const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => 
         onChange={handleValue} 
         className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none  ${size} ${style}`} 
         placeholder={placeholder || null}
-        disabled={disabled || false}
+        disabled={disabled}
         />
     </>
   )

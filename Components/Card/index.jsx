@@ -5,6 +5,8 @@ import { FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Button from "../Buttons";
+import CardNotif from "./CardNotif";
+import CardMakul from "./CardMakul";
 
 export default function Card({ users }) {
   return (
@@ -42,6 +44,8 @@ export default function Card({ users }) {
         </div>
       ))}
       </div>
+      <CardNotif />
+      <CardMakul />
     </>
   );
 }

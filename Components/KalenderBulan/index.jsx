@@ -20,7 +20,7 @@ const KalenderBulan = ({ bulan, tahun }) => {
   }
 
   return (
-    <div className="w-full max-w-[280px] h-[330px] text-xs bg-white border-[1.25px] rounded-2xl shadow-md p-7 flex flex-col items-center gap-3">
+    <div className="w-full h-[330px] text-xs bg-white border-[1.25px] rounded-2xl shadow p-7 flex flex-col items-center gap-3">
       <div className="flex flex-row justify-center w-full border-b border-neutral-2 pb-4 text-sm font-semibold">
         {value.clone().format("MMMM").toString() + " " + tahun}
       </div>

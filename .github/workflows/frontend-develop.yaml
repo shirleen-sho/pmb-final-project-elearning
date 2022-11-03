@@ -1,0 +1,39 @@
+name: Build & Publish
+
+on:
+  push:
+    branches: [ develop ]
+
+env:
+  IMAGE_NAME: ${{ github.repository }} # don't change , this get the repo name on github
+  PROJCET_BRANCH: ${{ github.ref_name }} # don't change , this get the branch or tag on github
+
+jobs:
+  next-build:  
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Login to registry pmberjaya
+        uses: docker/login-action@v1 
+        with:
+          registry: ${{ secrets.PMBERJAYA_REGISTRY }} # need create secret inside repo
+          username: ${{ secrets.PMBERJAYA_USERNAME }} # need create secret inside repo
+          password: ${{ secrets.PMBERJAYA_PASSWORD }} # need create secret inside repo
+      - name: Push to registry latest
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm64
+          context: ./
+          file: ./Dockerfile.${{ github.ref_name }} 
+          push: true 
+          tags: ${{ secrets.PMBERJAYA_REGISTRY_IMAGE }}/${{ env.IMAGE_NAME }}/${{ env.PROJCET_BRANCH }}:latest
+      - name: Push to registry
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm64
+          context: ./
+          file: ./Dockerfile.${{ github.ref_name }} 
+          push: true 
+          tags: ${{ secrets.PMBERJAYA_REGISTRY_IMAGE }}/${{ env.IMAGE_NAME }}/${{ env.PROJCET_BRANCH }}:${{ github.sha }}
+          

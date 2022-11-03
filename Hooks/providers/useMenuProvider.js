@@ -4,7 +4,7 @@ export const useMenuProvider = () => {
   const list_menu = [
     {
       menu: {
-        route: "/",
+        route: "/dashboard",
         name: "Dashboard",
         icon: "icon dashboard.png",
       },
@@ -189,7 +189,7 @@ export const useMenuProvider = () => {
   ];
 
   const [menus, setMenus] = useState(list_menu);
-  const [selectedMenu, setSelectedMenu] = useState("/");
+  const [selectedMenu, setSelectedMenu] = useState("/dashboard");
   const [selectedSubmenu, setSelectedSubmenu] = useState("");
 
   let currentMenu;

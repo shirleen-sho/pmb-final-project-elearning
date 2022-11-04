@@ -3,14 +3,14 @@ import Image from "next/image";
 import Button from "../../Buttons";
 import { FaAngleRight } from "react-icons/fa";
 
-export default function CardMaPel({ study ,color="bg-red-800"}) {
+export default function CardMaPel({ study ,color}) {
   return (
     <>
       <div>
         <div className="flex">
         {study.map((value, index) => (
-          <div className={`w-96 h-52 flex justify-center items-center rounded-xl shadow-xl ${color} m-2 bg-opacity-70`} key={index}>
-            <div className={`w-40 h-32 flex justify-center items-center rounded-xl ${color}`}>
+          <div className={`w-96 h-52 flex justify-center items-center rounded-xl shadow-xl bg-[${value.color}] m-2 bg-opacity-90`} key={index}>
+            <div className={`w-40 h-32 flex justify-center items-center rounded-xl bg-[${value.color}]`}>
               <Image
                 src={value.image}
                 width={2000}

@@ -5,12 +5,14 @@ import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
 import { FaSearch } from "react-icons/fa";
 import Search from "../Components/Search";
-import Card from "../Components/Card";
+import CardNotif from "../Components/Card/CardNotif";
+import CardMaPel from "../Components/Card/CardMaPel";
+import CardUsers from "../Components/Card/CardUsers";
 
 export default function Home() {
   const list = [{ name: "pendi" }, { name: "geovaldo" }, { name: "Joko" }];
 
-  const study = [{title: "MTK", desc:" - "}, {title :"Penjaskes" , desc:"?"} ]
+  const study = [{image: "/images/profile.jpg",title: "MTK", desc:" Matematika" , color: "#000"}, {image: "/images/profile.jpg",title :"Penjaskes" , desc:"Pendidikan Jasmani Olahraga dan Kesehatan" , color: "bg-[#000]"} ]
 
   const users = [
     {
@@ -31,7 +33,10 @@ export default function Home() {
   return (
     <>
       <div className="m-5">
-        <Card users={users} study={study}  link="/data_master/kalender_akademik" />
+        <CardNotif type={true} />
+        <CardNotif />
+        <CardMaPel study={study}/>
+        <CardUsers users={users}/>
       </div>
       <div className="m-5">
         <Notifikasi type="Success" />

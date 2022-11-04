@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "../../Buttons";
 
-export default function CardNotif({ title, desc, type }) {
+export default function CardNotif({type}) {
   return (
     <div>
       <div className="w-96 h-64 border shadow flex flex-col items-center justify-center rounded-xl space-y-3 m-2">
@@ -19,7 +19,7 @@ export default function CardNotif({ title, desc, type }) {
           </div>
           <div className="text-xs">
             {type
-              ? (desc =
+              ? (type =
                   "Setelah data dihapus, data ini tidak dapat dikembalikan!")
               : null}
           </div>

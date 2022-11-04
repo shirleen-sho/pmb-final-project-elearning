@@ -12,7 +12,7 @@ const Guru = () => {
 
   return (
     <Layout>
-      <div className="flex justify-end">
+      <div className="flex justify-end mb-2">
         <Search></Search>
         <Buttons link="/kepegawaian/guru/add">add</Buttons>
       </div>

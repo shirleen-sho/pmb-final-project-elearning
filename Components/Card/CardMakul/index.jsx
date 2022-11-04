@@ -3,13 +3,15 @@ import Image from "next/image";
 import Button from "../../Buttons";
 import { FaAngleRight } from "react-icons/fa";
 
-export default function CardMakul({ matakuliah, desc ,color = "bg-orange-200"} , colors = "bg-orange-900") {
+export default function CardMakul({ study ,color="bg-red-800",colors="bg-blue-200" }) {
+  console.log(study)
   return (
     <>
       <div>
         <div className="flex">
-          <div className={`w-96 h-52 flex justify-center items-center rounded-xl shadow bg-orange-200 m-2`}>
-            <div className={`w-40 h-32 flex justify-center items-center rounded-xl bg-orange-400`}>
+        {study.map((value, index) => (
+          <div className={`w-96 h-52 flex justify-center items-center rounded-xl shadow-xl ${color} m-2`} key={index}>
+            <div className={`w-40 h-32 flex justify-center items-center rounded-xl ${colors}`}>
               <Image
                 src="/images/logo.png"
                 width={2000}
@@ -21,9 +23,9 @@ export default function CardMakul({ matakuliah, desc ,color = "bg-orange-200"} ,
             <div className="w-44 h-44 flex justify-center items-center mx-2">
               <div className="space-y-4">
                 <div>
-                  <h1 className="text-xl">{matakuliah || "Bahasa Indonesia"}</h1>
+                  <h1 className="text-xl">{value.title || "Bahasa Indonesia"}</h1>
                   <h1 className="text-xs">
-                    {desc || "Handout Bahasa Indonesia"}
+                    {value.desc || "Handout Bahasa Indonesia"}
                   </h1>
                 </div>
                 <div className="w-full flex justify-end">
@@ -34,7 +36,7 @@ export default function CardMakul({ matakuliah, desc ,color = "bg-orange-200"} ,
               </div>
             </div>
           </div>
-          <div></div>
+          ))}
         </div>
       </div>
     </>

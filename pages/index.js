@@ -10,6 +10,8 @@ import Card from "../Components/Card";
 export default function Home() {
   const list = [{ name: "pendi" }, { name: "geovaldo" }, { name: "Joko" }];
 
+  const study = [{title: "MTK", desc:" - "}, {title :"Penjaskes" , desc:"?"} ]
+
   const users = [
     {
       name: "Pendi",
@@ -29,7 +31,7 @@ export default function Home() {
   return (
     <>
       <div className="m-5">
-        <Card users={users} link="/data_master/kalender_akademik" />
+        <Card users={users} study={study}  link="/data_master/kalender_akademik" />
       </div>
       <div className="m-5">
         <Notifikasi type="Success" />

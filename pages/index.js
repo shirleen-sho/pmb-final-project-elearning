@@ -12,7 +12,7 @@ import CardUsers from "../Components/Card/CardUsers";
 export default function Home() {
   const list = [{ name: "pendi" }, { name: "geovaldo" }, { name: "Joko" }];
 
-  const study = [{image: "/images/profile.jpg",title: "MTK", desc:" Matematika" , color: "#000"}, {image: "/images/profile.jpg",title :"Penjaskes" , desc:"Pendidikan Jasmani Olahraga dan Kesehatan" , color: "bg-[#000]"} ]
+  const study = [{image: "/images/profile.jpg",title: "MTK", desc:" Matematika" , color: ""}, {image: "/images/profile.jpg",title :"Penjaskes" , desc:"Pendidikan Jasmani Olahraga dan Kesehatan" , color: "#f5f5f5S"} ]
 
   const users = [
     {

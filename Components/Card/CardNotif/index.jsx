@@ -1,40 +1,44 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../../Buttons";
+import { AiOutlineClose } from "react-icons/ai";
 
-export default function CardNotif({type}) {
+export default function CardNotif({ type }) {
   return (
-    <div>
-      <div className="w-96 h-64 border shadow flex flex-col items-center justify-center rounded-xl space-y-3 m-2">
+    <div className="flex ">
+      <div className="w-96 py-4 border shadow flex flex-col items-center justify-center rounded-xl space-y-3 m-2">
+        {type ? null : (
+          <div className="w-full flex justify-end px-5">
+            <Button type="icon">
+              <AiOutlineClose />
+            </Button>
+          </div>
+        )}
         <Image
-          src={type ? "/images/profile.jpg" : "/images/logo.png"}
+          src={type ? "/images/icon/warning.png" : "/images/icon/correct.png"}
           width={2000}
           height={2000}
           alt="Notif"
-          className="w-32 h-32"
+          className="w-28 h-28"
         />
         <div className="text-center">
           <div className="font-bold text-base">
-            {type ? "Yakin ingin menghapus data?" : "Data Deleted!"}
+            {type ? "Yakin Ingin Menghapus Data?" : "Data Deleted!"}
           </div>
           <div className="text-xs">
             {type
-              ? (type =
+              ? (
                   "Setelah data dihapus, data ini tidak dapat dikembalikan!")
               : null}
           </div>
         </div>
-        <div>
+        <div className="w-full flex justify-center items-center px-10">
           {type ? (
-            <>
-              <Button type="light" style="mx-2">
-                Delete
-              </Button>
+            <div className="w-full flex justify-evenly">
+              <Button type="light">Delete</Button>
               <Button>Cancel</Button>
-            </>
-          ) : (
-            <Button>Close</Button>
-          )}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

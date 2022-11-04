@@ -187,46 +187,28 @@ const addStaff = () => {
         <div className="border-b border-neutral-2" />
         <div className="grid grid-cols-9 gap-x-7">
           <div className="col-start-1 col-span-1">
-            <FormItem label="Address" labelType="label-md" />
+            <FormItem label="Password" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-full flex flex-col gap-5">
-            <FormItem label="Alamat" labelType="label-sm" labelWidth="w-1/5">
-              <TextArea placeholder="Alamat" />
-            </FormItem>
-            <div className="col-start-2 col-span-full flex flex-col gap-5">
+            
               <FormItem
-                label="Kecamatan"
+                label="Password"
                 labelType="label-sm"
                 labelWidth="w-1/5"
               >
                 <InputFields
                   type="text"
-                  placeholder="Kecamatan"
+                  placeholder="Password"
                   size="w-full"
                 />
               </FormItem>
               <FormItem
-                label="Kode Pos"
+                label="Confirm Password"
                 labelType="label-sm"
                 labelWidth="w-1/5"
               >
-                <InputFields type="text" placeholder="Kode Pos" size="w-full" />
+                <InputFields type="text" placeholder="Confirm Password" size="w-full" />
               </FormItem>
-            </div>
-            <FormItem
-              label="Kabupaten / Kota"
-              labelType="label-sm"
-              labelWidth="w-1/5"
-            >
-              <InputFields
-                type="text"
-                placeholder="Kabupaten / Kota"
-                size="w-full"
-              />
-            </FormItem>
-            <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/5">
-              <InputFields type="text" placeholder="Provinsi" size="w-full" />
-            </FormItem>
           </div>
         </div>
         <div className="border-b border-neutral-2" />

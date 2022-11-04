@@ -1,15 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdPhone } from "react-icons/md";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Button from "../../Buttons";
 
 export default function CardUsers({users}) {
   return (
     <>
-      <div className="flex">
         {users.map((value, index) => (
           <div
             className="flex flex-col justify-center border w-52 h-64 shadow rounded-xl m-2 hover:border-blue-500 hover:border-2"
@@ -36,16 +34,13 @@ export default function CardUsers({users}) {
                   {value.nuptk}
                 </div>
               </div>
-              <div className="flex justify-center space-x-4 space-y pt-2 divide-y  ">
-                <FaPhone />
+              <div className="flex justify-center space-x-8 space-y pt-2 divide-y  ">
+                <MdPhone />
                 <MdEmail />
-                <FaInstagram />
-                <FaTwitter />
               </div>
             </div>
           </div>
         ))}
-      </div>
     </>
   );
 }

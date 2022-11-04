@@ -574,6 +574,94 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const users = [
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+    {
+      name: "Pendi",
+      nuptk: "NUPTK 219887370203223",
+      image: "/images/profile.jpg",
+      desc: "vercel",
+    },
+  ];
+
+
   return {
     list1,
     list2,
@@ -592,5 +680,6 @@ export const useDummyProvider = () => {
     dataDummyTrial2,
     dataDummyTrial3,
     dataDummyTrial4,
+    users
   };
 };

@@ -40,7 +40,7 @@ const Button = ({ type, classColor, style, children, link, handleClick }) => {
       <a>
         <button
           type={type}
-          className={`inline-flex justify-center items-center leading-4 tracking-widest uppercase transition ease-in-out duration-500 font-semibold ${classColor} ${style}`}
+          className={`inline-flex justify-center items-center leading-4 tracking-widest uppercase transition ease-in-out duration-500 font-semibold mx-2 ${classColor} ${style}`}
           onClick={handleClick}
         >
           {children}

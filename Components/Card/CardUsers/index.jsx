@@ -8,6 +8,7 @@ import Button from "../../Buttons";
 export default function CardUsers({users}) {
   return (
     <>
+      {/* <div className="flex"> */}
         {users.map((value, index) => (
           <div
             className="flex flex-col justify-center border w-52 h-64 shadow rounded-xl m-2 hover:border-blue-500 hover:border-2"
@@ -41,6 +42,7 @@ export default function CardUsers({users}) {
             </div>
           </div>
         ))}
+        {/* </div> */}
     </>
   );
 }

@@ -6,19 +6,25 @@ import Image from "next/image";
 
 const Header = () => {
   const { menu, user } = useAppContext();
-  const { setSelectedMenu, setSelectedSubmenu, currentMenu } = menu;
+  const { header } = menu;
   const { user_info } = user;
 
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const handleToggleProfileDropdown = () => {
     setShowProfileDropdown(!showProfileDropdown);
   };
+
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    console.log("Log Out !");
+  };
+
   return (
     <div className="flex flex-row justify-between items-center h-[120px] border-b border-neutral-2">
       <div className="flex flex-col gap-2">
-        <div className="font-bold text-3xl">{currentMenu.title}</div>
-        {currentMenu.detail && (
-          <div className="font-medium text-sm">{currentMenu.detail}</div>
+        <div className="font-bold text-3xl">{header.title}</div>
+        {header.detail && (
+          <div className="font-medium text-sm">{header.detail}</div>
         )}
       </div>
       <div id="icons" className="flex flex-row items-center gap-4">
@@ -32,14 +38,10 @@ const Header = () => {
           </div>
         </div>
 
-        <Link href="/settings" legacyBehavior>
+        <Link href="/settings/level" legacyBehavior>
           <a
             id="icon-settings"
             className="bg-white p-4 rounded-full text-neutral-3 hover:cursor-pointer hover:text-primary-400"
-            onClick={() => {
-              setSelectedMenu("/settings");
-              setSelectedSubmenu("");
-            }}
           >
             <HiOutlineCog size={24} />
           </a>
@@ -95,51 +97,28 @@ const Header = () => {
               </div>
               <div className="py-2.5 flex flex-col cursor-default">
                 <Link href="/profile" legacyBehavior>
-                  <a
-                    className="px-4 py-2 text-xs font-medium hover:text-primary-900"
-                    onClick={() => {
-                      setSelectedMenu("/profile");
-                      setSelectedSubmenu("");
-                    }}
-                  >
+                  <a className="px-4 py-2 text-xs font-medium hover:text-primary-900">
                     Profile
                   </a>
                 </Link>
                 <Link href="/password" legacyBehavior>
-                  <a
-                    className="px-4 py-2 text-2xs hover:text-primary-900"
-                    onClick={() => {
-                      setSelectedMenu("/password");
-                      setSelectedSubmenu("");
-                    }}
-                  >
+                  <a className="px-4 py-2 text-2xs hover:text-primary-900">
                     Password
                   </a>
                 </Link>
               </div>
               <div className="py-2.5 flex flex-col">
-                <Link href="/settings" legacyBehavior>
-                  <a
-                    className="px-4 py-2 text-2xs hover:text-primary-900"
-                    onClick={() => {
-                      setSelectedMenu("/settings");
-                      setSelectedSubmenu("");
-                    }}
-                  >
+                <Link href="/settings/level" legacyBehavior>
+                  <a className="px-4 py-2 text-2xs hover:text-primary-900">
                     Settings
                   </a>
                 </Link>
-                <Link href="/logout" legacyBehavior>
-                  <a
-                    className="px-4 py-2 text-2xs hover:text-primary-900"
-                    onClick={() => {
-                      setSelectedMenu("/logout");
-                      setSelectedSubmenu("");
-                    }}
-                  >
-                    Log Out
-                  </a>
-                </Link>
+                <a
+                  className="px-4 py-2 text-2xs hover:text-primary-900 cursor-pointer"
+                  onClick={(e) => handleLogOut(e)}
+                >
+                  Log Out
+                </a>
               </div>
             </div>
           )}

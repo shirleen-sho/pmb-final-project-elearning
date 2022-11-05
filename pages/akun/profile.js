@@ -60,7 +60,10 @@ const Profile = () => {
                           </button>
                         ) : (
                           imageList.map((image, index) => (
-                            <div className="w-32 h-full relative">
+                            <div
+                              className="w-32 h-full relative"
+                              key={"imageProfile" + index}
+                            >
                               <Image
                                 src={image["data_url"]}
                                 alt="image"

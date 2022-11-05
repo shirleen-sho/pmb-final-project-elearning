@@ -3,25 +3,38 @@ import Image from 'next/image'
 import React from 'react'
 import Button from '../../Components/Buttons'
 import InputFields from '../../Components/InputFields'
+import FormItem from '../../Components/FormItem'
 
 const Login = ({ showSidemenu }) => {
     return (
         <>
             <div className='w-full h-screen flex' >
+                <div className='w-1/2 h-full bg-primary-300 flex justify-center my-auto'>
+                    <div className='w-1/2 h-3/4 space-y-4 my-auto'>
+
+                    </div>
+                </div>
                 <div className='w-1/2 h-full bg-white flex justify-center items-center'>
                     <div className='w-1/2 h-1/2 rounded-xl shadow-xl px-6 space-y-4 border'>
                         <div className='w-full h-full flex flex-col justify-evenly'>
                             <div className='space-y-4'>
-                                <div className='space-y-4 pb-4'>
-                                    <h1 className='text-2xl'>Log In</h1>
-                                    <p className='text-xs'>Enter your credentials to access your account</p>
+                                <div className='flex justify-center'>
+                                <Image
+                                    src="/images/logo.png"
+                                    height={200}
+                                    width={200}
+                                    alt=" school"
+                                    className='w-42 h-20 flex justify-center items-center'
+                                />
                                 </div>
-                                <div className='space-y-6'>
+                                <div className='space-y-4'>
                                     <div className="relative">
+                                        <FormItem label="Username or email address" labelType="label-sm" labelWidth="w-full"></FormItem>
                                         <InputFields size="w-full" placeholder="Username" />
                                     </div>
                                     <div className="relative">
-                                        <InputFields size="w-full" placeholder="password" />
+                                        <FormItem label="Password" labelType="label-sm" labelWidth="w-full"></FormItem>
+                                        <InputFields size="w-full" placeholder="Password" />
                                     </div>
                                     <div className='flex justify-between'>
                                         <div>
@@ -56,25 +69,6 @@ const Login = ({ showSidemenu }) => {
                             </div>
                             <h1 className='text-2xl flex'>SS / </h1>
                             <span className='text-xs'>Starling school</span>
-                        </div>
-                    </div>
-                </div>
-                <div className='w-1/2 h-full bg-[#607EAA] flex justify-center my-auto'>
-                    <div className='w-1/2 h-3/4 space-y-4 my-auto'>
-                        <div className='flex items-center justify-center space-x-2'>
-                            <Image
-                                src="/images/icon/school.png"
-                                height={32}
-                                width={32}
-                                alt=" school"
-                            />
-                            <h1 className='text-3xl flex'>SS / </h1>
-                            <span className='text-md'>Starling school</span>
-                        </div>
-                        <div>
-                            <p className='text-xs text-center'>School System Infromation</p>
-                        </div>
-                        <div>
                         </div>
                     </div>
                 </div>

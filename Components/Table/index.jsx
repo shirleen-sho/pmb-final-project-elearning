@@ -72,21 +72,23 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
                 </td>
               ))}
               {action && (
-                <td className={`${defaultCellStyle} border-b text-center`}>
+                <td className={`${defaultCellStyle} border-b text-center w-fit`}>
                   {action === "archive-edit" && (
                     <div className="w-full flex flex-row justify-center gap-4">
-                      <button className="hover:text-primary-600" title="View">
-                        <HiOutlineEye size={18} />
-                      </button>
-                      <button
-                        className="hover:text-primary-600"
+                      <Button type="link" title="View">
+                        <HiOutlineEye className="hover:text-primary-600" size={18} />
+                      </Button>
+                      <Button
+                        type="link"
                         title="Archive"
                       >
-                        <HiOutlineArchive size={18} />
-                      </button>
-                      <button className="hover:text-primary-600" title="Edit">
-                        <HiOutlinePencil size={18} />
-                      </button>
+                        <HiOutlineArchive size={18} className="hover:text-primary-600" />
+                      </Button>
+                      <Button  
+                        type="link"
+                        title="Edit">
+                        <HiOutlinePencil className="hover:text-primary-600" size={18} />
+                      </Button>
                     </div>
                   )}
                 </td>

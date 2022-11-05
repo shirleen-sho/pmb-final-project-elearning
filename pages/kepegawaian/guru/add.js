@@ -10,7 +10,7 @@ import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
 import ColorPicker from "../../../Components/ColorPicker";
 
-const addGuru = () => {
+export default function addGuru () {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState(null);
 
@@ -81,7 +81,7 @@ const addGuru = () => {
                             </div>
                           ))
                         )}
-                        <div className="flex flex-row gap-5 items-center ">
+                        <div className="flex flex-row items-center ">
                           <Button type="light"
                             handleClick={() => onImageRemove(0)}
                             className="text-sm text-red-400 font-semibold disabled:text-gray-300"
@@ -243,5 +243,3 @@ const addGuru = () => {
     </Layout>
   );
 };
-
-export default addGuru;

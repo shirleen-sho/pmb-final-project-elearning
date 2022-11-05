@@ -128,12 +128,26 @@ export const useMenuProvider = () => {
             name: "Staff",
             title: "Staff Management",
             detail: "See list of staff here!",
+            actionMenu: [
+              {
+                route: "/kepegawaian/staff/add",
+                name: "Staff",
+                title: "Add Staff",
+              },
+            ],
           },
           {
             route: "/kepegawaian/guru",
             name: "Guru",
             title: "Guru Management",
             detail: "See list of teachers here!",
+            actionMenu: [
+              {
+                route: "/kepegawaian/guru/add",
+                name: "Guru",
+                title: " Add Guru",
+              },
+            ],
           },
         ],
       },

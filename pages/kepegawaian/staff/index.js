@@ -17,7 +17,7 @@ const Staff = () => {
         <Buttons link="/kepegawaian/guru/add">add</Buttons>
       </div>
         
-      <div className="grid grid-cols-6 grid-flow-cols  grid-flow-rows gap-">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-8 gap-2 md:gap-4 lg:gap-6 p-5">
         <CardUsers users={users}></CardUsers>
       </div>
     </Layout>

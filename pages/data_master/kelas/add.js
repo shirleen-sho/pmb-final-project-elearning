@@ -79,8 +79,11 @@ const AddKelas = () => {
           {/* STATUS */}
           <FormItem label="Status" labelType="label-sm" labelWidth="w-1/4">
             <div className="flex flex-row gap-6 w-1/3">
-              {pilihan_status.map((i) => (
-                <div className="radio flex flex-row gap-2">
+              {pilihan_status.map((i, index) => (
+                <div
+                  className="radio flex flex-row gap-2"
+                  key={"radio" + index}
+                >
                   <input
                     type="radio"
                     value={i.value}

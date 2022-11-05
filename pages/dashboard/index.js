@@ -122,8 +122,11 @@ const Dashboard = () => {
             <div className="flex flex-col gap-3.5">
               {list_belum_lunas
                 .filter((i, index) => index < 3) // hanya memunculkan 3 data
-                .map((i) => (
-                  <div className="border rounded-lg text-xs p-3 bg-white">
+                .map((i, index) => (
+                  <div
+                    className="border rounded-lg text-xs p-3 bg-white"
+                    key={"siswaBelumLunas" + index}
+                  >
                     <div className="grid grid-rows-2 grid-cols-12 gap-x-3 gap-y-0.5">
                       <div className="row-start-1 row-span-2 col-start-1 col-span-2 flex items-center">
                         <div className="rounded-lg min-h-6 min-w-6 h-10 w-10 relative">
@@ -223,8 +226,11 @@ const Dashboard = () => {
             <div className="flex flex-col gap-3.5">
               {list_belum_submit_tugas
                 .filter((i, index) => index < 5) // hanya memunculkan 5 data
-                .map((i) => (
-                  <div className="border rounded-lg text-xs p-3 bg-white">
+                .map((i, index) => (
+                  <div
+                    className="border rounded-lg text-xs p-3 bg-white"
+                    key={"siswaBelumSubmit" + index}
+                  >
                     <div className="grid grid-rows-2 grid-cols-8 gap-x-3 gap-y-0.5">
                       <div className="row-start-1 row-span-2 col-start-1 col-span-2 flex items-center">
                         <div className="rounded-lg min-h-6 min-w-6 h-10 w-10 relative">

@@ -62,7 +62,10 @@ const IdentitasSekolah = () => {
                           </button>
                         ) : (
                           imageList.map((image, index) => (
-                            <div className="w-16 h-full relative">
+                            <div
+                              className="w-16 h-full relative"
+                              key={"image" + index}
+                            >
                               <Image
                                 src={image["data_url"]}
                                 alt="image"

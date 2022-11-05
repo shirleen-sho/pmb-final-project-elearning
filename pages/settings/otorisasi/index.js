@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../Components/Layout";
-import Tabs from "../../Components/Tabs";
-import Button from "../../Components/Buttons";
-import Selects from "../../Components/Selects";
-import { useAppContext } from "../../Hooks/useAppContext";
-import TableOtorisasi from "../../Components/Table/otorisasi";
+import Layout from "../../../Components/Layout";
+import Tabs from "../../../Components/Tabs";
+import Button from "../../../Components/Buttons";
+import Selects from "../../../Components/Selects";
+import { useAppContext } from "../../../Hooks/useAppContext";
+import TableOtorisasi from "../../../Components/Table/otorisasi";
 
 const PengaturanOtorisasi = () => {
   const list = [
-    { id: 1, name: "Level Staff", tab: "" },
+    { id: 1, name: "Level Staff", tab: "/level" },
     { id: 2, name: "Pengaturan Otorisasi", tab: "/otorisasi" },
   ];
 

@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../Components/Layout";
-import Tabs from "../../Components/Tabs";
-import Button from "../../Components/Buttons";
-import Table from "../../Components/Table";
-import { useAppContext } from "../../Hooks/useAppContext";
-import Search from "../../Components/Search";
+import Layout from "../../../Components/Layout";
+import Tabs from "../../../Components/Tabs";
+import Button from "../../../Components/Buttons";
+import Table from "../../../Components/Table";
+import { useAppContext } from "../../../Hooks/useAppContext";
+import Search from "../../../Components/Search";
 
 const Settings = () => {
   const list = [
-    { id: 1, name: "Level Staff", tab: "" },
+    { id: 1, name: "Level Staff", tab: "/level" },
     { id: 2, name: "Pengaturan Otorisasi", tab: "/otorisasi" },
   ];
 

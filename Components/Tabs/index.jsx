@@ -5,35 +5,10 @@ import { useAppContext } from "../../Hooks/useAppContext";
 
 const Tabs = ({ list, pathName, children }) => {
   const { menu } = useAppContext();
-  const {
-    menus,
-    selectedMenu,
-    selectedSubmenu,
-    setSelectedMenu,
-    setSelectedSubmenu,
-  } = menu;
+  const { selectedMenu, selectedSubmenu, selectedActionmenu } = menu;
 
   const location = useRouter();
   const path = location.asPath;
-  const pathMenu = "/" + path.split("/")[1];
-
-  useEffect(() => {
-    // fungsi untuk memastikan state menu terupdate sesuai dengan location
-    // misalnya ketika user mengakses page dari route secara manual
-    if (path !== selectedMenu) {
-      menus.map((m) => {
-        if (m.sub_menu !== undefined) {
-          const findSubMenu = m.sub_menu.find((i) => path === i.route);
-          if (findSubMenu !== undefined) {
-            setSelectedMenu(pathMenu);
-            setSelectedSubmenu(path);
-          } else {
-            setSelectedMenu(pathMenu);
-          }
-        }
-      });
-    }
-  }, []);
 
   return (
     <div className="w-full h-full text-sm relative">
@@ -45,7 +20,7 @@ const Tabs = ({ list, pathName, children }) => {
             selected = "border-b-2";
           }
           return (
-            <div className={`px-5 py-2 ${selected}`} key={i.tab}>
+            <div className={`px-5 py-2 ${selected}`} key={"tab" + i.tab}>
               <Link href={`${pathName}${i.tab}`}>{i.name}</Link>
             </div>
           );

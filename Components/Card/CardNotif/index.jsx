@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function CardNotif({ type }) {
   return (
-    <div className="flex ">
+    <div className="relative flex justify-center align-middle items-center w-full h-screen ">
       <div className="w-96 py-4 border shadow flex flex-col items-center justify-center rounded-xl space-y-3 m-2">
         {type ? null : (
           <div className="w-full flex justify-end px-5">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button from "../../Buttons";
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function CardNotif({ type }) {
+export default function CardNotif({ type , desc, title}) {
   return (
     <div className="relative flex justify-center align-middle items-center w-full h-screen ">
       <div className="w-96 py-4 border shadow flex flex-col items-center justify-center rounded-xl space-y-3 m-2">
@@ -23,12 +23,12 @@ export default function CardNotif({ type }) {
         />
         <div className="text-center">
           <div className="font-bold text-base">
-            {type ? "Yakin Ingin Menghapus Data?" : "Data Deleted!"}
+            {type ?  title || "Yakin Ingin Menghapus Data?"  : "Data Deleted!"}
           </div>
           <div className="text-xs">
             {type
               ? (
-                  "Setelah data dihapus, data ini tidak dapat dikembalikan!")
+                  desc || "Setelah data dihapus, data ini tidak dapat dikembalikan!" )
               : null}
           </div>
         </div>

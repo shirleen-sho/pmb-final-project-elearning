@@ -28,9 +28,9 @@ export default function CardUsers({ users }) {
               <div className="relative">
                 <div className="absolute top-0 right-5">
                   <div className="bg-white w-24 h-20 border rounded shadow px-4 ">
-                    <Button type="link"><HiOutlinePencil className="absolute left-2 hover:text-primary-400" size={12}/>Edit</Button>
-                    <Button type="link"><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400"/>Detail</Button>
-                    <Button type="link"><HiOutlineArchive size={12} className="absolute left-2 hover:text-primary-400"/>Archive</Button>
+                    <Button type="link" link="/dashboard"><HiOutlinePencil className="absolute left-2 hover:text-primary-400" size={12}/>Edit</Button>
+                    <Button type="link" link= "/dashboard"><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400" size={12}/>Detail</Button>
+                    <Button type="link" link= "/dashboard"><HiOutlineArchive className="absolute left-2 hover:text-primary-400" size={12}/>Archive</Button>
                   </div>
                 </div>
               </div>

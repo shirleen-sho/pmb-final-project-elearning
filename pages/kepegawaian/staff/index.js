@@ -23,7 +23,7 @@ const Staff = () => {
           {/* container top */}
           <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
             <Search></Search>
-            <Button link="/kepegawaian/guru/add">add</Button>
+            <Button link="/kepegawaian/staff/add">add</Button>
           </div>
         </div>
       </Tabs>

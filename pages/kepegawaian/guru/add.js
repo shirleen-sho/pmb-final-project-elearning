@@ -10,7 +10,7 @@ import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
 import ColorPicker from "../../../Components/ColorPicker";
 
-export default function addGuru () {
+export default function addGuru() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState(null);
 
@@ -36,7 +36,7 @@ export default function addGuru () {
             <FormItem label="Account" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
-            <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
               <div className="w-full h-16">
                 <ImageUploading
                   value={image}
@@ -82,7 +82,8 @@ export default function addGuru () {
                           ))
                         )}
                         <div className="flex flex-row items-center ">
-                          <Button type="light"
+                          <Button
+                            type="light"
                             handleClick={() => onImageRemove(0)}
                             className="text-sm text-red-400 font-semibold disabled:text-gray-300"
                             disabled={imageList.length === 0 ? true : false}
@@ -102,16 +103,16 @@ export default function addGuru () {
                 </ImageUploading>
               </div>
             </FormItem>
-            <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Nama" size="w-full" />
             </FormItem>
-            <FormItem label="NUPTK" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="NUPTK" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="NPS" size="w-full" />
             </FormItem>
             <FormItem
               label="Jenis Kelamin"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <Selects
                 list={[{ name: "Pria" }, { name: "Wanita" }]}
@@ -119,7 +120,7 @@ export default function addGuru () {
                 description="Pilih Jenis Kelamin"
               />
             </FormItem>
-            <FormItem label="Warna" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Warna" labelType="label-sm" labelWidth="w-1/3">
               <div className="relative py-2">
                 {/* preview warna terpilih */}
                 <div className="flex flex-row items-center gap-4">
@@ -149,14 +150,14 @@ export default function addGuru () {
             <FormItem
               label="No.Telp/WA"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <InputFields type="text" placeholder="No.Telp/WA" size="w-full" />
             </FormItem>
             <FormItem
               label="Tempat Lahir"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <InputFields
                 type="text"
@@ -167,11 +168,11 @@ export default function addGuru () {
             <FormItem
               label="Tanggal lahir"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <InputFields type="date" placeholder="Email" size="w-full" />
             </FormItem>
-            <FormItem label="Email" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Email" size="w-full" />
             </FormItem>
           </div>
@@ -181,28 +182,28 @@ export default function addGuru () {
           <div className="col-start-1 col-span-1">
             <FormItem label="Address" labelType="label-md" />
           </div>
-          <div className="col-start-2 col-span-full flex flex-col gap-5">
-            <FormItem label="Alamat" labelType="label-sm" labelWidth="w-1/5">
+          <div className="col-start-2 col-span-full mb-4">
+            <FormItem
+              label="Alamat"
+              labelType="label-sm"
+              labelWidth="w-[13.5%]"
+            >
               <TextArea placeholder="Alamat" />
             </FormItem>
-            <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/5">
+          </div>
+          <div className="col-start-2 col-span-4 flex flex-col gap-5">
+            <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kecamatan" size="w-full" />
             </FormItem>
-            <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/5">
+            <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kode Pos" size="w-full" />
             </FormItem>
-            <FormItem
-              label="Kabupaten / Kota"
-              labelType="label-sm"
-              labelWidth="w-1/5"
-            >
-              <InputFields
-                type="text"
-                placeholder="Kabupaten / Kota"
-                size="w-full"
-              />
+          </div>
+          <div className="col-start-6 col-span-4 flex flex-col gap-5">
+            <FormItem label="Kabupaten / Kota" labelType="label-sm"labelWidth="w-1/3">
+              <InputFields type="text" placeholder="Kabupaten / Kota" size="w-full"/>
             </FormItem>
-            <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/5">
+            <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Provinsi" size="w-full" />
             </FormItem>
           </div>
@@ -213,25 +214,20 @@ export default function addGuru () {
             <FormItem label="Password" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-full flex flex-col gap-5">
-            
-              <FormItem
-                label="Password"
-                labelType="label-sm"
-                labelWidth="w-1/5"
-              >
-                <InputFields
-                  type="text"
-                  placeholder="Password"
-                  size="w-full"
-                />
-              </FormItem>
-              <FormItem
-                label="Confirm Password"
-                labelType="label-sm"
-                labelWidth="w-1/5"
-              >
-                <InputFields type="text" placeholder="Confirm Password" size="w-full" />
-              </FormItem>
+            <FormItem label="Password" labelType="label-sm" labelWidth="w-[13.5%]" >
+              <InputFields type="text" placeholder="Password" size="w-full" />
+            </FormItem>
+            <FormItem
+              label="Confirm Password"
+              labelType="label-sm"
+              labelWidth="w-[13.5%]"
+            >
+              <InputFields
+                type="text"
+                placeholder="Confirm Password"
+                size="w-full"
+              />
+            </FormItem>
           </div>
         </div>
         <div className="border-b border-neutral-2" />
@@ -242,4 +238,4 @@ export default function addGuru () {
       </div>
     </Layout>
   );
-};
+}

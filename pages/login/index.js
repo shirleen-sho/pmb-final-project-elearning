@@ -7,7 +7,7 @@ import FormItem from "../../Components/FormItem";
 
 const Login = () => {
   const info = [
-    { picture: "/images/icon/Dashboard.png", title: "", desc: "" },
+    { picture: "/images/icon/Dashboard.png", title: "Monitor your school", desc: "At starling school we make it easy for students, admins, and teachers to monitor all learning activities" },
     // { picture: "/images/icon/Dashboard.png", title: "", desc: "" },
     // { picture: "/images/icon/Dashboard.png", title: "", desc: "" },
   ];
@@ -17,7 +17,7 @@ const Login = () => {
     <>
       <div className="w-full h-screen flex">
         <div className="w-1/2 h-full bg-primary-300 flex justify-center my-auto">
-          <div className="w-2/3 h-3/4 space-y-4 my-auto">
+          <div className="w-3/4 h-3/4 space-y-4 my-auto">
             {info.map((value, index) => (
               <div key={index} className="space-y-12">
                 <Image
@@ -30,11 +30,10 @@ const Login = () => {
                 <div className="w-full flex flex-col space-y-8 justify-center items-center">
                   <div className="w-80 flex justify-center flex-col">
                     <h1 className="text-center font-extrabold text-lg">
-                      Monitor your school
+                      {value.title}
                     </h1>
                     <p className="text-center text-sm font-extralight">
-                      At starling school we make it easy for students, admins,
-                      and teachers to monitor all learning activities
+                      {value.desc}
                     </p>
                   </div>
                   <div className="w-full flex justify-center space-x-4">
@@ -66,7 +65,7 @@ const Login = () => {
           </div>
         </div>
         <div className="w-1/2 h-full bg-white flex justify-center items-center">
-          <div className="w-1/2 h-1/2 rounded-xl shadow-xl px-6 space-y-4 border">
+          <div className="w-1/2 h-1/2 rounded-xl shadow px-6 space-y-4 border">
             <div className="w-full h-full flex flex-col justify-evenly">
               <div className="space-y-4">
                 <div className="flex justify-center">

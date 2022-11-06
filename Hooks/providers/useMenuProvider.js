@@ -133,6 +133,7 @@ export const useMenuProvider = () => {
                 route: "/kepegawaian/staff/add",
                 name: "Staff",
                 title: "Add Staff",
+                detail: "See list of staff here!"
               },
             ],
           },
@@ -146,6 +147,7 @@ export const useMenuProvider = () => {
                 route: "/kepegawaian/guru/add",
                 name: "Guru",
                 title: " Add Guru",
+                detail: "See list of teachers here!"
               },
             ],
           },
@@ -181,18 +183,50 @@ export const useMenuProvider = () => {
             route: "/data_akademik/mata_pelajaran",
             name: "Mata Pelajaran",
             title: "Mata Pelajaran",
+            actionMenu: [
+              {
+                route: "/data_akademik/mata_pelajaran/add",
+                name: "Mata Pelajaran",
+                title: "Add Mata Pelajaran",
+              },
+            ],
           },
           {
             route: "/data_akademik/jadwal_pelajaran",
             name: "Jadwal Pelajaran",
             title: "Jadwal Pelajaran",
+            actionMenu: [
+              {
+                route: "/data_akademik/jadwal_pelajaran/add",
+                name: "Jadwal Pelajaran",
+                title: "Add Jadwal Pelajaran",
+              },
+            ],
           },
           {
             route: "/data_akademik/silabus",
             name: "Silabus",
             title: "Silabus",
+            actionMenu: [
+              {
+                route: "/data_akademik/silabus/add",
+                name: "Silabus",
+                title: "Add Silabus",
+              },
+            ],
           },
-          { route: "/data_akademik/rpp", name: "RPP", title: "RPP" },
+          { 
+            route: "/data_akademik/rpp", 
+            name: "RPP",
+            title: "Rencana Pelaksanaan Pembelajaran",
+            actionMenu: [
+              {
+                route: "/data_akademik/rpp/add",
+                name: "Rencana Pelaksanaan Pembelajaran",
+                title: " Add Rencana Pelaksanaan Pembelajaran",
+              },
+            ],
+          },
         ],
       },
       {

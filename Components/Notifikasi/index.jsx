@@ -33,8 +33,10 @@ const Notifikasi = ({ type, colorClass, description }) => {
   return (
     <>
       <div className={`p-4 mb-4 text-sm w-96 ${colorClass}`}>
-        <FaInfoCircle className="flex-shrink-0 inline w-4 h-4 mr-1" />
+        <div className="inline-flex">
+        <FaInfoCircle className="w-4 h-4 mr-1" />
         <span className="font-semibold">{description + " "}</span>
+        </div>
         <div>Change a few things up and try submitting again.</div>
       </div>
     </>

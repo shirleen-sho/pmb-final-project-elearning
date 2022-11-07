@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Button from "../../../Components/Buttons";
-import FormItem from "../../../Components/FormItem";
-import InputFields from "../../../Components/InputFields";
-import Layout from "../../../Components/Layout";
-import Selects from "../../../Components/Selects";
-import TextArea from "../../../Components/TextArea";
+import Button from "../../../../Components/Buttons";
+import FormItem from "../../../../Components/FormItem";
+import InputFields from "../../../../Components/InputFields";
+import Layout from "../../../../Components/Layout";
+import Selects from "../../../../Components/Selects";
+import TextArea from "../../../../Components/TextArea";
 import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
-import ColorPicker from "../../../Components/ColorPicker";
+import ColorPicker from "../../../../Components/ColorPicker";
 
 export default function addGuru() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -81,7 +81,7 @@ export default function addGuru() {
                             </div>
                           ))
                         )}
-                        <div className="flex flex-row items-center gap-5 ">
+                        <div className="flex flex-row items-center gap-5">
                           <Button
                             type="light"
                             handleClick={() => onImageRemove(0)}

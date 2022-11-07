@@ -167,6 +167,13 @@ export const useMenuProvider = () => {
             route: "/data_akademik/mata_pelajaran",
             name: "Mata Pelajaran",
             title: "Mata Pelajaran",
+            actionMenu: [
+              {
+                route: "/data_akademik/mata_pelajaran/kategori",
+                name: "Kategori Mata Pelajaran",
+                title: "Kategori Mata Pelajaran",
+              },
+            ],
           },
           {
             route: "/data_akademik/jadwal_pelajaran",

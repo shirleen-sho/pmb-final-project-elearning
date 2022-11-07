@@ -661,6 +661,103 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const list_siswa = [
+    {
+      nim: "2569874",
+      name: "Pendi",
+      kelas: "XII-IA 2",
+      jenis_kelamin: "pendi@gmail.com",
+      tempat_lahir: "Batam",
+      tanggal_lahir: "05/11/2003",
+    },
+    {
+      nim: "2569875",
+      name: "Poppy",
+      kelas: "XII-IA 2",
+      jenis_kelamin: "poppy@gmail.com",
+      tempat_lahir: "Batam",
+      tanggal_lahir: "01/03/2004",
+    },
+    {
+      nim: "2569876",
+      name: "Puput Lestari",
+      kelas: "XII-IA 2",
+      jenis_kelamin: "puput@gmail.com",
+      tempat_lahir: "Batam",
+      tanggal_lahir: "18/12/2003",
+    },
+    {
+      nim: "2569877",
+      name: "Refal",
+      kelas: "XII-IA 2",
+      jenis_kelamin: "refal@gmail.com",
+      tempat_lahir: "Batam",
+      tanggal_lahir: "20/05/2004",
+    },
+  ];
+
+  const list_jadwal_pelajaran = [
+    {
+      sesi: "I",
+      waktu: "07.30 - 08.15",
+      nama_hari: {
+        senin: "Matematika",
+        selasa: "Matematika",
+        rabu: "Bahasa Indonesia",
+        kamis: "PPKn",
+        jumat: "IPS",
+        sabtu: "PPKn",
+      },
+    },
+    {
+      sesi: "II",
+      waktu: "07.30 - 08.15",
+      nama_hari: {
+        senin: "Matematika",
+        selasa: "Matematika",
+        rabu: "Bahasa Indonesia",
+        kamis: "PPKn",
+        jumat: "IPS",
+        sabtu: "PPKn",
+      },
+    },
+    {
+      sesi: "III",
+      waktu: "07.30 - 08.15",
+      nama_hari: {
+        senin: "Matematika",
+        selasa: "Matematika",
+        rabu: "Bahasa Indonesia",
+        kamis: "PPKn",
+        jumat: "IPS",
+        sabtu: "PPKn",
+      },
+    },
+    {
+      sesi: "IV",
+      waktu: "07.30 - 08.15",
+      nama_hari: {
+        senin: "Matematika",
+        selasa: "Matematika",
+        rabu: "Bahasa Indonesia",
+        kamis: "PPKn",
+        jumat: "IPS",
+        sabtu: "PPKn",
+      },
+    },
+    {
+      sesi: "V",
+      waktu: "07.30 - 08.15",
+      nama_hari: {
+        senin: "Matematika",
+        selasa: "Matematika",
+        rabu: "Bahasa Indonesia",
+        kamis: "PPKn",
+        jumat: "IPS",
+        sabtu: "PPKn",
+      },
+    },
+  ];
 
   return {
     list1,
@@ -680,6 +777,8 @@ export const useDummyProvider = () => {
     dataDummyTrial2,
     dataDummyTrial3,
     dataDummyTrial4,
-    users
+    users,
+    list_siswa,
+    list_jadwal_pelajaran,
   };
 };

@@ -15,8 +15,6 @@ const JamPembelajaran = () => {
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Jam Pembelajaran"
-          buttonAddLink="/data_master/jam_pembelajaran/add"
-          buttonAddText="Add Jam Pembelajaran"
         />
       </div>
     </Layout>

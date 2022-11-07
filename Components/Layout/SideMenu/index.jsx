@@ -22,13 +22,8 @@ const SideMenu = () => {
   };
 
   const { menu } = useAppContext();
-  const {
-    menus,
-    selectedMenu,
-    selectedSubmenu,
-    setSelectedMenu,
-    setSelectedSubmenu,
-  } = menu;
+  const { configMenu, selectedMenu, selectedSubmenu, selectedActionmenu } =
+    menu;
 
   return (
     <div className="relative bg-primary-100 flex flex-col gap-10 px-2 py-14 rounded-lg min-h-screen h-fit min-w-fit">
@@ -55,61 +50,55 @@ const SideMenu = () => {
         </button>
       </div>
       <div className="flex flex-col gap-1">
-        {menus.map(({ menu, sub_menu }) => (
-          <div className="flex flex-col gap-1" key={menu.route}>
-            <Link
-              href={sub_menu ? sub_menu[0].route : menu.route}
-              key={menu.route}
-              legacyBehavior
-            >
-              <a
-                title={showSidemenu ? "" : menu.name}
-                className={
-                  selectedMenu === menu.route
-                    ? `font-semibold text-xs ${paddingMenu} bg-primary-200 rounded-full`
-                    : `font-semibold text-xs ${paddingMenu} hover:bg-primary-200 hover:rounded-full`
-                }
-                onClick={() => {
-                  if (sub_menu) {
-                    setSelectedSubmenu(sub_menu[0].route);
-                  } else {
-                    setSelectedSubmenu("");
-                  }
-                  setSelectedMenu(menu.route);
-                  if (!showSidemenu) {
-                    setShowSidemenu(true);
-                  }
-                }}
+        {configMenu.mainMenu.map(
+          ({ route, name, title, detail, icon, subMenu }) => (
+            <div className="flex flex-col gap-1" key={route}>
+              <Link
+                href={subMenu ? subMenu[0].route : route}
+                key={route}
+                legacyBehavior
               >
-                <div className="flex flex-row justify-between items-center gap-4">
-                  <div className="flex flex-row gap-4">
-                    <Image
-                      src={
-                        menu.icon
-                          ? `/images/icon/${menu.icon}`
-                          : "/images/icon/icon settings.png"
-                      }
-                      alt="icon"
-                      width={16}
-                      height={16}
-                    />
-                    {showSidemenu && menu.name}
+                <a
+                  title={showSidemenu ? "" : name}
+                  className={
+                    selectedMenu === route
+                      ? `font-semibold text-xs ${paddingMenu} bg-primary-200 rounded-full`
+                      : `font-semibold text-xs ${paddingMenu} hover:bg-primary-200 hover:rounded-full`
+                  }
+                  onClick={() => {
+                    if (!showSidemenu) {
+                      setShowSidemenu(true);
+                    }
+                  }}
+                >
+                  <div className="flex flex-row justify-between items-center gap-4">
+                    <div className="flex flex-row gap-4">
+                      <Image
+                        src={
+                          icon
+                            ? `/images/icon/${icon}`
+                            : "/images/icon/icon settings.png"
+                        }
+                        alt="icon"
+                        width={16}
+                        height={16}
+                      />
+                      {showSidemenu && name}
+                    </div>
+                    {subMenu &&
+                      showSidemenu &&
+                      (selectedMenu === route ? (
+                        <HiChevronUp size={16} />
+                      ) : (
+                        <HiChevronDown size={16} />
+                      ))}
                   </div>
-                  {sub_menu &&
-                    showSidemenu &&
-                    (selectedMenu === menu.route ? (
-                      <HiChevronUp size={16} />
-                    ) : (
-                      <HiChevronDown size={16} />
-                    ))}
-                </div>
-              </a>
-            </Link>
-            {showSidemenu && selectedMenu === menu.route && sub_menu && (
-              <div className="flex flex-row justify-center">
-                <div className="bg-primary-50 flex flex-col w-4/5">
-                  {sub_menu.length > 0 &&
-                    sub_menu.map((sub) => (
+                </a>
+              </Link>
+              {showSidemenu && selectedMenu === route && subMenu && (
+                <div className="flex flex-row justify-center">
+                  <div className="bg-primary-50 flex flex-col w-4/5">
+                    {subMenu.map((sub) => (
                       <Link href={sub.route} key={sub.route} legacyBehavior>
                         <a
                           className={
@@ -117,19 +106,17 @@ const SideMenu = () => {
                               ? "font-normal text-2xs px-4 py-2 border-l-4 border-neutral-4"
                               : "font-normal text-2xs px-4 py-2 border-l-4 border-transparent hover:border-primary-500"
                           }
-                          onClick={() => {
-                            setSelectedSubmenu(sub.route);
-                          }}
                         >
                           {sub.name}
                         </a>
                       </Link>
                     ))}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          )
+        )}
       </div>
     </div>
   );

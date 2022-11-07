@@ -62,7 +62,10 @@ const IdentitasSekolah = () => {
                           </button>
                         ) : (
                           imageList.map((image, index) => (
-                            <div className="w-16 h-full relative">
+                            <div
+                              className="w-16 h-full relative"
+                              key={"image" + index}
+                            >
                               <Image
                                 src={image["data_url"]}
                                 alt="image"
@@ -143,16 +146,8 @@ const IdentitasSekolah = () => {
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
-            <FormItem
-              label="Kabupaten / Kota"
-              labelType="label-sm"
-              labelWidth="w-1/3"
-            >
-              <InputFields
-                type="text"
-                placeholder="Kabupaten / Kota"
-                size="w-full"
-              />
+            <FormItem label="Kabupaten / Kota" labelType="label-sm"labelWidth="w-1/3">
+              <InputFields type="text" placeholder="Kabupaten / Kota" size="w-full"/>
             </FormItem>
             <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Provinsi" size="w-full" />

@@ -7,7 +7,7 @@ const FormItem = ({ label, labelType, labelWidth, children }) => {
       labelWidth = "";
       break;
     case "label-sm":
-      labelType = "font-semibold text-[13px] leading-5";
+      labelType = "font-semibold text-xs leading-5";
       break;
     case "label-md":
       labelType = "font-bold text-base";

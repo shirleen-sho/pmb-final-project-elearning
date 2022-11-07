@@ -14,7 +14,6 @@ const Gedung = () => {
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Gedung"
-          buttonAddLink="/data_master/gedung/add"
         />
       </div>
     </Layout>

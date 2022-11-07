@@ -18,7 +18,7 @@ const Selects = ({ list, size, description , handleChange ,value}) => {
       <ul
         className={`bg-white overflow-y-auto rounded shadow 
         ${size} 
-        ${open ? "mt-3 mb-2 border z-10 absolute " : "max-h-0"}`}
+        ${open ? "mt-3 mb-2 absolute border z-10" : "max-h-0"}`}
       >
         {list.map((value) => (
           <li

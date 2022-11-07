@@ -14,7 +14,6 @@ const Kelas = () => {
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Kelas"
-          buttonAddLink="/data_master/kelas/add"
         />
       </div>
     </Layout>

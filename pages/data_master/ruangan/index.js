@@ -14,7 +14,6 @@ const Ruangan = () => {
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Ruangan"
-          buttonAddLink="/data_master/ruangan/add"
         />
       </div>
     </Layout>

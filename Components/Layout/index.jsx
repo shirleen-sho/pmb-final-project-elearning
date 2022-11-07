@@ -6,35 +6,34 @@ import { useAppContext } from "../../Hooks/useAppContext";
 
 const Layout = ({ children }) => {
   const { menu } = useAppContext();
-  const {
-    menus,
-    selectedMenu,
-    selectedSubmenu,
-    setSelectedMenu,
-    setSelectedSubmenu,
-  } = menu;
+  const { setSelectedMenu, setSelectedSubmenu, setSelectedActionmenu } = menu;
 
   const location = useRouter();
   const path = location.asPath;
   const pathMenu = "/" + path.split("/")[1];
+  const pathSubMenu = "/" + path.split("/")[2];
+  const pathAction = "/" + path.split("/")[3];
 
   useEffect(() => {
-    // fungsi untuk memastikan state menu terupdate sesuai dengan location
-    // misalnya ketika user mengakses page dari route secara manual tanpa menekan submenu
-    if (path !== selectedMenu) {
-      menus.map((m) => {
-        if (m.sub_menu !== undefined) {
-          const findSubMenu = m.sub_menu.find((i) => path === i.route);
-          if (findSubMenu !== undefined) {
-            setSelectedMenu(pathMenu);
-            setSelectedSubmenu(path);
-          } else {
-            setSelectedMenu(pathMenu);
-          }
-        }
-      });
+    setSelectedMenu(pathMenu);
+    if (pathSubMenu === "/undefined") {
+      setSelectedSubmenu("");
+    } else {
+      setSelectedSubmenu(pathMenu + pathSubMenu);
     }
-  }, []);
+    if (pathAction === "/undefined") {
+      setSelectedActionmenu("");
+    } else {
+      setSelectedActionmenu(pathMenu + pathSubMenu + pathAction);
+    }
+  }, [
+    pathAction,
+    pathMenu,
+    pathSubMenu,
+    setSelectedActionmenu,
+    setSelectedMenu,
+    setSelectedSubmenu,
+  ]);
 
   return (
     <div className="flex flex-row gap-10 p-10">

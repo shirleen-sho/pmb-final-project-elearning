@@ -1,15 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Button from "../Buttons";
-import InputFields from "../InputFields";
-import Search from "../Search";
-import {
-  HiOutlineArchive,
-  HiOutlinePencil,
-  HiOutlineEye,
-  HiChevronLeft,
-  HiChevronRight,
-} from "react-icons/hi";
 
 const TableMerge = ({ data }) => {
   const [tableHead, setTableHead] = useState([]);
@@ -19,56 +8,53 @@ const TableMerge = ({ data }) => {
     spanCols: "",
   });
 
-  const dataProcessing = async () => {
-    let table_head = [];
-    let table_head_formatted = [];
-    let cols = 0;
-    let colsChild = 0;
-    Object.keys(data[0]).forEach((key) => {
-      const splitKey = key.split("_");
-      const formattedKey = splitKey.join(" ");
-      if (typeof data[0][key] === "object") {
-        let head = [];
-        let head_formatted = [];
-        Object.keys(data[0][key]).forEach((k) => {
-          const splitK = k.split("_");
-          const formattedK = splitK.join(" ");
-          head.push(k);
-          head_formatted.push(formattedK);
-          cols += 1;
-          colsChild += 1;
-        });
-        table_head.push({
-          top: key,
-          bottom: head,
-        });
-        table_head_formatted.push({
-          top: formattedKey,
-          bottom: head_formatted,
-        });
-      } else {
-        table_head.push(key);
-        table_head_formatted.push(formattedKey);
-        cols += 1;
-      }
-    });
-    setTableHead(table_head);
-    setTableHeadFormatted(table_head_formatted);
-    setStyle({
-      gridCols: `grid-cols-${cols}`,
-      spanCols: `col-span-${colsChild}`,
-    });
-  };
-
   const defaultCellStyle =
     "px-3 py-3 border border-collapse border-gray-200 flex justify-center items-center";
   const fontHead = "font-semibold";
 
   useEffect(() => {
-    (async () => {
-      await dataProcessing();
-    })();
-  }, []);
+    const dataProcessing = () => {
+      let table_head = [];
+      let table_head_formatted = [];
+      let cols = 0;
+      let colsChild = 0;
+      Object.keys(data[0]).forEach((key) => {
+        const splitKey = key.split("_");
+        const formattedKey = splitKey.join(" ");
+        if (typeof data[0][key] === "object") {
+          let head = [];
+          let head_formatted = [];
+          Object.keys(data[0][key]).forEach((k) => {
+            const splitK = k.split("_");
+            const formattedK = splitK.join(" ");
+            head.push(k);
+            head_formatted.push(formattedK);
+            cols += 1;
+            colsChild += 1;
+          });
+          table_head.push({
+            top: key,
+            bottom: head,
+          });
+          table_head_formatted.push({
+            top: formattedKey,
+            bottom: head_formatted,
+          });
+        } else {
+          table_head.push(key);
+          table_head_formatted.push(formattedKey);
+          cols += 1;
+        }
+      });
+      setTableHead(table_head);
+      setTableHeadFormatted(table_head_formatted);
+      setStyle({
+        gridCols: `grid-cols-${cols}`,
+        spanCols: `col-span-${colsChild}`,
+      });
+    };
+    dataProcessing();
+  }, [data]);
 
   return (
     <table

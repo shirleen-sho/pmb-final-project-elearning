@@ -26,7 +26,14 @@ const Layout = ({ children }) => {
     } else {
       setSelectedActionmenu(pathMenu + pathSubMenu + pathAction);
     }
-  }, []);
+  }, [
+    pathAction,
+    pathMenu,
+    pathSubMenu,
+    setSelectedActionmenu,
+    setSelectedMenu,
+    setSelectedSubmenu,
+  ]);
 
   return (
     <div className="flex flex-row gap-10 p-10">

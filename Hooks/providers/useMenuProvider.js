@@ -302,13 +302,13 @@ export const useMenuProvider = () => {
           },
           {
             route: "/elearning/nilai",
-            name: "Penyumpulan Tugas",
-            title: "Penyumpulan Tugas",
+            name: "Nilai",
+            title: "Nilai",
             actionMenu: [
               {
-                route: "/elearning/penyumpulan_tugas/add",
-                name: "Penyumpulan Tugas",
-                title: "Add Penyumpulan Tugas",
+                route: "/elearning/nilai/add",
+                name: "Nilai",
+                title: "Add Nilai",
               },
             ],
           },

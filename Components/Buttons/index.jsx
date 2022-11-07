@@ -26,13 +26,13 @@ const Button = ({ type, classColor, style, children, link, handleClick }) => {
       classColor = "bg-[#00B5EE] text-white hover:bg-[#1392B8] shadow py-2 px-4 text-xs rounded";
       break;
     case "link":
-      classColor = "hover:underline text-[#252525] shadow py-2 px-4 text-xs rounded";
+      classColor = "hover:underline text-[#252525] text-xs rounded";
       break;
     case "icon":
       classColor = " hover:bg-gray-300 outline-none p-2 rounded-full ";
       break;
     default:
-      classColor = "bg-[#889AF9] outline-none text-white hover:bg-[#757AFF] shadow py-2 px-4 text-xs rounded";
+      classColor = "bg-primary-300 outline-none text-white hover:bg-[#757AFF] shadow py-2 px-4 text-xs rounded";
       break;
   }
   return (
@@ -40,7 +40,7 @@ const Button = ({ type, classColor, style, children, link, handleClick }) => {
       <a>
         <button
           type={type}
-          className={`inline-flex justify-center items-center leading-4 tracking-widest uppercase transition ease-in-out duration-500 font-semibold mx-2 ${classColor} ${style}`}
+          className={`inline-flex justify-center items-center leading-4 tracking-widest uppercase transition ease-in-out duration-500 font-semibold ${classColor} ${style}`}
           onClick={handleClick}
         >
           {children}

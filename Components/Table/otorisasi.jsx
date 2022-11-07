@@ -26,7 +26,9 @@ const TableOtorisasi = ({ data }) => {
         </thead>
         <tbody>
           {data.map((item, index) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             const [itemRow, setItemRow] = useState(item);
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             const [checkAll, setCheckAll] = useState(false);
             const handleChecked = (head, e) => {
               const row = itemRow;

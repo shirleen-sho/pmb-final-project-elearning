@@ -128,12 +128,28 @@ export const useMenuProvider = () => {
             name: "Staff",
             title: "Staff Management",
             detail: "See list of staff here!",
+            actionMenu: [
+              {
+                route: "/kepegawaian/staff/add",
+                name: "Staff",
+                title: "Add Staff",
+                detail: "See list of staff here!",
+              },
+            ],
           },
           {
             route: "/kepegawaian/guru",
             name: "Guru",
             title: "Guru Management",
             detail: "See list of teachers here!",
+            actionMenu: [
+              {
+                route: "/kepegawaian/guru/add",
+                name: "Guru",
+                title: " Add Guru",
+                detail: "See list of teachers here!",
+              },
+            ],
           },
         ],
       },
@@ -173,19 +189,49 @@ export const useMenuProvider = () => {
                 name: "Kategori Mata Pelajaran",
                 title: "Kategori Mata Pelajaran",
               },
+              {
+                route: "/data_akademik/mata_pelajaran/add",
+                name: "Mata Pelajaran",
+                title: "Add Mata Pelajaran",
+              },
             ],
           },
           {
             route: "/data_akademik/jadwal_pelajaran",
             name: "Jadwal Pelajaran",
             title: "Jadwal Pelajaran",
+            actionMenu: [
+              {
+                route: "/data_akademik/jadwal_pelajaran/add",
+                name: "Jadwal Pelajaran",
+                title: "Add Jadwal Pelajaran",
+              },
+            ],
           },
           {
             route: "/data_akademik/silabus",
             name: "Silabus",
             title: "Silabus",
+            actionMenu: [
+              {
+                route: "/data_akademik/silabus/add",
+                name: "Silabus",
+                title: "Add Silabus",
+              },
+            ],
           },
-          { route: "/data_akademik/rpp", name: "RPP", title: "RPP" },
+          {
+            route: "/data_akademik/rpp",
+            name: "RPP",
+            title: "Rencana Pelaksanaan Pembelajaran",
+            actionMenu: [
+              {
+                route: "/data_akademik/rpp/add",
+                name: "Rencana Pelaksanaan Pembelajaran",
+                title: " Add Rencana Pelaksanaan Pembelajaran",
+              },
+            ],
+          },
         ],
       },
       {

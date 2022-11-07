@@ -27,7 +27,7 @@ const addStaff = () => {
             <FormItem label="Account" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
-            <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
               <div className="w-full h-16">
                 <ImageUploading
                   value={image}
@@ -73,7 +73,8 @@ const addStaff = () => {
                           ))
                         )}
                         <div className="flex flex-row gap-5 items-center ">
-                          <Button type="light"
+                          <Button
+                            type="light"
                             handleClick={() => onImageRemove(0)}
                             className="text-sm text-red-400 font-semibold disabled:text-gray-300"
                             disabled={imageList.length === 0 ? true : false}
@@ -93,16 +94,16 @@ const addStaff = () => {
                 </ImageUploading>
               </div>
             </FormItem>
-            <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Nama" size="w-full" />
             </FormItem>
-            <FormItem label="NPS" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="NPS" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="NPS" size="w-full" />
             </FormItem>
             <FormItem
               label="Jenis Kelamin"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <Selects
                 list={[{ name: "Pria" }, { name: "Wanita" }]}
@@ -113,7 +114,7 @@ const addStaff = () => {
             <FormItem
               label="No.Telp/WA"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <InputFields type="text" placeholder="No.Telp/WA" size="w-full" />
             </FormItem>
@@ -122,7 +123,7 @@ const addStaff = () => {
             <FormItem
               label="Tempat Lahir"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <InputFields
                 type="text"
@@ -133,18 +134,14 @@ const addStaff = () => {
             <FormItem
               label="Tanggal lahir"
               labelType="label-sm"
-              labelWidth="w-1/2"
+              labelWidth="w-1/3"
             >
               <InputFields type="date" placeholder="Email" size="w-full" />
             </FormItem>
-            <FormItem label="Email" labelType="label-sm" labelWidth="w-1/2">
+            <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Email" size="w-full" />
             </FormItem>
-            <FormItem
-              label="Level"
-              labelType="label-sm"
-              labelWidth="w-1/2"
-            >
+            <FormItem label="Level" labelType="label-sm" labelWidth="w-1/3">
               <Selects
                 list={[{ name: "Guru" }, { name: "Manajemen" }]}
                 style="w-full"
@@ -158,20 +155,28 @@ const addStaff = () => {
           <div className="col-start-1 col-span-1">
             <FormItem label="Address" labelType="label-md" />
           </div>
-          <div className="col-start-2 col-span-full flex flex-col gap-5">
-            <FormItem label="Alamat" labelType="label-sm" labelWidth="w-1/5">
+          <div className="col-start-2 col-span-full mb-4">
+            <FormItem
+              label="Alamat"
+              labelType="label-sm"
+              labelWidth="w-[13.5%]"
+            >
               <TextArea placeholder="Alamat" />
             </FormItem>
-            <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/5">
+          </div>
+          <div className="col-start-2 col-span-4 flex flex-col gap-5">
+            <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kecamatan" size="w-full" />
             </FormItem>
-            <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/5">
+            <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kode Pos" size="w-full" />
             </FormItem>
+          </div>
+          <div className="col-start-6 col-span-4 flex flex-col gap-5">
             <FormItem
               label="Kabupaten / Kota"
               labelType="label-sm"
-              labelWidth="w-1/5"
+              labelWidth="w-1/3"
             >
               <InputFields
                 type="text"
@@ -179,7 +184,7 @@ const addStaff = () => {
                 size="w-full"
               />
             </FormItem>
-            <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/5">
+            <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Provinsi" size="w-full" />
             </FormItem>
           </div>
@@ -190,25 +195,24 @@ const addStaff = () => {
             <FormItem label="Password" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-full flex flex-col gap-5">
-            
-              <FormItem
-                label="Password"
-                labelType="label-sm"
-                labelWidth="w-1/5"
-              >
-                <InputFields
-                  type="text"
-                  placeholder="Password"
-                  size="w-full"
-                />
-              </FormItem>
-              <FormItem
-                label="Confirm Password"
-                labelType="label-sm"
-                labelWidth="w-1/5"
-              >
-                <InputFields type="text" placeholder="Confirm Password" size="w-full" />
-              </FormItem>
+            <FormItem
+              label="Password"
+              labelType="label-sm"
+              labelWidth="w-[13.5%]"
+            >
+              <InputFields type="text" placeholder="Password" size="w-full" />
+            </FormItem>
+            <FormItem
+              label="Confirm Password"
+              labelType="label-sm"
+              labelWidth="w-[13.5%]"
+            >
+              <InputFields
+                type="text"
+                placeholder="Confirm Password"
+                size="w-full"
+              />
+            </FormItem>
           </div>
         </div>
         <div className="border-b border-neutral-2" />

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
+import Search from "../../../Components/Search";
 import Tabs from "../../../Components/Tabs";
 
 const MataPelajaran = () => {
@@ -11,10 +13,14 @@ const MataPelajaran = () => {
   return (
     <Layout>
       <Tabs list={list} pathName="/data_akademik/mata_pelajaran">
-        <div className="flex flex-col gap-5 py-2"></div>
+        <div className="flex flex-col">
+          {/* container top */}
+          <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
+            <Search></Search>
+            <Button link="/data_akademik/mata_pelajaran/add">add</Button>
+          </div>
+        </div>
       </Tabs>
     </Layout>
   );
 };
-
-export default MataPelajaran;

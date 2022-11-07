@@ -5,19 +5,9 @@ import InputFields from "../Components/InputFields";
 import Layout from "../Components/Layout";
 import Selects from "../Components/Selects";
 import TextArea from "../Components/TextArea";
-import ImageUploading from "react-images-uploading";
-import { HiUpload } from "react-icons/hi";
-import Image from "next/image";
+import ImageUploader from "../Components/ImageUploader";
 
 const Profile = () => {
-  const [image, setImage] = useState(null);
-
-  const handleChangeImage = (currentImage, addUpdateIndex) => {
-    console.log("image", currentImage);
-    console.log("addUpdateIndex", addUpdateIndex);
-    setImage(currentImage);
-  };
-
   return (
     <Layout>
       <div className="flex flex-col gap-5">
@@ -27,73 +17,7 @@ const Profile = () => {
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
             <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
-              <div className="w-full h-32">
-                <ImageUploading
-                  value={image}
-                  onChange={handleChangeImage}
-                  dataURLKey="data_url"
-                >
-                  {({
-                    imageList,
-                    onImageUpload,
-                    // onImageRemoveAll,
-                    onImageUpdate,
-                    onImageRemove,
-                    isDragging,
-                    dragProps,
-                  }) => {
-                    let classBtn = "";
-                    if (isDragging) {
-                      classBtn = "bg-primary-50";
-                    } else {
-                      classBtn = "text-gray-400";
-                    }
-                    return (
-                      <div className="flex flex-row gap-8 w-full h-full">
-                        {imageList.length === 0 ? (
-                          <button
-                            className={`w-32 h-full rounded-full border shadow-md flex justify-center items-center ${classBtn}`}
-                            onClick={onImageUpload}
-                            {...dragProps}
-                          >
-                            <HiUpload size={32} />
-                          </button>
-                        ) : (
-                          imageList.map((image, index) => (
-                            <div
-                              className="w-32 h-full relative"
-                              key={"imageProfile" + index}
-                            >
-                              <Image
-                                src={image["data_url"]}
-                                alt="image"
-                                key={"image" + index}
-                                className="object-cover rounded-full shadow-lg"
-                                fill
-                              />
-                            </div>
-                          ))
-                        )}
-                        <div className="flex flex-col gap-2 items-end">
-                          <button
-                            onClick={() => onImageRemove(0)}
-                            className="text-sm text-red-400 font-semibold disabled:text-gray-300"
-                            disabled={imageList.length === 0 ? true : false}
-                          >
-                            Delete
-                          </button>
-                          <button
-                            onClick={() => onImageUpdate(0)}
-                            className="text-sm text-primary-400 font-semibold"
-                          >
-                            {imageList.length === 0 ? "Upload" : "Change"}
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  }}
-                </ImageUploading>
-              </div>
+              <ImageUploader />
             </FormItem>
             <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Nama" size="w-full" />

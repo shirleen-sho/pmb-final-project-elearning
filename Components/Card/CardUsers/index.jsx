@@ -4,9 +4,12 @@ import Image from "next/image";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { HiOutlineArchive, HiOutlineDocumentText, HiOutlineDotsVertical, HiOutlinePencil } from "react-icons/hi";
 import Button from "../../Buttons";
+import { useRouter } from "next/router";
 
 export default function CardUsers({ users }) {
   const [open, setOpen] = useState(false);
+  const location = useRouter();
+  const path = location.asPath;
   return (
     <>
       {users.map((value, index) => (
@@ -27,9 +30,9 @@ export default function CardUsers({ users }) {
             <>
               <div className="relative">
                 <div className="absolute top-0 right-5">
-                  <div className="bg-white w-24 h-20 border rounded shadow px-4 ">
-                    <Button type="link" link="/dashboard"><HiOutlinePencil className="absolute left-2 hover:text-primary-400" size={12}/>Edit</Button>
-                    <Button type="link" link= "/dashboard"><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400" size={12}/>Detail</Button>
+                  <div className="bg-white w-28 h-24 border rounded shadow px-4 ">
+                    <Button type="link" link= {path + `/detail/${value.id}`}><HiOutlinePencil className="absolute left-2 hover:text-primary-400" size={12}/>Edit</Button>
+                    <Button type="link" link= {path + `/detail/${value.id}`}><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400" size={12}/>Detail</Button>
                     <Button type="link" link= "/dashboard"><HiOutlineArchive className="absolute left-2 hover:text-primary-400" size={12}/>Archive</Button>
                   </div>
                 </div>

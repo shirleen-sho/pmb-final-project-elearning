@@ -17,13 +17,13 @@ const Login = () => {
     <>
       <div className="w-full h-screen flex">
         <div className="w-1/2 h-full bg-primary-300 flex justify-center my-auto">
-          <div className="w-3/4 h-3/4 space-y-4 my-auto">
+          <div className="w-[600px] h-[600px] space-y-4 my-auto">
             {info.map((value, index) => (
               <div key={index} className="space-y-12">
                 <Image
                   src={value.picture}
-                  height={596}
-                  width={853}
+                  height={1000}
+                  width={1000}
                   alt=" school"
                   className="w-full h-full flex justify-center items-center"
                 />
@@ -65,7 +65,7 @@ const Login = () => {
           </div>
         </div>
         <div className="w-1/2 h-full bg-white flex justify-center items-center">
-          <div className="w-1/2 h-1/2 rounded-xl shadow px-6 space-y-4 border">
+          <div className="w-96 h-96 flex justify-center items-center border rounded shadow-md p-6">
             <div className="w-full h-full flex flex-col justify-evenly">
               <div className="space-y-4">
                 <div className="flex justify-center">
@@ -133,6 +133,8 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      {/*  */}
 
       {/* <div className="min-h-screen bg-gradient-to-r from-primary-400 to-blue-200 py-6 flex flex-col justify-center sm:py-12">
                 <div className="relative py-3 sm:max-w-xl sm:mx-auto">

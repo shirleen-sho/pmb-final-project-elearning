@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between items-center h-[120px] border-b border-neutral-2">
+    <div className="flex flex-row justify-between items-center w-full h-[120px] border-b border-neutral-2">
       <div className="flex flex-col gap-2">
         <div className="font-bold text-3xl">{header.title}</div>
         {header.detail && (

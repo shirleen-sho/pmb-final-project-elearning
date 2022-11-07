@@ -164,12 +164,36 @@ export const useMenuProvider = () => {
             name: "Siswa",
             title: "Siswa Management",
             detail: "See list of Students here!",
+            actionMenu: [
+              {
+                route: "/kesiswaan/siswa/view",
+                name: "Data Siswa",
+                title: "Data Siswa",
+              },
+              {
+                route: "/kesiswaan/siswa/add",
+                name: "Add Siswa",
+                title: "Add Siswa",
+              },
+            ],
           },
           {
             route: "/kesiswaan/wali",
             name: "Wali Murid",
             title: "Wali Murid Management",
             detail: "See list of Wali Murid here!",
+            actionMenu: [
+              {
+                route: "/kesiswaan/wali/view",
+                name: "Data Wali Murid",
+                title: "Data Wali Murid",
+              },
+              {
+                route: "/kesiswaan/wali/add",
+                name: "Add Wali Murid",
+                title: "Add Wali Murid",
+              },
+            ],
           },
         ],
       },

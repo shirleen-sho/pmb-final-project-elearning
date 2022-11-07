@@ -19,18 +19,41 @@ module.exports = {
           800: "#4048c5",
           900: "#3534ae",
         },
-        secondary: {},
+        secondary: {
+          base:"#efd226",
+          hover: "#bba20e"
+        },
+        light: {
+          base:"#757AFF",
+          hover: "#889AF9"
+        },
+        dark:{
+          base:"#71717a",
+          hover: "#3f3f46"
+        },
         success: {
-          base: "#81e052",
-          hover: "#67d92a",
+          base: "#22c55e",
+          hover: "#15803d",
+        },
+        danger: {
+          base:"#E74A3B",
+          hover: "#b91c1c"
         },
         error: {
           base: "#ee2b2b",
           hover: "#dc1e25",
         },
         warning: {
-          base: "#f8bc54",
-          hover: "#f7ad31",
+          base: "#eab308",
+          hover: "#a16207",
+        },
+        info:{
+          base: "#0ea5e9",
+          hover: "#0369a1"
+        },
+        link:{
+          base: "#d1d5db",
+          hover: "#4b5563"
         },
         neutral: {
           1: "#F2F2F3",

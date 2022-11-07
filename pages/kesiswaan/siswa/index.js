@@ -64,7 +64,6 @@ const Siswa = () => {
             action="archive-edit"
             topNavigation={true}
             tableTitle="Daftar Siswa"
-            buttonAddLink="/kesiswaan/siswa/add"
           />
         </div>
       </Tabs>

@@ -14,7 +14,6 @@ const Tingkatan = () => {
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Tingkatan"
-          buttonAddLink="/data_master/tingkatan/add"
         />
       </div>
     </Layout>

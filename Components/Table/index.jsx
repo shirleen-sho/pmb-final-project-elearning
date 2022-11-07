@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Button from "../Buttons";
-import InputFields from "../InputFields";
 import Search from "../Search";
 import {
   HiOutlineArchive,
@@ -10,8 +9,9 @@ import {
   HiChevronLeft,
   HiChevronRight,
 } from "react-icons/hi";
+import { useRouter } from "next/router";
 
-const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
+const Table = ({ data, action, tableTitle, topNavigation }) => {
   let table_head = [];
   Object.keys(data[0]).forEach((key) => table_head.push(key));
 
@@ -25,6 +25,9 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
     colorHead = "top-[68px] border-b";
   }
 
+  const location = useRouter();
+  const path = location.asPath;
+
   return (
     <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full h-full">
       {/* top navigation table */}
@@ -33,7 +36,7 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
           <div className="font-semibold text-xl">{tableTitle || ""}</div>
           <div className="flex flex-row items-center gap-5">
             <Search />
-            <Button type="primary" link={buttonAddLink}>
+            <Button type="primary" link={path + "/add"}>
               Add
             </Button>
           </div>
@@ -72,22 +75,32 @@ const Table = ({ data, action, tableTitle, topNavigation, buttonAddLink }) => {
                 </td>
               ))}
               {action && (
-                <td className={`${defaultCellStyle} border-b text-center w-fit`}>
+                <td
+                  className={`${defaultCellStyle} border-b text-center w-fit`}
+                >
                   {action === "archive-edit" && (
                     <div className="w-full flex flex-row justify-center gap-4">
-                      <Button type="link" title="View">
-                        <HiOutlineEye className="hover:text-primary-600" size={18} />
+                      <Button type="link" title="View" link={path + "/view"}>
+                        <HiOutlineEye
+                          className="hover:text-primary-600"
+                          size={18}
+                        />
                       </Button>
                       <Button
                         type="link"
                         title="Archive"
+                        link={path + "/archive"}
                       >
-                        <HiOutlineArchive size={18} className="hover:text-primary-600" />
+                        <HiOutlineArchive
+                          size={18}
+                          className="hover:text-primary-600"
+                        />
                       </Button>
-                      <Button  
-                        type="link"
-                        title="Edit">
-                        <HiOutlinePencil className="hover:text-primary-600" size={18} />
+                      <Button type="link" title="Edit" link={path + "/edit"}>
+                        <HiOutlinePencil
+                          className="hover:text-primary-600"
+                          size={18}
+                        />
                       </Button>
                     </div>
                   )}

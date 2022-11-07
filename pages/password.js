@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "../../Components/Buttons";
-import Layout from "../../Components/Layout";
-import FormItem from "../../Components/FormItem";
-import InputFields from "../../Components/InputFields";
+import Button from "../Components/Buttons";
+import Layout from "../Components/Layout";
+import FormItem from "../Components/FormItem";
+import InputFields from "../Components/InputFields";
 
 const Password = () => {
   return (

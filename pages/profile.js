@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Button from "../../Components/Buttons";
-import FormItem from "../../Components/FormItem";
-import InputFields from "../../Components/InputFields";
-import Layout from "../../Components/Layout";
-import Selects from "../../Components/Selects";
-import TextArea from "../../Components/TextArea";
+import Button from "../Components/Buttons";
+import FormItem from "../Components/FormItem";
+import InputFields from "../Components/InputFields";
+import Layout from "../Components/Layout";
+import Selects from "../Components/Selects";
+import TextArea from "../Components/TextArea";
 import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";

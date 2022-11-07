@@ -24,3 +24,5 @@ const MataPelajaran = () => {
     </Layout>
   );
 };
+
+export default MataPelajaran;

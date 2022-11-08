@@ -4,6 +4,7 @@ import Button from "../../../Components/Buttons";
 import Selects from "../../../Components/Selects";
 import TableMerge from "../../../Components/Table/merge";
 import { useAppContext } from "../../../Hooks/useAppContext";
+import Search from "../../../Components/Search";
 
 const JadwalPelajaran = () => {
   const { dummy } = useAppContext();
@@ -50,6 +51,11 @@ const JadwalPelajaran = () => {
               <Button type="success">Simpan</Button>
             </div>
           </div>
+        </div>
+        {/* container top */}
+        <div className="flex flex-row items-center justify-end gap-8">
+          <Search></Search>
+          <Button link="/kepegawaian/guru/add">add</Button>
         </div>
         <TableMerge data={list_jadwal_pelajaran} />
       </div>

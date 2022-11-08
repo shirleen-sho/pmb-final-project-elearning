@@ -580,98 +580,98 @@ export const useDummyProvider = () => {
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 1
+      id: 1,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 2
+      id: 2,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 3
+      id: 3,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 4
+      id: 4,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 5
+      id: 5,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 6
+      id: 6,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 7
+      id: 7,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 8
+      id: 8,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 9
+      id: 9,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 10
+      id: 10,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 11
+      id: 11,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 12
+      id: 12,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 13
+      id: 13,
     },
     {
       name: "Pendi",
       nuptk: "NUPTK 219887370203223",
       image: "/images/profile.jpg",
       desc: "vercel",
-      id: 14
+      id: 14,
     },
   ];
 
@@ -773,6 +773,96 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const list_silabus = [
+    {
+      nama_mata_pelajaran: "Bahasa Indonesia",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_silabus: "SL001",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Bahasa Inggris",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_silabus: "SL002",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Bahasa Mandarin",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_silabus: "SL003",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Fisika",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_silabus: "SL004",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Kimia",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_silabus: "SL005",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Biologi",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_silabus: "SL006",
+      file: "Nama File",
+    },
+  ];
+
+  const list_rpp = [
+    {
+      nama_mata_pelajaran: "Bahasa Indonesia",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_rpp: "SL001",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Bahasa Inggris",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_rpp: "SL002",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Bahasa Mandarin",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_rpp: "SL003",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Fisika",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_rpp: "SL004",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Kimia",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_rpp: "SL005",
+      file: "Nama File",
+    },
+    {
+      nama_mata_pelajaran: "Biologi",
+      kelas: "VII B",
+      tahun_akademik: "Semester Ganjil 2022/2023",
+      kode_rpp: "SL006",
+      file: "Nama File",
+    },
+  ];
+
   return {
     list1,
     list2,
@@ -794,5 +884,7 @@ export const useDummyProvider = () => {
     users,
     list_siswa,
     list_jadwal_pelajaran,
+    list_silabus,
+    list_rpp,
   };
 };

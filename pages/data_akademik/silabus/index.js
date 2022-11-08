@@ -5,12 +5,12 @@ import { useAppContext } from "../../../Hooks/useAppContext";
 
 const Silabus = () => {
   const { dummy } = useAppContext();
-  const { list_ruangan } = dummy;
+  const { list_silabus } = dummy;
   return (
     <Layout>
       <div className="w-full h-full">
         <Table
-          data={list_ruangan}
+          data={list_silabus}
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Silabus"

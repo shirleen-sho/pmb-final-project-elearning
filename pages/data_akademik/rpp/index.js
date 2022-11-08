@@ -5,12 +5,12 @@ import { useAppContext } from "../../../Hooks/useAppContext";
 
 const RPP = () => {
   const { dummy } = useAppContext();
-  const { list_ruangan } = dummy;
+  const { list_rpp } = dummy;
   return (
     <Layout>
       <div className="w-full h-full">
         <Table
-          data={list_ruangan}
+          data={list_rpp}
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar RPP"

@@ -21,9 +21,10 @@ const SideMenu = () => {
     }
   };
 
-  const { menu } = useAppContext();
+  const { menu, user } = useAppContext();
   const { configMenu, selectedMenu, selectedSubmenu, selectedActionmenu } =
     menu;
+  const { showLogout, setShowLogout } = user;
 
   return (
     <div
@@ -66,9 +67,13 @@ const SideMenu = () => {
                       ? `font-semibold text-xs ${paddingMenu} bg-primary-200 rounded-full`
                       : `font-semibold text-xs ${paddingMenu} hover:bg-primary-200 hover:rounded-full`
                   }
-                  onClick={() => {
+                  onClick={(e) => {
                     if (!showSidemenu) {
                       setShowSidemenu(true);
+                    }
+                    if (route === "/logout") {
+                      e.preventDefault();
+                      setShowLogout(true);
                     }
                   }}
                 >

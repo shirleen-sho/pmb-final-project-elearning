@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SideMenu from "./SideMenu";
 import Header from "./Header";
 import { useRouter } from "next/router";
 import { useAppContext } from "../../Hooks/useAppContext";
+import CardLogOut from "../Card/CardLogOut";
 
 const Layout = ({ children }) => {
-  const { menu } = useAppContext();
+  const { menu, user } = useAppContext();
   const { setSelectedMenu, setSelectedSubmenu, setSelectedActionmenu } = menu;
+  const { showLogout, setShowLogout } = user;
 
   const location = useRouter();
   const path = location.asPath;
@@ -37,6 +39,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="w-full">
+      {showLogout && <CardLogOut />}
       <div className="flex flex-row gap-10 p-7 w-full">
         <SideMenu />
         <div className="flex flex-col flex-grow h-full">

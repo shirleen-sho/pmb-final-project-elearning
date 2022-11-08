@@ -73,7 +73,7 @@ export default function EditStaff() {
                             </div>
                           ))
                         )}
-                        {/* <div className="flex flex-row gap-5 items-center ">
+                        <div className="flex flex-row gap-5 items-center ">
                           <Button
                             type="light"
                             handleClick={() => onImageRemove(0)}
@@ -88,7 +88,7 @@ export default function EditStaff() {
                           >
                             {imageList.length === 0 ? "Upload" : "Change"}
                           </Button>
-                        </div> */}
+                        </div>
                       </div>
                     );
                   }}
@@ -218,8 +218,8 @@ export default function EditStaff() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          {/* <Button type="light">Back</Button> */}
-          <Button type="info">Save</Button>
+          <Button type="light">Back</Button>
+          <Button type="warning">Edit</Button>
         </div>
       </div>
     </Layout>

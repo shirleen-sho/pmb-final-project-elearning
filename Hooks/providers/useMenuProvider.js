@@ -282,6 +282,56 @@ export const useMenuProvider = () => {
         name: "E-Learning",
         title: "E-Learning",
         icon: <RiMacFill size={18} />,
+        subMenu: [
+          {
+            route: "/elearning/materi_pelajaran",
+            name: "Materi Pelajaran",
+            title: "Materi Pelajaran",
+            actionMenu: [
+              {
+                route: "/elearning/materi_pelajaran/add",
+                name: "Materi Pelajaran",
+                title: "Add Materi Pelajaran",
+              },
+            ],
+          },
+          {
+            route: "/elearning/tugas",
+            name: "Tugas",
+            title: "Tugas",
+            actionMenu: [
+              {
+                route: "/elearning/tugas/add",
+                name: "Tugas",
+                title: "Add Tugas",
+              },
+            ],
+          },
+          {
+            route: "/elearning/penyumpulan_tugas",
+            name: "Penyumpulan Tugas",
+            title: "Penyumpulan Tugas",
+            actionMenu: [
+              {
+                route: "/elearning/penyumpulan_tugas/add",
+                name: "Penyumpulan Tugas",
+                title: "Add Penyumpulan Tugas",
+              },
+            ],
+          },
+          {
+            route: "/elearning/nilai",
+            name: "Nilai",
+            title: "Nilai",
+            actionMenu: [
+              {
+                route: "/elearning/nilai/add",
+                name: "Nilai",
+                title: "Add Nilai",
+              },
+            ],
+          },
+        ],
       },
       {
         route: "/data_absensi",

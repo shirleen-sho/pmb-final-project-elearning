@@ -3,7 +3,7 @@ import SideMenu from "./SideMenu";
 import Header from "./Header";
 import { useRouter } from "next/router";
 import { useAppContext } from "../../Hooks/useAppContext";
-import CardLogOut from "../Card/CardLogOut";
+import CardNotif from "../Card/CardNotif";
 
 const Layout = ({ children }) => {
   const { menu, user } = useAppContext();
@@ -39,7 +39,13 @@ const Layout = ({ children }) => {
 
   return (
     <div className="w-full">
-      {showLogout && <CardLogOut />}
+      {showLogout && (
+        <CardNotif
+          type="logout"
+          title="Yakin Ingin Keluar"
+          desc="Setelah Logout, Anda Harus Login Kembali"
+        />
+      )}
       <div className="flex flex-row gap-10 p-7 w-full">
         <SideMenu />
         <div className="flex flex-col flex-grow h-full">

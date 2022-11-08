@@ -37,11 +37,18 @@ const Layout = ({ children }) => {
 
   return (
     <div className="w-full">
-      <div className="flex flex-row gap-10 p-10">
+      <div className="flex flex-row gap-10 p-7 w-full">
         <SideMenu />
         <div className="flex flex-col flex-grow h-full">
           <Header />
-          <div className="w-full h-full py-5">{children}</div>
+          <div className="w-full h-full pt-5">
+            <div
+              className="pr-10 scrollbar-thin scrollbar-thumb-primary-200 scrollbar-track-primary-50 scrollbar-thumb-rounded scrollbar-track-rounded hover:scrollbar-thumb-primary-300 overflow-y-scroll"
+              style={{ height: "calc(100vh - 176px)" }}
+            >
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     </div>

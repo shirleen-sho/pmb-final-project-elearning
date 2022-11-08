@@ -26,11 +26,12 @@ const SideMenu = () => {
     menu;
 
   return (
-    <div className="relative bg-primary-100 flex flex-col gap-10 px-2 py-14 rounded-lg min-h-screen h-fit min-w-fit">
+    <div
+      className="relative bg-primary-100 flex flex-col gap-14 px-2 py-14 rounded-lg min-w-fit"
+      style={{ height: "calc(100vh - 56px)" }}
+    >
       <div className="flex flex-row justify-center h-14">
-        <div
-          className={showSidemenu ? "h-14 w-40 relative" : "h-7 w-7 relative"}
-        >
+        <div className={`${showSidemenu ? "h-14 w-40" : "h-7 w-7"} relative`}>
           <Image
             src={showSidemenu ? "/images/logo.png" : "/images/icon/school.png"}
             height={200}
@@ -49,7 +50,7 @@ const SideMenu = () => {
           )}
         </button>
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 pr-4 scrollbar-thin scrollbar-thumb-primary-200 scrollbar-track-primary-50 scrollbar-thumb-rounded scrollbar-track-rounded hover:scrollbar-thumb-primary-300 overflow-y-scroll">
         {configMenu.mainMenu.map(
           ({ route, name, title, detail, icon, subMenu }) => (
             <div className="flex flex-col gap-1" key={route}>

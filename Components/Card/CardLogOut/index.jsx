@@ -24,7 +24,7 @@ export default function CardLogOut({ type, desc, title }) {
         </div>
         <div className="w-full flex justify-center items-center px-10">
           <div className="w-full flex justify-evenly">
-            <Button type="light">LogOut</Button>
+            <Button type="light" link="/login">LogOut</Button>
             <Button handleClick={() => setShowLogout(false)}>Kembali</Button>
           </div>
         </div>

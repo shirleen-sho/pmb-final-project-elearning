@@ -11,7 +11,7 @@ const Tabs = ({ list, pathName, children }) => {
   const path = location.asPath;
 
   return (
-    <div className="w-full h-full text-sm relative">
+    <div className="w-full text-sm relative">
       {/* Tab Head */}
       <div className="flex text-gray-400 font-medium w-fit">
         {list.map((i) => {
@@ -27,7 +27,7 @@ const Tabs = ({ list, pathName, children }) => {
         })}
       </div>
       {/* Tab Body */}
-      <div className="h-full py-5">{children}</div>
+      <div className=" py-5">{children}</div>
     </div>
   );
 };

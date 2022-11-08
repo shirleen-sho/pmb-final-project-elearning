@@ -29,7 +29,7 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
   const path = location.asPath;
 
   return (
-    <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full h-full">
+    <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full">
       {/* top navigation table */}
       {topNavigation && (
         <div className="mb-3 flex flex-row justify-between items-center">
@@ -42,7 +42,7 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
           </div>
         </div>
       )}
-      <table className={`table-auto text-xs w-full h-full text-justify`}>
+      <table className={`table-auto text-xs w-full text-justify`}>
         <thead>
           <tr>
             <th className={`${fontHead} ${defaultCellStyle} text-center`}>

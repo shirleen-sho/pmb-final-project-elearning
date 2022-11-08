@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <div className="m-5">
-        <CardNotif type={true} />
+        <CardNotif type />
         <CardNotif />
         <CardMaPel study={study}/>
         <CardUsers users={users}/>

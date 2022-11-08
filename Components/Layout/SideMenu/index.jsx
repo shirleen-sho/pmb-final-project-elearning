@@ -72,17 +72,8 @@ const SideMenu = () => {
                   }}
                 >
                   <div className="flex flex-row justify-between items-center gap-4">
-                    <div className="flex flex-row gap-4">
-                      <Image
-                        src={
-                          icon
-                            ? `/images/icon/${icon}`
-                            : "/images/icon/icon settings.png"
-                        }
-                        alt="icon"
-                        width={16}
-                        height={16}
-                      />
+                    <div className="flex flex-row items-center">
+                      <div className={showSidemenu ? "w-8" : ""}>{icon}</div>
                       {showSidemenu && name}
                     </div>
                     {subMenu &&

@@ -174,9 +174,9 @@ const AddSiswa = () => {
         {/* end form */}
         <div className="flex flex-row justify-end gap-5">
           <Button type="light" link="/kesiswaan/siswa">
-            Back
+            Cancel
           </Button>
-          <Button type="primary">Update</Button>
+          <Button type="primary">Save</Button>
         </div>
       </div>
     </Layout>

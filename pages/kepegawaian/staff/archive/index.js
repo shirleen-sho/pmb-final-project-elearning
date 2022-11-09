@@ -1,13 +1,13 @@
 import React from "react";
-import Layout from "../../../Components/Layout";
-import Button from "../../../Components/Buttons";
-import Search from "../../../Components/Search";
-import CardUsers from "../../../Components/Card/CardUsers";
-import { useAppContext } from "../../../Hooks/useAppContext";
-import Tabs from "../../../Components/Tabs";
-import Selects from "../../../Components/Selects";
+import Layout from "../../../../Components/Layout";
+import Button from "../../../../Components/Buttons";
+import Search from "../../../../Components/Search";
+import CardUsers from "../../../../Components/Card/CardUsers";
+import { useAppContext } from "../../../../Hooks/useAppContext";
+import Tabs from "../../../../Components/Tabs";
+import Selects from "../../../../Components/Selects";
 
-const Guru = () => {
+const ArchiveStaff = () => {
   const { dummy } = useAppContext();
   const { users } = dummy;
 
@@ -35,4 +35,4 @@ const Guru = () => {
   );
 };
 
-export default Guru;
+export default ArchiveStaff;

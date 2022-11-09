@@ -5,6 +5,7 @@ import Search from "../../../Components/Search";
 import CardUsers from "../../../Components/Card/CardUsers";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Tabs from "../../../Components/Tabs";
+import Select from "../../../Components/Selects"
 
 const Staff = () => {
   
@@ -22,6 +23,7 @@ const Staff = () => {
         <div className="flex flex-col">
           {/* container top */}
           <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
+            <Select list={[{name: "Active"},{name:"Archive"}]}/>
             <Search></Search>
             <Button link="/kepegawaian/staff/add">add</Button>
           </div>

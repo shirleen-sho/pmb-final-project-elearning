@@ -5,6 +5,7 @@ import InputFields from "../../../Components/InputFields";
 import Selects from "../../../Components/Selects";
 import Link from "next/link";
 import FormItem from "../../../Components/FormItem";
+import Uploader from "../../../Components/Uploader";
 
 const AddRPP = () => {
   const tahun_akademik = [
@@ -69,9 +70,9 @@ const AddRPP = () => {
             label="File"
             labelType="label-sm"
             labelWidth="w-1/4"
-            helper={true}
+            labelNote="File must be in PDF & docs only"
           >
-            <InputFields type="file" placeholder="File Silabus" size="w-full" />
+            <Uploader />
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">

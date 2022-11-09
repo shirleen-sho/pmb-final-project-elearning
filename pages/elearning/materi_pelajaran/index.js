@@ -7,7 +7,7 @@ import Button from "../../../Components/Buttons";
 
 const MateriPelajaran = () => {
   const { dummy } = useAppContext();
-  const { list_gedung } = dummy;
+  const { materi_pelajaran } = dummy;
   return (
     <Layout>
       <div className="w-full h-full">
@@ -17,31 +17,31 @@ const MateriPelajaran = () => {
         >
           <div className="grid grid-cols-12 grid-flow-row gap-x-5 gap-y-3">
             <div className="col-start-1 col-span-2 row-start-1 flex flex-row items-center">
-              <span className="font-medium">Tahun Akademik</span>
+              <span className="font-medium text-sm">Tahun Akademik</span>
             </div>
             <div className="col-start-3 col-span-3 row-start-1">
               <Selects
-                list={list_gedung}
+                list={materi_pelajaran}
                 description="Pilih Tahun Akademik"
                 size="w-[240px]"
               />
             </div>
             <div className="col-start-1 col-span-2 row-start-2 flex flex-row items-center">
-              <span className="font-medium">Tingkatan</span>
+              <span className="font-medium text-sm">Tingkatan</span>
             </div>
             <div className="col-start-3 col-span-3 row-start-2">
               <Selects
-                list={list_gedung}
+                list={materi_pelajaran}
                 description="Pilih Tingkatan"
                 size="w-[240px]"
               />
             </div>
             <div className="col-start-7 col-span-2 row-start-1 flex flex-row items-center">
-              <span className="font-medium">Kelas</span>
+              <span className="font-medium text-sm">Kelas</span>
             </div>
             <div className="col-start-9 col-span-3 row-start-1">
               <Selects
-                list={list_gedung}
+                list={materi_pelajaran}
                 description="Pilih Kelas"
                 size="w-[240px]"
               />
@@ -52,10 +52,12 @@ const MateriPelajaran = () => {
           </div>
         </div>
         <Table
-          data={list_gedung}
-          action="archive-edit"
+          data={materi_pelajaran}
           topNavigation={true}
           tableTitle="Daftar Gedung"
+          actionArchive
+          actionEdit
+          actionDetail
         />
       </div>
     </Layout>

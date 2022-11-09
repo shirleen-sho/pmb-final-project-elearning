@@ -11,9 +11,25 @@ import {
 } from "react-icons/hi";
 import { useRouter } from "next/router";
 
-const Table = ({ data, action, tableTitle, topNavigation }) => {
+const Table = ({
+  data,
+  tableTitle,
+  topNavigation,
+  actionDetail,
+  actionArchive,
+  actionUnarchive,
+  actionEdit,
+}) => {
   let table_head = [];
-  Object.keys(data[0]).forEach((key) => table_head.push(key));
+  let table_head_formatted = [];
+  Object.keys(data[0]).forEach((key) => {
+    const splitKey = key.split("_");
+    const formattedKey = splitKey.join(" ");
+    if (key !== "id") {
+      table_head.push(key);
+      table_head_formatted.push(formattedKey);
+    }
+  });
 
   const defaultCellStyle = "px-3 py-3 h-14";
   const fontHead = "font-semibold";
@@ -44,16 +60,19 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
       )}
       <table className={`table-auto text-xs w-full text-justify`}>
         <thead>
-          <tr>
+          <tr className="capitalize">
             <th className={`${fontHead} ${defaultCellStyle} text-center`}>
               No
             </th>
-            {table_head.map((head) => (
+            {table_head_formatted.map((head) => (
               <th key={head} className={`${fontHead} ${defaultCellStyle}`}>
                 {head}
               </th>
             ))}
-            {action && (
+            {(actionDetail ||
+              actionArchive ||
+              actionUnarchive ||
+              actionEdit) && (
               <th className={`${fontHead} ${defaultCellStyle} text-center`}>
                 Aksi
               </th>
@@ -74,36 +93,51 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                   {item[head]}
                 </td>
               ))}
-              {action && (
+              {(actionDetail ||
+                actionArchive ||
+                actionUnarchive ||
+                actionEdit) && (
                 <td
-                  className={`${defaultCellStyle} border-b text-center w-fit`}
+                  className={`${defaultCellStyle} border-b flex flex-row justify-center items-center`}
                 >
-                  {action === "archive-edit" && (
-                    <div className="w-full flex flex-row justify-center gap-4">
-                      <Button type="link" title="View" link={path + "/view"}>
+                  <div className="flex flex-row items-center">
+                    {actionDetail && (
+                      <Button
+                        type="link"
+                        title="View"
+                        link={path + "/detail/" + item.id}
+                      >
                         <HiOutlineEye
                           className="hover:text-primary-600"
                           size={18}
                         />
                       </Button>
+                    )}
+                    {actionArchive && (
                       <Button
                         type="link"
                         title="Archive"
-                        link={path + "/archive"}
+                        link={path + "/archive/" + item.id}
                       >
                         <HiOutlineArchive
                           size={18}
                           className="hover:text-primary-600"
                         />
                       </Button>
-                      <Button type="link" title="Edit" link={path + "/edit"}>
+                    )}
+                    {actionEdit && (
+                      <Button
+                        type="link"
+                        title="Edit"
+                        link={path + "/edit/" + item.id}
+                      >
                         <HiOutlinePencil
                           className="hover:text-primary-600"
                           size={18}
                         />
                       </Button>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </td>
               )}
             </tr>

@@ -44,12 +44,17 @@ export default function CardNotif({ type, desc, title }) {
         <div className="w-full flex justify-center items-center px-10">
           {type ? (
             <div className="w-full flex justify-evenly">
-              <Button type="light" link={type === "logout" ? "/login" : path}>
+              <Button type="light">
                 {type === "logout" ? "Logout" : "Delete"}
               </Button>
               <Button
                 handleClick={
-                  type === "logout" ? () => setShowLogout(false) : ""
+                  type === "logout"
+                    ? (e) => {
+                        e.preventDefault();
+                        setShowLogout(false);
+                      }
+                    : ""
                 }
               >
                 Cancel

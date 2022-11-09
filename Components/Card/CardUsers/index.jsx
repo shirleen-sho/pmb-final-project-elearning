@@ -10,6 +10,11 @@ export default function CardUsers({ users }) {
   const [open, setOpen] = useState(false);
   const location = useRouter();
   const path = location.asPath;
+
+  const handleClick = () => {
+    setOpen(!open)
+  }
+
   return (
     <>
       {users.map((value, index) => (
@@ -21,7 +26,7 @@ export default function CardUsers({ users }) {
             <Button
               variant="icon"
               type="icon"
-              handleClick={() => setOpen(!open)}
+              handleClick={handleClick}
             >
               <HiOutlineDotsVertical />
             </Button>
@@ -33,7 +38,7 @@ export default function CardUsers({ users }) {
                   <div className="bg-white w-28 h-24 border rounded shadow px-4 ">
                     <Button type="link" link= {path + `/edit/${value.id}`}><HiOutlinePencil className="absolute left-2 hover:text-primary-400" size={12}/>Edit</Button>
                     <Button type="link" link= {path + `/detail/${value.id}`}><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400" size={12}/>Detail</Button>
-                    <Button type="link" link= "/dashboard"><HiOutlineArchive className="absolute left-2 hover:text-primary-400" size={12}/>Archive</Button>
+                    <Button type="link" link= {path + `/archive`}><HiOutlineArchive className="absolute left-2 hover:text-primary-400" size={12}/>Archive</Button>
                   </div>
                 </div>
               </div>

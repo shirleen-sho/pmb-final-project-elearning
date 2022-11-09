@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormItem = ({ label, labelType, labelWidth, helper, children }) => {
+const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
   let labelStyle;
   switch (labelType) {
     case "banner":
@@ -23,12 +23,10 @@ const FormItem = ({ label, labelType, labelWidth, helper, children }) => {
 
   return (
     <div className={`flex flex-row gap-5`}>
-      {helper ? (
+      {labelNote ? (
         <div className={`flex flex-col gap-1 ${labelWidth}`}>
           <div className={`${labelStyle}`}>{label}</div>
-          <div className="text-[8px] italic ">
-            File must be in PDF & docs only
-          </div>
+          <div className="text-[8px] italic ">{labelNote}</div>
         </div>
       ) : (
         <div className={`${labelStyle} ${labelWidth}`}>{label}</div>

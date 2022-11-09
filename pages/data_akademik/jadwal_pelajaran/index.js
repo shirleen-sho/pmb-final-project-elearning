@@ -55,7 +55,7 @@ const JadwalPelajaran = () => {
         {/* container top */}
         <div className="flex flex-row items-center justify-end gap-8">
           <Search></Search>
-          <Button link="/kepegawaian/guru/add">add</Button>
+          <Button link="/data_akademik/jadwal_pelajaran/add">add</Button>
         </div>
         <TableMerge data={list_jadwal_pelajaran} />
       </div>

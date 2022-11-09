@@ -344,6 +344,96 @@ export const useMenuProvider = () => {
         name: "Ujian",
         title: "Ujian",
         icon: <FaClipboardList size={16} />,
+        subMenu: [
+          {
+            route: "/ujian/jenis_ujian",
+            name: "Jenis Ujian",
+            title: "Jenis Ujian",
+            actionMenu: [
+              {
+                route: "/ujian/jenis_ujian/add",
+                name: "Jenis Ujian",
+                title: "Add Jenis Ujian",
+              },
+              {
+                route: "/ujian/jenis_ujian/detail",
+                name: "Jenis Ujian",
+                title: "Detail Jenis Ujian",
+              },
+              {
+                route: "/ujian/jenis_ujian/edit",
+                name: "Jenis Ujian",
+                title: "Edit Jenis Ujian",
+              },
+            ],
+          },
+          {
+            route: "/ujian/bank_soal",
+            name: "Bank Soal",
+            title: "Bank Soal",
+            actionMenu: [
+              {
+                route: "/ujian/bank_soal/add",
+                name: "Bank Soal",
+                title: "Add Bank Soal",
+              },
+              {
+                route: "/ujian/bank_soal/detail",
+                name: "Bank Soal",
+                title: "Detail Bank Soal",
+              },
+              {
+                route: "/ujian/bank_soal/edit",
+                name: "Bank Soal",
+                title: "Edit Bank Soal",
+              },
+            ],
+          },
+          {
+            route: "/ujian/jadwal_ujian",
+            name: "Jadwal Ujian",
+            title: "Jadwal Ujian",
+            actionMenu: [
+              {
+                route: "/ujian/jadwal_ujian/add",
+                name: "Jadwal Ujian",
+                title: "Add Jadwal Ujian",
+              },
+              {
+                route: "/ujian/jadwal_ujian/detail",
+                name: "Jadwal Ujian",
+                title: "Detail Jadwal Ujian",
+              },
+              {
+                route: "/ujian/jadwal_ujian/edit",
+                name: "Jadwal Ujian",
+                title: "Edit Jadwal Ujian",
+              },
+            ],
+          },
+          {
+            route: "/ujian/nilai_ujian",
+            name: "Nilai Ujian",
+            title: "Nilai Ujian",
+            actionMenu: [
+              {
+                route: "/ujian/nilai_ujian/add",
+                name: "Nilai Ujian",
+                title: "Add Nilai Ujian",
+              },
+              {
+                route: "/ujian/nilai_ujian/detail",
+                name: "Nilai Ujian",
+                title: "Detail Nilai Ujian",
+              },
+              {
+                route: "/ujian/nilai_ujian/edit",
+                name: "Nilai Ujian",
+                title: "Edit Nilai Ujian",
+              },
+            ],
+          },
+        ],
       },
       {
         route: "/pengumuman",

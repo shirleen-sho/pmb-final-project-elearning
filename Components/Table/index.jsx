@@ -13,7 +13,13 @@ import { useRouter } from "next/router";
 
 const Table = ({ data, action, tableTitle, topNavigation }) => {
   let table_head = [];
-  Object.keys(data[0]).forEach((key) => table_head.push(key));
+  let table_head_formatted = [];
+  Object.keys(data[0]).forEach((key) => {
+    const splitKey = key.split("_");
+    const formattedKey = splitKey.join(" ");
+    table_head.push(key);
+    table_head_formatted.push(formattedKey);
+  });
 
   const defaultCellStyle = "px-3 py-3 h-14";
   const fontHead = "font-semibold";
@@ -44,11 +50,11 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
       )}
       <table className={`table-auto text-xs w-full text-justify`}>
         <thead>
-          <tr>
+          <tr className="capitalize">
             <th className={`${fontHead} ${defaultCellStyle} text-center`}>
               No
             </th>
-            {table_head.map((head) => (
+            {table_head_formatted.map((head) => (
               <th key={head} className={`${fontHead} ${defaultCellStyle}`}>
                 {head}
               </th>

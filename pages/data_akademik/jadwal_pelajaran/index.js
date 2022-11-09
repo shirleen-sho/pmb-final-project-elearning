@@ -52,12 +52,11 @@ const JadwalPelajaran = () => {
             </div>
           </div>
         </div>
-        {/* container top */}
-        <div className="flex flex-row items-center justify-end gap-8">
-          <Search></Search>
-          <Button link="/kepegawaian/guru/add">add</Button>
-        </div>
-        <TableMerge data={list_jadwal_pelajaran} />
+        <TableMerge
+          data={list_jadwal_pelajaran}
+          topNavigation={true}
+          tableTitle="Tabel Jadwal Pelajaran"
+        />
       </div>
     </Layout>
   );

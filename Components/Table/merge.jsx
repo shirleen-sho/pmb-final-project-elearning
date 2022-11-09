@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Button from "../Buttons";
+import Search from "../Search";
+import { useRouter } from "next/router";
 
-const TableMerge = ({ data }) => {
+const TableMerge = ({ data, tableTitle, topNavigation }) => {
   const [tableHead, setTableHead] = useState([]);
   const [tableHeadFormatted, setTableHeadFormatted] = useState([]);
   const [style, setStyle] = useState({
@@ -56,74 +59,96 @@ const TableMerge = ({ data }) => {
     dataProcessing();
   }, [data]);
 
+  const location = useRouter();
+  const path = location.asPath;
+
   return (
-    <table
-      className={`border border-collapse border-gray-200 table-auto text-xs w-full h-full text-justify`}
-    >
-      <thead>
-        <tr className={`grid ${style.gridCols} grid-rows-2 capitalize`}>
-          {tableHeadFormatted.length > 0 &&
-            tableHeadFormatted.map((head) =>
-              typeof head === "object" ? (
-                <>
-                  <th
-                    key={head.top}
-                    className={`${fontHead} ${defaultCellStyle} row-start-1 ${style.spanCols}`}
-                  >
-                    {head.top}
-                  </th>
-                  {head.bottom.map((h) => (
-                    <th
-                      key={h}
-                      className={`${fontHead} ${defaultCellStyle} row-start-2`}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </>
-              ) : (
-                <th
-                  key={head}
-                  className={`${fontHead} ${defaultCellStyle} row-start-1 row-span-2`}
-                >
-                  {head}
-                </th>
-              )
-            )}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item, index) => (
-          <tr
-            key={"itemTableTrial" + index}
-            className={`grid ${style.gridCols} `}
-          >
-            {tableHead.length > 0 &&
-              tableHead.map((head, i) =>
+    <div className="border border-gray-200 bg-white rounded-xl p-6 shadow-lg w-full flex flex-col gap-6">
+      {/* top navigation table */}
+      {topNavigation && (
+        <div className="flex flex-row justify-between items-center">
+          <div className="font-semibold text-xl">{tableTitle || ""}</div>
+          <div className="flex flex-row items-center gap-5">
+            <Search />
+            <Button type="primary" link={path + "/add"}>
+              Add
+            </Button>
+          </div>
+        </div>
+      )}
+      <table
+        className={`border border-collapse border-gray-200 table-auto text-xs w-full h-full text-justify`}
+      >
+        <thead>
+          <tr className={`grid ${style.gridCols} grid-rows-2 capitalize`}>
+            {tableHeadFormatted.length > 0 &&
+              tableHeadFormatted.map((head) =>
                 typeof head === "object" ? (
-                  head.bottom.map((h) => (
-                    <td
-                      key={
-                        "itemHead-" + index + "-" + i + "-" + item[head.top][h]
-                      }
-                      className={`${defaultCellStyle}`}
+                  <>
+                    <th
+                      key={head.top}
+                      className={`${fontHead} ${defaultCellStyle} row-start-1 ${style.spanCols}`}
                     >
-                      {item[head.top][h]}
-                    </td>
-                  ))
+                      {head.top}
+                    </th>
+                    {head.bottom.map((h) => (
+                      <th
+                        key={h}
+                        className={`${fontHead} ${defaultCellStyle} row-start-2`}
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </>
                 ) : (
-                  <td
-                    key={"itemHead-" + index + "-" + i + "-" + item[head]}
-                    className={`${defaultCellStyle}`}
+                  <th
+                    key={head}
+                    className={`${fontHead} ${defaultCellStyle} row-start-1 row-span-2`}
                   >
-                    {item[head]}
-                  </td>
+                    {head}
+                  </th>
                 )
               )}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((item, index) => (
+            <tr
+              key={"itemTableTrial" + index}
+              className={`grid ${style.gridCols} `}
+            >
+              {tableHead.length > 0 &&
+                tableHead.map((head, i) =>
+                  typeof head === "object" ? (
+                    head.bottom.map((h) => (
+                      <td
+                        key={
+                          "itemHead-" +
+                          index +
+                          "-" +
+                          i +
+                          "-" +
+                          item[head.top][h]
+                        }
+                        className={`${defaultCellStyle}`}
+                      >
+                        {item[head.top][h]}
+                      </td>
+                    ))
+                  ) : (
+                    <td
+                      key={"itemHead-" + index + "-" + i + "-" + item[head]}
+                      className={`${defaultCellStyle}`}
+                    >
+                      {item[head]}
+                    </td>
+                  )
+                )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

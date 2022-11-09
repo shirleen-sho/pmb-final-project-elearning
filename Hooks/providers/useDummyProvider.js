@@ -677,6 +677,7 @@ export const useDummyProvider = () => {
 
   const list_siswa = [
     {
+      id: "2569874",
       nim: "2569874",
       name: "Pendi",
       kelas: "XII-IA 2",
@@ -685,6 +686,7 @@ export const useDummyProvider = () => {
       tanggal_lahir: "05/11/2003",
     },
     {
+      id: "2569875",
       nim: "2569875",
       name: "Poppy",
       kelas: "XII-IA 2",
@@ -693,6 +695,7 @@ export const useDummyProvider = () => {
       tanggal_lahir: "01/03/2004",
     },
     {
+      id: "2569876",
       nim: "2569876",
       name: "Puput Lestari",
       kelas: "XII-IA 2",
@@ -701,6 +704,7 @@ export const useDummyProvider = () => {
       tanggal_lahir: "18/12/2003",
     },
     {
+      id: "2569877",
       nim: "2569877",
       name: "Refal",
       kelas: "XII-IA 2",

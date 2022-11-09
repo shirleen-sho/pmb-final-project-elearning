@@ -17,8 +17,10 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
   Object.keys(data[0]).forEach((key) => {
     const splitKey = key.split("_");
     const formattedKey = splitKey.join(" ");
-    table_head.push(key);
-    table_head_formatted.push(formattedKey);
+    if (key !== "id") {
+      table_head.push(key);
+      table_head_formatted.push(formattedKey);
+    }
   });
 
   const defaultCellStyle = "px-3 py-3 h-14";
@@ -82,11 +84,15 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
               ))}
               {action && (
                 <td
-                  className={`${defaultCellStyle} border-b text-center w-fit`}
+                  className={`${defaultCellStyle} border-b flex flex-row justify-center items-center`}
                 >
                   {action === "archive-edit" && (
-                    <div className="w-full flex flex-row justify-center gap-4">
-                      <Button type="link" title="View" link={path + "/view"}>
+                    <div className="flex flex-row items-center">
+                      <Button
+                        type="link"
+                        title="View"
+                        link={path + "/detail/" + item.id}
+                      >
                         <HiOutlineEye
                           className="hover:text-primary-600"
                           size={18}
@@ -95,14 +101,18 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                       <Button
                         type="link"
                         title="Archive"
-                        link={path + "/archive"}
+                        link={path + "/archive/" + item.id}
                       >
                         <HiOutlineArchive
                           size={18}
                           className="hover:text-primary-600"
                         />
                       </Button>
-                      <Button type="link" title="Edit" link={path + "/edit"}>
+                      <Button
+                        type="link"
+                        title="Edit"
+                        link={path + "/edit/" + item.id}
+                      >
                         <HiOutlinePencil
                           className="hover:text-primary-600"
                           size={18}

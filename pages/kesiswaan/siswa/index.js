@@ -19,13 +19,11 @@ const Siswa = () => {
     <Layout>
       <Tabs list={list} pathName="/kesiswaan">
         <div className="w-full h-full flex flex-col gap-5">
-          <div
-            id="top-content"
-            className="flex flex-row items-center justify-between my-2"
-          >
+          {/* top navigation */}
+          <div className="flex flex-row items-center justify-between my-2">
             <div className="grid grid-cols-12 grid-flow-row gap-x-5 gap-y-3">
               <div className="col-start-1 col-span-2 row-start-1 flex flex-row items-center">
-                <span className="font-medium">Tahun Akademik</span>
+                <span className="font-medium text-sm">Tahun Akademik</span>
               </div>
               <div className="col-start-3 col-span-3 row-start-1">
                 <Selects
@@ -35,7 +33,7 @@ const Siswa = () => {
                 />
               </div>
               <div className="col-start-1 col-span-2 row-start-2 flex flex-row items-center">
-                <span className="font-medium">Tingkatan</span>
+                <span className="font-medium text-sm">Tingkatan</span>
               </div>
               <div className="col-start-3 col-span-3 row-start-2">
                 <Selects
@@ -45,7 +43,7 @@ const Siswa = () => {
                 />
               </div>
               <div className="col-start-7 col-span-2 row-start-1 flex flex-row items-center">
-                <span className="font-medium">Kelas</span>
+                <span className="font-medium text-sm">Kelas</span>
               </div>
               <div className="col-start-9 col-span-3 row-start-1">
                 <Selects
@@ -59,6 +57,7 @@ const Siswa = () => {
               </div>
             </div>
           </div>
+          {/* table */}
           <Table
             data={list_siswa}
             action="archive-edit"

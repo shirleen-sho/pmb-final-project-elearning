@@ -863,6 +863,44 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const list_kategori_mata_pelajaran = [
+    { kode_kategori: "K001", nama_kategori: "Muatan Nasional" },
+    { kode_kategori: "K002", nama_kategori: "Muatan Kewilayahan" },
+  ];
+
+  const list_mata_pelajaran = [
+    {
+      kode_mata_pelajaran: "MP0001",
+      nama_mata_pelajaran: "Bahasa Inggris",
+      guru_pengampuh: "Bu Eka",
+      kkm: 85,
+    },
+    {
+      kode_mata_pelajaran: "MP0002",
+      nama_mata_pelajaran: "Bahasa Indonesia",
+      guru_pengampuh: "Pak Hebron",
+      kkm: 85,
+    },
+    {
+      kode_mata_pelajaran: "MP0003",
+      nama_mata_pelajaran: "Fisika",
+      guru_pengampuh: "Pak Rajin",
+      kkm: 85,
+    },
+    {
+      kode_mata_pelajaran: "MP0004",
+      nama_mata_pelajaran: "Biologi",
+      guru_pengampuh: "Bu Ruth",
+      kkm: 85,
+    },
+    {
+      kode_mata_pelajaran: "MP0005",
+      nama_mata_pelajaran: "Bahasa Indonesia",
+      guru_pengampuh: "Pak Hebron",
+      kkm: 85,
+    },
+  ];
+
   return {
     list1,
     list2,
@@ -886,5 +924,7 @@ export const useDummyProvider = () => {
     list_jadwal_pelajaran,
     list_silabus,
     list_rpp,
+    list_kategori_mata_pelajaran,
+    list_mata_pelajaran,
   };
 };

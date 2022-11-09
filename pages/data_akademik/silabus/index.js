@@ -15,7 +15,7 @@ const Silabus = () => {
         {/* top nav */}
         <div className="flex flex-row items-center justify-between gap-5 my-2">
           <div className="flex flex-row items-center gap-5">
-            <span className="font-medium">Tahun Akademik</span>
+            <span className="font-medium text-sm">Tahun Akademik</span>
             <Selects
               list={list_siswa}
               description="Pilih Tahun Akademik"

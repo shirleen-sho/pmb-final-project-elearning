@@ -11,7 +11,15 @@ import {
 } from "react-icons/hi";
 import { useRouter } from "next/router";
 
-const Table = ({ data, action, tableTitle, topNavigation }) => {
+const Table = ({
+  data,
+  tableTitle,
+  topNavigation,
+  actionDetail,
+  actionArchive,
+  actionUnarchive,
+  actionEdit,
+}) => {
   let table_head = [];
   let table_head_formatted = [];
   Object.keys(data[0]).forEach((key) => {
@@ -61,7 +69,10 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                 {head}
               </th>
             ))}
-            {action && (
+            {(actionDetail ||
+              actionArchive ||
+              actionUnarchive ||
+              actionEdit) && (
               <th className={`${fontHead} ${defaultCellStyle} text-center`}>
                 Aksi
               </th>
@@ -82,12 +93,15 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                   {item[head]}
                 </td>
               ))}
-              {action && (
+              {(actionDetail ||
+                actionArchive ||
+                actionUnarchive ||
+                actionEdit) && (
                 <td
                   className={`${defaultCellStyle} border-b flex flex-row justify-center items-center`}
                 >
-                  {action === "archive-edit" && (
-                    <div className="flex flex-row items-center">
+                  <div className="flex flex-row items-center">
+                    {actionDetail && (
                       <Button
                         type="link"
                         title="View"
@@ -98,6 +112,8 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                           size={18}
                         />
                       </Button>
+                    )}
+                    {actionArchive && (
                       <Button
                         type="link"
                         title="Archive"
@@ -108,6 +124,8 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                           className="hover:text-primary-600"
                         />
                       </Button>
+                    )}
+                    {actionEdit && (
                       <Button
                         type="link"
                         title="Edit"
@@ -118,8 +136,8 @@ const Table = ({ data, action, tableTitle, topNavigation }) => {
                           size={18}
                         />
                       </Button>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </td>
               )}
             </tr>

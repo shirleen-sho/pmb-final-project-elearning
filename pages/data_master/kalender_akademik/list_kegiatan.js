@@ -25,7 +25,7 @@ const ListKegiatan = () => {
               Add
             </Button>
           </div>
-          <Table data={list_kegiatan} action="archive-edit" />
+          <Table data={list_kegiatan} actionArchive actionEdit />
         </div>
       </Tabs>
     </Layout>

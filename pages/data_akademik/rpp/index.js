@@ -28,7 +28,7 @@ const RPP = () => {
           </div>
         </div>
         {/* table */}
-        <Table data={list_rpp} action="archive-edit" />
+        <Table data={list_rpp} actionArchive actionEdit actionDetail />
       </div>
     </Layout>
   );

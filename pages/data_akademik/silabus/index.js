@@ -28,7 +28,7 @@ const Silabus = () => {
           </div>
         </div>
         {/* table */}
-        <Table data={list_silabus} action="archive-edit" />
+        <Table data={list_silabus} actionArchive actionEdit actionDetail />
       </div>
     </Layout>
   );

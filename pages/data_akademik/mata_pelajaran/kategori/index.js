@@ -27,7 +27,7 @@ const KategoriMataPelajaran = () => {
             </Button>
           </div>
           {/* table */}
-          <Table data={list_kategori_mata_pelajaran} action="archive-edit" />
+          <Table data={list_kategori_mata_pelajaran} actionArchive actionEdit />
         </div>
       </Tabs>
     </Layout>

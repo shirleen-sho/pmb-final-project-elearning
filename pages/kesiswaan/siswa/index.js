@@ -60,9 +60,11 @@ const Siswa = () => {
           {/* table */}
           <Table
             data={list_siswa}
-            action="archive-edit"
             topNavigation={true}
             tableTitle="Daftar Siswa"
+            actionArchive
+            actionEdit
+            actionDetail
           />
         </div>
       </Tabs>

@@ -24,12 +24,7 @@ const Wali = () => {
             <Search />
             <Button link="/kesiswaan/wali/add">add</Button>
           </div>
-          <Table
-            data={list_siswa}
-            action="archive-edit"
-            // topNavigation={true}
-            // tableTitle="Daftar Wali"
-          />
+          <Table data={list_siswa} actionArchive actionEdit actionDetail />
         </div>
       </Tabs>
     </Layout>

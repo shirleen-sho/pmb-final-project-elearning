@@ -25,7 +25,12 @@ const MataPelajaran = () => {
             <Button link="/data_akademik/mata_pelajaran/add">add</Button>
           </div>
           {/* table */}
-          <Table data={list_mata_pelajaran} action="archive-edit" />
+          <Table
+            data={list_mata_pelajaran}
+            actionArchive
+            actionEdit
+            actionDetail
+          />
         </div>
       </Tabs>
     </Layout>

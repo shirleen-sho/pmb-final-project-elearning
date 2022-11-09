@@ -49,9 +49,11 @@ const Tugas = () => {
       <div className="w-full h-full">
         <Table
           data={tugas}
-          action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Gedung"
+          actionArchive
+          actionEdit
+          actionDetail
         />
       </div>
     </Layout>

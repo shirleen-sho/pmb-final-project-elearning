@@ -53,9 +53,11 @@ const PengumpulanTugas = () => {
       <div className="w-full h-full">
         <Table
           data={list_gedung}
-          action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Gedung"
+          actionArchive
+          actionEdit
+          actionDetail
         />
       </div>
     </Layout>

@@ -25,7 +25,7 @@ const Settings = () => {
               Add
             </Button>
           </div>
-          <Table data={list_level_staff} action="archive-edit" />
+          <Table data={list_level_staff} actionArchive actionEdit />
         </div>
       </Tabs>
     </Layout>

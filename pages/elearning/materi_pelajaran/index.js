@@ -53,9 +53,11 @@ const MateriPelajaran = () => {
         </div>
         <Table
           data={materi_pelajaran}
-          action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Gedung"
+          actionArchive
+          actionEdit
+          actionDetail
         />
       </div>
     </Layout>

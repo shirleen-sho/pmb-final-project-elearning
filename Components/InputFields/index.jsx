@@ -10,9 +10,6 @@ const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => 
     case "date":
       style='uppercase'
       break;
-    case "file":
-      style="invisible absolute"
-      break;
     default:
       style='capitalize'
       break;

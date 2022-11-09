@@ -4,7 +4,7 @@ import FormItem from '../../../Components/FormItem'
 import InputFields from '../../../Components/InputFields'
 import Button from '../../../Components/Buttons'
 import Selects from '../../../Components/Selects'
-import { SlPaperClip } from 'react-icons/sl'
+import Uploader from '../../../Components/Uploader'
 
 export default function AddMateriPelajaran() {
     return (
@@ -62,20 +62,12 @@ export default function AddMateriPelajaran() {
                         </div>
                         <div className="col-start-1 col-span-9 row-start-6">
                             <FormItem label="File" labelType="label-sm" labelWidth="w-1/5">
-                                <label className='border py-2 rounded bg-primary-400 inline-flex align-middle items-center space-x-2 justify-center px-4 shadow'>
-                                    <SlPaperClip></SlPaperClip>
-                                    <span className='text-xs'>Upload</span>
-                                    <InputFields type="file" size="w-20" />
-                                </label>
+                                <Uploader/>
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-7">
                             <FormItem label="Cover" labelType="label-sm" labelWidth="w-1/5">
-                                <label className='border py-2 rounded bg-primary-400 inline-flex align-middle items-center space-x-2 justify-center px-4 shadow'>
-                                    <SlPaperClip></SlPaperClip>
-                                    <span className='text-xs'>Upload</span>
-                                    <InputFields type="file" size="w-20" />
-                                </label>
+                                <Uploader/>
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-8">

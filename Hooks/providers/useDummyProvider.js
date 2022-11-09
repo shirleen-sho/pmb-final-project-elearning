@@ -773,6 +773,72 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const materi_pelajaran = [
+    {
+      mata_pelajaran:"Bahasa Indonesia",
+      kode_materi:"MO1",
+      judul_materi:"Teks Eksposisi",
+      status:"ditampilkan"
+    },
+    {
+      mata_pelajaran:"Bahasa Indonesia",
+      kode_materi:"MO1",
+      judul_materi:"Teks Eksposisi",
+      status:"ditampilkan"
+    },
+    {
+      mata_pelajaran:"Bahasa Indonesia",
+      kode_materi:"MO1",
+      judul_materi:"Teks Eksposisi",
+      status:"ditampilkan"
+    }
+  ]
+
+  const tugas = [
+    {
+      mata_pelajaran:"Bahasa Indonesia",
+      kode_tugas:"T01",
+      judul_materi:"Teks Eksposisi",
+      waktu:"08.00 s/d 10.00"
+    },
+    {
+      mata_pelajaran:"Bahasa Indonesia",
+      kode_tugas:"T01",
+      judul_materi:"Teks Eksposisi",
+      waktu:"08.00 s/d 10.00"
+    },
+    {
+      mata_pelajaran:"Bahasa Indonesia",
+      kode_tugas:"T01",
+      judul_materi:"Teks Eksposisi",
+      waktu:"08.00 s/d 10.00"
+    }
+  ]
+
+  const pengumpulan_tugas = [
+    {
+      nis: 2001365231,
+      nama: "Ana Varela",
+      tugas: "Aljabar 1",
+      mata_pelajaran:"Bahasa Indonesia",
+      nilai: "100"
+    },
+    {
+      nis: 2001365231,
+      nama: "Ana Varela",
+      tugas: "Aljabar 1",
+      mata_pelajaran:"Bahasa Indonesia",
+      nilai: "100"
+    },
+    {
+      nis: 2001365231,
+      nama: "Ana Varela",
+      tugas: "Aljabar 1",
+      mata_pelajaran:"Bahasa Indonesia",
+      nilai: "100"
+    },
+  ]
+
   return {
     list1,
     list2,
@@ -794,5 +860,8 @@ export const useDummyProvider = () => {
     users,
     list_siswa,
     list_jadwal_pelajaran,
+    materi_pelajaran,
+    tugas,
+    pengumpulan_tugas,
   };
 };

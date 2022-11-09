@@ -8,8 +8,11 @@ export const useUserProvider = () => {
   };
 
   const [user_info, setUserInfo] = useState(user);
+  const [showLogout, setShowLogout] = useState(false);
 
   return {
     user_info,
+    showLogout,
+    setShowLogout,
   };
 };

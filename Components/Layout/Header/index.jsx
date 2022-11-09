@@ -7,7 +7,7 @@ import Image from "next/image";
 const Header = () => {
   const { menu, user } = useAppContext();
   const { header } = menu;
-  const { user_info } = user;
+  const { user_info, setShowLogout } = user;
 
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const handleToggleProfileDropdown = () => {
@@ -16,11 +16,11 @@ const Header = () => {
 
   const handleLogOut = (e) => {
     e.preventDefault();
-    console.log("Log Out !");
+    setShowLogout(true);
   };
 
   return (
-    <div className="flex flex-row justify-between items-center w-full h-[120px] border-b border-neutral-2">
+    <div className="flex flex-row justify-between items-center w-full h-[100px] py-auto border-b border-neutral-2">
       <div className="flex flex-col gap-2">
         <div className="font-bold text-3xl">{header.title}</div>
         {header.detail && (

@@ -250,12 +250,7 @@ const AddWali = () => {
           </div>
           <div className="col-start-1 col-span-4 row-start-4 row-span-1">
             <FormItem label="NUPTK" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields
-                type="text"
-                placeholder="NUPTK"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="2569877" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-1 col-span-4 row-start-5 row-span-1">
@@ -264,12 +259,7 @@ const AddWali = () => {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <Selects
-                list={[{ name: "Pria" }, { name: "Wanita" }]}
-                style="w-full"
-                description="Pilih Jenis Kelamin"
-                disabled
-              />
+              <FormItem label="Wanita" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-1 col-span-4 row-start-6 row-span-1">
@@ -278,12 +268,7 @@ const AddWali = () => {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields
-                type="text"
-                placeholder="Tempat Lahir"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="Medan" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-1 col-span-4 row-start-7 row-span-1">
@@ -292,39 +277,17 @@ const AddWali = () => {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields
-                type="date"
-                placeholder="Tanggal Lahir"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="08/08/2005" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-1 col-span-4 row-start-8 row-span-1">
             <FormItem label="Kelas" labelType="label-sm" labelWidth="w-1/3">
-              <Selects
-                list={[{ name: "A" }, { name: "B" }]}
-                style="w-full"
-                description="Pilih Kelas"
-                disabled
-              />
+              <FormItem label="XII-IA3" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-1 col-span-4 row-start-9 row-span-1">
             <FormItem label="Agama" labelType="label-sm" labelWidth="w-1/3">
-              <Selects
-                list={[
-                  { name: "Islam" },
-                  { name: "Protestan" },
-                  { name: "Katolik" },
-                  { name: "Hindu" },
-                  { name: "Buddha" },
-                  { name: "Konghucu" },
-                ]}
-                style="w-full"
-                description="Pilih Agama"
-                disabled
-              />
+              <FormItem label="Protestan" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-1 row-span-1">
@@ -333,22 +296,12 @@ const AddWali = () => {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields
-                type="text"
-                placeholder="No.Telp/WA"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="081823597492" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-2 row-span-1">
             <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields
-                type="text"
-                placeholder="Email"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="siswa007@gmail.com" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-3 flex items-center">
@@ -359,12 +312,7 @@ const AddWali = () => {
           </div>
           <div className="col-start-6 col-span-4 row-start-4 row-span-1">
             <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields
-                type="text"
-                placeholder="Provinsi"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="Sumatera Utara" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-5 row-span-1">
@@ -373,37 +321,22 @@ const AddWali = () => {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields
-                type="text"
-                placeholder="Kabupaten / Kota"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="Kota Medan" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-6 row-span-1">
             <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields
-                type="text"
-                placeholder="Kecamatan"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="Medan Denai" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-7 row-span-1">
             <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields
-                type="text"
-                placeholder="Kode Pos"
-                size="w-full"
-                disabled
-              />
+              <FormItem label="20256" labelType="read-only" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 row-start-8 row-span-2">
             <FormItem label="Alamat" labelType="label-sm" labelWidth="w-1/3">
-              <TextArea placeholder="Alamat" disabled />
+              <FormItem label="Jl. Mangga No. 17" labelType="read-only" />
             </FormItem>
           </div>
         </div>

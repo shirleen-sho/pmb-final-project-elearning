@@ -17,7 +17,7 @@ export default function AddMateriPelajaran() {
                     <h3 className="font-bold underline underline-offset-2 mb-1">
                         DATA DIRI
                     </h3>
-                    <div className="grid grid-cols-9 grid-rows-11 gap-x-7 gap-y-4">
+                    <div className="grid grid-cols-9 grid-rows-9 gap-x-7 gap-y-4">
                         <div className="col-start-1 col-span-9 row-start-1">
                             <FormItem label="Kode Materi" labelType="label-sm" labelWidth="w-1/5">
                                 <InputFields type="text" valueLock="MO1" placeholder="MO1" size="w-full" disabled />
@@ -62,12 +62,12 @@ export default function AddMateriPelajaran() {
                         </div>
                         <div className="col-start-1 col-span-9 row-start-6">
                             <FormItem label="File" labelType="label-sm" labelWidth="w-1/5">
-                                <Uploader/>
+                                <Uploader />
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-7">
                             <FormItem label="Cover" labelType="label-sm" labelWidth="w-1/5">
-                                <Uploader/>
+                                <Uploader />
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-8">
@@ -82,15 +82,16 @@ export default function AddMateriPelajaran() {
                                 />
                             </FormItem>
                         </div>
+                        <div className="col-start-1 col-span-9 row-start-9" >
+                            <div className="flex flex-row justify-end gap-5">
+                                <Button type="light" link="/kesiswaan/siswa">
+                                    Cancel
+                                </Button>
+                                <Button type="primary">Save</Button>
+                            </div>
+                        </div>
                     </div>
-                    <div className="border-b border-neutral-2" />
-                    {/* end form */}
-                    <div className="flex flex-row justify-end gap-5">
-                        <Button type="light" link="/kesiswaan/siswa">
-                            Cancel
-                        </Button>
-                        <Button type="primary">Save</Button>
-                    </div>
+
                 </div>
             </Layout>
         </>

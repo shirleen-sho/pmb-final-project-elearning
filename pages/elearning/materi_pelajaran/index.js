@@ -10,7 +10,7 @@ const MateriPelajaran = () => {
   const { materi_pelajaran } = dummy;
   return (
     <Layout>
-      <div className="w-full h-full">
+      <div>
         <div
           id="top-content"
           className="flex flex-row items-center justify-between my-2"

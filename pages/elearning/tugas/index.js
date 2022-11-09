@@ -46,7 +46,7 @@ const Tugas = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-full">
+      <div>
         <Table
           data={tugas}
           topNavigation={true}

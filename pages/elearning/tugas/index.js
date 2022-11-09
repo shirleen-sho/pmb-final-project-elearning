@@ -7,7 +7,7 @@ import Button from "../../../Components/Buttons";
 
 const Tugas = () => {
   const { dummy } = useAppContext();
-  const { list_gedung } = dummy;
+  const { tugas } = dummy;
   return (
     <Layout>
       <div
@@ -20,7 +20,7 @@ const Tugas = () => {
             </div>
             <div className="col-start-3 col-span-3 row-start-1">
               <Selects
-                list={list_gedung}
+                list={tugas}
                 description="Pilih Tahun Akademik"
                 size="w-[240px]"
               />
@@ -30,7 +30,7 @@ const Tugas = () => {
             </div>
             <div className="col-start-3 col-span-3 row-start-2">
               <Selects
-                list={list_gedung}
+                list={tugas}
                 description="Pilih Tingkatan"
                 size="w-[240px]"
               />
@@ -40,7 +40,7 @@ const Tugas = () => {
             </div>
             <div className="col-start-9 col-span-3 row-start-1">
               <Selects
-                list={list_gedung}
+                list={tugas}
                 description="Pilih Kelas"
                 size="w-[240px]"
               />
@@ -52,7 +52,7 @@ const Tugas = () => {
         </div>
       <div className="w-full h-full">
         <Table
-          data={list_gedung}
+          data={tugas}
           action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Gedung"

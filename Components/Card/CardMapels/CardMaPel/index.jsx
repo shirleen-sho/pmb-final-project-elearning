@@ -1,19 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import Button from "../../Buttons";
+import Button from "../../../Buttons";
 import { FaAngleRight } from "react-icons/fa";
 
-export default function CardMaPel({ study }) {
+export default function CardMaPel({value,index}) {
   return (
     <>
-      <div className="flex">
-        {study.map((value, index) => (
           <div
-            className={`w-96 h-52 flex justify-center border items-center rounded-xl shadow bg-[${value.color}] m-2 `}
+            className={`w-96 h-52 flex justify-center border items-center rounded-xl shadow bg-black m-2 `}
             key={index}
           >
             <div
-              className={`w-40 h-32 flex justify-center items-center rounded bg-[${value.color}] border`}
+              className={`w-40 h-32 flex justify-center items-center rounded bg-blue border`}
             >
               <Image
                 src={value.image}
@@ -38,8 +36,6 @@ export default function CardMaPel({ study }) {
               </div>
             </div>
           </div>
-        ))}
-      </div>
     </>
   );
 }

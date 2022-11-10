@@ -108,7 +108,12 @@ const AddKegiatan = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light">Cancel</Button>
+          <Button
+            type="light"
+            link="/data_master/kalender_akademik/list_kegiatan"
+          >
+            Cancel
+          </Button>
           <Button type="primary">Save</Button>
         </div>
       </div>

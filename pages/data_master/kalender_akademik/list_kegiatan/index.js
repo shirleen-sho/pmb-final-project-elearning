@@ -21,7 +21,10 @@ const ListKegiatan = () => {
         <div className="w-full h-full py-3">
           <div className="flex flex-row justify-center items-center gap-3 absolute top-0 right-0">
             <Search />
-            <Button type="primary" link="/data_master/kalender_akademik/add">
+            <Button
+              type="primary"
+              link="/data_master/kalender_akademik/list_kegiatan/add"
+            >
               Add
             </Button>
           </div>

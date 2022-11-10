@@ -1,9 +1,9 @@
 import React from 'react'
-import Layout from '../../../Components/Layout'
-import FormItem from '../../../Components/FormItem'
-import InputFields from '../../../Components/InputFields'
-import Button from '../../../Components/Buttons'
-import Selects from '../../../Components/Selects'
+import Layout from '../../../../Components/Layout'
+import FormItem from '../../../../Components/FormItem'
+import InputFields from '../../../../Components/InputFields'
+import Button from '../../../../Components/Buttons'
+import Selects from '../../../../Components/Selects'
 
 export default function AddTugas() {
   return (

@@ -47,9 +47,6 @@ const JadwalPelajaran = () => {
                 size="w-[240px]"
               />
             </div>
-            <div className="col-start-7 col-span-2 row-start-2">
-              <Button type="success">Simpan</Button>
-            </div>
           </div>
         </div>
         <TableMerge

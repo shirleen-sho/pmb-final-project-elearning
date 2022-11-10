@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../../Components/Layout";
-import Tabs from "../../../Components/Tabs";
-import Button from "../../../Components/Buttons";
-import Table from "../../../Components/Table";
-import { useAppContext } from "../../../Hooks/useAppContext";
-import Search from "../../../Components/Search";
+import Layout from "../../../../Components/Layout";
+import Tabs from "../../../../Components/Tabs";
+import Button from "../../../../Components/Buttons";
+import Table from "../../../../Components/Table";
+import { useAppContext } from "../../../../Hooks/useAppContext";
+import Search from "../../../../Components/Search";
 
 const ListKegiatan = () => {
   const list = [

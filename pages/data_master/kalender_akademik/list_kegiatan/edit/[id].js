@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { SketchPicker } from "react-color";
-import Button from "../../../Components/Buttons";
-import Layout from "../../../Components/Layout";
-import InputFields from "../../../Components/InputFields";
-import Selects from "../../../Components/Selects";
+import Button from "../../../../../Components/Buttons";
+import Layout from "../../../../../Components/Layout";
+import InputFields from "../../../../../Components/InputFields";
+import Selects from "../../../../../Components/Selects";
 import Link from "next/link";
-import FormItem from "../../../Components/FormItem";
-import ColorPicker from "../../../Components/ColorPicker";
+import FormItem from "../../../../../Components/FormItem";
+import ColorPicker from "../../../../../Components/ColorPicker";
+import { useRouter } from "next/router";
 
-const AddKegiatan = () => {
+const EditKegiatan = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
   const tahun_akademik = [
     { name: "Semester Ganjil 2022/2023" },
     { name: "Semester Genap 2021/2022" },
@@ -21,10 +25,18 @@ const AddKegiatan = () => {
   const handleClosePicker = () => setShowPicker(false);
   const handleChangeColor = (color, event) => setChoosenColor(color);
 
+  const handleUpdateKegiatan = (e) => {
+    e.preventDefault();
+    // isi fungsi
+  };
+
   return (
     <Layout>
       <div>
-        <FormItem label="Fill Kegiatan details here!" labelType="banner" />
+        <FormItem
+          label={`Edit Kegiatan ID ${id} details here!`}
+          labelType="banner"
+        />
         <div className="flex flex-col py-5 gap-5">
           {/* KODE KALENDER */}
           <FormItem
@@ -108,12 +120,19 @@ const AddKegiatan = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light">Cancel</Button>
-          <Button type="primary">Save</Button>
+          <Button
+            type="light"
+            link="/data_master/kalender_akademik/list_kegiatan"
+          >
+            Back
+          </Button>
+          <Button type="primary" handleClick={(e) => handleUpdateKegiatan(e)}>
+            Update
+          </Button>
         </div>
       </div>
     </Layout>
   );
 };
 
-export default AddKegiatan;
+export default EditKegiatan;

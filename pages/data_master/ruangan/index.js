@@ -11,9 +11,10 @@ const Ruangan = () => {
       <div className="w-full h-full">
         <Table
           data={list_ruangan}
-          action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Ruangan"
+          actionArchive
+          actionEdit
         />
       </div>
     </Layout>

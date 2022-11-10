@@ -11,9 +11,10 @@ const TahunAkademik = () => {
       <div className="w-full h-full">
         <Table
           data={list_tahun_akademik}
-          action="archive-edit"
           topNavigation={true}
           tableTitle="Daftar Tahun Akademik"
+          actionArchive
+          actionEdit
         />
       </div>
     </Layout>

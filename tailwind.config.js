@@ -20,24 +20,24 @@ module.exports = {
           900: "#3534ae",
         },
         secondary: {
-          base:"#efd226",
-          hover: "#bba20e"
+          base: "#efd226",
+          hover: "#bba20e",
         },
         light: {
-          base:"#757AFF",
-          hover: "#889AF9"
+          base: "#757AFF",
+          hover: "#889AF9",
         },
-        dark:{
-          base:"#71717a",
-          hover: "#3f3f46"
+        dark: {
+          base: "#71717a",
+          hover: "#3f3f46",
         },
         success: {
           base: "#22c55e",
           hover: "#15803d",
         },
         danger: {
-          base:"#E74A3B",
-          hover: "#b91c1c"
+          base: "#E74A3B",
+          hover: "#b91c1c",
         },
         error: {
           base: "#ee2b2b",
@@ -47,13 +47,13 @@ module.exports = {
           base: "#eab308",
           hover: "#a16207",
         },
-        info:{
+        info: {
           base: "#0ea5e9",
-          hover: "#0369a1"
+          hover: "#0369a1",
         },
-        link:{
+        link: {
           base: "#d1d5db",
-          hover: "#4b5563"
+          hover: "#4b5563",
         },
         neutral: {
           1: "#F2F2F3",
@@ -91,5 +91,5 @@ module.exports = {
     },
   },
   safelist: [{ pattern: /grid-cols-./ }, { pattern: /col-span-./ }],
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };

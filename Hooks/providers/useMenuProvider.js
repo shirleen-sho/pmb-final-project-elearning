@@ -1,4 +1,23 @@
 import { useState } from "react";
+import {
+  RiBookReadFill,
+  RiCurrencyFill,
+  RiDashboardFill,
+  RiFolderKeyholeFill,
+  RiGitRepositoryFill,
+  RiMacFill,
+  RiSettings5Fill,
+  RiWallet3Fill,
+} from "react-icons/ri";
+import {
+  FaBookReader,
+  FaUserTie,
+  FaGraduationCap,
+  FaClipboardList,
+  FaUserCheck,
+} from "react-icons/fa";
+import { GoSignOut } from "react-icons/go";
+import { HiSpeakerphone } from "react-icons/hi";
 
 export const useMenuProvider = () => {
   const configMenu = {
@@ -7,13 +26,13 @@ export const useMenuProvider = () => {
         route: "/dashboard",
         name: "Dashboard",
         title: "Hello !",
-        icon: "icon dashboard.png",
+        icon: <RiDashboardFill size={20} />,
       },
       {
         route: "/data_master",
         name: "Data Master",
         title: "Data Master",
-        icon: "icon data master.png",
+        icon: <RiFolderKeyholeFill size={18} />,
         subMenu: [
           {
             route: "/data_master/identitas_sekolah",
@@ -121,7 +140,7 @@ export const useMenuProvider = () => {
         route: "/kepegawaian",
         name: "Kepegawaian",
         title: "Kepegawaian",
-        icon: "icon kepegawaian.png",
+        icon: <FaUserTie size={15} />,
         subMenu: [
           {
             route: "/kepegawaian/staff",
@@ -157,7 +176,7 @@ export const useMenuProvider = () => {
         route: "/kesiswaan",
         name: "Kesiswaan",
         title: "Kesiswaan",
-        icon: "icon kesiswaan.png",
+        icon: <FaBookReader size={15} />,
         subMenu: [
           {
             route: "/kesiswaan/siswa",
@@ -201,7 +220,7 @@ export const useMenuProvider = () => {
         route: "/data_akademik",
         name: "Data Akademik",
         title: "Data Akademik",
-        icon: "icon data akademik.png",
+        icon: <FaGraduationCap size={18} />,
         subMenu: [
           {
             route: "/data_akademik/mata_pelajaran",
@@ -262,61 +281,201 @@ export const useMenuProvider = () => {
         route: "/elearning",
         name: "E-Learning",
         title: "E-Learning",
-        icon: "icon elearning.png",
+        icon: <RiMacFill size={18} />,
+        subMenu: [
+          {
+            route: "/elearning/materi_pelajaran",
+            name: "Materi Pelajaran",
+            title: "Materi Pelajaran",
+            actionMenu: [
+              {
+                route: "/elearning/materi_pelajaran/add",
+                name: "Materi Pelajaran",
+                title: "Add Materi Pelajaran",
+              },
+            ],
+          },
+          {
+            route: "/elearning/tugas",
+            name: "Tugas",
+            title: "Tugas",
+            actionMenu: [
+              {
+                route: "/elearning/tugas/add",
+                name: "Tugas",
+                title: "Add Tugas",
+              },
+            ],
+          },
+          {
+            route: "/elearning/penyumpulan_tugas",
+            name: "Penyumpulan Tugas",
+            title: "Penyumpulan Tugas",
+            actionMenu: [
+              {
+                route: "/elearning/penyumpulan_tugas/add",
+                name: "Penyumpulan Tugas",
+                title: "Add Penyumpulan Tugas",
+              },
+            ],
+          },
+          {
+            route: "/elearning/nilai",
+            name: "Nilai",
+            title: "Nilai",
+            actionMenu: [
+              {
+                route: "/elearning/nilai/add",
+                name: "Nilai",
+                title: "Add Nilai",
+              },
+            ],
+          },
+        ],
       },
       {
         route: "/data_absensi",
         name: "Data Absensi",
         title: "Data Absensi",
-        icon: "icon absensi.png",
+        icon: <FaUserCheck size={17} />,
       },
       {
         route: "/ujian",
         name: "Ujian",
         title: "Ujian",
-        icon: "icon ujian.png",
+        icon: <FaClipboardList size={16} />,
+        subMenu: [
+          {
+            route: "/ujian/jenis_ujian",
+            name: "Jenis Ujian",
+            title: "Jenis Ujian",
+            actionMenu: [
+              {
+                route: "/ujian/jenis_ujian/add",
+                name: "Jenis Ujian",
+                title: "Add Jenis Ujian",
+              },
+              {
+                route: "/ujian/jenis_ujian/detail",
+                name: "Jenis Ujian",
+                title: "Detail Jenis Ujian",
+              },
+              {
+                route: "/ujian/jenis_ujian/edit",
+                name: "Jenis Ujian",
+                title: "Edit Jenis Ujian",
+              },
+            ],
+          },
+          {
+            route: "/ujian/bank_soal",
+            name: "Bank Soal",
+            title: "Bank Soal",
+            actionMenu: [
+              {
+                route: "/ujian/bank_soal/add",
+                name: "Bank Soal",
+                title: "Add Bank Soal",
+              },
+              {
+                route: "/ujian/bank_soal/detail",
+                name: "Bank Soal",
+                title: "Detail Bank Soal",
+              },
+              {
+                route: "/ujian/bank_soal/edit",
+                name: "Bank Soal",
+                title: "Edit Bank Soal",
+              },
+            ],
+          },
+          {
+            route: "/ujian/jadwal_ujian",
+            name: "Jadwal Ujian",
+            title: "Jadwal Ujian",
+            actionMenu: [
+              {
+                route: "/ujian/jadwal_ujian/add",
+                name: "Jadwal Ujian",
+                title: "Add Jadwal Ujian",
+              },
+              {
+                route: "/ujian/jadwal_ujian/detail",
+                name: "Jadwal Ujian",
+                title: "Detail Jadwal Ujian",
+              },
+              {
+                route: "/ujian/jadwal_ujian/edit",
+                name: "Jadwal Ujian",
+                title: "Edit Jadwal Ujian",
+              },
+            ],
+          },
+          {
+            route: "/ujian/nilai_ujian",
+            name: "Nilai Ujian",
+            title: "Nilai Ujian",
+            actionMenu: [
+              {
+                route: "/ujian/nilai_ujian/add",
+                name: "Nilai Ujian",
+                title: "Add Nilai Ujian",
+              },
+              {
+                route: "/ujian/nilai_ujian/detail",
+                name: "Nilai Ujian",
+                title: "Detail Nilai Ujian",
+              },
+              {
+                route: "/ujian/nilai_ujian/edit",
+                name: "Nilai Ujian",
+                title: "Edit Nilai Ujian",
+              },
+            ],
+          },
+        ],
       },
       {
         route: "/pengumuman",
         name: "Pengumuman",
         title: "Pengumuman",
-        icon: "icon pengumuman.png",
+        icon: <HiSpeakerphone size={16} />,
       },
       {
         route: "/epayment",
         name: "E-Payment",
         title: "E-Payment",
-        icon: "icon e-payment.png",
+        icon: <RiWallet3Fill size={16} />,
       },
       {
         route: "/raport",
         name: "Raport",
         title: "Raport",
-        icon: "icon raport.png",
+        icon: <RiBookReadFill size={17} />,
       },
       {
         route: "/keuangan_sekolah",
         name: "Keuangan Sekolah",
         title: "Keuangan Sekolah",
-        icon: "icon keuangan sekolah.png",
+        icon: <RiCurrencyFill size={17} />,
       },
       {
         route: "/log_activity",
         name: "Log Activity",
         title: "Log Activity",
-        icon: "icon log activity.png",
+        icon: <RiGitRepositoryFill size={18} />,
       },
       {
         route: "/logout",
         name: "Log Out",
         title: "Log Out",
-        icon: "icon log out.png",
+        icon: <GoSignOut size={17} />,
       },
       {
         route: "/settings",
         name: "Settings",
         title: "Settings",
-        icon: "icon settings.png",
+        icon: <RiSettings5Fill size={18} />,
         subMenu: [
           {
             route: "/settings/level",

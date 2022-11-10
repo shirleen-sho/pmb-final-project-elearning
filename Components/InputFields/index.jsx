@@ -39,4 +39,6 @@ const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => 
   )
 }
 
+
+
 export default InputFields

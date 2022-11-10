@@ -5,6 +5,7 @@ import Search from "../../../Components/Search";
 import CardUsers from "../../../Components/Card/CardUsers";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Tabs from "../../../Components/Tabs";
+import Selects from "../../../Components/Selects";
 
 const Guru = () => {
   const { dummy } = useAppContext();
@@ -21,6 +22,7 @@ const Guru = () => {
         <div className="flex flex-col">
           {/* container top */}
           <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
+            <Selects list={[{name:"Arcive"},{name:"Archive"}]}/>
             <Search></Search>
             <Button link="/kepegawaian/guru/add">add</Button>
           </div>

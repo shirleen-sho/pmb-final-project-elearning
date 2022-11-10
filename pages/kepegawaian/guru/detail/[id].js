@@ -10,7 +10,7 @@ import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
 import ColorPicker from "../../../../Components/ColorPicker";
 
-export default function addGuru() {
+export default function ViewGuru() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState(null);
 
@@ -81,7 +81,7 @@ export default function addGuru() {
                             </div>
                           ))
                         )}
-                        <div className="flex flex-row items-center gap-5">
+                        {/* <div className="flex flex-row items-center gap-5">
                           <Button
                             type="light"
                             handleClick={() => onImageRemove(0)}
@@ -96,7 +96,7 @@ export default function addGuru() {
                           >
                             {imageList.length === 0 ? "Upload" : "Change"}
                           </Button>
-                        </div>
+                        </div> */}
                       </div>
                     );
                   }}
@@ -232,8 +232,8 @@ export default function addGuru() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light">Back</Button>
-          <Button type="primary">Update</Button>
+          {/* <Button type="light">Back</Button> */}
+          <Button type="info">Save</Button>
         </div>
       </div>
     </Layout>

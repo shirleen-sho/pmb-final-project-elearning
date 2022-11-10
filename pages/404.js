@@ -9,8 +9,8 @@ export default function Page404() {
           <div className="border-t border-gray-200 text-center pt-8 pb-8 px-12">
             <h1 className="text-9xl font-bold text-primary-400">404</h1>
             <h1 className="text-6xl font-medium pb-10">Oops! Page not found</h1>
-            <Button type="primary" link="/">
-              Home
+            <Button type="primary" link="/dashboard">
+              Dashboard
             </Button>
           </div>
         </div>

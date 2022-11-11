@@ -11,8 +11,9 @@ import {
   HiOutlinePlus,
 } from "react-icons/hi";
 import Image from "next/image";
+import { getServerSideProps } from "../../lib/serverProps";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const { dummy } = useAppContext();
   const { list_belum_submit_tugas, list_belum_lunas } = dummy;
 
@@ -27,6 +28,7 @@ const Dashboard = () => {
     setSelectedYear(parseInt(tahun));
   }, []);
 
+  console.log("props dashboard", props);
   return (
     <Layout>
       <div className="flex flex-row gap-7">
@@ -261,5 +263,7 @@ const Dashboard = () => {
     </Layout>
   );
 };
+
+export { getServerSideProps };
 
 export default Dashboard;

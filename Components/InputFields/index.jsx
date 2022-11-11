@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => {
+const InputFields = ({type, size, placeholder, disabled, readOnly , style, label, valueLock, defaultValue}) => {
   const[value , setValue] = useState('')
   const handleValue= (e) => {
     setValue(e.target.value)
@@ -20,10 +20,7 @@ const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => 
       style='bg-gray-200'
       placeholder = null
       break;
-    default:
-      break;
   }
-
 
   return (
     <>
@@ -32,8 +29,11 @@ const InputFields = ({type, size, placeholder, disabled , style, valueLock}) => 
         value={value || valueLock}
         onChange={handleValue} 
         className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none  ${size} ${style}`} 
-        placeholder={placeholder || null}
+        placeholder={placeholder}
+        label = {label || placeholder}
         disabled={disabled}
+        readOnly={readOnly}
+        defaultValue={defaultValue}
         />
     </>
   )

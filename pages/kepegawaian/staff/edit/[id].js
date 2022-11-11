@@ -218,8 +218,8 @@ export default function EditStaff() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light">Back</Button>
-          <Button type="warning">Edit</Button>
+          <Button type="light" link="/kepegawaian/staff">Cancel</Button>
+          <Button >Update</Button>
         </div>
       </div>
     </Layout>

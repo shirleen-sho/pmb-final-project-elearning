@@ -11,7 +11,7 @@ import {
   HiOutlinePlus,
 } from "react-icons/hi";
 import Image from "next/image";
-import { getServerSideProps } from "../../lib/serverProps";
+import { serverProps } from "../../lib/serverProps";
 
 const Dashboard = (props) => {
   const { dummy } = useAppContext();
@@ -264,6 +264,16 @@ const Dashboard = (props) => {
   );
 };
 
-export { getServerSideProps };
+export async function getServerSideProps() {
+  // Fetch previous data
+  const getPreviousProps = await serverProps();
+  const prevProps = getPreviousProps.props;
+
+  // Fetch page's data
+  // none
+
+  // Pass data to the page via props
+  return { props: { ...prevProps } };
+}
 
 export default Dashboard;

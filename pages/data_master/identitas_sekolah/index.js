@@ -162,7 +162,7 @@ const IdentitasSekolah = (props) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Fetch previous data
   const getPreviousProps = await serverProps();
   const prevProps = getPreviousProps.props;

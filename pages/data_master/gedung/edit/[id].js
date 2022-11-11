@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Button from "../../../../Components/Buttons";
 import Layout from "../../../../Components/Layout";
 import InputFields from "../../../../Components/InputFields";
@@ -7,6 +7,8 @@ import FormItem from "../../../../Components/FormItem";
 import { useRouter } from "next/router";
 
 const EditGedung = () => {
+  // const refNamaGedung = useRef(null);
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -27,6 +29,7 @@ const EditGedung = () => {
   const handleUpdateGedung = (e) => {
     e.preventDefault();
     // isi fungsi
+    // console.log(e, refNamaGedung);
   };
 
   return (
@@ -53,6 +56,7 @@ const EditGedung = () => {
               type="text"
               placeholder="Tulis nama gedung"
               size="w-full"
+              // ref={refNamaGedung}
             />
           </FormItem>
 

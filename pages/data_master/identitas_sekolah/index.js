@@ -8,6 +8,7 @@ import TextArea from "../../../Components/TextArea";
 import ImageUploader from "../../../Components/ImageUploader";
 
 const IdentitasSekolah = () => {
+  
   return (
     <Layout>
       <div className="flex flex-col gap-5">
@@ -95,5 +96,15 @@ const IdentitasSekolah = () => {
     </Layout>
   );
 };
+export async function getStaticProps() {
+  const res = await fetch('https://api.starling.kotasatelit.com/api/school-identity/1')
+  const IdentitasSekolah = await res.json()
+
+  return {
+    props: {
+      IdentitasSekolah,
+    },
+  }
+}
 
 export default IdentitasSekolah;

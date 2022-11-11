@@ -32,7 +32,7 @@ export default function ViewGuru() {
     <Layout>
       <div className="flex flex-col gap-5">
         <div className="grid grid-cols-9 gap-x-7">
-          <div className="col-start-1 col-span-1">
+          <div className="col-start-1 col-span-9">
             <FormItem label="Account" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
@@ -81,7 +81,7 @@ export default function ViewGuru() {
                             </div>
                           ))
                         )}
-                        {/* <div className="flex flex-row items-center gap-5">
+                        {/* <div className="flex flex-row items-center gap-5 ">
                           <Button
                             type="light"
                             handleClick={() => onImageRemove(0)}
@@ -103,12 +103,15 @@ export default function ViewGuru() {
                 </ImageUploading>
               </div>
             </FormItem>
+            {/* Nama */}
             <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Nama" size="w-full" />
             </FormItem>
+            {/* NPS */}
             <FormItem label="NUPTK" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="NPS" size="w-full" />
             </FormItem>
+            {/* Jenis Kelamin */}
             <FormItem
               label="Jenis Kelamin"
               labelType="label-sm"
@@ -120,6 +123,7 @@ export default function ViewGuru() {
                 description="Pilih Jenis Kelamin"
               />
             </FormItem>
+            {/* Warna */}
             <FormItem label="Warna" labelType="label-sm" labelWidth="w-1/3">
               <div className="relative py-2">
                 {/* preview warna terpilih */}
@@ -146,6 +150,7 @@ export default function ViewGuru() {
               </div>
             </FormItem>
           </div>
+          {/* No Wa */}
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
             <FormItem
               label="No.Telp/WA"
@@ -154,6 +159,7 @@ export default function ViewGuru() {
             >
               <InputFields type="text" placeholder="No.Telp/WA" size="w-full" />
             </FormItem>
+            {/* Tempat Lahir */}
             <FormItem
               label="Tempat Lahir"
               labelType="label-sm"
@@ -165,6 +171,7 @@ export default function ViewGuru() {
                 size="w-full"
               />
             </FormItem>
+            {/* Tanggal Lahir */}
             <FormItem
               label="Tanggal lahir"
               labelType="label-sm"
@@ -172,6 +179,7 @@ export default function ViewGuru() {
             >
               <InputFields type="date" placeholder="Email" size="w-full" />
             </FormItem>
+            {/* Email */}
             <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Email" size="w-full" />
             </FormItem>
@@ -179,10 +187,12 @@ export default function ViewGuru() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="grid grid-cols-9 gap-x-7">
+          {/* Form Alamat  */}
           <div className="col-start-1 col-span-1">
             <FormItem label="Address" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-full mb-4">
+            {/* Alamat */}
             <FormItem
               label="Alamat"
               labelType="label-sm"
@@ -191,18 +201,23 @@ export default function ViewGuru() {
               <TextArea placeholder="Alamat" />
             </FormItem>
           </div>
+          
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
+            {/* Kecamatan */}
             <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kecamatan" size="w-full" />
             </FormItem>
+            {/* Kode Pos */}
             <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kode Pos" size="w-full" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
+            {/* Kabupaten */}
             <FormItem label="Kabupaten / Kota" labelType="label-sm"labelWidth="w-1/3">
               <InputFields type="text" placeholder="Kabupaten / Kota" size="w-full"/>
             </FormItem>
+            {/* Provinsi */}
             <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
               <InputFields type="text" placeholder="Provinsi" size="w-full" />
             </FormItem>
@@ -210,13 +225,16 @@ export default function ViewGuru() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="grid grid-cols-9 gap-x-7">
+          {/* password */}
           <div className="col-start-1 col-span-1">
             <FormItem label="Password" labelType="label-md" />
           </div>
           <div className="col-start-2 col-span-full flex flex-col gap-5">
+            {/* Password */}
             <FormItem label="Password" labelType="label-sm" labelWidth="w-[13.5%]" >
               <InputFields type="text" placeholder="Password" size="w-full" />
             </FormItem>
+            {/* Confirm Password */}
             <FormItem
               label="Confirm Password"
               labelType="label-sm"
@@ -233,7 +251,8 @@ export default function ViewGuru() {
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
           {/* <Button type="light">Back</Button> */}
-          <Button type="info">Save</Button>
+          <Button type="warning" link="/kepegawaian/guru/edit">Edit</Button>
+          <Button link="/kepegawaian/guru">Back</Button>
         </div>
       </div>
     </Layout>

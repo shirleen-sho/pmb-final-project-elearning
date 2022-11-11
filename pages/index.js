@@ -6,7 +6,7 @@ import TextArea from "../Components/TextArea";
 import { FaSearch } from "react-icons/fa";
 import Search from "../Components/Search";
 import CardNotif from "../Components/Card/CardNotif";
-import CardMaPel from "../Components/Card/CardMaPel";
+import CardMaPels from "../Components/Card/CardMapels";
 import CardUsers from "../Components/Card/CardUsers";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
       <div className="m-5">
         <CardNotif type />
         <CardNotif />
-        <CardMaPel study={study}/>
+        <CardMaPels study={study}/>
         <CardUsers users={users}/>
       </div>
       <div className="m-5">

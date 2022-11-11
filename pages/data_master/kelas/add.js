@@ -40,7 +40,7 @@ const AddKelas = () => {
           <FormItem label="Nama Gedung" labelType="label-sm" labelWidth="w-1/4">
             <Selects
               list={tahun_akademik}
-              style="w-full"
+              size="w-full"
               description="Pilih Gedung"
             />
           </FormItem>
@@ -53,7 +53,7 @@ const AddKelas = () => {
           >
             <Selects
               list={tahun_akademik}
-              style="w-full"
+              size="w-full"
               description="Pilih Ruangan"
             />
           </FormItem>

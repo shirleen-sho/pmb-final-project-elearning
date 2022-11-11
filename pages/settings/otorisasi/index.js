@@ -26,14 +26,14 @@ const PengaturanOtorisasi = () => {
             id="top-content-kalender"
             className="flex flex-row items-center justify-between"
           >
-            <div className="relative flex flex-row items-center w-full">
+            <div className="flex flex-row items-center w-full">
               <span className="h-8 flex flex-row items-center font-medium mx-5">
                 Staff Level
               </span>
               <Selects
                 list={level}
                 description="Pilih Staff Level"
-                size="w-1/3"
+                size="w-96"
               />
             </div>
             <Button type="primary">Simpan</Button>

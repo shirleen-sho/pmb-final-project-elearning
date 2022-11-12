@@ -4,6 +4,7 @@ import Table from "../../../../Components/Table";
 import { useAppContext } from "../../../../Hooks/useAppContext";
 import Selects from "../../../../Components/Selects";
 import Button from "../../../../Components/Buttons";
+import TableBasic from "../../../../Components/Table/TableBasic";
 
 const MateriPelajaran = () => {
   const { dummy } = useAppContext();
@@ -49,7 +50,7 @@ const MateriPelajaran = () => {
           </div>
         </div>
         <div className="w-full h-full">
-          <Table
+          <TableBasic
             data={materi_pelajaran}
             tableTitle="Materi Pelajaran"
             actionUnarchive

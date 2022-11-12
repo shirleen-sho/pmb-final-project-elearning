@@ -912,23 +912,23 @@ export const useDummyProvider = () => {
     {
       nis: 2001365231,
       nama: "Ana Varela",
-      tugas: "Aljabar 1",
+      dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      nilai: "100",
+      status:"tepat waktu"
     },
     {
       nis: 2001365231,
       nama: "Ana Varela",
-      tugas: "Aljabar 1",
+      dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      nilai: "100",
+      status:"tepat waktu"
     },
     {
       nis: 2001365231,
       nama: "Ana Varela",
-      tugas: "Aljabar 1",
+      dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      nilai: "100",
+      status:"tepat waktu"
     },
   ];
 
@@ -970,6 +970,31 @@ export const useDummyProvider = () => {
     },
   ];
 
+  const list_nilai = [{
+    NIS: 2020131034,
+    nama: "Pendi",
+    judul_tugas: "Aljabar 1",
+    mata_pelajaran: "Mtematika",
+    nilai: 80,
+  },
+  {
+    NIS: 2020131034,
+    nama: "Pendi",
+    judul_tugas: "Aljabar 1",
+    mata_pelajaran: "Mtematika",
+    nilai: 80,
+  },
+  {
+    NIS: 2020131034,
+    nama: "Pendi",
+    judul_tugas: "Aljabar 1",
+    mata_pelajaran: "Mtematika",
+    nilai: 80,
+  }
+  ];
+
+
+
   return {
     list1,
     list2,
@@ -998,5 +1023,6 @@ export const useDummyProvider = () => {
     tugas,
     pengumpulan_tugas,
     materi_pelajaran,
+    list_nilai
   };
 };

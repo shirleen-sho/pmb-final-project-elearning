@@ -7,58 +7,56 @@ import Button from "../../../Components/Buttons";
 
 const PengumpulanTugas = () => {
   const { dummy } = useAppContext();
-  const { list_gedung } = dummy;
+  const { pengumpulan_tugas } = dummy;
   return (
     <Layout>
-      <div
-        id="top-content"
-        className="flex flex-row items-center justify-between my-2"
-      >
-        <div className="grid grid-cols-12 grid-flow-row gap-x-5 gap-y-3">
-          <div className="col-start-1 col-span-2 row-start-1 flex flex-row items-center">
-            <span className="font-medium text-sm">Tahun Akademik</span>
-          </div>
-          <div className="col-start-3 col-span-3 row-start-1">
-            <Selects
-              list={list_gedung}
-              description="Pilih Tahun Akademik"
-              size="w-[240px]"
-            />
-          </div>
-          <div className="col-start-1 col-span-2 row-start-2 flex flex-row items-center">
-            <span className="font-medium text-sm">Tingkatan</span>
-          </div>
-          <div className="col-start-3 col-span-3 row-start-2">
-            <Selects
-              list={list_gedung}
-              description="Pilih Tingkatan"
-              size="w-[240px]"
-            />
-          </div>
-          <div className="col-start-7 col-span-2 row-start-1 flex flex-row items-center">
-            <span className="font-medium text-sm">Kelas</span>
-          </div>
-          <div className="col-start-9 col-span-3 row-start-1">
-            <Selects
-              list={list_gedung}
-              description="Pilih Kelas"
-              size="w-[240px]"
-            />
-          </div>
-          <div className="col-start-7 col-span-2 row-start-2">
-            <Button type="success">Simpan</Button>
+      <div>
+        <div
+          id="top-content"
+          className="flex flex-row items-center justify-between my-4"
+        >
+          <div className="grid grid-cols-12 grid-flow-row gap-x-5 gap-y-3">
+            <div className="col-start-1 col-span-1  row-start-1 flex flex-row items-center">
+              <span className="font-medium text-sm">Tahun Akademik</span>
+            </div>
+            <div className="col-start-2 col-span-3 row-start-1">
+              <Selects
+                list={pengumpulan_tugas}
+                description="Pilih Tahun Akademik"
+                size="w-full"
+              />
+            </div>
+            <div className="col-start-5 col-span-1 row-start-1 flex flex-row items-center">
+              <span className="font-medium text-sm">Tingkatan</span>
+            </div>
+            <div className="col-start-6  col-span-3 row-start-1">
+              <Selects
+                list={pengumpulan_tugas}
+                description="Pilih Tingkatan"
+                size="w-full"
+              />
+            </div>
+            <div className="col-start-9 col-span-1 row-start-1 flex flex-row items-center">
+              <span className="font-medium text-sm">Kelas</span>
+            </div>
+            <div className="col-start-10 col-span-3 row-start-1">
+              <Selects
+                list={pengumpulan_tugas}
+                description="Pilih Kelas"
+                size="w-full"
+              />
+            </div>
           </div>
         </div>
-      </div>
       <div className="w-full h-full">
         <Table
-          data={list_gedung}
+          data={pengumpulan_tugas}
           topNavigation={true}
-          tableTitle="Daftar Gedung"
+          tableTitle="Penyumpulan Tugas"
           actionArchive
-          actionEdit
           actionDetail
         />
+      </div>
       </div>
     </Layout>
   );

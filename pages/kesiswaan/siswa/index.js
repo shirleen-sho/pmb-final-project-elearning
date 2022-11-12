@@ -2,9 +2,9 @@ import React from "react";
 import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
-import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Selects from "../../../Components/Selects";
+import TableBasic from "../../../Components/Table/TableBasic";
 
 const Siswa = () => {
   const list = [
@@ -45,7 +45,7 @@ const Siswa = () => {
             </div>
           </div>
           {/* table */}
-          <Table
+          <TableBasic
             data={list_siswa}
             tableTitle="Daftar Siswa"
             actionArchive

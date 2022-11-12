@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import Search from "../../../Components/Search";
-import Table from "../../../Components/Table";
+import TableBasic from "../../../Components/Table/TableBasic";
 import Tabs from "../../../Components/Tabs";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
@@ -26,7 +26,7 @@ const ArchiveWali = () => {
               Active
             </Button>
           </div>
-          <Table data={list_siswa} actionUnarchive />
+          <TableBasic data={list_siswa} actionUnarchive />
         </div>
       </Tabs>
     </Layout>

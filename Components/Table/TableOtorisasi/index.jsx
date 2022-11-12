@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import Link from "next/link";
-import Button from "../Buttons";
+import Button from "../../Buttons";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const TableOtorisasi = ({ data }) => {

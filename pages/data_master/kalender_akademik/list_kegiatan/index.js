@@ -2,9 +2,9 @@ import React from "react";
 import Layout from "../../../../Components/Layout";
 import Tabs from "../../../../Components/Tabs";
 import Button from "../../../../Components/Buttons";
-import Table from "../../../../Components/Table";
 import { useAppContext } from "../../../../Hooks/useAppContext";
 import Search from "../../../../Components/Search";
+import TableBasic from "../../../../Components/Table/TableBasic";
 
 const ListKegiatan = () => {
   const list = [
@@ -34,7 +34,7 @@ const ListKegiatan = () => {
               Add
             </Button>
           </div>
-          <Table data={list_kegiatan} actionArchive actionEdit />
+          <TableBasic data={list_kegiatan} actionArchive actionEdit />
         </div>
       </Tabs>
     </Layout>

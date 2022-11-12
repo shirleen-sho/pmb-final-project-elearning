@@ -2,9 +2,9 @@ import React from "react";
 import Layout from "../../../../Components/Layout";
 import Tabs from "../../../../Components/Tabs";
 import Button from "../../../../Components/Buttons";
-import Table from "../../../../Components/Table";
 import { useAppContext } from "../../../../Hooks/useAppContext";
 import Search from "../../../../Components/Search";
+import TableBasic from "../../../../Components/Table/TableBasic";
 
 const ArchiveListKegiatan = () => {
   const list = [
@@ -28,7 +28,7 @@ const ArchiveListKegiatan = () => {
               Active
             </Button>
           </div>
-          <Table data={list_kegiatan} actionUnarchive />
+          <TableBasic data={list_kegiatan} actionUnarchive />
         </div>
       </Tabs>
     </Layout>

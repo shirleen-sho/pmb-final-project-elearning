@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Button from "../Buttons";
-import Search from "../Search";
+import Button from "../../Buttons";
+import Search from "../../Search";
 import {
   HiOutlineArchive,
   HiOutlinePencil,
@@ -11,7 +11,7 @@ import {
 } from "react-icons/hi";
 import { useRouter } from "next/router";
 
-const Table = ({
+const TableBasic = ({
   data,
   tableTitle,
   actionDetail,
@@ -230,4 +230,4 @@ const Table = ({
   );
 };
 
-export default Table;
+export default TableBasic;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Button from "../Buttons";
-import Search from "../Search";
+import Button from "../../Buttons";
+import Search from "../../Search";
 import { useRouter } from "next/router";
 
 const TableMerge = ({

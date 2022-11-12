@@ -3,7 +3,7 @@ import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import Search from "../../../Components/Search";
 import Selects from "../../../Components/Selects";
-import Table from "../../../Components/Table";
+import TableBasic from "../../../Components/Table/TableBasic";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
 const RPP = () => {
@@ -33,7 +33,7 @@ const RPP = () => {
           </div>
         </div>
         {/* table */}
-        <Table data={list_rpp} actionArchive actionEdit actionDetail />
+        <TableBasic data={list_rpp} actionArchive actionEdit actionDetail />
       </div>
     </Layout>
   );

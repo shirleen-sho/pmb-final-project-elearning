@@ -3,7 +3,7 @@ import Button from "../../../../Components/Buttons";
 import Layout from "../../../../Components/Layout";
 import Search from "../../../../Components/Search";
 import Tabs from "../../../../Components/Tabs";
-import Table from "../../../../Components/Table";
+import TableBasic from "../../../../Components/Table/TableBasic";
 import { useAppContext } from "../../../../Hooks/useAppContext";
 
 const ArchiveKategoriMataPelajaran = () => {
@@ -30,7 +30,7 @@ const ArchiveKategoriMataPelajaran = () => {
             </Button>
           </div>
           {/* table */}
-          <Table data={list_kategori_mata_pelajaran} actionUnarchive />
+          <TableBasic data={list_kategori_mata_pelajaran} actionUnarchive />
         </div>
       </Tabs>
     </Layout>

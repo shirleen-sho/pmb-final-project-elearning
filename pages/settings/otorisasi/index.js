@@ -4,7 +4,7 @@ import Tabs from "../../../Components/Tabs";
 import Button from "../../../Components/Buttons";
 import Selects from "../../../Components/Selects";
 import { useAppContext } from "../../../Hooks/useAppContext";
-import TableOtorisasi from "../../../Components/Table/otorisasi";
+import TableOtorisasi from "../../../Components/Table/TableOtorisasi";
 
 const PengaturanOtorisasi = () => {
   const list = [

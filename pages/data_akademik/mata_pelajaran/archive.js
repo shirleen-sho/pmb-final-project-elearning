@@ -6,7 +6,7 @@ import Tabs from "../../../Components/Tabs";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const MataPelajaran = () => {
+const ArchiveMataPelajaran = () => {
   const list = [
     { id: 1, name: "Kategori Mata Pelajaran", tab: "/kategori" },
     { id: 2, name: "Mata Pelajaran", tab: "" },
@@ -22,24 +22,16 @@ const MataPelajaran = () => {
           {/* container top */}
           <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
             <Search></Search>
-            <Button type="warning" link="/data_akademik/mata_pelajaran/archive">
-              Archive
-            </Button>
-            <Button type="primary" link="/data_akademik/mata_pelajaran/add">
-              Add
+            <Button type="warning" link="/data_akademik/mata_pelajaran">
+              Active
             </Button>
           </div>
           {/* table */}
-          <Table
-            data={list_mata_pelajaran}
-            actionArchive
-            actionEdit
-            actionDetail
-          />
+          <Table data={list_mata_pelajaran} actionUnarchive />
         </div>
       </Tabs>
     </Layout>
   );
 };
 
-export default MataPelajaran;
+export default ArchiveMataPelajaran;

@@ -3,10 +3,12 @@ import Layout from '../../../../Components/Layout'
 import FormItem from '../../../../Components/FormItem'
 import InputFields from '../../../../Components/InputFields'
 import Button from '../../../../Components/Buttons'
-import Selects from '../../../../Components/Selects'
 import Uploader from '../../../../Components/Uploader'
+import { useRouter } from "next/router";
 
 export default function AddMateriPelajaran() {
+    const router = useRouter();
+    const { id } = router.query;
     return (
         <>
             <Layout>
@@ -20,34 +22,17 @@ export default function AddMateriPelajaran() {
                     <div className="grid grid-cols-9 grid-rows-9 gap-x-7 gap-y-4">
                         <div className="col-start-1 col-span-9 row-start-1">
                             <FormItem label="Kode Materi" labelType="label-sm" labelWidth="w-1/5">
-                                <InputFields type="text" valueLock="MO1" placeholder="MO1" size="w-full" disabled />
+                                <InputFields type="text" valueLock="MO1" placeholder="MO1" size="w-full" disabled readOnly />
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-2">
                             <FormItem label="Mata Pelajaran*" labelType="label-sm" labelWidth="w-1/5">
-                                <Selects
-                                    list={[
-                                        { name: "MTK" },
-                                        { name: "PKN" },
-                                        { name: "Penjaskes" },
-                                        { name: "IPS" },
-                                        { name: "IPA" },
-                                    ]}
-                                    style="w-full"
-                                    description="Pilih Materi Pelajaran"
-                                />
+                                <InputFields type="text" placeholder="Pilih Materi Pelajaran" size="w-full"  />
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-3">
                             <FormItem label="Kategori Materi" labelType="label-sm" labelWidth="w-1/5">
-                                <Selects
-                                    list={[
-                                        { name: "Materi" },
-                                        { name: "Video" },
-                                    ]}
-                                    style="w-full"
-                                    description="Pilih Materi Pelajaran"
-                                />
+                                <InputFields type="text" placeholder="Kategori Materi" size="w-full"  />
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-4">
@@ -72,19 +57,13 @@ export default function AddMateriPelajaran() {
                         </div>
                         <div className="col-start-1 col-span-9 row-start-8">
                             <FormItem label="Kelas" labelType="label-sm" labelWidth="w-1/5">
-                                <Selects
-                                    list={[
-                                        { name: "1A" },
-                                        { name: "2B" },
-                                    ]}
-                                    style="w-full"
-                                    description="Kelas"
-                                />
+                                <InputFields type="text" placeholder="Kelas" size="w-full" />
                             </FormItem>
                         </div>
                         <div className="col-start-1 col-span-9 row-start-9" >
                             <div className="flex flex-row justify-end gap-5">
-                                <Button type="primary">ok</Button>
+                                <Button type="warning" link={`/elearning/materi_pelajaran/edit/${id}`}>Edit</Button>
+                                <Button link={"/elearning/materi_pelajaran" }>Back</Button>
                             </div>
                         </div>
                     </div>

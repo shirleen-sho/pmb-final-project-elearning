@@ -96,10 +96,10 @@ export default function AddTugas() {
             </div>
             <div className="col-start-1 col-span-9 row-start-9" >
               <div className="flex flex-row justify-end gap-5">
-                <Button type="light" link="/kesiswaan/siswa">
+                <Button type="light" link="/elearning/tugas">
                   Cancel
                 </Button>
-                <Button type="primary">Save</Button>
+                <Button type="primary" link="/elearning/tugas">Update</Button>
               </div>
             </div>
           </div>

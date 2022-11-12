@@ -84,10 +84,10 @@ export default function AddMateriPelajaran() {
                         </div>
                         <div className="col-start-1 col-span-9 row-start-9" >
                             <div className="flex flex-row justify-end gap-5">
-                                <Button type="light" link="/kesiswaan/siswa">
+                                <Button type="light" link="/elearning/materi_pelajaran">
                                     Cancel
                                 </Button>
-                                <Button type="primary">Update</Button>
+                                <Button type="primary" link="/elearning/materi_pelajaran">Update</Button>
                             </div>
                         </div>
                     </div>

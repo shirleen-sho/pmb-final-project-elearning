@@ -51,10 +51,11 @@ const Nilai = () => {
         <div className="w-full h-full">
           <Table
             data={list_nilai}
-            topNavigation={true}
             tableTitle="Nilai"
             actionArchive
             actionDetail
+            fieldSearch
+            buttonArchive
           />
         </div>
       </div>

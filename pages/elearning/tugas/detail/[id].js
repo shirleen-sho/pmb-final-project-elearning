@@ -4,8 +4,11 @@ import FormItem from '../../../../Components/FormItem'
 import InputFields from '../../../../Components/InputFields'
 import Button from '../../../../Components/Buttons'
 import Selects from '../../../../Components/Selects'
+import { useRouter } from "next/router";
 
 export default function AddTugas() {
+  const router = useRouter();
+  const { id } = router.query;
   return (
     <>
       <Layout>
@@ -24,32 +27,12 @@ export default function AddTugas() {
             </div>
             <div className="col-start-1 col-span-9 row-start-2">
               <FormItem label="Guru Pembuat" labelType="label-sm" labelWidth="w-1/5">
-                <Selects
-                  list={[
-                    { name: "MTK" },
-                    { name: "PKN" },
-                    { name: "Penjaskes" },
-                    { name: "IPS" },
-                    { name: "IPA" },
-                  ]}
-                  style="w-full"
-                  description="Pilih Mata Pelajaran"
-                />
+                <InputFields type="text" placeholder="Guru" size="w-full" />
               </FormItem>
             </div>
             <div className="col-start-1 col-span-9 row-start-3">
               <FormItem label="Mata Pelajaran" labelType="label-sm" labelWidth="w-1/5">
-                <Selects
-                  list={[
-                    { name: "MTK" },
-                    { name: "PKN" },
-                    { name: "Penjaskes" },
-                    { name: "IPS" },
-                    { name: "IPA" },
-                  ]}
-                  style="w-full"
-                  description="Pilih Mata Pelajaran"
-                />
+              <InputFields type="text" placeholder="Mata Pelajaran" size="w-full" />
               </FormItem>
             </div>
             <div className="col-start-1 col-span-9 row-start-4">
@@ -59,17 +42,7 @@ export default function AddTugas() {
             </div>
             <div className="col-start-1 col-span-9 row-start-5">
               <FormItem label="Kelas" labelType="label-sm" labelWidth="w-1/5">
-                <Selects
-                  list={[
-                    { name: "MTK" },
-                    { name: "PKN" },
-                    { name: "Penjaskes" },
-                    { name: "IPS" },
-                    { name: "IPA" },
-                  ]}
-                  style="w-full"
-                  description="Pilih Materi Pelajaran"
-                />
+                <InputFields type="text" placeholder="Kelas" size="w-full" />
               </FormItem>
             </div>
             <div className="col-start-1 col-span-9 row-start-6">
@@ -96,10 +69,10 @@ export default function AddTugas() {
             </div>
             <div className="col-start-1 col-span-9 row-start-9" >
               <div className="flex flex-row justify-end gap-5">
-                <Button type="light" link="/kesiswaan/siswa">
-                  Cancel
+                <Button type="warning" link={`/elearning/tugas/edit/${id}`}>
+                  Edit
                 </Button>
-                <Button type="primary">Save</Button>
+                <Button type="primary" link="/elearning/tugas">Back</Button>
               </div>
             </div>
           </div>

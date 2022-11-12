@@ -48,15 +48,17 @@ const PengumpulanTugas = () => {
             </div>
           </div>
         </div>
-      <div className="w-full h-full">
-        <Table
-          data={pengumpulan_tugas}
-          topNavigation={true}
-          tableTitle="Penyumpulan Tugas"
-          actionArchive
-          actionDetail
-        />
-      </div>
+        <div className="w-full h-full">
+          <Table
+            data={pengumpulan_tugas}
+            topNavigation={true}
+            tableTitle="Penyumpulan Tugas"
+            actionArchive
+            actionDetail
+            buttonArchive
+            fieldSearch
+          />
+        </div>
       </div>
     </Layout>
   );

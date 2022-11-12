@@ -49,14 +49,16 @@ const MateriPelajaran = () => {
           </div>
         </div>
         <div className="w-full h-full">
-        <Table
-          data={materi_pelajaran}
-          topNavigation={true}
-          tableTitle="Materi Pelajaran"
-          actionArchive
-          actionEdit
-          actionDetail
-        />
+          <Table
+            data={materi_pelajaran}
+            tableTitle="Materi Pelajaran"
+            actionArchive
+            actionEdit
+            actionDetail
+            buttonAdd
+            buttonArchive
+            fieldSearch
+          />
         </div>
       </div>
     </Layout>

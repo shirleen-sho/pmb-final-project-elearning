@@ -1,13 +1,12 @@
-import Layout from "../../../Components/Layout";
+import Layout from "../../../../Components/Layout";
 import React from "react";
-import Table from "../../../Components/Table";
-import { useAppContext } from "../../../Hooks/useAppContext";
-import Selects from "../../../Components/Selects";
-import Button from "../../../Components/Buttons";
+import Table from "../../../../Components/Table";
+import { useAppContext } from "../../../../Hooks/useAppContext";
+import Selects from "../../../../Components/Selects";
 
-const Tugas = () => {
+const Nilai = () => {
   const { dummy } = useAppContext();
-  const { tugas } = dummy;
+  const { list_nilai } = dummy;
   return (
     <Layout>
       <div>
@@ -21,7 +20,7 @@ const Tugas = () => {
             </div>
             <div className="col-start-2 col-span-3 row-start-1">
               <Selects
-                list={tugas}
+                list={list_nilai}
                 description="Pilih Tahun Akademik"
                 size="w-full"
               />
@@ -31,7 +30,7 @@ const Tugas = () => {
             </div>
             <div className="col-start-6  col-span-3 row-start-1">
               <Selects
-                list={tugas}
+                list={list_nilai}
                 description="Pilih Tingkatan"
                 size="w-full"
               />
@@ -41,28 +40,27 @@ const Tugas = () => {
             </div>
             <div className="col-start-10 col-span-3 row-start-1">
               <Selects
-                list={tugas}
+                list={list_nilai}
                 description="Pilih Kelas"
                 size="w-full"
               />
             </div>
           </div>
         </div>
-      </div>
-      <div className=" w-full h-full">
-        <Table
-          data={tugas}
-          tableTitle="Tugas"
-          actionArchive
-          actionDetail
-          actionEdit
-          buttonAdd
-          buttonArchive
-          fieldSearch
-        />
+
+        <div className="w-full h-full">
+          <Table
+            data={list_nilai}
+            tableTitle="Nilai"
+            actionUnarchive
+            actionDetail
+            fieldSearch
+            buttonActive
+          />
+        </div>
       </div>
     </Layout>
   );
 };
 
-export default Tugas;
+export default Nilai;

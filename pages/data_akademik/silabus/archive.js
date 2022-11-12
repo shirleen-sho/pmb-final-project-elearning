@@ -6,7 +6,7 @@ import Selects from "../../../Components/Selects";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const Silabus = () => {
+const ArchiveSilabus = () => {
   const { dummy } = useAppContext();
   const { list_silabus, list_siswa } = dummy;
   return (
@@ -24,19 +24,16 @@ const Silabus = () => {
           </div>
           <div className="flex flex-row items-center gap-5">
             <Search></Search>
-            <Button type="warning" link="/data_akademik/silabus/archive">
-              Archive
-            </Button>
-            <Button type="primary" link="/data_akademik/silabus/add">
-              Add
+            <Button type="warning" link="/data_akademik/silabus">
+              Active
             </Button>
           </div>
         </div>
         {/* table */}
-        <Table data={list_silabus} actionArchive actionEdit actionDetail />
+        <Table data={list_silabus} actionArchive />
       </div>
     </Layout>
   );
 };
 
-export default Silabus;
+export default ArchiveSilabus;

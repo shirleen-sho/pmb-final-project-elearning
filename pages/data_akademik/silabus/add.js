@@ -14,14 +14,6 @@ const AddSilabus = () => {
     { name: "Semester Ganjil 2021/2022" },
   ];
 
-  const pilihan_status = [
-    { label: "Aktif", value: "aktif" },
-    { label: "Tidak Aktif", value: "nonaktif" },
-  ];
-
-  const [selectedStatus, setSelectedStatus] = useState(null);
-  const handleChangeStatus = (e) => setSelectedStatus(e.target.value);
-
   return (
     <Layout>
       <div>

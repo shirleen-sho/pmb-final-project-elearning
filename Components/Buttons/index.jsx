@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Button = ({ type, classColor, style, children, link, handleClick }) => {
+const Button = ({ type, classColor, style, children, link, handleClick,title }) => {
   switch (type) {
     case "secondary":
       classColor = "bg-secondary-base text-white hover:bg-secondary-hover py-2 px-4 text-xs rounded";
@@ -42,6 +42,7 @@ const Button = ({ type, classColor, style, children, link, handleClick }) => {
           type={type}
           className={`inline-flex justify-center items-center leading-4 tracking-widest uppercase transition ease-in-out duration-500 font-semibold ${classColor} ${style}`}
           onClick={handleClick}
+          title={title}
         >
           {children}
         </button>

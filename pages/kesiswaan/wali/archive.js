@@ -6,7 +6,7 @@ import Table from "../../../Components/Table";
 import Tabs from "../../../Components/Tabs";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const Wali = () => {
+const ArchiveWali = () => {
   const list = [
     { id: 1, name: "Siswa", tab: "/siswa" },
     { id: 2, name: "Wali Murid", tab: "/wali" },
@@ -22,18 +22,15 @@ const Wali = () => {
           {/* container top */}
           <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
             <Search />
-            <Button type="warning" link="/kesiswaan/wali/archive">
-              Archive
-            </Button>
-            <Button type="primary" link="/kesiswaan/wali/add">
-              Add
+            <Button type="warning" link="/kesiswaan/wali">
+              Active
             </Button>
           </div>
-          <Table data={list_siswa} actionArchive actionEdit actionDetail />
+          <Table data={list_siswa} actionUnarchive />
         </div>
       </Tabs>
     </Layout>
   );
 };
 
-export default Wali;
+export default ArchiveWali;

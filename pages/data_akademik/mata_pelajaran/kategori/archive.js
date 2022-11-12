@@ -6,7 +6,7 @@ import Tabs from "../../../../Components/Tabs";
 import Table from "../../../../Components/Table";
 import { useAppContext } from "../../../../Hooks/useAppContext";
 
-const KategoriMataPelajaran = () => {
+const ArchiveKategoriMataPelajaran = () => {
   const list = [
     { id: 1, name: "Kategori Mata Pelajaran", tab: "/kategori" },
     { id: 2, name: "Mata Pelajaran", tab: "" },
@@ -24,23 +24,17 @@ const KategoriMataPelajaran = () => {
             <Search></Search>
             <Button
               type="warning"
-              link="/data_akademik/mata_pelajaran/kategori/archive"
+              link="/data_akademik/mata_pelajaran/kategori"
             >
-              Archive
-            </Button>
-            <Button
-              type="primary"
-              link="/data_akademik/mata_pelajaran/kategori/add"
-            >
-              Add
+              Active
             </Button>
           </div>
           {/* table */}
-          <Table data={list_kategori_mata_pelajaran} actionArchive actionEdit />
+          <Table data={list_kategori_mata_pelajaran} actionUnarchive />
         </div>
       </Tabs>
     </Layout>
   );
 };
 
-export default KategoriMataPelajaran;
+export default ArchiveKategoriMataPelajaran;

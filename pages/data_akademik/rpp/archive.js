@@ -6,9 +6,9 @@ import Selects from "../../../Components/Selects";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const Silabus = () => {
+const ArchiveRPP = () => {
   const { dummy } = useAppContext();
-  const { list_silabus, list_siswa } = dummy;
+  const { list_rpp, list_siswa } = dummy;
   return (
     <Layout>
       <div className="w-full h-full flex flex-col gap-5">
@@ -24,19 +24,16 @@ const Silabus = () => {
           </div>
           <div className="flex flex-row items-center gap-5">
             <Search></Search>
-            <Button type="warning" link="/data_akademik/silabus/archive">
-              Archive
-            </Button>
-            <Button type="primary" link="/data_akademik/silabus/add">
-              Add
+            <Button type="warning" link="/data_akademik/rpp">
+              Active
             </Button>
           </div>
         </div>
         {/* table */}
-        <Table data={list_silabus} actionArchive actionEdit actionDetail />
+        <Table data={list_rpp} actionUnarchive />
       </div>
     </Layout>
   );
 };
 
-export default Silabus;
+export default ArchiveRPP;

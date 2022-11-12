@@ -6,7 +6,7 @@ import Table from "../../../../Components/Table";
 import { useAppContext } from "../../../../Hooks/useAppContext";
 import Search from "../../../../Components/Search";
 
-const ListKegiatan = () => {
+const ArchiveListKegiatan = () => {
   const list = [
     { id: 1, name: "Kalender", tab: "" },
     { id: 2, name: "List Kegiatan", tab: "/list_kegiatan" },
@@ -23,22 +23,16 @@ const ListKegiatan = () => {
             <Search />
             <Button
               type="warning"
-              link="/data_master/kalender_akademik/list_kegiatan/archive"
+              link="/data_master/kalender_akademik/list_kegiatan"
             >
-              Archive
-            </Button>
-            <Button
-              type="primary"
-              link="/data_master/kalender_akademik/list_kegiatan/add"
-            >
-              Add
+              Active
             </Button>
           </div>
-          <Table data={list_kegiatan} actionArchive actionEdit />
+          <Table data={list_kegiatan} actionUnarchive />
         </div>
       </Tabs>
     </Layout>
   );
 };
 
-export default ListKegiatan;
+export default ArchiveListKegiatan;

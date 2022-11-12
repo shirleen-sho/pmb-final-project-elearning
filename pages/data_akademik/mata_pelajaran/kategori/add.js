@@ -7,12 +7,6 @@ import Link from "next/link";
 import FormItem from "../../../../Components/FormItem";
 
 const AddKategoriMataPelajaran = () => {
-  const tahun_akademik = [
-    { name: "Semester Ganjil 2022/2023" },
-    { name: "Semester Genap 2021/2022" },
-    { name: "Semester Ganjil 2021/2022" },
-  ];
-
   return (
     <Layout>
       <div>

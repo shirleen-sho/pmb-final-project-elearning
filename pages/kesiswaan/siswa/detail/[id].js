@@ -152,7 +152,7 @@ const DetailSiswa = () => {
           <Button type="light" link="/kesiswaan/siswa">
             Back
           </Button>
-          <Button type="danger" link={"/kesiswaan/siswa/detail/" + id}>
+          <Button type="danger" link={"/kesiswaan/siswa/archive"}>
             Archive
           </Button>
           <Button type="warning" link={"/kesiswaan/siswa/edit/" + id}>

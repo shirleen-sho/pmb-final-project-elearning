@@ -24,7 +24,12 @@ const RPP = () => {
           </div>
           <div className="flex flex-row items-center gap-5">
             <Search></Search>
-            <Button link="/data_akademik/rpp/add">add</Button>
+            <Button type="warning" link="/data_akademik/rpp/archive">
+              Archive
+            </Button>
+            <Button type="primary" link="/data_akademik/rpp/add">
+              Add
+            </Button>
           </div>
         </div>
         {/* table */}

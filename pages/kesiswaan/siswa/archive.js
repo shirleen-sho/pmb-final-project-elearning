@@ -6,7 +6,7 @@ import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Selects from "../../../Components/Selects";
 
-const Siswa = () => {
+const ArchiveSiswa = () => {
   const list = [
     { id: 1, name: "Siswa", tab: "/siswa" },
     { id: 2, name: "Wali Murid", tab: "/wali" },
@@ -47,12 +47,9 @@ const Siswa = () => {
           {/* table */}
           <Table
             data={list_siswa}
-            tableTitle="Daftar Siswa"
-            actionArchive
-            actionEdit
-            actionDetail
-            buttonAdd
-            buttonArchive
+            tableTitle="Daftar Arsipan Siswa"
+            actionUnarchive
+            buttonActive
             fieldSearch
           />
         </div>
@@ -61,4 +58,4 @@ const Siswa = () => {
   );
 };
 
-export default Siswa;
+export default ArchiveSiswa;

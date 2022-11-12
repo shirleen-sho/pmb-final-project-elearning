@@ -12,10 +12,12 @@ const JamPembelajaran = () => {
         <Table
           data={list_jam_pembelajaran}
           textAlign="center"
-          topNavigation={true}
           tableTitle="Daftar Jam Pembelajaran"
           actionArchive
           actionEdit
+          buttonAdd
+          buttonArchive
+          fieldSearch
         />
       </div>
     </Layout>

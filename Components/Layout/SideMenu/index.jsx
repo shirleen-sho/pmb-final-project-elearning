@@ -11,6 +11,8 @@ import {
 
 const SideMenu = () => {
   const [showSidemenu, setShowSidemenu] = useState(true);
+  const [showDropdown, setShowDropdown] = useState(false);
+
   const [paddingMenu, setPaddingMenu] = useState("px-6 py-2");
   const handleToggleSidemenu = () => {
     setShowSidemenu(!showSidemenu);
@@ -22,8 +24,7 @@ const SideMenu = () => {
   };
 
   const { menu, user } = useAppContext();
-  const { configMenu, selectedMenu, selectedSubmenu, selectedActionmenu } =
-    menu;
+  const { configMenu, selectedMenu, selectedSubmenu, setSelectedMenu } = menu;
   const { showLogout, setShowLogout } = user;
 
   return (
@@ -55,11 +56,7 @@ const SideMenu = () => {
         {configMenu.mainMenu.map(
           ({ route, name, title, detail, icon, subMenu }) => (
             <div className="flex flex-col gap-1" key={route}>
-              <Link
-                href={subMenu ? subMenu[0].route : route}
-                key={route}
-                legacyBehavior
-              >
+              <Link href={subMenu ? "" : route} key={route} legacyBehavior>
                 <a
                   title={showSidemenu ? "" : name}
                   className={
@@ -74,6 +71,8 @@ const SideMenu = () => {
                     if (route === "/logout") {
                       e.preventDefault();
                       setShowLogout(true);
+                    } else if (subMenu) {
+                      setShowDropdown(route);
                     }
                   }}
                 >
@@ -92,25 +91,27 @@ const SideMenu = () => {
                   </div>
                 </a>
               </Link>
-              {showSidemenu && selectedMenu === route && subMenu && (
-                <div className="flex flex-row justify-center">
-                  <div className="bg-primary-50 flex flex-col w-4/5">
-                    {subMenu.map((sub) => (
-                      <Link href={sub.route} key={sub.route} legacyBehavior>
-                        <a
-                          className={
-                            selectedSubmenu === sub.route
-                              ? "font-normal text-2xs px-4 py-2 border-l-4 border-neutral-4"
-                              : "font-normal text-2xs px-4 py-2 border-l-4 border-transparent hover:border-primary-500"
-                          }
-                        >
-                          {sub.name}
-                        </a>
-                      </Link>
-                    ))}
+              {showSidemenu &&
+                (selectedMenu === route || showDropdown === route) &&
+                subMenu && (
+                  <div className="flex flex-row justify-center">
+                    <div className="bg-primary-50 flex flex-col w-4/5">
+                      {subMenu.map((sub) => (
+                        <Link href={sub.route} key={sub.route} legacyBehavior>
+                          <a
+                            className={
+                              selectedSubmenu === sub.route
+                                ? "font-normal text-2xs px-4 py-2 border-l-4 border-neutral-4"
+                                : "font-normal text-2xs px-4 py-2 border-l-4 border-transparent hover:border-primary-500"
+                            }
+                          >
+                            {sub.name}
+                          </a>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           )
         )}

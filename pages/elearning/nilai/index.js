@@ -1,8 +1,8 @@
 import Layout from "../../../Components/Layout";
 import React from "react";
-import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Selects from "../../../Components/Selects";
+import TableBasic from "../../../Components/Table/TableBasic";
 
 const Nilai = () => {
   const { dummy } = useAppContext();
@@ -49,7 +49,7 @@ const Nilai = () => {
         </div>
 
         <div className="w-full h-full">
-          <Table
+          <TableBasic
             data={list_nilai}
             topNavigation={true}
             tableTitle="Nilai"

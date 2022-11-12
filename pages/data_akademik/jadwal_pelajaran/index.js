@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../../../Components/Layout";
 import Button from "../../../Components/Buttons";
 import Selects from "../../../Components/Selects";
-import TableMerge from "../../../Components/Table/merge";
+import TableMerge from "../../../Components/Table/TableMerge";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Search from "../../../Components/Search";
 

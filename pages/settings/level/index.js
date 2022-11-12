@@ -2,9 +2,9 @@ import React from "react";
 import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
 import Button from "../../../Components/Buttons";
-import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Search from "../../../Components/Search";
+import TableBasic from "../../../Components/Table/TableBasic";
 
 const Settings = () => {
   const list = [
@@ -25,7 +25,7 @@ const Settings = () => {
               Add
             </Button>
           </div>
-          <Table data={list_level_staff} actionArchive actionEdit />
+          <TableBasic data={list_level_staff} actionArchive actionEdit />
         </div>
       </Tabs>
     </Layout>

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../Components/Layout";
-import TableMerge from "../../Components/Table/merge";
+import TableMerge from "../../Components/Table/TableMerge";
 import { useAppContext } from "../../Hooks/useAppContext";
 
 const Raport = () => {

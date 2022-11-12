@@ -1,9 +1,9 @@
 import Layout from "../../../Components/Layout";
 import React from "react";
-import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import Selects from "../../../Components/Selects";
 import Button from "../../../Components/Buttons";
+import TableBasic from "../../../Components/Table/TableBasic";
 
 const MateriPelajaran = () => {
   const { dummy } = useAppContext();
@@ -49,14 +49,14 @@ const MateriPelajaran = () => {
           </div>
         </div>
         <div className="w-full h-full">
-        <Table
-          data={materi_pelajaran}
-          topNavigation={true}
-          tableTitle="Materi Pelajaran"
-          actionArchive
-          actionEdit
-          actionDetail
-        />
+          <TableBasic
+            data={materi_pelajaran}
+            topNavigation={true}
+            tableTitle="Materi Pelajaran"
+            actionArchive
+            actionEdit
+            actionDetail
+          />
         </div>
       </div>
     </Layout>

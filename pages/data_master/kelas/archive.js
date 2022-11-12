@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../../Components/Layout";
-import Table from "../../../Components/Table";
+import TableBasic from "../../../Components/Table/TableBasic";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
 const ArchiveKelas = () => {
@@ -9,7 +9,7 @@ const ArchiveKelas = () => {
   return (
     <Layout>
       <div className="w-full h-full">
-        <Table
+        <TableBasic
           data={list_kelas}
           tableTitle="Daftar Arsipan Kelas"
           actionUnarchive

@@ -3,7 +3,7 @@ import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import Search from "../../../Components/Search";
 import Selects from "../../../Components/Selects";
-import Table from "../../../Components/Table";
+import TableBasic from "../../../Components/Table/TableBasic";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
 const ArchiveSilabus = () => {
@@ -30,7 +30,7 @@ const ArchiveSilabus = () => {
           </div>
         </div>
         {/* table */}
-        <Table data={list_silabus} actionArchive />
+        <TableBasic data={list_silabus} actionArchive />
       </div>
     </Layout>
   );

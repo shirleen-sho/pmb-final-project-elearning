@@ -51,8 +51,8 @@ const JadwalPelajaran = () => {
         </div>
         <TableMerge
           data={list_jadwal_pelajaran}
-          topNavigation={true}
           tableTitle="Tabel Jadwal Pelajaran"
+          buttonAdd
         />
       </div>
     </Layout>

@@ -3,7 +3,14 @@ import Button from "../Buttons";
 import Search from "../Search";
 import { useRouter } from "next/router";
 
-const TableMerge = ({ data, tableTitle, topNavigation }) => {
+const TableMerge = ({
+  data,
+  tableTitle,
+  buttonAdd,
+  buttonArchive,
+  buttonActive,
+  fieldSearch,
+}) => {
   const [tableHead, setTableHead] = useState([]);
   const [tableHeadFormatted, setTableHeadFormatted] = useState([]);
   const [style, setStyle] = useState({
@@ -65,14 +72,27 @@ const TableMerge = ({ data, tableTitle, topNavigation }) => {
   return (
     <div className="border border-gray-200 bg-white rounded-xl p-6 shadow-lg w-full flex flex-col gap-6">
       {/* top navigation table */}
-      {topNavigation && (
+      {(fieldSearch || buttonAdd || buttonArchive || buttonActive) && (
         <div className="flex flex-row justify-between items-center">
           <div className="font-semibold text-xl">{tableTitle || ""}</div>
           <div className="flex flex-row items-center gap-5">
-            <Search />
-            <Button type="primary" link={path + "/add"}>
-              Add
-            </Button>
+            {fieldSearch && <Search />}
+            {buttonArchive ? (
+              <Button type="warning" link={path + "/archive"}>
+                Archive
+              </Button>
+            ) : (
+              buttonActive && (
+                <Button type="warning" handleClick={location.back}>
+                  Active
+                </Button>
+              )
+            )}
+            {buttonAdd && (
+              <Button type="primary" link={path + "/add"}>
+                Add
+              </Button>
+            )}
           </div>
         </div>
       )}

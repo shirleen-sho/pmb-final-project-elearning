@@ -3,19 +3,17 @@ import Layout from "../../../Components/Layout";
 import Table from "../../../Components/Table";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const Gedung = () => {
+const ArchiveTingkatan = () => {
   const { dummy } = useAppContext();
-  const { list_gedung } = dummy;
+  const { list_tingkatan } = dummy;
   return (
     <Layout>
       <div className="w-full h-full">
         <Table
-          data={list_gedung}
-          tableTitle="Daftar Gedung"
-          actionArchive
-          actionEdit
-          buttonAdd
-          buttonArchive
+          data={list_tingkatan}
+          tableTitle="Daftar Arsipan Tingkatan"
+          actionUnarchive
+          buttonActive
           fieldSearch
         />
       </div>
@@ -23,4 +21,4 @@ const Gedung = () => {
   );
 };
 
-export default Gedung;
+export default ArchiveTingkatan;

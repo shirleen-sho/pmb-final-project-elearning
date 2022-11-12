@@ -14,11 +14,14 @@ import { useRouter } from "next/router";
 const Table = ({
   data,
   tableTitle,
-  topNavigation,
   actionDetail,
   actionArchive,
   actionUnarchive,
   actionEdit,
+  buttonAdd,
+  buttonArchive,
+  buttonActive,
+  fieldSearch,
 }) => {
   let table_head = [];
   let table_head_formatted = [];
@@ -35,10 +38,10 @@ const Table = ({
   const fontHead = "font-semibold";
   let colorHead;
 
-  if (!topNavigation) {
-    colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
-  } else {
+  if (fieldSearch || buttonAdd || buttonArchive || buttonActive) {
     colorHead = "top-[68px] border-b";
+  } else {
+    colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
   }
 
   const location = useRouter();
@@ -47,14 +50,27 @@ const Table = ({
   return (
     <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full">
       {/* top navigation table */}
-      {topNavigation && (
+      {(fieldSearch || buttonAdd || buttonArchive || buttonActive) && (
         <div className="mb-3 flex flex-row justify-between items-center">
           <div className="font-semibold text-xl">{tableTitle || ""}</div>
           <div className="flex flex-row items-center gap-5">
-            <Search />
-            <Button type="primary" link={path + "/add"}>
-              Add
-            </Button>
+            {fieldSearch && <Search />}
+            {buttonArchive ? (
+              <Button type="warning" link={path + "/archive"}>
+                Archive
+              </Button>
+            ) : (
+              buttonActive && (
+                <Button type="warning" handleClick={location.back}>
+                  Active
+                </Button>
+              )
+            )}
+            {buttonAdd && (
+              <Button type="primary" link={path + "/add"}>
+                Add
+              </Button>
+            )}
           </div>
         </div>
       )}
@@ -114,11 +130,15 @@ const Table = ({
                       </Button>
                     )}
                     {actionArchive && (
-                      <Button
-                        type="link"
-                        title="Archive"
-                        link={path + "/archive/" + item.id}
-                      >
+                      <Button type="link" title="Archive">
+                        <HiOutlineArchive
+                          size={18}
+                          className="hover:text-primary-600"
+                        />
+                      </Button>
+                    )}
+                    {actionUnarchive && (
+                      <Button type="link" title="Unarchive">
                         <HiOutlineArchive
                           size={18}
                           className="hover:text-primary-600"

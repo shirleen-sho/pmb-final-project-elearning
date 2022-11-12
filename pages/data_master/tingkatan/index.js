@@ -11,10 +11,12 @@ const Tingkatan = () => {
       <div className="w-full h-full">
         <Table
           data={list_tingkatan}
-          topNavigation={true}
           tableTitle="Daftar Tingkatan"
           actionArchive
           actionEdit
+          buttonAdd
+          buttonArchive
+          fieldSearch
         />
       </div>
     </Layout>

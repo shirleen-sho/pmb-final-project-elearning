@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../Components/Buttons";
 import FormItem from "../../../Components/FormItem";
 import InputFields from "../../../Components/InputFields";
@@ -6,27 +6,34 @@ import Layout from "../../../Components/Layout";
 import Selects from "../../../Components/Selects";
 import TextArea from "../../../Components/TextArea";
 import ImageUploader from "../../../Components/ImageUploader";
+import { useAppContext } from "../../../Hooks/useAppContext";
 import { serverProps } from "../../../lib/serverProps";
+import axios from "axios";
 
 const IdentitasSekolah = (props) => {
   console.log(props);
-  const {
-    NPSN,
-    address,
-    city,
-    districts,
-    email,
-    id,
-    level,
-    name,
-    phone_number,
-    photo,
-    postal_code,
-    province,
-    school_id,
-    status,
-    website,
-  } = props.dataIdentitasSekolah.school_data;
+  const { identitas_sekolah } = useAppContext();
+  const { form, setForm, resetForm, handleSubmitEdit } = identitas_sekolah;
+  const { data } = props.dataIdentitasSekolah;
+  const { school_data } = data;
+
+  useEffect(() => {
+    setForm({
+      photo: school_data.photo,
+      name: school_data.name,
+      NPSN: school_data.NPSN,
+      NSS: school_data.NSS,
+      phone_number: school_data.phone_number,
+      email: school_data.email,
+      website: school_data.website,
+      address: school_data.address,
+      districts: school_data.districts,
+      city: school_data.city,
+      postal_code: school_data.postal_code,
+      province: school_data.province,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Layout>
@@ -46,7 +53,8 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Nama"
                 size="w-full"
-                valueLock={name}
+                value={form.name}
+                setValue={(e) => setForm({ ...form, name: e.target.value })}
               />
             </FormItem>
             <FormItem label="NPSN" labelType="label-sm" labelWidth="w-1/3">
@@ -54,7 +62,8 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="NPSN"
                 size="w-full"
-                valueLock={NPSN}
+                value={form.NPSN}
+                setValue={(e) => setForm({ ...form, NPSN: e.target.value })}
               />
             </FormItem>
             <FormItem label="NSS" labelType="label-sm" labelWidth="w-1/3">
@@ -62,7 +71,8 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="NSS"
                 size="w-full"
-                valueLock={school_id}
+                value={form.NSS}
+                setValue={(e) => setForm({ ...form, NSS: e.target.value })}
               />
             </FormItem>
           </div>
@@ -76,7 +86,10 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="No.Telp/WA"
                 size="w-full"
-                valueLock={phone_number}
+                value={form.phone_number}
+                setValue={(e) =>
+                  setForm({ ...form, phone_number: e.target.value })
+                }
               />
             </FormItem>
             <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
@@ -84,7 +97,8 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Email"
                 size="w-full"
-                valueLock={email}
+                value={form.email}
+                setValue={(e) => setForm({ ...form, email: e.target.value })}
               />
             </FormItem>
             <FormItem label="Website" labelType="label-sm" labelWidth="w-1/3">
@@ -92,7 +106,8 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Website"
                 size="w-full"
-                valueLock={website}
+                value={form.website}
+                setValue={(e) => setForm({ ...form, website: e.target.value })}
               />
             </FormItem>
           </div>
@@ -108,7 +123,11 @@ const IdentitasSekolah = (props) => {
               labelType="label-sm"
               labelWidth="w-[13.5%]"
             >
-              <TextArea placeholder="Alamat" valueLock={address} />
+              <TextArea
+                placeholder="Alamat"
+                value={form.address}
+                setValue={(e) => setForm({ ...form, address: e.target.value })}
+              />
             </FormItem>
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
@@ -117,7 +136,10 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Kecamatan"
                 size="w-full"
-                valueLock={districts}
+                value={form.districts}
+                setValue={(e) =>
+                  setForm({ ...form, districts: e.target.value })
+                }
               />
             </FormItem>
             <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
@@ -125,7 +147,10 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Kode Pos"
                 size="w-full"
-                valueLock={postal_code}
+                value={form.postal_code}
+                setValue={(e) =>
+                  setForm({ ...form, postal_code: e.target.value })
+                }
               />
             </FormItem>
           </div>
@@ -139,7 +164,8 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Kabupaten / Kota"
                 size="w-full"
-                valueLock={city}
+                value={form.city}
+                setValue={(e) => setForm({ ...form, city: e.target.value })}
               />
             </FormItem>
             <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
@@ -147,15 +173,26 @@ const IdentitasSekolah = (props) => {
                 type="text"
                 placeholder="Provinsi"
                 size="w-full"
-                valueLock={province}
+                value={form.province}
+                setValue={(e) => setForm({ ...form, province: e.target.value })}
               />
             </FormItem>
           </div>
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light">Back</Button>
-          <Button type="primary">Update</Button>
+          <Button type="light" handleClick={resetForm}>
+            Back
+          </Button>
+          <Button
+            type="primary"
+            handleClick={(e) => {
+              e.preventDefault();
+              handleSubmitEdit();
+            }}
+          >
+            Update
+          </Button>
         </div>
       </div>
     </Layout>
@@ -168,10 +205,9 @@ export async function getServerSideProps() {
   const prevProps = getPreviousProps.props;
 
   // Fetch page's data
-  const api = await fetch(
+  const res = await axios.get(
     "https://api.starling.kotasatelit.com/api/school-identity/1"
   );
-  const res = await api.json();
   const dataIdentitasSekolah = res.data;
 
   // Pass data to the page via props

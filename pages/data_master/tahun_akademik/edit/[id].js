@@ -1,32 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../../Components/Buttons";
 import Layout from "../../../../Components/Layout";
 import InputFields from "../../../../Components/InputFields";
 import FormItem from "../../../../Components/FormItem";
-import { useRouter } from "next/router";
+import { useAppContext } from "../../../../Hooks/useAppContext";
+import { serverProps } from "../../../../lib/serverProps";
+import axios from "axios";
 
-const EditTahunAkademik = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const EditTahunAkademik = (props) => {
+  const { tahun_akademik } = useAppContext();
+  const { form, setForm, resetForm, handleSubmitEdit } = tahun_akademik;
+  const { data } = props.dataTahunAkademik;
 
   const pilihan_status = [
-    { label: "Aktif", value: "aktif" },
-    { label: "Tidak Aktif", value: "nonaktif" },
+    { label: "Aktif", value: 1 },
+    { label: "Tidak Aktif", value: 0 },
   ];
 
-  const [selectedStatus, setSelectedStatus] = useState(null);
-  const handleChangeStatus = (e) => setSelectedStatus(e.target.value);
-
-  const handleUpdateTahunAkademik = (e) => {
-    e.preventDefault();
-    // isi fungsi
-  };
+  useEffect(() => {
+    setForm({
+      year_code: data.id,
+      year_name: data.year_name,
+      semester: data.semester,
+      status: data.status,
+    });
+  }, [data.id, data.semester, data.status, data.year_name, setForm]);
 
   return (
     <Layout>
       <div>
         <FormItem
-          label={`Edit Tahun Akademik ID ${id} details here!`}
+          label="Edit Tahun Akademik details here!"
           labelType="banner"
         />
         <div className="flex flex-col py-5 gap-5">
@@ -37,6 +41,7 @@ const EditTahunAkademik = () => {
               placeholder="Kode Tahun otomatis"
               size="w-full"
               disabled={true}
+              value={form.year_code}
             />
           </FormItem>
 
@@ -46,12 +51,20 @@ const EditTahunAkademik = () => {
               type="text"
               placeholder="Tulis nama tahun"
               size="w-full"
+              value={form.year_name}
+              setValue={(e) => setForm({ ...form, year_name: e.target.value })}
             />
           </FormItem>
 
           {/* SEMESTER */}
           <FormItem label="Semester" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields type="number" placeholder="1" size="w-full" />
+            <InputFields
+              type="number"
+              placeholder="1"
+              size="w-full"
+              value={form.semester}
+              setValue={(e) => setForm({ ...form, semester: e.target.value })}
+            />
           </FormItem>
 
           {/* STATUS */}
@@ -65,8 +78,10 @@ const EditTahunAkademik = () => {
                   <input
                     type="radio"
                     value={i.value}
-                    checked={selectedStatus === i.value ? true : false}
-                    onClick={handleChangeStatus}
+                    checked={form.status === i.value ? true : false}
+                    onClick={(e) =>
+                      setForm({ ...form, status: parseInt(e.target.value) })
+                    }
                   />
                   <label>{i.label}</label>
                 </div>
@@ -75,12 +90,19 @@ const EditTahunAkademik = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/data_master/tahun_akademik">
+          <Button
+            type="light"
+            link="/data_master/tahun_akademik"
+            handleClick={resetForm}
+          >
             Back
           </Button>
           <Button
             type="primary"
-            handleClick={(e) => handleUpdateTahunAkademik(e)}
+            handleClick={(e) => {
+              e.preventDefault();
+              handleSubmitEdit();
+            }}
           >
             Update
           </Button>
@@ -89,5 +111,21 @@ const EditTahunAkademik = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps(ctx) {
+  // Fetch previous data
+  const getPreviousProps = await serverProps();
+  const prevProps = getPreviousProps.props;
+
+  // Fetch page's data
+  let id = parseInt(ctx.query.id);
+  const res = await axios.get(
+    `https://api.starling.kotasatelit.com/api/academic-year/${id}`
+  );
+  const dataTahunAkademik = res.data;
+
+  // Pass data to the page via props
+  return { props: { ...prevProps, dataTahunAkademik } };
+}
 
 export default EditTahunAkademik;

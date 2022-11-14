@@ -31,7 +31,10 @@ const Tingkatan = (props) => {
     <Layout>
       <div className="w-full h-full">
         {notification.show && (
-          <Notifikasi type={notification.type} title={notification.message} />
+          <Notifikasi
+            type={notification.type}
+            description={notification.message}
+          />
         )}
         <TableBasic
           data={data}

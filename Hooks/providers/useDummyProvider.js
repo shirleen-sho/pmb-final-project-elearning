@@ -868,18 +868,21 @@ export const useDummyProvider = () => {
   ];
   const materi_pelajaran = [
     {
+      id:1,
       mata_pelajaran: "Bahasa Indonesia",
       kode_materi: "MO1",
       judul_materi: "Teks Eksposisi",
       status: "ditampilkan",
     },
     {
+      id:2,
       mata_pelajaran: "Bahasa Indonesia",
       kode_materi: "MO1",
       judul_materi: "Teks Eksposisi",
       status: "ditampilkan",
     },
     {
+      id:3,
       mata_pelajaran: "Bahasa Indonesia",
       kode_materi: "MO1",
       judul_materi: "Teks Eksposisi",
@@ -889,18 +892,21 @@ export const useDummyProvider = () => {
 
   const tugas = [
     {
+      id:1,
       mata_pelajaran: "Bahasa Indonesia",
       kode_tugas: "T01",
       judul_materi: "Teks Eksposisi",
       waktu: "08.00 s/d 10.00",
     },
     {
+      id:2,
       mata_pelajaran: "Bahasa Indonesia",
       kode_tugas: "T01",
       judul_materi: "Teks Eksposisi",
       waktu: "08.00 s/d 10.00",
     },
     {
+      id:3,
       mata_pelajaran: "Bahasa Indonesia",
       kode_tugas: "T01",
       judul_materi: "Teks Eksposisi",

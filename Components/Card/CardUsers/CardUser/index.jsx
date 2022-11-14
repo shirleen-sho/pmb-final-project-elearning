@@ -36,8 +36,8 @@ export default function CardUser({ value, index }) {
                 <div className="absolute top-0 right-5">
                   <div className="bg-white w-28 h-24 border rounded shadow px-4 ">
                     <Button type="link" link= {path + `/edit/` + value.id}><HiOutlinePencil className="absolute left-2 hover:text-primary-400" size={12}/>Edit</Button>
-                    <Button type="link" link= {path + `/detail` + value.id}><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400" size={12}/>Detail</Button>
-                    <Button type="link" link= {path + `/archive`}><HiOutlineArchive className="absolute left-2 hover:text-primary-400" size={12}/>Archive</Button>
+                    <Button type="link" link= {path + `/detail/` + value.id}><HiOutlineDocumentText className="absolute left-2 hover:text-primary-400" size={12}/>Detail</Button>
+                    <Button type="link" link= {path + `/archive/`}><HiOutlineArchive className="absolute left-2 hover:text-primary-400" size={12}/>Archive</Button>
                   </div>
                 </div>
               </div>

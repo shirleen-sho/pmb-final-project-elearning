@@ -9,6 +9,7 @@ import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
 import ColorPicker from "../../../../Components/ColorPicker";
+import { useRouter } from "next/router";
 
 export default function ViewGuru() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -27,6 +28,8 @@ export default function ViewGuru() {
   const handleShowPicker = () => setShowPicker(true);
   const handleClosePicker = () => setShowPicker(false);
   const handleChangeColor = (color, event) => setChoosenColor(color);
+  const router = useRouter();
+  const { id } = router.query;
 
   return (
     <Layout>
@@ -247,7 +250,7 @@ export default function ViewGuru() {
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
           {/* <Button type="light">Back</Button> */}
-          <Button type="warning" link="/kepegawaian/guru/edit">Edit</Button>
+          <Button type="warning" link={`/kepegawaian/guru/edit/` + id }>Edit</Button>
           <Button link="/kepegawaian/guru">Back</Button>
         </div>
       </div>

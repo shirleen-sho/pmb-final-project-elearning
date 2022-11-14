@@ -9,10 +9,15 @@ import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
 import ColorPicker from "../../../../Components/ColorPicker";
+import { useRouter } from "next/router";
+
 
 export default function EditStaff() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState(null);
+  const router =  useRouter();
+  const { id } = router.query;
+
 
   const handleChangeImage = (currentImage, addUpdateIndex) => {
     console.log("image", currentImage);

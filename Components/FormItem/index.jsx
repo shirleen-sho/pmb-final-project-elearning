@@ -7,6 +7,10 @@ const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
       labelStyle =
         "font-semibold text-lg bg-primary-100 rounded-md px-5 py-3 w-full";
       break;
+    case "title":
+      labelStyle =
+        "font-semibold text-5xl rounded-md w-full";
+      break;
     case "label-sm":
       labelStyle = "font-semibold text-xs leading-5";
       break;

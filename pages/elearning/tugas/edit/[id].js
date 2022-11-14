@@ -4,6 +4,8 @@ import FormItem from '../../../../Components/FormItem'
 import InputFields from '../../../../Components/InputFields'
 import Button from '../../../../Components/Buttons'
 import Selects from '../../../../Components/Selects'
+import Textarea from '../../../../Components/TextArea'
+import Uploader from '../../../../Components/Uploader'
 
 export default function AddTugas() {
   return (
@@ -16,7 +18,7 @@ export default function AddTugas() {
           <h3 className="font-bold underline underline-offset-2 mb-1">
             DATA DIRI
           </h3>
-          <div className="grid grid-cols-9 grid-rows-9 gap-x-7 gap-y-4">
+          <div className="grid grid-cols-9 grid-rows-12 gap-x-7 gap-y-4">
             <div className="col-start-1 col-span-9 row-start-1">
               <FormItem label="Kode Tugas" labelType="label-sm" labelWidth="w-1/5">
                 <InputFields type="text" valueLock="T01" size="w-full" disabled />
@@ -94,7 +96,22 @@ export default function AddTugas() {
                 <InputFields type="time" placeholder="Bab" size="w-full" />
               </FormItem>
             </div>
-            <div className="col-start-1 col-span-9 row-start-9" >
+            <div className="col-start-1 col-span-9 row-start-9">
+              <FormItem label="Upload File" labelType="label-sm" labelWidth="w-1/5">
+                <Uploader />
+              </FormItem>
+            </div>
+            <div className="col-start-1 col-span-9 row-start-10">
+              <FormItem label="Link Soal" labelType="label-sm" labelWidth="w-1/5">
+                <InputFields type="text" size="w-full" placeholder="Link Soal" />
+              </FormItem>
+            </div>
+            <div className="col-start-1 col-span-9 row-start-11">
+              <FormItem label="Instruksi" labelType="label-sm" labelWidth="w-1/5">
+                <Textarea />
+              </FormItem>
+            </div>
+            <div className="col-start-1 col-span-9 row-start-12" >
               <div className="flex flex-row justify-end gap-5">
                 <Button type="light" link="/elearning/tugas">
                   Cancel

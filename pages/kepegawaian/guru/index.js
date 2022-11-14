@@ -21,9 +21,9 @@ const Guru = () => {
       <Tabs list={list} pathName="/kepegawaian">
         <div className="flex flex-col">
           {/* container top */}
-          <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
-            <Button type="warning" link="/kepegawaian/guru/archive">active</Button>
+          <div className="flex flex-row items-center gap-4 absolute top-0 right-0">
             <Search></Search>
+            <Button type="warning" link="/kepegawaian/guru/archive">active</Button>
             <Button link="/kepegawaian/guru/add">add</Button>
           </div>
         </div>

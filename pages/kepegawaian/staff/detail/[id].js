@@ -8,10 +8,13 @@ import TextArea from "../../../../Components/TextArea";
 import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
+import {useRouter} from "next/router"
 
 export default function EditStaff() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState(null);
+  const router =  useRouter();
+  const { id } = router.query;
 
   const handleChangeImage = (currentImage, addUpdateIndex) => {
     console.log("image", currentImage);
@@ -218,7 +221,7 @@ export default function EditStaff() {
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
           {/* <Button type="light">Back</Button> */}
-          <Button type="warning" link="/kepegawaian/staff/edit">Edit</Button>
+          <Button type="warning" link={`/kepegawaian/staff/edit/`+ id}>Edit</Button>
           <Button link="/kepegawaian/staff">Back</Button>
         </div>
       </div>

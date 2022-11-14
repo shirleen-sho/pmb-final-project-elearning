@@ -72,7 +72,11 @@ const SideMenu = () => {
                       e.preventDefault();
                       setShowLogout(true);
                     } else if (subMenu) {
-                      setShowDropdown(route);
+                      if (showDropdown === route) {
+                        setShowDropdown(false);
+                      } else {
+                        setShowDropdown(route);
+                      }
                     }
                   }}
                 >
@@ -83,7 +87,7 @@ const SideMenu = () => {
                     </div>
                     {subMenu &&
                       showSidemenu &&
-                      (selectedMenu === route ? (
+                      (selectedMenu === route || showDropdown === route ? (
                         <HiChevronUp size={16} />
                       ) : (
                         <HiChevronDown size={16} />

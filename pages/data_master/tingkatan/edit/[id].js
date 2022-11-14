@@ -10,7 +10,7 @@ import axios from "axios";
 
 const EditTingkatan = (props) => {
   const { tingkatan } = useAppContext();
-  const { form, setForm, handleSubmitEdit } = tingkatan;
+  const { form, setForm, resetForm, handleSubmitEdit } = tingkatan;
   const { data } = props.dataTingkatan;
 
   useEffect(() => {
@@ -56,7 +56,11 @@ const EditTingkatan = (props) => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/data_master/tingkatan">
+          <Button
+            type="light"
+            link="/data_master/tingkatan"
+            handleClick={resetForm}
+          >
             Back
           </Button>
           <Button

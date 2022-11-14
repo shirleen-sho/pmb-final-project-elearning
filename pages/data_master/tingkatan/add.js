@@ -7,7 +7,7 @@ import { useAppContext } from "../../../Hooks/useAppContext";
 
 const AddTingkatan = () => {
   const { tingkatan } = useAppContext();
-  const { form, setForm, handleSubmitAdd } = tingkatan;
+  const { form, setForm, resetForm, handleSubmitAdd } = tingkatan;
 
   return (
     <Layout>
@@ -44,7 +44,11 @@ const AddTingkatan = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/data_master/tingkatan">
+          <Button
+            type="light"
+            link="/data_master/tingkatan"
+            handleClick={resetForm}
+          >
             Cancel
           </Button>
           <Button type="primary" handleClick={handleSubmitAdd}>

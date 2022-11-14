@@ -15,6 +15,13 @@ export const useTingkatanProvider = () => {
     class_name: "",
   });
 
+  const resetForm = () => {
+    setForm({
+      class_code: null,
+      class_name: "",
+    });
+  };
+
   const handleSubmitAdd = async () => {
     try {
       const res = await axios.post(
@@ -22,10 +29,7 @@ export const useTingkatanProvider = () => {
         form
       );
       console.log("success res", res);
-      setForm({
-        class_code: null,
-        class_name: "",
-      });
+      resetForm();
       setNotification({
         show: true,
         type: "Success",
@@ -33,10 +37,7 @@ export const useTingkatanProvider = () => {
       });
       router.push("/data_master/tingkatan");
     } catch (error) {
-      setForm({
-        class_code: null,
-        class_name: "",
-      });
+      resetForm();
       setNotification({
         show: true,
         type: "Danger",
@@ -53,10 +54,7 @@ export const useTingkatanProvider = () => {
         form
       );
       console.log("success res", res);
-      setForm({
-        class_code: null,
-        class_name: "",
-      });
+      resetForm();
       setNotification({
         show: true,
         type: "Success",
@@ -64,10 +62,7 @@ export const useTingkatanProvider = () => {
       });
       router.push("/data_master/tingkatan");
     } catch (error) {
-      setForm({
-        class_code: null,
-        class_name: "",
-      });
+      resetForm();
       setNotification({
         show: true,
         type: "Danger",
@@ -80,6 +75,7 @@ export const useTingkatanProvider = () => {
   return {
     form,
     setForm,
+    resetForm,
     handleSubmitAdd,
     handleSubmitEdit,
     notification,

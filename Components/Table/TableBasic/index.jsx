@@ -28,7 +28,12 @@ const TableBasic = ({
   Object.keys(data[0]).forEach((key) => {
     const splitKey = key.split("_");
     const formattedKey = splitKey.join(" ");
-    if (key !== "id") {
+    if (
+      key !== "id" &&
+      key !== "created_at" &&
+      key !== "deleted_at" &&
+      key !== "updated_at"
+    ) {
       table_head.push(key);
       table_head_formatted.push(formattedKey);
     }

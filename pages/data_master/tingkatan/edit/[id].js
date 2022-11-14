@@ -1,27 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../../Components/Buttons";
 import Layout from "../../../../Components/Layout";
 import InputFields from "../../../../Components/InputFields";
-import Link from "next/link";
 import FormItem from "../../../../Components/FormItem";
 import { useRouter } from "next/router";
+import { useAppContext } from "../../../../Hooks/useAppContext";
+import { serverProps } from "../../../../lib/serverProps";
+import axios from "axios";
 
-const EditTingkatan = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const EditTingkatan = (props) => {
+  const { tingkatan } = useAppContext();
+  const { form, setForm, handleSubmitEdit } = tingkatan;
+  const { data } = props.dataTingkatan;
 
-  const handleUpdateTingkatan = (e) => {
-    e.preventDefault();
-    // isi fungsi
-  };
+  useEffect(() => {
+    setForm({
+      class_code: data.id,
+      class_name: data.name,
+    });
+  }, [data.id, data.name, setForm]);
 
   return (
     <Layout>
       <div>
-        <FormItem
-          label={`Edit Tingkatan ID ${id} details here!`}
-          labelType="banner"
-        />
+        <FormItem label={`Edit Tingkatan details here!`} labelType="banner" />
         <div className="flex flex-col py-5 gap-5">
           {/* KODE TINGKATAN */}
           <FormItem
@@ -34,6 +36,7 @@ const EditTingkatan = () => {
               placeholder="Kode Tingkatan otomatis"
               size="w-full"
               disabled={true}
+              value={form.class_code}
             />
           </FormItem>
 
@@ -47,6 +50,8 @@ const EditTingkatan = () => {
               type="text"
               placeholder="Tulis nama tingkatan"
               size="w-full"
+              value={form.class_name}
+              setValue={(e) => setForm({ ...form, class_name: e.target.value })}
             />
           </FormItem>
         </div>
@@ -54,7 +59,13 @@ const EditTingkatan = () => {
           <Button type="light" link="/data_master/tingkatan">
             Back
           </Button>
-          <Button type="primary" handleClick={(e) => handleUpdateTingkatan(e)}>
+          <Button
+            type="primary"
+            handleClick={(e) => {
+              e.preventDefault();
+              handleSubmitEdit();
+            }}
+          >
             Update
           </Button>
         </div>
@@ -62,5 +73,21 @@ const EditTingkatan = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps(ctx) {
+  // Fetch previous data
+  const getPreviousProps = await serverProps();
+  const prevProps = getPreviousProps.props;
+
+  // Fetch page's data
+  let id = parseInt(ctx.query.id);
+  const res = await axios.get(
+    `https://api.starling.kotasatelit.com/api/class/${id}`
+  );
+  const dataTingkatan = res.data;
+
+  // Pass data to the page via props
+  return { props: { ...prevProps, dataTingkatan } };
+}
 
 export default EditTingkatan;

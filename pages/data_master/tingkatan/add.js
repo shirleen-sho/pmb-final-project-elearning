@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import InputFields from "../../../Components/InputFields";
-import Link from "next/link";
 import FormItem from "../../../Components/FormItem";
+import { useAppContext } from "../../../Hooks/useAppContext";
 
 const AddTingkatan = () => {
+  const { tingkatan } = useAppContext();
+  const { form, setForm, handleSubmitAdd } = tingkatan;
+
   return (
     <Layout>
       <div>
@@ -35,6 +38,8 @@ const AddTingkatan = () => {
               type="text"
               placeholder="Tulis nama tingkatan"
               size="w-full"
+              value={form.class_name}
+              setValue={(e) => setForm({ ...form, class_name: e.target.value })}
             />
           </FormItem>
         </div>
@@ -42,7 +47,9 @@ const AddTingkatan = () => {
           <Button type="light" link="/data_master/tingkatan">
             Cancel
           </Button>
-          <Button type="primary">Save</Button>
+          <Button type="primary" handleClick={handleSubmitAdd}>
+            Save
+          </Button>
         </div>
       </div>
     </Layout>

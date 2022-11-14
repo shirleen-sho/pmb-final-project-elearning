@@ -1,7 +1,7 @@
-import React ,{useState} from 'react'
+import React  from 'react'
 
-const TextArea = ({placeholder , valueLock ,readOnly}) => {
-  const[value , setValue] = useState('')
+const TextArea = ({placeholder ,readOnly , value, setValue}) => {
+  // const[value , setValue] = useState('')
   const handleValue= (e) => {
     setValue(e.target.value)
   }

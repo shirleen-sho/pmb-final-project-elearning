@@ -27,9 +27,6 @@ export default class TextEditor extends Component {
       <div>
         <Editor
           initialEditorState={editorState}
-          wrapperStyle={wrapperStyle}
-          toolbarStyle={toolbarStyle}
-          editorState={editorState}
           toolbarClassName="toolbarClassName"
           wrapperClassName="wrapperClassName"
           editorClassName="editorClassName"

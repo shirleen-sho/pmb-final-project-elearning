@@ -39,11 +39,11 @@ export default function Home() {
         <CardUsers users={users}/>
       </div>
       <div className="m-5">
-        <Notifikasi type="Success" />
+        <Notifikasi type="Success"  />
         <Notifikasi type="Danger" />
         <Notifikasi type="Warning" />
         <Notifikasi type="Info" />
-        <Notifikasi type="Dark" />
+        <Notifikasi type="Dark" description={"pendi"}/>
       </div>
       <div className="m-5">
         <Selects list={list} size="w-2/4" description="Home" />

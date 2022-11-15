@@ -6,6 +6,7 @@ import {
   HiOutlineArchive,
   HiOutlinePencil,
   HiOutlineEye,
+  HiOutlineTrash,
   HiChevronLeft,
   HiChevronRight,
 } from "react-icons/hi";
@@ -18,6 +19,7 @@ const TableBasic = ({
   actionArchive,
   actionUnarchive,
   actionEdit,
+  actionDelete,
   buttonAdd,
   buttonArchive,
   buttonActive,
@@ -44,7 +46,7 @@ const TableBasic = ({
   let colorHead;
 
   if (fieldSearch || buttonAdd || buttonArchive || buttonActive) {
-    colorHead = "top-[68px] border-b";
+    colorHead = "top-[78px] bg-gradient-to-r from-primary-50/50 to-primary-100";
   } else {
     colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
   }
@@ -56,7 +58,7 @@ const TableBasic = ({
     <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full">
       {/* top navigation table */}
       {(fieldSearch || buttonAdd || buttonArchive || buttonActive) && (
-        <div className="mb-3 flex flex-row justify-between items-center">
+        <div className="mb-5 flex flex-row justify-between items-center">
           <div className="font-semibold text-xl">{tableTitle || ""}</div>
           <div className="flex flex-row items-center gap-5">
             {fieldSearch && <Search />}
@@ -93,7 +95,8 @@ const TableBasic = ({
             {(actionDetail ||
               actionArchive ||
               actionUnarchive ||
-              actionEdit) && (
+              actionEdit ||
+              actionDelete) && (
               <th className={`${fontHead} ${defaultCellStyle} text-center`}>
                 Aksi
               </th>
@@ -117,7 +120,8 @@ const TableBasic = ({
               {(actionDetail ||
                 actionArchive ||
                 actionUnarchive ||
-                actionEdit) && (
+                actionEdit ||
+                actionDelete) && (
                 <td
                   className={`${defaultCellStyle} border-b flex flex-row justify-center items-center`}
                 >
@@ -157,6 +161,14 @@ const TableBasic = ({
                         link={path + "/edit/" + item.id}
                       >
                         <HiOutlinePencil
+                          className="hover:text-primary-600"
+                          size={18}
+                        />
+                      </Button>
+                    )}
+                    {actionDelete && (
+                      <Button type="link" title="Delete">
+                        <HiOutlineTrash
                           className="hover:text-primary-600"
                           size={18}
                         />

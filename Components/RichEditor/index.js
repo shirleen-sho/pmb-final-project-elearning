@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 // import { Editor } from "react-draft-wysiwyg";
-import dynamic from "next/dynamic"
+import dynamic from "next/dynamic";
 import { EditorState, convertToRaw } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const Editor = dynamic(
-  () => import('react-draft-wysiwyg').then(mod => mod.Editor),
+  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
   { ssr: false }
-)
+);
 
 export default class TextEditor extends Component {
   state = {

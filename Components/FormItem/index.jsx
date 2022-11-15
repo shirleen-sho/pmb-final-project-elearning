@@ -9,7 +9,7 @@ const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
       break;
     case "title":
       labelStyle =
-        "font-semibold text-5xl rounded-md w-full";
+        "font-semibold text-3xl rounded-md w-full";
       break;
     case "label-sm":
       labelStyle = "font-semibold text-xs leading-5";
@@ -26,7 +26,7 @@ const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
   }
 
   return (
-    <div className={`flex flex-row gap-5`}>
+    <div className={`flex flex-row gap-5 capitalize`}>
       {labelNote ? (
         <div className={`flex flex-col gap-1 ${labelWidth}`}>
           <div className={`${labelStyle}`}>{label}</div>

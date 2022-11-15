@@ -18,20 +18,14 @@ const ArchiveKategoriMataPelajaran = () => {
   return (
     <Layout>
       <Tabs list={list} pathName="/data_akademik/mata_pelajaran">
-        <div className="flex flex-col gap-5">
-          {/* container top */}
-          <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
-            <Search></Search>
-            <Button
-              type="warning"
-              link="/data_akademik/mata_pelajaran/kategori"
-            >
-              Active
-            </Button>
-          </div>
-          {/* table */}
-          <TableBasic data={list_kategori_mata_pelajaran} actionUnarchive />
-        </div>
+        {/* table */}
+        <TableBasic
+          data={list_kategori_mata_pelajaran}
+          actionUnarchive
+          buttonActive
+          fieldSearch
+          tableTitle="Daftar Arsipan Kategori Mata Pelajaran"
+        />
       </Tabs>
     </Layout>
   );

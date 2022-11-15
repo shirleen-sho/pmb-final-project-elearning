@@ -18,30 +18,16 @@ const KategoriMataPelajaran = () => {
   return (
     <Layout>
       <Tabs list={list} pathName="/data_akademik/mata_pelajaran">
-        <div className="flex flex-col gap-5">
-          {/* container top */}
-          <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
-            <Search></Search>
-            <Button
-              type="warning"
-              link="/data_akademik/mata_pelajaran/kategori/archive"
-            >
-              Archive
-            </Button>
-            <Button
-              type="primary"
-              link="/data_akademik/mata_pelajaran/kategori/add"
-            >
-              Add
-            </Button>
-          </div>
-          {/* table */}
-          <TableBasic
-            data={list_kategori_mata_pelajaran}
-            actionArchive
-            actionEdit
-          />
-        </div>
+        {/* table */}
+        <TableBasic
+          data={list_kategori_mata_pelajaran}
+          actionArchive
+          actionEdit
+          buttonAdd
+          buttonArchive
+          fieldSearch
+          tableTitle="Daftar Kategori Mata Pelajaran"
+        />
       </Tabs>
     </Layout>
   );

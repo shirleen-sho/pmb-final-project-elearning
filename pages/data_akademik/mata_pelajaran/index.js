@@ -18,25 +18,17 @@ const MataPelajaran = () => {
   return (
     <Layout>
       <Tabs list={list} pathName="/data_akademik/mata_pelajaran">
-        <div className="flex flex-col gap-5">
-          {/* container top */}
-          <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
-            <Search></Search>
-            <Button type="warning" link="/data_akademik/mata_pelajaran/archive">
-              Archive
-            </Button>
-            <Button type="primary" link="/data_akademik/mata_pelajaran/add">
-              Add
-            </Button>
-          </div>
-          {/* table */}
-          <TableBasic
-            data={list_mata_pelajaran}
-            actionArchive
-            actionEdit
-            actionDetail
-          />
-        </div>
+        {/* table */}
+        <TableBasic
+          data={list_mata_pelajaran}
+          actionArchive
+          actionEdit
+          actionDetail
+          buttonAdd
+          buttonArchive
+          fieldSearch
+          tableTitle="Daftar Mata Pelajaran"
+        />
       </Tabs>
     </Layout>
   );

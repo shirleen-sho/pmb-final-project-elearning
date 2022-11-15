@@ -19,13 +19,14 @@ const Settings = () => {
     <Layout>
       <Tabs list={list} pathName="/settings">
         <div className="w-full h-full py-3">
-          <div className="flex flex-row justify-center items-center gap-3 absolute top-0 right-0">
-            <Search />
-            <Button type="primary" link="/settings/add">
-              Add
-            </Button>
-          </div>
-          <TableBasic data={list_level_staff} actionArchive actionEdit />
+          <TableBasic
+            data={list_level_staff}
+            actionArchive
+            actionEdit
+            buttonAdd
+            fieldSearch
+            tableTitle="Pengaturan Level Staff"
+          />
         </div>
       </Tabs>
     </Layout>

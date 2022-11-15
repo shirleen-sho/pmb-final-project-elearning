@@ -19,17 +19,16 @@ const Wali = () => {
     <Layout>
       <Tabs list={list} pathName="/kesiswaan">
         <div className="flex flex-col gap-5 py-2">
-          {/* container top */}
-          <div className="flex flex-row items-center gap-8 absolute top-0 right-0">
-            <Search />
-            <Button type="warning" link="/kesiswaan/wali/archive">
-              Archive
-            </Button>
-            <Button type="primary" link="/kesiswaan/wali/add">
-              Add
-            </Button>
-          </div>
-          <TableBasic data={list_siswa} actionArchive actionEdit actionDetail />
+          <TableBasic
+            data={list_siswa}
+            actionArchive
+            actionEdit
+            actionDetail
+            buttonArchive
+            buttonAdd
+            fieldSearch
+            tableTitle="Daftar Wali Murid"
+          />
         </div>
       </Tabs>
     </Layout>

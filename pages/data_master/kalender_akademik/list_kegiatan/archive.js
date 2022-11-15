@@ -19,16 +19,13 @@ const ArchiveListKegiatan = () => {
     <Layout>
       <Tabs list={list} pathName="/data_master/kalender_akademik">
         <div className="w-full h-full py-3">
-          <div className="flex flex-row justify-center items-center gap-3 absolute top-0 right-0">
-            <Search />
-            <Button
-              type="warning"
-              link="/data_master/kalender_akademik/list_kegiatan"
-            >
-              Active
-            </Button>
-          </div>
-          <TableBasic data={list_kegiatan} actionUnarchive />
+          <TableBasic
+            data={list_kegiatan}
+            actionUnarchive
+            buttonActive
+            fieldSearch
+            tableTitle="Daftar Arsipan Kegiatan"
+          />
         </div>
       </Tabs>
     </Layout>

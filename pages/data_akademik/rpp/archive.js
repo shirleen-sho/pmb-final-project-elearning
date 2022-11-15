@@ -13,24 +13,22 @@ const ArchiveRPP = () => {
     <Layout>
       <div className="w-full h-full flex flex-col gap-5">
         {/* top nav */}
-        <div className="flex flex-row items-center justify-between gap-5 my-2">
-          <div className="flex flex-row items-center gap-5">
-            <span className="font-medium text-sm">Tahun Akademik</span>
-            <Selects
-              list={list_siswa}
-              description="Pilih Tahun Akademik"
-              size="w-[240px]"
-            />
-          </div>
-          <div className="flex flex-row items-center gap-5">
-            <Search></Search>
-            <Button type="warning" link="/data_akademik/rpp">
-              Active
-            </Button>
-          </div>
+        <div className="flex flex-row items-center gap-5 my-2">
+          <span className="font-medium text-sm">Tahun Akademik</span>
+          <Selects
+            list={list_siswa}
+            description="Pilih Tahun Akademik"
+            size="w-[240px]"
+          />
         </div>
         {/* table */}
-        <TableBasic data={list_rpp} actionUnarchive />
+        <TableBasic
+          data={list_rpp}
+          actionUnarchive
+          buttonActive
+          fieldSearch
+          tableTitle="Daftar Arsipan RPP"
+        />
       </div>
     </Layout>
   );

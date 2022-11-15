@@ -108,11 +108,11 @@ export default function ViewGuru() {
             </FormItem>
             {/* Nama */}
             <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Nama" size="w-full" />
+              <InputFields disabled type="text" placeholder="Nama" size="w-full" />
             </FormItem>
             {/* NPS */}
             <FormItem label="NUPTK" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="NPS" size="w-full" />
+              <InputFields disabled  type="text" placeholder="NPS" size="w-full" />
             </FormItem>
             {/* Jenis Kelamin */}
             <FormItem
@@ -120,7 +120,7 @@ export default function ViewGuru() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly type="text" placeholder="JenisKelamin" size="w-full" />
+              <InputFields disabled  type="text" placeholder="JenisKelamin" size="w-full" />
             </FormItem>
             {/* Warna */}
             <FormItem label="Warna" labelType="label-sm" labelWidth="w-1/3">
@@ -156,7 +156,7 @@ export default function ViewGuru() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly type="text" placeholder="No.Telp/WA" size="w-full" />
+              <InputFields disabled  type="text" placeholder="No.Telp/WA" size="w-full" />
             </FormItem>
             {/* Tempat Lahir */}
             <FormItem
@@ -164,7 +164,7 @@ export default function ViewGuru() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly
+              <InputFields disabled 
                 type="text"
                 placeholder="Tempat Lahir"
                 size="w-full"
@@ -176,11 +176,11 @@ export default function ViewGuru() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly type="date" placeholder="Email" size="w-full" />
+              <InputFields disabled  type="date" placeholder="Email" size="w-full" />
             </FormItem>
             {/* Email */}
             <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Email" size="w-full" />
+              <InputFields disabled  type="text" placeholder="Email" size="w-full" />
             </FormItem>
           </div>
         </div>
@@ -197,28 +197,28 @@ export default function ViewGuru() {
               labelType="label-sm"
               labelWidth="w-[13.5%]"
             >
-              <TextArea placeholder="Alamat" />
+              <TextArea disabled placeholder="Alamat" />
             </FormItem>
           </div>
           
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
             {/* Kecamatan */}
             <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Kecamatan" size="w-full" />
+              <InputFields disabled  type="text" placeholder="Kecamatan" size="w-full" />
             </FormItem>
             {/* Kode Pos */}
             <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Kode Pos" size="w-full" />
+              <InputFields disabled  type="text" placeholder="Kode Pos" size="w-full" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
             {/* Kabupaten */}
             <FormItem label="Kabupaten / Kota" labelType="label-sm"labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Kabupaten / Kota" size="w-full"/>
+              <InputFields disabled  type="text" placeholder="Kabupaten / Kota" size="w-full"/>
             </FormItem>
             {/* Provinsi */}
             <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Provinsi" size="w-full" />
+              <InputFields disabled  type="text" placeholder="Provinsi" size="w-full" />
             </FormItem>
           </div>
         </div>
@@ -231,7 +231,7 @@ export default function ViewGuru() {
           <div className="col-start-2 col-span-full flex flex-col gap-5">
             {/* Password */}
             <FormItem label="Password" labelType="label-sm" labelWidth="w-[13.5%]" >
-              <InputFields valueLock="" readOnly type="text" placeholder="Password" size="w-full" />
+              <InputFields disabled  type="text" placeholder="Password" size="w-full" />
             </FormItem>
             {/* Confirm Password */}
             <FormItem
@@ -239,7 +239,7 @@ export default function ViewGuru() {
               labelType="label-sm"
               labelWidth="w-[13.5%]"
             >
-              <InputFields valueLock="" readOnly
+              <InputFields disabled 
                 type="text"
                 placeholder="Confirm Password"
                 size="w-full"
@@ -249,7 +249,6 @@ export default function ViewGuru() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          {/* <Button type="light">Back</Button> */}
           <Button type="warning" link={`/kepegawaian/guru/edit/` + id }>Edit</Button>
           <Button link="/kepegawaian/guru">Back</Button>
         </div>

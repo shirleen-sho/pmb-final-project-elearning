@@ -440,6 +440,13 @@ export const useMenuProvider = () => {
         name: "Pengumuman",
         title: "Pengumuman",
         icon: <HiSpeakerphone size={16} />,
+        actionMenu: [
+          {
+            route: "/pengumuman/add",
+            name: "Pengumuman",
+            title: "Add Pengumuman",
+          },
+        ],
       },
       {
         route: "/epayment",
@@ -543,15 +550,17 @@ export const useMenuProvider = () => {
       }
     } else {
       if (selectedActionmenu) {
-        const findSelectedActionmenuInMain =
-          findSelectedMenuInMain.actionMenu.find(
-            (i) => selectedActionmenu === i.route
-          );
-        if (findSelectedActionmenuInMain) {
-          header = {
-            title: findSelectedActionmenuInMain.title,
-            detail: findSelectedActionmenuInMain.detail,
-          };
+        if (findSelectedMenuInMain.actionMenu) {
+          const findSelectedActionmenuInMain =
+            findSelectedMenuInMain.actionMenu.find(
+              (i) => selectedActionmenu === i.route
+            );
+          if (findSelectedActionmenuInMain) {
+            header = {
+              title: findSelectedActionmenuInMain.title,
+              detail: findSelectedActionmenuInMain.detail,
+            };
+          }
         }
       }
     }

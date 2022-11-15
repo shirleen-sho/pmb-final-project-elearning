@@ -15,51 +15,39 @@ const BankSoal = () => {
   return (
     <Layout>
       <div className="w-full h-full flex flex-col gap-5">
-        <div
-          id="top-content"
-          className="flex flex-row items-center justify-between my-2"
-        >
-          <div className="grid grid-cols-12 grid-flow-row gap-x-5 gap-y-3">
-            <div className="col-start-1 col-span-2 row-start-1 flex flex-row items-center">
-              <span className="font-medium text-sm">Tahun Akademik</span>
-            </div>
-            <div className="col-start-3 col-span-3 row-start-1">
-              <Selects
-                list={pilihan_dummy}
-                description="Pilih Tahun Akademik"
-                size="w-[240px]"
-              />
-            </div>
-            <div className="col-start-1 col-span-2 row-start-2 flex flex-row items-center">
-              <span className="font-medium text-sm">Jenis Ujian</span>
-            </div>
-            <div className="col-start-3 col-span-3 row-start-2">
-              <Selects
-                list={pilihan_dummy}
-                description="Pilih Jenis Ujian"
-                size="w-[240px]"
-              />
-            </div>
-            <div className="col-start-7 col-span-2 row-start-1 flex flex-row items-center">
-              <span className="font-medium text-sm">Tingkatan</span>
-            </div>
-            <div className="col-start-9 col-span-3 row-start-1">
-              <Selects
-                list={pilihan_dummy}
-                description="Pilih Tingkatan"
-                size="w-[240px]"
-              />
-            </div>
-            <div className="col-start-7 col-span-2 row-start-2 flex flex-row items-center">
-              <span className="font-medium text-sm">Kelas</span>
-            </div>
-            <div className="col-start-9 col-span-3 row-start-2">
-              <Selects
-                list={pilihan_dummy}
-                description="Pilih Kelas"
-                size="w-[240px]"
-              />
-            </div>
+        {/* filter */}
+        <div className="flex flex-row items-center gap-5 my-2 w-full">
+          <div className="flex flex-col gap-2">
+            <span className="font-medium text-xs">Tahun Akademik</span>
+            <Selects
+              list={pilihan_dummy}
+              description="Pilih"
+              size="w-[280px]"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-medium text-xs">Jenis Ujian</span>
+            <Selects
+              list={pilihan_dummy}
+              description="Pilih"
+              size="w-[280px]"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-medium text-xs">Tingkatan</span>
+            <Selects
+              list={pilihan_dummy}
+              description="Pilih"
+              size="w-[120px]"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-medium text-xs">Kelas</span>
+            <Selects
+              list={pilihan_dummy}
+              description="Pilih"
+              size="w-[120px]"
+            />
           </div>
         </div>
         <TableBasic

@@ -12,11 +12,6 @@ export default function AddMateriPelajaran() {
             <Layout>
                 <div className="flex flex-col gap-5">
                     <FormItem label="Fill Siswa details here!" labelType="banner" />
-                    <div className="border-b border-neutral-2" />
-                    {/* start form */}
-                    <h3 className="font-bold underline underline-offset-2 mb-1">
-                        DATA DIRI
-                    </h3>
                     <div className="grid grid-cols-9 grid-rows-9 gap-x-7 gap-y-4">
                         <div className="col-start-1 col-span-9 row-start-1">
                             <FormItem label="Kode Materi" labelType="label-sm" labelWidth="w-1/5">

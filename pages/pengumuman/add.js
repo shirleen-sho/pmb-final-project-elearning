@@ -11,7 +11,9 @@ const AddPengumuman = () => {
     <Layout>
       <div className="flex flex-col gap-5">
         <FormItem label="Fill Siswa details here!" labelType="banner" />
-        
+        <div>
+          <RichEditor/>
+        </div>
       </div>
     </Layout>
   );

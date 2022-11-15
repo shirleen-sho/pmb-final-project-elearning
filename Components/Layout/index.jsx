@@ -18,15 +18,25 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     setSelectedMenu(pathMenu);
+    setSelectedSubmenu("");
+    setSelectedActionmenu("");
     if (pathSubMenu === "/undefined") {
       setSelectedSubmenu("");
+    } else if (
+      pathSubMenu === "/add" ||
+      pathSubMenu === "/edit" ||
+      pathSubMenu === "/archive" ||
+      pathSubMenu === "/detail"
+    ) {
+      setSelectedActionmenu(pathMenu + pathSubMenu);
+      console.log(pathMenu + pathSubMenu);
     } else {
       setSelectedSubmenu(pathMenu + pathSubMenu);
-    }
-    if (pathAction === "/undefined") {
-      setSelectedActionmenu("");
-    } else {
-      setSelectedActionmenu(pathMenu + pathSubMenu + pathAction);
+      if (pathAction === "/undefined") {
+        setSelectedActionmenu("");
+      } else {
+        setSelectedActionmenu(pathMenu + pathSubMenu + pathAction);
+      }
     }
   }, [
     pathAction,

@@ -11,41 +11,31 @@ const MateriPelajaran = () => {
   return (
     <Layout>
       <div>
-        <div
-          id="top-content"
-          className="flex flex-row items-center justify-between my-4"
-        >
-          <div className="grid grid-cols-12 grid-flow-row gap-x-5 gap-y-3">
-            <div className="col-start-1 col-span-1  row-start-1 flex flex-row items-center">
-              <span className="font-medium text-sm">Tahun Akademik</span>
-            </div>
-            <div className="col-start-2 col-span-3 row-start-1">
-              <Selects
-                list={materi_pelajaran}
-                description="Pilih Tahun Akademik"
-                size="w-full"
-              />
-            </div>
-            <div className="col-start-5 col-span-1 row-start-1 flex flex-row items-center">
-              <span className="font-medium text-sm">Tingkatan</span>
-            </div>
-            <div className="col-start-6  col-span-3 row-start-1">
-              <Selects
-                list={materi_pelajaran}
-                description="Pilih Tingkatan"
-                size="w-full"
-              />
-            </div>
-            <div className="col-start-9 col-span-1 row-start-1 flex flex-row items-center">
-              <span className="font-medium text-sm">Kelas</span>
-            </div>
-            <div className="col-start-10 col-span-3 row-start-1">
-              <Selects
-                list={materi_pelajaran}
-                description="Pilih Kelas"
-                size="w-full"
-              />
-            </div>
+        {/* filter */}
+        <div className="flex flex-row items-center gap-5 mt-2 mb-8 w-full">
+          <div className="flex flex-col gap-2 w-1/2">
+            <span className="font-medium text-xs">Tahun Akademik</span>
+            <Selects
+              list={materi_pelajaran}
+              description="Pilih"
+              size="w-full"
+            />
+          </div>
+          <div className="flex flex-col gap-2 w-1/4">
+            <span className="font-medium text-xs">Tingkatan</span>
+            <Selects
+              list={materi_pelajaran}
+              description="Pilih"
+              size="w-full"
+            />
+          </div>
+          <div className="flex flex-col gap-2 w-1/4">
+            <span className="font-medium text-xs">Kelas</span>
+            <Selects
+              list={materi_pelajaran}
+              description="Pilih"
+              size="w-full"
+            />
           </div>
         </div>
         <div className="w-full h-full">

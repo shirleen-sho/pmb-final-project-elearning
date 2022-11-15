@@ -14,17 +14,17 @@ const JadwalPelajaran = () => {
       <div className="w-full h-full flex flex-col gap-5">
         {/* filter */}
         <div className="flex flex-row items-center gap-5 my-2">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/2">
             <span className="font-medium text-xs">Tahun Akademik</span>
-            <Selects list={list_siswa} description="Pilih" size="w-[280px]" />
+            <Selects list={list_siswa} description="Pilih" size="w-full" />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/4">
             <span className="font-medium text-xs">Tingkatan</span>
-            <Selects list={list_siswa} description="Pilih" size="w-[120px]" />
+            <Selects list={list_siswa} description="Pilih" size="w-full" />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/4">
             <span className="font-medium text-xs">Kelas</span>
-            <Selects list={list_siswa} description="Pilih" size="w-[120px]" />
+            <Selects list={list_siswa} description="Pilih" size="w-full" />
           </div>
         </div>
         <TableMerge

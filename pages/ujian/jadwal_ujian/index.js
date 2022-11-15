@@ -17,37 +17,21 @@ const JadwalUjian = () => {
       <div className="w-full h-full flex flex-col gap-5">
         {/* filter */}
         <div className="flex flex-row items-center gap-5 my-2 w-full">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/3">
             <span className="font-medium text-xs">Tahun Akademik</span>
-            <Selects
-              list={pilihan_dummy}
-              description="Pilih"
-              size="w-[280px]"
-            />
+            <Selects list={pilihan_dummy} description="Pilih" size="w-full" />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/3">
             <span className="font-medium text-xs">Jenis Ujian</span>
-            <Selects
-              list={pilihan_dummy}
-              description="Pilih"
-              size="w-[280px]"
-            />
+            <Selects list={pilihan_dummy} description="Pilih" size="w-full" />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/6">
             <span className="font-medium text-xs">Tingkatan</span>
-            <Selects
-              list={pilihan_dummy}
-              description="Pilih"
-              size="w-[120px]"
-            />
+            <Selects list={pilihan_dummy} description="Pilih" size="w-full" />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 w-1/6">
             <span className="font-medium text-xs">Kelas</span>
-            <Selects
-              list={pilihan_dummy}
-              description="Pilih"
-              size="w-[120px]"
-            />
+            <Selects list={pilihan_dummy} description="Pilih" size="w-full" />
           </div>
         </div>
         <TableBasic

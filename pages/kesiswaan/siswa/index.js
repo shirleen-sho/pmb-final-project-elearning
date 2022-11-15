@@ -19,29 +19,15 @@ const Siswa = () => {
     <Layout>
       <Tabs list={list} pathName="/kesiswaan">
         <div className="w-full h-full flex flex-col gap-5">
-          {/* top navigation */}
-          <div className="flex flex-row items-center justify-between my-2">
-            <div className="grid grid-cols-12 gap-x-5 gap-y-3">
-              <div className="col-start-1 col-span-2 flex flex-row items-center">
-                <span className="font-medium text-sm">Tingkatan</span>
-              </div>
-              <div className="col-start-3 col-span-3">
-                <Selects
-                  list={list_siswa}
-                  description="Pilih Tingkatan"
-                  size="w-[240px]"
-                />
-              </div>
-              <div className="col-start-7 col-span-2 flex flex-row items-center">
-                <span className="font-medium text-sm">Kelas</span>
-              </div>
-              <div className="col-start-9 col-span-3">
-                <Selects
-                  list={list_siswa}
-                  description="Pilih Kelas"
-                  size="w-[240px]"
-                />
-              </div>
+          {/* filter */}
+          <div className="flex flex-row items-center gap-5 my-2 w-full">
+            <div className="flex flex-col gap-2 w-1/2">
+              <span className="font-medium text-xs">Tingkatan</span>
+              <Selects list={list_siswa} description="Pilih" size="w-full" />
+            </div>
+            <div className="flex flex-col gap-2 w-1/2">
+              <span className="font-medium text-xs">Kelas</span>
+              <Selects list={list_siswa} description="Pilih" size="w-full" />
             </div>
           </div>
           {/* table */}

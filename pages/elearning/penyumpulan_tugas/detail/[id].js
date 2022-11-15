@@ -23,8 +23,8 @@ const DetailPengumpulanTugas = () => {
                   <MdOutlineLocalOffer />
                   <FormItem
                     label="Bahasa Indonesia"
-                    labelType="label-md"
-                    labelWidth="w-full "
+                    labelType="label-md" 
+                    labelWidth="w-full"
                   />
                 </div>
               </div>
@@ -38,10 +38,15 @@ const DetailPengumpulanTugas = () => {
               </p>
             </div>
           </div>
-          <div className="space-y-5">
-            <div>
-              <FormItem label="Instruksi" labelType="label-md " labelWidth="w-1/5" />
+          <div className="flex spac-y-5 gap-4">
+            <div className="flex-initial w-2/3" >
+              <FormItem label="Instruksi" labelType="label-md" labelWidth="w-full" />
               <p className="text-justify">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here,
+                content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
+                as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions
+                have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                 The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here,
                 content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
@@ -49,29 +54,46 @@ const DetailPengumpulanTugas = () => {
                 have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
               </p>
             </div>
-            <div className="grid grid-cols-6 grid-rows-2 md:grid-cols-10 md:grid-rows-1 md:gap-4 items-center ">
-              <div className="md:col-start-1 md:col-span-1 md:row-start-1 ">
-                <FormItem label="file Sosial" labelType="label-md" labelWidth="w-full" />
+            <div className="flex-initial w-1/3 space-y-6">
+              <div>
+              <FormItem label="file Sosial" labelType="label-md" labelWidth="w-full" />
+              <InputFields size="w-full" />
               </div>
-              <div className="md:col-start-2 md:col-span-2 md:row-start-1 ">
-                <InputFields size="w-full" />
-              </div>
-              <div className="md:col-start-4 md:col-span-1 md:row-start-1 ">
+              <div>
               <FormItem label="My Work" labelType="label-md" labelWidth="w-full" />
+              <InputFields size="w-full" />
               </div>
-              <div className="md:col-start-5 md:col-span-2 md:row-start-1 ">
-                <InputFields size="w-full" />
-              </div>
-              <div className="md:col-start-7 md:col-span-1 md:row-start-1 ">
-              <FormItem label="Score" labelType="label-md" labelWidth="w-1/5" />
-              </div>
-              <div className="col-start-1 row-start-2 md:col-start-8 md:col-span-2 md:row-start-1 ">
-                <InputFields type="text" size="w-full " />
-              </div>
-              <div className="md:col-start-10 md:col-span-1 md:row-start-1 ">
+              <div className="space-y-2">
+              <FormItem label="Score" labelType="label-md" labelWidth="w-full" />
+              <InputFields type="text" size="w-full " />
+              <div className="flex justify-end">
                 <Button>Share</Button>
               </div>
+              </div>
             </div>
+            {/* <div className="grid grid-cols-6 grid-rows-2 md:grid-cols-10 md:grid-rows-1 md:gap-4 items-center ">
+              <div className="md:col-start-1 md:col-span-1 md:row-start-1 ">
+                
+              </div>
+              <div className="md:col-start-2 md:col-span-2 md:row-start-1 ">
+                
+              </div>
+              <div className="md:col-start-4 md:col-span-1 md:row-start-1 ">
+                
+              </div>
+              <div className="md:col-start-5 md:col-span-2 md:row-start-1 ">
+                
+              </div>
+              <div className="md:col-start-7 md:col-span-1 md:row-start-1 ">
+               
+              </div>
+              <div className="col-start-1 row-start-2 md:col-start-8 md:col-span-2 md:row-start-1 ">
+                
+              </div>
+              <div className="md:col-start-10 md:col-span-1 md:row-start-1 ">
+                
+              </div>
+            </div> */}
           </div>
         </div>
       </Layout>

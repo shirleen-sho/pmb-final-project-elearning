@@ -868,21 +868,21 @@ export const useDummyProvider = () => {
   ];
   const materi_pelajaran = [
     {
-      id:1,
+      id: 1,
       mata_pelajaran: "Bahasa Indonesia",
       kode_materi: "MO1",
       judul_materi: "Teks Eksposisi",
       status: "ditampilkan",
     },
     {
-      id:2,
+      id: 2,
       mata_pelajaran: "Bahasa Indonesia",
       kode_materi: "MO1",
       judul_materi: "Teks Eksposisi",
       status: "ditampilkan",
     },
     {
-      id:3,
+      id: 3,
       mata_pelajaran: "Bahasa Indonesia",
       kode_materi: "MO1",
       judul_materi: "Teks Eksposisi",
@@ -892,21 +892,21 @@ export const useDummyProvider = () => {
 
   const tugas = [
     {
-      id:1,
+      id: 1,
       mata_pelajaran: "Bahasa Indonesia",
       kode_tugas: "T01",
       judul_materi: "Teks Eksposisi",
       waktu: "08.00 s/d 10.00",
     },
     {
-      id:2,
+      id: 2,
       mata_pelajaran: "Bahasa Indonesia",
       kode_tugas: "T01",
       judul_materi: "Teks Eksposisi",
       waktu: "08.00 s/d 10.00",
     },
     {
-      id:3,
+      id: 3,
       mata_pelajaran: "Bahasa Indonesia",
       kode_tugas: "T01",
       judul_materi: "Teks Eksposisi",
@@ -916,28 +916,28 @@ export const useDummyProvider = () => {
 
   const pengumpulan_tugas = [
     {
-      id:1,
+      id: 1,
       nis: 2001365231,
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      status:"tepat waktu"
+      status: "tepat waktu"
     },
     {
-      id:2,
+      id: 2,
       nis: 2001365231,
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      status:"tepat waktu"
+      status: "tepat waktu"
     },
     {
-      id:3,
+      id: 3,
       nis: 2001365231,
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      status:"tepat waktu"
+      status: "tepat waktu"
     },
   ];
 
@@ -1002,6 +1002,25 @@ export const useDummyProvider = () => {
   }
   ];
 
+  const pengumuman = [{
+    judul: "Hari Kemerdekaan Indonesia",
+    tanggal: "Senin, 17 Agsutus 2023",
+    Keterangan: "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
+    id: 1,
+  },
+  {
+    judul: "Hari Kemerdekaan Indonesia",
+    tanggal: "Senin, 17 Agsutus 2023",
+    Keterangan: "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
+    id: 2,
+  },
+  {
+    judul: "Hari Kemerdekaan Indonesia",
+    tanggal: "Senin, 17 Agsutus 2023",
+    Keterangan: "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
+    id: 3,
+  }
+  ]
 
 
   return {
@@ -1032,6 +1051,7 @@ export const useDummyProvider = () => {
     tugas,
     pengumpulan_tugas,
     materi_pelajaran,
-    list_nilai
+    list_nilai,
+    pengumuman
   };
 };

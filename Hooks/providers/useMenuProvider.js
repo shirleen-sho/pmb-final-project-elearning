@@ -440,6 +440,23 @@ export const useMenuProvider = () => {
         name: "Pengumuman",
         title: "Pengumuman",
         icon: <HiSpeakerphone size={16} />,
+        actionMenu: [
+          {
+            route: "/pengumuman/add",
+            name: "Pengumumann",
+            title: "Add Pengumumann",
+          },
+          {
+            route: "/pengumuman/detail",
+            name: "Pengumumann",
+            title: "Detail Pengumumann",
+          },
+          {
+            route: "/pengumuman/edit",
+            name: "Pengumumann",
+            title: "Edit Pengumumann",
+          },
+        ],
       },
       {
         route: "/epayment",

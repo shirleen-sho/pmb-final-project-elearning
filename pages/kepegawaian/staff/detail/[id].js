@@ -98,28 +98,24 @@ export default function EditStaff() {
               </div>
             </FormItem>
             <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Nama" size="w-full"  />
+              <InputFields disabled type="text" placeholder="Nama" size="w-full"  />
             </FormItem>
             <FormItem label="NPS" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="NPS" size="w-full" />
+              <InputFields disabled type="text" placeholder="NPS" size="w-full" />
             </FormItem>
             <FormItem
               label="Jenis Kelamin"
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <Selects
-                list={[{ name: "Pria" }, { name: "Wanita" }]}
-                style="w-full"
-                description="Pilih Jenis Kelamin"
-              />
+              <InputFields disabled type="text" placeholder="Jenis Kelamin" size="w-full"  />
             </FormItem>
             <FormItem
               label="No.Telp/WA"
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly type="text" placeholder="No.Telp/WA" size="w-full" />
+              <InputFields disabled type="text" placeholder="No.Telp/WA" size="w-full" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
@@ -128,7 +124,7 @@ export default function EditStaff() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly
+              <InputFields disabled
                 type="text"
                 placeholder="Tempat Lahir"
                 size="w-full"
@@ -139,17 +135,13 @@ export default function EditStaff() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly type="date" placeholder="Email" size="w-full" />
+              <InputFields disabled type="date" placeholder="Email" size="w-full" />
             </FormItem>
             <FormItem label="Email" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="Value" readOnly type="text" placeholder="Email" size="w-full"  />
+              <InputFields disabled type="text" placeholder="Email" size="w-full"  />
             </FormItem>
             <FormItem label="Level" labelType="label-sm" labelWidth="w-1/3">
-              <Selects
-                list={[{ name: "Guru" }, { name: "Manajemen" }]}
-                style="w-full"
-                description="Pilih Level"
-              />
+             <InputFields disabled type="text" placeholder="Level" size="w-full"  />
             </FormItem>
           </div>
         </div>
@@ -164,15 +156,15 @@ export default function EditStaff() {
               labelType="label-sm"
               labelWidth="w-[13.5%]"
             >
-              <TextArea placeholder="Alamat" readOnly valueLock="" />
+              <TextArea placeholder="Alamat" disabled />
             </FormItem>
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
             <FormItem label="Kecamatan" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Kecamatan" size="w-full" />
+              <InputFields disabled type="text" placeholder="Kecamatan" size="w-full" />
             </FormItem>
             <FormItem label="Kode Pos" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Kode Pos" size="w-full" />
+              <InputFields disabled type="text" placeholder="Kode Pos" size="w-full" />
             </FormItem>
           </div>
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
@@ -181,14 +173,14 @@ export default function EditStaff() {
               labelType="label-sm"
               labelWidth="w-1/3"
             >
-              <InputFields valueLock="" readOnly
+              <InputFields disabled
                 type="text"
                 placeholder="Kabupaten / Kota"
                 size="w-full"
               />
             </FormItem>
             <FormItem label="Provinsi" labelType="label-sm" labelWidth="w-1/3">
-              <InputFields valueLock="" readOnly type="text" placeholder="Provinsi" size="w-full" />
+              <InputFields disabled type="text" placeholder="Provinsi" size="w-full" />
             </FormItem>
           </div>
         </div>
@@ -203,14 +195,14 @@ export default function EditStaff() {
               labelType="label-sm"
               labelWidth="w-[13.5%]"
             >
-              <InputFields valueLock="" readOnly type="text" placeholder="Password" size="w-full" />
+              <InputFields disabled type="text" placeholder="Password" size="w-full" />
             </FormItem>
             <FormItem
               label="Confirm Password"
               labelType="label-sm"
               labelWidth="w-[13.5%]"
             >
-              <InputFields valueLock="" readOnly
+              <InputFields disabled
                 type="text"
                 placeholder="Confirm Password"
                 size="w-full"

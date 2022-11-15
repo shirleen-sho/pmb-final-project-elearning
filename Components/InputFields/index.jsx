@@ -5,11 +5,8 @@ const InputFields = ({
   size,
   placeholder,
   disabled,
-  readOnly,
   style,
   label,
-  valueLock,
-  defaultValue,
   value,
   setValue,
 }) => {
@@ -35,14 +32,12 @@ const InputFields = ({
     <>
       <input
         type={type}
-        value={value || valueLock}
+        value={value}
         onChange={(e) => setValue(e)}
         className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none ${size} ${style}`}
         placeholder={placeholder}
         label={label || placeholder}
         disabled={disabled}
-        readOnly={readOnly}
-        defaultValue={defaultValue}
       />
     </>
   );

@@ -916,6 +916,7 @@ export const useDummyProvider = () => {
 
   const pengumpulan_tugas = [
     {
+      id:1,
       nis: 2001365231,
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
@@ -923,6 +924,7 @@ export const useDummyProvider = () => {
       status:"tepat waktu"
     },
     {
+      id:2,
       nis: 2001365231,
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
@@ -930,6 +932,7 @@ export const useDummyProvider = () => {
       status:"tepat waktu"
     },
     {
+      id:3,
       nis: 2001365231,
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",

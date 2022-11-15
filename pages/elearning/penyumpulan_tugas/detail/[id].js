@@ -49,7 +49,7 @@ const DetailPengumpulanTugas = () => {
                 have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
               </p>
             </div>
-            {/* <div className="grid grid-cols-6 grid-rows-2 md:grid-cols-10 md:grid-rows-1 md:gap-4 items-center ">
+            <div className="grid grid-cols-6 grid-rows-2 md:grid-cols-10 md:grid-rows-1 md:gap-4 items-center ">
               <div className="md:col-start-1 md:col-span-1 md:row-start-1 ">
                 <FormItem label="file Sosial" labelType="label-md" labelWidth="w-full" />
               </div>
@@ -71,7 +71,7 @@ const DetailPengumpulanTugas = () => {
               <div className="md:col-start-10 md:col-span-1 md:row-start-1 ">
                 <Button>Share</Button>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </Layout>

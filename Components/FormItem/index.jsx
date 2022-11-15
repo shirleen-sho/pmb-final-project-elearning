@@ -15,7 +15,7 @@ const FormItem = ({
         "font-semibold text-lg bg-primary-100 rounded-md px-5 py-3 w-full";
       break;
     case "title":
-      labelStyle = "font-semibold text-5xl rounded-md w-full";
+      labelStyle = "font-semibold text-3xl rounded-md w-full";
       break;
     case "label-sm":
       labelStyle = "font-semibold text-xs leading-5";
@@ -33,7 +33,7 @@ const FormItem = ({
 
   return (
     <div
-      className={`flex ${
+      className={`flex capitalize ${
         formDirection === "col" ? "flex-col gap-1.5" : "flex-row gap-5"
       }`}
     >

@@ -37,7 +37,7 @@ const InputFields = ({
         type={type}
         value={value || valueLock}
         onChange={(e) => setValue(e)}
-        className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none  ${size} ${style}`}
+        className={`border border-gray-200 bg-white shadow rounded px-4 text-xs py-2 outline-none ${size} ${style}`}
         placeholder={placeholder}
         label={label || placeholder}
         disabled={disabled}

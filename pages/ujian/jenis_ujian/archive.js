@@ -3,22 +3,20 @@ import Layout from "../../../Components/Layout";
 import TableBasic from "../../../Components/Table/TableBasic";
 import { useAppContext } from "../../../Hooks/useAppContext";
 
-const JenisUjian = () => {
+const ArchiveJenisUjian = () => {
   const { dummy } = useAppContext();
   const { list_tingkatan } = dummy;
   return (
     <Layout>
       <TableBasic
-        actionArchive
-        actionEdit
-        buttonAdd
-        buttonArchive
+        actionUnarchive
+        buttonActive
         fieldSearch
-        tableTitle="Daftar Jenis Ujian"
+        tableTitle="Daftar Arsipan Jenis Ujian"
         data={list_tingkatan}
       />
     </Layout>
   );
 };
 
-export default JenisUjian;
+export default ArchiveJenisUjian;

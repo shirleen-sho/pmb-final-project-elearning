@@ -1,6 +1,13 @@
 import React from "react";
 
-const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
+const FormItem = ({
+  label,
+  labelType,
+  labelWidth,
+  labelNote,
+  children,
+  formDirection,
+}) => {
   let labelStyle;
   switch (labelType) {
     case "banner":
@@ -8,8 +15,7 @@ const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
         "font-semibold text-lg bg-primary-100 rounded-md px-5 py-3 w-full";
       break;
     case "title":
-      labelStyle =
-        "font-semibold text-5xl rounded-md w-full";
+      labelStyle = "font-semibold text-5xl rounded-md w-full";
       break;
     case "label-sm":
       labelStyle = "font-semibold text-xs leading-5";
@@ -26,7 +32,11 @@ const FormItem = ({ label, labelType, labelWidth, labelNote, children }) => {
   }
 
   return (
-    <div className={`flex flex-row gap-5`}>
+    <div
+      className={`flex ${
+        formDirection === "col" ? "flex-col gap-1.5" : "flex-row gap-5"
+      }`}
+    >
       {labelNote ? (
         <div className={`flex flex-col gap-1 ${labelWidth}`}>
           <div className={`${labelStyle}`}>{label}</div>

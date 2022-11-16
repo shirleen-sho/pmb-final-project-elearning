@@ -15,6 +15,7 @@ import {
   FaGraduationCap,
   FaClipboardList,
   FaUserCheck,
+  FaUserGraduate,
 } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { HiSpeakerphone } from "react-icons/hi";
@@ -220,7 +221,7 @@ export const useMenuProvider = () => {
         route: "/alumni",
         name: "Alumni",
         title: "Alumni",
-        icon: <HiSpeakerphone size={16} />,
+        icon: <FaUserGraduate size={16} />,
       },
       {
         route: "/data_akademik",

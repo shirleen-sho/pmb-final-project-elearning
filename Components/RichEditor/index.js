@@ -1,34 +1,41 @@
-import React, { useRef } from 'react';
-import { Editor } from '@tinymce/tinymce-react';
+import React, { Component } from "react";
+import { EditorState } from "draft-js";
+// import { Editor } from "react-draft-wysiwyg";
+import dynamic from "next/dynamic";
+import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
-export default function App() {
-  const editorRef = useRef(null);
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
-    }
+const Editor = dynamic(
+  () => {
+    return import("react-draft-wysiwyg").then(mod => mod.Editor);
+  },
+  { ssr: false }
+);
+
+class RichEditor extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { editorState: EditorState.createEmpty() };
+  }
+
+  onEditorStateChange = editorState => {
+    this.setState({ editorState });
   };
-  return (
-    <>
-     <div className='w-full h-40'>
-      <Editor
-        onInit={(evt, editor) => editorRef.current = editor}
-        init={{
-          height: 500,
-          menubar: false,
-          plugins: [
-            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
-            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-            'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
-          ],
-          toolbar: 'undo redo | blocks | ' +
-            'bold italic forecolor | alignleft aligncenter ' +
-            'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help',
-          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-        }}
-      />
+
+  render() {
+    const { editorState } = this.state;
+
+    return (
+      <div className="w-1/2">
+        <Editor
+          editorState={editorState}
+          wrapperClassName="rich-editor demo-wrapper"
+          editorClassName="demo-editor"
+          onEditorStateChange={this.onEditorStateChange}
+          placeholder="The message goes here..."
+        />
       </div>
-    </>
-  );
+    );
+  }
 }
+
+export default RichEditor;

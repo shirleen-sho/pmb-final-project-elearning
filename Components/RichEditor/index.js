@@ -25,7 +25,7 @@ class RichEditor extends Component {
     const { editorState } = this.state;
 
     return (
-      <div className="w-1/2">
+      <div className="border border-black">
         <Editor
           editorState={editorState}
           wrapperClassName="rich-editor demo-wrapper"

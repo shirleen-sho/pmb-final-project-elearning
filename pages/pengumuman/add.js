@@ -2,7 +2,6 @@ import React from "react";
 import FormItem from "../../Components/FormItem";
 import Layout from "../../Components/Layout";
 import InputFields from "../../Components/InputFields";
-import Selects from "../../Components/Selects";
 import Button from "../../Components/Buttons";
 import RichEditor from "../../Components/RichEditor";
 import RadioButton from "../../Components/RadioButton";
@@ -44,7 +43,7 @@ const AddPengumuman = () => {
           </div>
           <div className="col-start-1 col-span-9 row-start-5">
             <FormItem
-              label="Muncul Notifikasi"
+              label="lampiran pengumuman"
               labelType="label-sm"
               labelWidth="w-1/5"
             >
@@ -53,7 +52,7 @@ const AddPengumuman = () => {
           </div>
           <div className="col-start-1 col-span-9 row-start-6">
             <FormItem
-              label="Deskripsi Pengumuman"
+              label="Deskripsi pengumuman"
               labelType="label-sm"
               labelWidth="w-1/5"
             >
@@ -61,7 +60,7 @@ const AddPengumuman = () => {
             </FormItem>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex gap-5 justify-end">
           <Button type="light" link="/elearning/materi_pelajaran">
             Cancel
           </Button>

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Button from "../../../../Components/Buttons";
-import FormItem from "../../../../Components/FormItem";
-import InputFields from "../../../../Components/InputFields";
-import Layout from "../../../../Components/Layout";
-import Selects from "../../../../Components/Selects";
-import TextArea from "../../../../Components/TextArea";
+import Button from "../../../Components/Buttons";
+import FormItem from "../../../Components/FormItem";
+import InputFields from "../../../Components/InputFields";
+import Layout from "../../../Components/Layout";
+import Selects from "../../../Components/Selects";
+import TextArea from "../../../Components/TextArea";
 import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
-import ColorPicker from "../../../../Components/ColorPicker";
+import ColorPicker from "../../../Components/ColorPicker";
 
-export default function EditAlumni() {
+export default function EditGuru() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [image, setImage] = useState(null);
 
@@ -250,7 +250,7 @@ export default function EditAlumni() {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/kepegawaian/Alumni">Cancel</Button>
+          <Button type="light" link="/kepegawaian/guru">Cancel</Button>
           <Button >Update</Button>
         </div>
       </div>

@@ -217,6 +217,12 @@ export const useMenuProvider = () => {
         ],
       },
       {
+        route: "/alumni",
+        name: "Alumni",
+        title: "Alumni",
+        icon: <HiSpeakerphone size={16} />,
+      },
+      {
         route: "/data_akademik",
         name: "Data Akademik",
         title: "Data Akademik",

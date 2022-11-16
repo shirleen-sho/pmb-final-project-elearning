@@ -11,8 +11,8 @@ const Pengumuman = () => {
       <TableBasic
             data={pengumuman}
             tableTitle="Materi Pelajaran"
-            actionArchive
             actionEdit
+            actionDelete
             actionDetail
             buttonAdd
             fieldSearch

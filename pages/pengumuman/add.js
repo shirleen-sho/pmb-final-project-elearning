@@ -4,15 +4,70 @@ import Layout from "../../Components/Layout";
 import InputFields from "../../Components/InputFields";
 import Selects from "../../Components/Selects";
 import Button from "../../Components/Buttons";
-import RichEditor from "../../Components/RichEditor"
+import RichEditor from "../../Components/RichEditor";
+import RadioButton from "../../Components/RadioButton";
+import Uploader from "../../Components/Uploader";
 
 const AddPengumuman = () => {
   return (
     <Layout>
       <div className="flex flex-col gap-5">
         <FormItem label="Fill Siswa details here!" labelType="banner" />
-        <div>
-          <RichEditor/>
+        <div className="grid grid-cols-6 grid-rows-20 gap-x-7 gap-y-4 flex-1">
+          <div className="col-start-1 col-span-9 row-start-1">
+            <FormItem
+              label="Dikirim Ke"
+              labelType="label-sm"
+              labelWidth="w-1/5"
+            >
+              <InputFields type="text" placeholder="Select" size="w-full" />
+            </FormItem>
+          </div>
+          <div className="col-start-1 col-span-9 row-start-2">
+            <FormItem label="Judul" labelType="label-sm" labelWidth="w-1/5">
+              <InputFields type="text" placeholder="Judul" size="w-full" />
+            </FormItem>
+          </div>
+          <div className="col-start-1 col-span-9 row-start-3">
+            <FormItem label="tanggal" labelType="label-sm" labelWidth="w-1/5">
+              <InputFields type="date" placeholder="Semua" size="w-full" />
+            </FormItem>
+          </div>
+          <div className="col-start-1 col-span-9 row-start-4">
+            <FormItem
+              label="Muncul Notifikasi"
+              labelType="label-sm"
+              labelWidth="w-1/5"
+            >
+              <RadioButton />
+            </FormItem>
+          </div>
+          <div className="col-start-1 col-span-9 row-start-5">
+            <FormItem
+              label="Muncul Notifikasi"
+              labelType="label-sm"
+              labelWidth="w-1/5"
+            >
+              <Uploader />
+            </FormItem>
+          </div>
+          <div className="col-start-1 col-span-9 row-start-6">
+            <FormItem
+              label="Deskripsi Pengumuman"
+              labelType="label-sm"
+              labelWidth="w-1/5"
+            >
+              <RichEditor />
+            </FormItem>
+          </div>
+        </div>
+        <div className="flex">
+          <Button type="light" link="/elearning/materi_pelajaran">
+            Cancel
+          </Button>
+          <Button type="primary" link="/elearning/materi_pelajaran">
+            Save
+          </Button>
         </div>
       </div>
     </Layout>

@@ -308,14 +308,14 @@ export const useMenuProvider = () => {
             ],
           },
           {
-            route: "/elearning/penyumpulan_tugas",
-            name: "Penyumpulan Tugas",
-            title: "Penyumpulan Tugas",
+            route: "/elearning/pengumpulan_tugas",
+            name: "Pengumpulan Tugas",
+            title: "Pengumpulan Tugas",
             actionMenu: [
               {
-                route: "/elearning/penyumpulan_tugas/add",
-                name: "Penyumpulan Tugas",
-                title: "Add Penyumpulan Tugas",
+                route: "/elearning/pengumpulan_tugas/add",
+                name: "Pengumpulan Tugas",
+                title: "Add pengumpulan Tugas",
               },
             ],
           },

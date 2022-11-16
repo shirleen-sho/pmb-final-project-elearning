@@ -184,11 +184,11 @@ const DetailAlumni = () => {
         <div className="border-b border-neutral-2" />
         {/* end form */}
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/kesiswaan/siswa">
-            Back
+          <Button type="warning" link={"/alumni/edit/" + id}>
+            Edit
           </Button>
-          <Button type="primary" link={"/kesiswaan/siswa/edit/" + id}>
-            Update
+          <Button type="primary" link="/alumni">
+            Back
           </Button>
         </div>
       </div>

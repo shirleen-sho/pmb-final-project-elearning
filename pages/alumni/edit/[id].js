@@ -184,10 +184,10 @@ const EditAlumni = () => {
         <div className="border-b border-neutral-2" />
         {/* end form */}
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/kesiswaan/siswa">
+          <Button type="light" link="/alumni">
             Back
           </Button>
-          <Button type="primary" link={"/kesiswaan/siswa/edit/" + id}>
+          <Button type="primary" link={"/alumni/edit/" + id}>
             Update
           </Button>
         </div>

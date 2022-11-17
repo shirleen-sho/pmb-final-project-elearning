@@ -291,6 +291,18 @@ export const useMenuProvider = () => {
         icon: <RiMacFill size={18} />,
         subMenu: [
           {
+            route: "/elearning/materi_pembelajaran",
+            name: "Materi Pembelajaran",
+            title: "Materi Pembelajaran",
+            actionMenu: [
+              {
+                route: "/elearning/materi_pembelajaran/add",
+                name: "Materi Pembelajaran",
+                title: "Add Materi Pembelajaran",
+              },
+            ],
+          },
+          {
             route: "/elearning/materi_pelajaran",
             name: "Materi Pelajaran",
             title: "Materi Pelajaran",

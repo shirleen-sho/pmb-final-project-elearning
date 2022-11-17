@@ -1022,8 +1022,29 @@ export const useDummyProvider = () => {
   }
   ]
 
+  const study = [
+    { image: "/images/profile.jpg", title: "MTK", desc: " Matematika", color: "#0D4C92" }, 
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Handout Penjas", color: "#f5f5f5S" },
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#000" },
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
+    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
+  ]
+
+  const materi = [
+    {title: "Teks Eksposisi" , bab: "1.1"},
+    {title: "Teks Eksposisi" , bab: "1.1"},
+    {title: "Teks Eksposisi" , bab: "1.1"},
+    {title: "Teks Eksposisi" , bab: "1.1"},
+    {title: "Teks Eksposisi" , bab: "1.1"},
+    {title: "Teks Eksposisi" , bab: "1.1"},
+  ]
 
   return {
+    materi,
+    study,
     list1,
     list2,
     list_belum_submit_tugas,

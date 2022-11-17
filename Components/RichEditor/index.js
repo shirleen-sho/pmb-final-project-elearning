@@ -25,10 +25,10 @@ class RichEditor extends Component {
     const { editorState } = this.state;
 
     return (
-      <div className="border border-black">
+      <div className="border">
         <Editor
           editorState={editorState}
-          wrapperClassName="rich-editor demo-wrapper"
+          wrapperClassName="bg-red"
           editorClassName="demo-editor"
           onEditorStateChange={this.onEditorStateChange}
           placeholder="The message goes here..."

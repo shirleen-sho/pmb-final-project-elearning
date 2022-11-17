@@ -20,6 +20,7 @@ import {
 } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { HiSpeakerphone } from "react-icons/hi";
+import { MdAssignment } from "react-icons/md"
 
 export const useMenuProvider = () => {
   const configMenu = {
@@ -347,6 +348,12 @@ export const useMenuProvider = () => {
         name: "Materi Pembelajaran",
         title: "Materi Pembelajaran",
         icon: <FaBookOpen size={17} />,
+      },
+      {
+        route: "/assignment",
+        name: "Assignment",
+        title: "Assignment",
+        icon: <MdAssignment size={17} />,
       },
       {
         route: "/data_absensi",

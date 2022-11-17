@@ -37,8 +37,8 @@ const BankSoal = () => {
         <TableBasic
           data={list_tingkatan}
           tableTitle="Data Bank Soal"
-          actionDetail
-          actionEdit
+          // actionDetail
+          // actionEdit
           actionDelete
           buttonAdd
           fieldSearch

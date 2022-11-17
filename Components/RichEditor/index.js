@@ -1,38 +1,41 @@
 import React, { Component } from "react";
+import { EditorState } from "draft-js";
 // import { Editor } from "react-draft-wysiwyg";
 import dynamic from "next/dynamic";
-import { EditorState, convertToRaw } from "draft-js";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import "../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
 const Editor = dynamic(
-  () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
+  () => {
+    return import("react-draft-wysiwyg").then(mod => mod.Editor);
+  },
   { ssr: false }
 );
 
-export default class TextEditor extends Component {
-  state = {
-    editorState: EditorState.createEmpty(),
-  };
+class RichEditor extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { editorState: EditorState.createEmpty() };
+  }
 
-  onEditorStateChange = (editorState) => {
-    this.setState({
-      editorState,
-    });
+  onEditorStateChange = editorState => {
+    this.setState({ editorState });
   };
 
   render() {
     const { editorState } = this.state;
 
     return (
-      <div>
+      <div className="border border-black">
         <Editor
-          initialEditorState={editorState}
-          toolbarClassName="toolbarClassName"
-          wrapperClassName="wrapperClassName"
-          editorClassName="editorClassName"
+          editorState={editorState}
+          wrapperClassName="rich-editor demo-wrapper"
+          editorClassName="demo-editor"
           onEditorStateChange={this.onEditorStateChange}
+          placeholder="The message goes here..."
         />
       </div>
     );
   }
 }
+
+export default RichEditor;

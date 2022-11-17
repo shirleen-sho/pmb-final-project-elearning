@@ -15,6 +15,7 @@ import {
   FaGraduationCap,
   FaClipboardList,
   FaUserCheck,
+  FaUserGraduate,
 } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { HiSpeakerphone } from "react-icons/hi";
@@ -217,6 +218,12 @@ export const useMenuProvider = () => {
         ],
       },
       {
+        route: "/alumni",
+        name: "Alumni",
+        title: "Alumni",
+        icon: <FaUserGraduate size={16} />,
+      },
+      {
         route: "/data_akademik",
         name: "Data Akademik",
         title: "Data Akademik",
@@ -308,14 +315,14 @@ export const useMenuProvider = () => {
             ],
           },
           {
-            route: "/elearning/penyumpulan_tugas",
-            name: "Penyumpulan Tugas",
-            title: "Penyumpulan Tugas",
+            route: "/elearning/pengumpulan_tugas",
+            name: "Pengumpulan Tugas",
+            title: "Pengumpulan Tugas",
             actionMenu: [
               {
-                route: "/elearning/penyumpulan_tugas/add",
-                name: "Penyumpulan Tugas",
-                title: "Add Penyumpulan Tugas",
+                route: "/elearning/pengumpulan_tugas/add",
+                name: "Pengumpulan Tugas",
+                title: "Add pengumpulan Tugas",
               },
             ],
           },

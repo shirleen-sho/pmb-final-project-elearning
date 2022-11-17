@@ -2,10 +2,26 @@ import React, { useState, useEffect } from "react";
 import Button from "../../Buttons";
 import Search from "../../Search";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import {
+  HiChevronLeft,
+  HiChevronRight,
+  HiOutlineArchive,
+  HiOutlineEye,
+  HiOutlinePencil,
+  HiOutlineTrash,
+} from "react-icons/hi";
 
 const TableMerge = ({
   data,
   tableTitle,
+  numbering,
+  pagination,
+  actionDetail,
+  actionArchive,
+  actionUnarchive,
+  actionEdit,
+  actionDelete,
   buttonAdd,
   buttonArchive,
   buttonActive,
@@ -58,13 +74,46 @@ const TableMerge = ({
       });
       setTableHead(table_head);
       setTableHeadFormatted(table_head_formatted);
-      setStyle({
-        gridCols: `grid-cols-${cols}`,
-        spanCols: `col-span-${colsChild}`,
-      });
+      if (
+        (actionDetail ||
+          actionArchive ||
+          actionUnarchive ||
+          actionEdit ||
+          actionDelete) &&
+        numbering
+      ) {
+        setStyle({
+          gridCols: `grid-cols-${cols + 2}`,
+          spanCols: `col-span-${colsChild}`,
+        });
+      } else if (
+        actionDetail ||
+        actionArchive ||
+        actionUnarchive ||
+        actionEdit ||
+        actionDelete
+      ) {
+        setStyle({
+          gridCols: `grid-cols-${cols + 1}`,
+          spanCols: `col-span-${colsChild}`,
+        });
+      } else {
+        setStyle({
+          gridCols: `grid-cols-${cols}`,
+          spanCols: `col-span-${colsChild}`,
+        });
+      }
     };
     dataProcessing();
-  }, [data]);
+  }, [
+    actionArchive,
+    actionDelete,
+    actionDetail,
+    actionEdit,
+    actionUnarchive,
+    data,
+    numbering,
+  ]);
 
   const location = useRouter();
   const path = location.asPath;
@@ -73,7 +122,7 @@ const TableMerge = ({
     <div className="border border-gray-200 bg-white rounded-xl p-6 shadow-lg w-full flex flex-col gap-6">
       {/* top navigation table */}
       {(fieldSearch || buttonAdd || buttonArchive || buttonActive) && (
-        <div className="flex flex-row justify-between items-center">
+        <div className="mb-1 flex flex-row justify-between items-center">
           <div className="font-semibold text-xl">{tableTitle || ""}</div>
           <div className="flex flex-row items-center gap-5">
             {fieldSearch && <Search />}
@@ -96,11 +145,17 @@ const TableMerge = ({
           </div>
         </div>
       )}
-      <table
-        className={`border border-collapse border-gray-200 table-auto text-xs w-full h-full text-justify`}
-      >
+      {/* table */}
+      <table className="table-auto border border-collapse border-gray-200 text-xs w-full h-full">
         <thead>
           <tr className={`grid ${style.gridCols} grid-rows-2 capitalize`}>
+            {numbering && (
+              <th
+                className={`${fontHead} ${defaultCellStyle} row-start-1 row-span-2 text-center`}
+              >
+                No
+              </th>
+            )}
             {tableHeadFormatted.length > 0 &&
               tableHeadFormatted.map((head) =>
                 typeof head === "object" ? (
@@ -129,6 +184,17 @@ const TableMerge = ({
                   </th>
                 )
               )}
+            {(actionDetail ||
+              actionArchive ||
+              actionUnarchive ||
+              actionEdit ||
+              actionDelete) && (
+              <th
+                className={`${fontHead} ${defaultCellStyle} row-start-1 row-span-2 text-center`}
+              >
+                Aksi
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -137,6 +203,10 @@ const TableMerge = ({
               key={"itemTableTrial" + index}
               className={`grid ${style.gridCols} `}
             >
+              {numbering && (
+                <td className={`${defaultCellStyle}`}>{index + 1}</td>
+              )}
+
               {tableHead.length > 0 &&
                 tableHead.map((head, i) =>
                   typeof head === "object" ? (
@@ -164,10 +234,128 @@ const TableMerge = ({
                     </td>
                   )
                 )}
+
+              {(actionDetail ||
+                actionArchive ||
+                actionUnarchive ||
+                actionEdit ||
+                actionDelete) && (
+                <td className={`${defaultCellStyle}`}>
+                  <div className="flex flex-row items-center">
+                    {actionDetail && (
+                      <Button
+                        type="link"
+                        title="View"
+                        link={path + "/detail/" + item.id}
+                      >
+                        <HiOutlineEye
+                          className="hover:text-primary-600"
+                          size={18}
+                        />
+                      </Button>
+                    )}
+                    {actionArchive && (
+                      <Button type="link" title="Archive">
+                        <HiOutlineArchive
+                          size={18}
+                          className="hover:text-primary-600"
+                        />
+                      </Button>
+                    )}
+                    {actionUnarchive && (
+                      <Button type="link" title="Unarchive">
+                        <HiOutlineArchive
+                          size={18}
+                          className="hover:text-primary-600"
+                        />
+                      </Button>
+                    )}
+                    {actionEdit && (
+                      <Button
+                        type="link"
+                        title="Edit"
+                        link={path + "/edit/" + item.id}
+                      >
+                        <HiOutlinePencil
+                          className="hover:text-primary-600"
+                          size={18}
+                        />
+                      </Button>
+                    )}
+                    {actionDelete && (
+                      <Button type="link" title="Delete">
+                        <HiOutlineTrash
+                          className="hover:text-primary-600"
+                          size={18}
+                        />
+                      </Button>
+                    )}
+                  </div>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
       </table>
+      {/* bottom navigation table */}
+      {pagination && (
+        <div
+          className="flex flex-row justify-between items-center mt-1"
+          id="table-navigation"
+        >
+          <span className="text-xs text-gray-500">
+            Showing data <span className="font-medium text-gray-700">1</span> to{" "}
+            <span className="font-medium text-gray-700">{data.length}</span> of{" "}
+            {data.length} entries
+          </span>
+          {/* pagination */}
+          <div className="flex flex-row items-center gap-4 text-xs h-8">
+            <Link
+              href="/"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            >
+              <HiChevronLeft size={14} />
+            </Link>
+            <Link
+              href="/"
+              aria-current="page"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-primary-300 border border-primary-300 text-white"
+            >
+              1
+            </Link>
+            <Link
+              href="/"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            >
+              2
+            </Link>
+            <Link
+              href="/"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            >
+              3
+            </Link>
+            <Link
+              href="/"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            >
+              ...
+            </Link>
+            <Link
+              href="/"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            >
+              100
+            </Link>
+            <Link
+              href="/"
+              className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
+            >
+              <HiChevronRight size={14} />
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

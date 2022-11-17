@@ -1,170 +1,147 @@
-import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Layout from "../../../../Components/Layout";
+import React from "react";
+import Button from "../../../../Components/Buttons";
 import FormItem from "../../../../Components/FormItem";
 import InputFields from "../../../../Components/InputFields";
+import Layout from "../../../../Components/Layout";
 import Selects from "../../../../Components/Selects";
-import Button from "../../../../Components/Buttons";
+import Tabs from "../../../../Components/Tabs";
 
 const EditBankSoal = () => {
   const router = useRouter();
   const { id } = router.query;
+
   const pilihan_dummy = [
     { label: "A", value: "a" },
     { label: "B", value: "b" },
     { label: "C", value: "c" },
   ];
 
-  const [showPilgan, setShowPilgan] = useState(false);
-  const [showEssai, setShowEssai] = useState(false);
+  const tabList = [
+    { id: 1, name: "Data Soal", tab: `/data_soal/${id}` },
+    { id: 2, name: "Edit", tab: `/edit/${id}` },
+  ];
 
   return (
     <Layout>
-      <div>
-        <FormItem label="Edit Bank Soal details here!" labelType="banner" />
-        <div className="flex flex-col py-5 gap-5">
-          {/* KODE JENIS UJIAN */}
-          <FormItem
-            label="Kode Bank Soal"
-            labelType="label-sm"
-            labelWidth="w-1/4"
-          >
-            <InputFields
-              type="text"
-              placeholder="Kode Bank Soal otomatis"
-              size="w-full"
-              disabled={true}
-              value={id}
-            />
-          </FormItem>
-
-          {/* Mata Pelajaran */}
-          <FormItem
-            label="Mata Pelajaran"
-            labelType="label-sm"
-            labelWidth="w-1/4"
-          >
-            <Selects
-              list={pilihan_dummy}
-              size="w-full"
-              description="Pilih mata pelajaran"
-            />
-          </FormItem>
-
-          {/* KKM */}
-          <FormItem label="KKM" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields type="number" placeholder="Tulis KKM" size="w-full" />
-          </FormItem>
-
-          {/* Nama Bank Soal */}
-          <FormItem
-            label="Nama Bank Soal"
-            labelType="label-sm"
-            labelWidth="w-1/4"
-          >
-            <InputFields
-              type="text"
-              placeholder="Tulis nama bank soal"
-              size="w-full"
-            />
-          </FormItem>
-
-          {/* Soal Pilihan Ganda */}
-          <Button
-            type="success"
-            style="w-full"
-            handleClick={(e) => {
-              e.preventDefault();
-              setShowPilgan(!showPilgan);
-            }}
-          >
-            Soal Pilihan Ganda dan Bobot
-          </Button>
-
-          {showPilgan && (
+      <Tabs list={tabList} pathName="/ujian/bank_soal">
+        <div className="flex flex-col gap-10 border border-gray-200 bg-white rounded-xl p-6 shadow-md w-full px-6 py-8 mt-2">
+          <div className="flex flex-col gap-8">
+            {/* judul */}
+            <div className="flex flex-row justify-between pb-7 border-b border-gray-200">
+              <div className="text-sm font-semibold">
+                Edit Soal *nama bank soal*
+              </div>
+            </div>
             <div className="grid grid-cols-3 gap-x-10">
-              <FormItem
-                label="Jumlah Soal PG"
-                labelType="label-sm"
-                formDirection="col"
-              >
+              {/* Mata Pelajaran */}
+              <div className="col-span-2">
+                <FormItem
+                  label="Mata Pelajaran"
+                  labelType="label-sm"
+                  formDirection="col"
+                >
+                  <Selects
+                    list={pilihan_dummy}
+                    size="w-full"
+                    description="Pilih mata pelajaran"
+                  />
+                </FormItem>
+              </div>
+              {/* KKM */}
+              <FormItem label="KKM" labelType="label-sm" formDirection="col">
                 <InputFields
                   type="number"
-                  placeholder="Jumlah Soal PG"
-                  size="w-full"
-                />
-              </FormItem>
-              <FormItem
-                label="Bobot Soal (%)"
-                labelType="label-sm"
-                formDirection="col"
-              >
-                <InputFields
-                  type="number"
-                  placeholder="Bobot Soal (%)"
-                  size="w-full"
-                />
-              </FormItem>
-              <FormItem
-                label="Opsi PG Default"
-                labelType="label-sm"
-                formDirection="col"
-              >
-                <Selects
-                  list={pilihan_dummy}
-                  size="w-full"
-                  description="Pilih opsi"
-                />
-              </FormItem>
-            </div>
-          )}
-
-          {/* Soal Essai / Uraian */}
-          <Button
-            type="info"
-            style="w-full"
-            handleClick={(e) => {
-              e.preventDefault();
-              setShowEssai(!showEssai);
-            }}
-          >
-            Soal Essai atau Uraian
-          </Button>
-
-          {showEssai && (
-            <div className="grid grid-cols-2 gap-x-10">
-              <FormItem
-                label="Jumlah Soal Essai"
-                labelType="label-sm"
-                formDirection="col"
-              >
-                <InputFields
-                  type="number"
-                  placeholder="Jumlah Soal Essai"
-                  size="w-full"
-                />
-              </FormItem>
-              <FormItem
-                label="Bobot Soal (%)"
-                labelType="label-sm"
-                formDirection="col"
-              >
-                <InputFields
-                  type="number"
-                  placeholder="Bobot Soal (%)"
+                  placeholder="Tulis KKM"
                   size="w-full"
                 />
               </FormItem>
             </div>
-          )}
+
+            {/* Soal Pilihan Ganda */}
+            <div className="flex flex-col gap-5">
+              <div className="text-xs font-bold">Soal Pilihan Ganda (PG)</div>
+              <div className="grid grid-cols-3 gap-x-10">
+                <div>
+                  <FormItem
+                    label="Jumlah Soal PG"
+                    labelType="label-sm"
+                    formDirection="col"
+                  >
+                    <InputFields
+                      type="number"
+                      placeholder="Jumlah Soal PG"
+                      size="w-full"
+                    />
+                  </FormItem>
+                </div>
+                <div>
+                  <FormItem
+                    label="Bobot Soal (%)"
+                    labelType="label-sm"
+                    formDirection="col"
+                  >
+                    <InputFields
+                      type="number"
+                      placeholder="Bobot Soal"
+                      size="w-full"
+                    />
+                  </FormItem>
+                </div>
+                <div>
+                  <FormItem
+                    label="Opsi PG Default"
+                    labelType="label-sm"
+                    formDirection="col"
+                  >
+                    <Selects
+                      list={pilihan_dummy}
+                      size="w-full"
+                      description="Pilih opsi"
+                    />
+                  </FormItem>
+                </div>
+              </div>
+            </div>
+
+            {/* Soal Essai / Uraian */}
+            <div className="flex flex-col gap-5">
+              <div className="text-xs font-bold">Soal Essai atau Uraian</div>
+              <div className="grid grid-cols-3 gap-x-10">
+                <div>
+                  <FormItem
+                    label="Jumlah Soal Essai"
+                    labelType="label-sm"
+                    formDirection="col"
+                  >
+                    <InputFields
+                      type="number"
+                      placeholder="Jumlah Soal Essai"
+                      size="w-full"
+                    />
+                  </FormItem>
+                </div>
+                <div>
+                  <FormItem
+                    label="Bobot Soal (%)"
+                    labelType="label-sm"
+                    formDirection="col"
+                  >
+                    <InputFields
+                      type="number"
+                      placeholder="Bobot Soal"
+                      size="w-full"
+                    />
+                  </FormItem>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-row justify-end gap-5">
+            <Button type="primary">Update</Button>
+          </div>
         </div>
-        <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/ujian/bank_soal">
-            Back
-          </Button>
-          <Button type="primary">Update</Button>
-        </div>
-      </div>
+      </Tabs>
     </Layout>
   );
 };

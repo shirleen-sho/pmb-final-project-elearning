@@ -373,19 +373,24 @@ export const useMenuProvider = () => {
             title: "Bank Soal",
             actionMenu: [
               {
-                route: "/ujian/bank_soal/add",
+                route: "/ujian/bank_soal/manual",
                 name: "Bank Soal",
-                title: "Add Bank Soal",
+                title: "Input Soal",
               },
               {
-                route: "/ujian/bank_soal/detail",
+                route: "/ujian/bank_soal/upload",
                 name: "Bank Soal",
-                title: "Detail Bank Soal",
+                title: "Input Soal",
+              },
+              {
+                route: "/ujian/bank_soal/data_soal",
+                name: "Bank Soal",
+                title: "Informasi Soal",
               },
               {
                 route: "/ujian/bank_soal/edit",
                 name: "Bank Soal",
-                title: "Edit Bank Soal",
+                title: "Informasi Soal",
               },
             ],
           },

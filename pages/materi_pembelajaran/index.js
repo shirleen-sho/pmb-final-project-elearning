@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from "../../../Components/Layout"
-import CardMapels from "../../../Components/Card/CardMapels";
-import { useAppContext } from "../../../Hooks/useAppContext";
+import Layout from "../../Components/Layout"
+import CardMapels from "../../Components/Card/CardMapels";
+import { useAppContext } from "../../Hooks/useAppContext";
 
 export default function MateriPembelaajran() {
     const { dummy } = useAppContext();

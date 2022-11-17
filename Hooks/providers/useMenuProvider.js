@@ -16,6 +16,7 @@ import {
   FaClipboardList,
   FaUserCheck,
   FaUserGraduate,
+  FaBookOpen,
 } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { HiSpeakerphone } from "react-icons/hi";
@@ -290,18 +291,7 @@ export const useMenuProvider = () => {
         title: "E-Learning",
         icon: <RiMacFill size={18} />,
         subMenu: [
-          {
-            route: "/elearning/materi_pembelajaran",
-            name: "Materi Pembelajaran",
-            title: "Materi Pembelajaran",
-            actionMenu: [
-              {
-                route: "/elearning/materi_pembelajaran/add",
-                name: "Materi Pembelajaran",
-                title: "Add Materi Pembelajaran",
-              },
-            ],
-          },
+          
           {
             route: "/elearning/materi_pelajaran",
             name: "Materi Pelajaran",
@@ -351,6 +341,12 @@ export const useMenuProvider = () => {
             ],
           },
         ],
+      },
+      {
+        route: "/materi_pembelajaran",
+        name: "Materi Pembelajaran",
+        title: "Materi Pembelajaran",
+        icon: <FaBookOpen size={17} />,
       },
       {
         route: "/data_absensi",

@@ -1,8 +1,8 @@
 import React from 'react'
-import CardMateris from '../../../../Components/Card/CardMateris'
-import Layout from '../../../../Components/Layout'
-import Tabs from '../../../../Components/Tabs'
-import { useAppContext } from "../../../../Hooks/useAppContext";
+import CardMateris from '../../../Components/Card/CardMateris'
+import Layout from '../../../Components/Layout'
+import Tabs from '../../../Components/Tabs'
+import { useAppContext } from "../../../Hooks/useAppContext";
 
 export default function DetailVideo() {
   const list = [
@@ -16,7 +16,7 @@ export default function DetailVideo() {
   return (
     <>
       <Layout>
-        <Tabs list={list} pathName="/elearning/materi_pembelajaran/detail/"></Tabs>
+        <Tabs list={list} pathName="/materi_pembelajaran/detail/"></Tabs>
         <div className='grid 2xl:grid-cols-5 xl:grid-cols-3 lg:grid-cols-2 gap-8 justify-center items-center'>
           <CardMateris materi={materi} ></CardMateris>
         </div>

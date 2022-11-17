@@ -6,7 +6,18 @@ import { useAppContext } from "../../Hooks/useAppContext";
 
 const Raport = () => {
   const { dummy } = useAppContext();
-  const { dataDummyTrial2 } = dummy;
+  const { raport } = dummy;
+
+  const raport_perhitungan = raport.map((i) => {
+    return {
+      ...i,
+      jumlah_nilai:
+        i.tugas + i.ulangan_harian + i.ujian.UTS + i.ujian.UAS + i.kehadiran,
+      rata_rata:
+        (i.tugas + i.ulangan_harian + i.ujian.UTS + i.ujian.UAS + i.kehadiran) /
+        5,
+    };
+  });
 
   const pilihan_dummy = [
     { label: "A", value: "a" },
@@ -36,7 +47,7 @@ const Raport = () => {
           </div>
         </div>
         <TableMerge
-          data={dataDummyTrial2}
+          data={raport_perhitungan}
           fieldSearch
           numbering
           pagination

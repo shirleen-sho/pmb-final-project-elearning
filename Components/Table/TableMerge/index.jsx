@@ -67,9 +67,16 @@ const TableMerge = ({
             bottom: head_formatted,
           });
         } else {
-          table_head.push(key);
-          table_head_formatted.push(formattedKey);
-          cols += 1;
+          if (
+            key !== "id" &&
+            key !== "created_at" &&
+            key !== "deleted_at" &&
+            key !== "updated_at"
+          ) {
+            table_head.push(key);
+            table_head_formatted.push(formattedKey);
+            cols += 1;
+          }
         }
       });
       setTableHead(table_head);
@@ -91,7 +98,8 @@ const TableMerge = ({
         actionArchive ||
         actionUnarchive ||
         actionEdit ||
-        actionDelete
+        actionDelete ||
+        numbering
       ) {
         setStyle({
           gridCols: `grid-cols-${cols + 1}`,
@@ -119,7 +127,7 @@ const TableMerge = ({
   const path = location.asPath;
 
   return (
-    <div className="border border-gray-200 bg-white rounded-xl p-6 shadow-lg w-full flex flex-col gap-6">
+    <div className="bg-white w-full flex flex-col gap-6 py-3">
       {/* top navigation table */}
       {(fieldSearch || buttonAdd || buttonArchive || buttonActive) && (
         <div className="mb-1 flex flex-row justify-between items-center">

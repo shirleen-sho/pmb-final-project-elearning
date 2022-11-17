@@ -921,7 +921,7 @@ export const useDummyProvider = () => {
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      status: "tepat waktu"
+      status: "tepat waktu",
     },
     {
       id: 2,
@@ -929,7 +929,7 @@ export const useDummyProvider = () => {
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      status: "tepat waktu"
+      status: "tepat waktu",
     },
     {
       id: 3,
@@ -937,7 +937,7 @@ export const useDummyProvider = () => {
       nama: "Ana Varela",
       dudul_tugas: "Aljabar 1",
       mata_pelajaran: "Bahasa Indonesia",
-      status: "tepat waktu"
+      status: "tepat waktu",
     },
   ];
 
@@ -979,68 +979,188 @@ export const useDummyProvider = () => {
     },
   ];
 
-  const list_nilai = [{
-    NIS: 2020131034,
-    nama: "Pendi",
-    judul_tugas: "Aljabar 1",
-    mata_pelajaran: "Mtematika",
-    nilai: 80,
-  },
-  {
-    NIS: 2020131034,
-    nama: "Pendi",
-    judul_tugas: "Aljabar 1",
-    mata_pelajaran: "Mtematika",
-    nilai: 80,
-  },
-  {
-    NIS: 2020131034,
-    nama: "Pendi",
-    judul_tugas: "Aljabar 1",
-    mata_pelajaran: "Mtematika",
-    nilai: 80,
-  }
+  const list_nilai = [
+    {
+      NIS: 2020131034,
+      nama: "Pendi",
+      judul_tugas: "Aljabar 1",
+      mata_pelajaran: "Mtematika",
+      nilai: 80,
+    },
+    {
+      NIS: 2020131034,
+      nama: "Pendi",
+      judul_tugas: "Aljabar 1",
+      mata_pelajaran: "Mtematika",
+      nilai: 80,
+    },
+    {
+      NIS: 2020131034,
+      nama: "Pendi",
+      judul_tugas: "Aljabar 1",
+      mata_pelajaran: "Mtematika",
+      nilai: 80,
+    },
   ];
 
-  const pengumuman = [{
-    judul: "Hari Kemerdekaan Indonesia",
-    tanggal: "Senin, 17 Agsutus 2023",
-    Keterangan: "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
-    id: 1,
-  },
-  {
-    judul: "Hari Kemerdekaan Indonesia",
-    tanggal: "Senin, 17 Agsutus 2023",
-    Keterangan: "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
-    id: 2,
-  },
-  {
-    judul: "Hari Kemerdekaan Indonesia",
-    tanggal: "Senin, 17 Agsutus 2023",
-    Keterangan: "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
-    id: 3,
-  }
-  ]
+  const pengumuman = [
+    {
+      judul: "Hari Kemerdekaan Indonesia",
+      tanggal: "Senin, 17 Agsutus 2023",
+      Keterangan:
+        "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
+      id: 1,
+    },
+    {
+      judul: "Hari Kemerdekaan Indonesia",
+      tanggal: "Senin, 17 Agsutus 2023",
+      Keterangan:
+        "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
+      id: 2,
+    },
+    {
+      judul: "Hari Kemerdekaan Indonesia",
+      tanggal: "Senin, 17 Agsutus 2023",
+      Keterangan:
+        "Hari Kemerdekaan Bangsa Indonesia dimana kita akan mengadakan Lomba-lomba dan diharapkan kepada seluruh siswa memakai seragam.",
+      id: 3,
+    },
+  ];
 
   const study = [
-    { image: "/images/profile.jpg", title: "MTK", desc: " Matematika", color: "#0D4C92" }, 
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Handout Penjas", color: "#f5f5f5S" },
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#000" },
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
-    { image: "/images/profile.jpg", title: "Penjaskes", desc: "Pendidikan Jasmani Olahraga dan Kesehatan", color: "#f5f5f5S" },
-  ]
+    {
+      image: "/images/profile.jpg",
+      title: "MTK",
+      desc: " Matematika",
+      color: "#0D4C92",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Handout Penjas",
+      color: "#f5f5f5S",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Pendidikan Jasmani Olahraga dan Kesehatan",
+      color: "#000",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Pendidikan Jasmani Olahraga dan Kesehatan",
+      color: "#f5f5f5S",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Pendidikan Jasmani Olahraga dan Kesehatan",
+      color: "#f5f5f5S",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Pendidikan Jasmani Olahraga dan Kesehatan",
+      color: "#f5f5f5S",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Pendidikan Jasmani Olahraga dan Kesehatan",
+      color: "#f5f5f5S",
+    },
+    {
+      image: "/images/profile.jpg",
+      title: "Penjaskes",
+      desc: "Pendidikan Jasmani Olahraga dan Kesehatan",
+      color: "#f5f5f5S",
+    },
+  ];
 
   const materi = [
-    {title: "Teks Eksposisi" , bab: "1.1"},
-    {title: "Teks Eksposisi" , bab: "1.1"},
-    {title: "Teks Eksposisi" , bab: "1.1"},
-    {title: "Teks Eksposisi" , bab: "1.1"},
-    {title: "Teks Eksposisi" , bab: "1.1"},
-    {title: "Teks Eksposisi" , bab: "1.1"},
-  ]
+    { title: "Teks Eksposisi", bab: "1.1" },
+    { title: "Teks Eksposisi", bab: "1.1" },
+    { title: "Teks Eksposisi", bab: "1.1" },
+    { title: "Teks Eksposisi", bab: "1.1" },
+    { title: "Teks Eksposisi", bab: "1.1" },
+    { title: "Teks Eksposisi", bab: "1.1" },
+  ];
+
+  const raport = [
+    {
+      id: 1,
+      NIS: "190703001",
+      nama: "Sarah",
+      tugas: 97,
+      ulangan_harian: 95,
+      ujian: {
+        UTS: 90,
+        UAS: 98,
+      },
+      kehadiran: 99,
+    },
+    {
+      id: 2,
+      NIS: "190703001",
+      nama: "Selly",
+      tugas: 95,
+      ulangan_harian: 98,
+      ujian: {
+        UTS: 89,
+        UAS: 96,
+      },
+      kehadiran: 99,
+    },
+    {
+      id: 3,
+      NIS: "190703001",
+      nama: "Teddy",
+      tugas: 90,
+      ulangan_harian: 92,
+      ujian: {
+        UTS: 85,
+        UAS: 88,
+      },
+      kehadiran: 99,
+    },
+    {
+      id: 4,
+      NIS: "190703001",
+      nama: "Theodora",
+      tugas: 97,
+      ulangan_harian: 95,
+      ujian: {
+        UTS: 90,
+        UAS: 98,
+      },
+      kehadiran: 99,
+    },
+    {
+      id: 5,
+      NIS: "190703001",
+      nama: "Vanessa",
+      tugas: 95,
+      ulangan_harian: 98,
+      ujian: {
+        UTS: 89,
+        UAS: 96,
+      },
+      kehadiran: 99,
+    },
+    {
+      id: 6,
+      NIS: "190703001",
+      nama: "Vivian",
+      tugas: 90,
+      ulangan_harian: 92,
+      ujian: {
+        UTS: 85,
+        UAS: 88,
+      },
+      kehadiran: 99,
+    },
+  ];
 
   return {
     materi,
@@ -1073,6 +1193,7 @@ export const useDummyProvider = () => {
     pengumpulan_tugas,
     materi_pelajaran,
     list_nilai,
-    pengumuman
+    pengumuman,
+    raport,
   };
 };

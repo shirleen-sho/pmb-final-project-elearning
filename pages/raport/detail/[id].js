@@ -85,6 +85,7 @@ const DetailRaport = () => {
             Back
           </Button>
           <Button type="primary">Save</Button>
+          <Button type="warning">Print</Button>
         </div>
       </div>
     </Layout>

@@ -4,7 +4,6 @@ import Button from "../../../Components/Buttons";
 import Selects from "../../../Components/Selects";
 import TableMerge from "../../../Components/Table/TableMerge";
 import { useAppContext } from "../../../Hooks/useAppContext";
-import Search from "../../../Components/Search";
 
 const JadwalPelajaran = () => {
   const { dummy } = useAppContext();

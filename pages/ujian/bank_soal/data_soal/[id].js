@@ -2,10 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import Button from "../../../../Components/Buttons";
-import FormItem from "../../../../Components/FormItem";
-import InputFields from "../../../../Components/InputFields";
 import Layout from "../../../../Components/Layout";
-import Selects from "../../../../Components/Selects";
 import Tabs from "../../../../Components/Tabs";
 
 const DetailBankSoal = () => {

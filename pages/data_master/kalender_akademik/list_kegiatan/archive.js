@@ -1,9 +1,7 @@
 import React from "react";
 import Layout from "../../../../Components/Layout";
 import Tabs from "../../../../Components/Tabs";
-import Button from "../../../../Components/Buttons";
 import { useAppContext } from "../../../../Hooks/useAppContext";
-import Search from "../../../../Components/Search";
 import TableBasic from "../../../../Components/Table/TableBasic";
 
 const ArchiveListKegiatan = () => {

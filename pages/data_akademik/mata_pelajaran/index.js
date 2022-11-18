@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
-import Search from "../../../Components/Search";
 import Tabs from "../../../Components/Tabs";
 import TableBasic from "../../../Components/Table/TableBasic";
 import { useAppContext } from "../../../Hooks/useAppContext";

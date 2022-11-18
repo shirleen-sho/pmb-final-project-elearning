@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { SketchPicker } from "react-color";
 import Button from "../../../../../Components/Buttons";
 import Layout from "../../../../../Components/Layout";
 import InputFields from "../../../../../Components/InputFields";
 import Selects from "../../../../../Components/Selects";
-import Link from "next/link";
 import FormItem from "../../../../../Components/FormItem";
 import ColorPicker from "../../../../../Components/ColorPicker";
 import { useRouter } from "next/router";

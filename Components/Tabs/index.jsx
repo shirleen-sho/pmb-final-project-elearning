@@ -1,12 +1,8 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useAppContext } from "../../Hooks/useAppContext";
 
 const Tabs = ({ list, pathName, children }) => {
-  const { menu } = useAppContext();
-  const { selectedMenu, selectedSubmenu, selectedActionmenu } = menu;
-
   const location = useRouter();
   const path = location.asPath;
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
 import { useAppContext } from "../../../Hooks/useAppContext";

@@ -5,8 +5,6 @@ import Button from "../../../../Components/Buttons";
 import FormItem from "../../../../Components/FormItem";
 import Selects from "../../../../Components/Selects";
 import Image from "next/image";
-import TextArea from "../../../../Components/TextArea";
-import InputFields from "../../../../Components/InputFields";
 import ImageUploader from "../../../../Components/ImageUploader";
 
 const DetailWali = () => {

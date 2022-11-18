@@ -5,7 +5,6 @@ import Button from "../../../Components/Buttons";
 import KalenderBulan from "../../../Components/KalenderBulan";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import moment from "moment";
-import Selects from "../../../Components/Selects";
 
 const KalenderAkademik = () => {
   const list = [

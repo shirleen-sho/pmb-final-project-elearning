@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import Layout from "../../../../Components/Layout";
 import FormItem from "../../../../Components/FormItem";
 import InputFields from "../../../../Components/InputFields";
-import Selects from "../../../../Components/Selects";
 import Button from "../../../../Components/Buttons";
 
 const DetailJadwalUjian = () => {

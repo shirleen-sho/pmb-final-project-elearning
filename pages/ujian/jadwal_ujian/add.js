@@ -3,6 +3,7 @@ import Button from "../../../Components/Buttons";
 import FormItem from "../../../Components/FormItem";
 import InputFields from "../../../Components/InputFields";
 import Layout from "../../../Components/Layout";
+import RadioButton from "../../../Components/RadioButton";
 import Selects from "../../../Components/Selects";
 
 const AddJadwalUjian = () => {
@@ -110,6 +111,23 @@ const AddJadwalUjian = () => {
               size="w-1/3"
             />
           </FormItem>
+
+          <div className="flex flex-row items-center gap-10 mt-3">
+            <div className="flex flex-row items-center gap-2">
+              <RadioButton />
+              <span className="font-semibold text-xs leading-5">Acak Soal</span>
+            </div>
+            <div className="flex flex-row items-center gap-2">
+              <RadioButton />
+              <span className="font-semibold text-xs leading-5">Acak Opsi</span>
+            </div>
+            <div className="flex flex-row items-center gap-2">
+              <RadioButton />
+              <span className="font-semibold text-xs leading-5">
+                Hasil Tampil
+              </span>
+            </div>
+          </div>
         </div>
         <div className="flex flex-row justify-end gap-5">
           <Button type="light" link="/ujian/jadwal_ujian">

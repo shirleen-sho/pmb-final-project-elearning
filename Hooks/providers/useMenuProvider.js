@@ -20,7 +20,7 @@ import {
 } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import { HiSpeakerphone } from "react-icons/hi";
-import { MdAssignment } from "react-icons/md"
+import { MdAssignment } from "react-icons/md";
 
 export const useMenuProvider = () => {
   const configMenu = {
@@ -292,7 +292,6 @@ export const useMenuProvider = () => {
         title: "E-Learning",
         icon: <RiMacFill size={18} />,
         subMenu: [
-          
           {
             route: "/elearning/materi_pelajaran",
             name: "Materi Pelajaran",
@@ -546,7 +545,7 @@ export const useMenuProvider = () => {
       title: findSelectedMenuInMain.title,
       detail: findSelectedMenuInMain.detail,
     };
-    if (selectedSubmenu) {
+    if (selectedSubmenu && findSelectedMenuInMain.subMenu) {
       const findSelectedSubmenuInMain = findSelectedMenuInMain.subMenu.find(
         (i) => selectedSubmenu === i.route
       );
@@ -556,7 +555,7 @@ export const useMenuProvider = () => {
           detail: findSelectedSubmenuInMain.detail,
         };
       }
-      if (selectedActionmenu) {
+      if (selectedActionmenu && findSelectedSubmenuInMain.actionMenu) {
         const findSelectedActionmenuInSub =
           findSelectedSubmenuInMain.actionMenu.find(
             (i) => selectedActionmenu === i.route
@@ -569,18 +568,16 @@ export const useMenuProvider = () => {
         }
       }
     } else {
-      if (selectedActionmenu) {
-        if (findSelectedMenuInMain.actionMenu) {
-          const findSelectedActionmenuInMain =
-            findSelectedMenuInMain.actionMenu.find(
-              (i) => selectedActionmenu === i.route
-            );
-          if (findSelectedActionmenuInMain) {
-            header = {
-              title: findSelectedActionmenuInMain.title,
-              detail: findSelectedActionmenuInMain.detail,
-            };
-          }
+      if (selectedActionmenu && findSelectedMenuInMain.actionMenu) {
+        const findSelectedActionmenuInMain =
+          findSelectedMenuInMain.actionMenu.find(
+            (i) => selectedActionmenu === i.route
+          );
+        if (findSelectedActionmenuInMain) {
+          header = {
+            title: findSelectedActionmenuInMain.title,
+            detail: findSelectedActionmenuInMain.detail,
+          };
         }
       }
     }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../../Components/Layout";
 import Tabs from "../../../Components/Tabs";
 import Button from "../../../Components/Buttons";
@@ -15,8 +15,23 @@ const PengaturanOtorisasi = () => {
   const { dummy } = useAppContext();
   const { list_level_staff, list_pengaturan_otorisasi } = dummy;
   const level = list_level_staff.map((i) => {
-    return { name: i.staff_level };
+    return { value: i.kode_level, label: i.staff_level };
   });
+
+  const [selectedData, setSelectedData] = useState(null);
+
+  const handleChangeSelect = (item) => {
+    const findSelected = list_pengaturan_otorisasi.find(
+      (setting) => setting.kode_level === item.value
+    );
+    setSelectedData(findSelected);
+    console.log("selected now", findSelected);
+  };
+
+  const handleSimpan = (e) => {
+    e.preventDefault();
+    console.log("submit data", selectedData);
+  };
 
   return (
     <Layout>
@@ -34,16 +49,21 @@ const PengaturanOtorisasi = () => {
                 list={level}
                 description="Pilih Staff Level"
                 size="w-96"
+                handleChange={(item) => handleChangeSelect(item)}
               />
             </div>
-            <Button type="primary">Simpan</Button>
+            {selectedData && (
+              <Button type="primary" handleClick={(e) => handleSimpan(e)}>
+                Simpan
+              </Button>
+            )}
           </div>
-          {list_pengaturan_otorisasi.map((setting, index) => (
+          {selectedData && (
             <TableOtorisasi
-              data={setting.otorisasi}
-              key={"tableOtorisasi" + index}
+              data={selectedData.otorisasi}
+              key="tableOtorisasi"
             />
-          ))}
+          )}
         </div>
       </Tabs>
     </Layout>

@@ -1,6 +1,5 @@
 import React, { use, useEffect, useState } from "react";
 import Link from "next/link";
-import Button from "../../Buttons";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const TableOtorisasi = ({ data }) => {
@@ -10,6 +9,11 @@ const TableOtorisasi = ({ data }) => {
   const defaultCellStyle = "px-3 py-3 h-14";
   const fontHead = "font-semibold";
   let colorHead = "top-6 bg-gradient-to-r from-primary-50/50 to-primary-100";
+
+  const [tableData, setTableData] = useState(data);
+  useEffect(() => {
+    setTableData(data);
+  }, [data]);
 
   return (
     <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full h-full">
@@ -25,65 +29,91 @@ const TableOtorisasi = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => {
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const [itemRow, setItemRow] = useState(item);
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            const [checkAll, setCheckAll] = useState(false);
-            const handleChecked = (head, e) => {
-              const row = itemRow;
-              Object.keys(row).forEach((key) => {
-                if (key === head) {
-                  row[key] = e.target.checked;
-                }
-              });
-              setItemRow(row);
-              console.log("itemRow updated !", itemRow);
-            };
-            const handleCheckedAll = () => {
-              const row = itemRow;
-              Object.keys(row).forEach((key) => {
-                if (typeof row[key] !== "string") {
-                  row[key] = !checkAll;
-                }
-              });
-              setItemRow(row);
-              setCheckAll(!checkAll);
-              console.log("itemRow select all !", itemRow);
-            };
-            // note: masih ada bugs case misal tekan check1 = true trus tekan lagi = false,
-            // trus checkAll true, yang sudah prnh ditekan check1 tadi akan tetap false
-            // padahal harusnya jadi true stlh dicheckAll
-            return (
-              <tr key={"item" + index}>
-                <td className={`${defaultCellStyle} border-b text-center`}>
-                  <input
-                    type="checkbox"
-                    checked={checkAll}
-                    onClick={handleCheckedAll}
-                  />
-                </td>
-                {table_head.map((head) => {
-                  return (
-                    <td
-                      key={"item" + head + index}
-                      className={`${defaultCellStyle} border-b`}
-                    >
-                      {typeof itemRow[head] === "string" ? (
-                        itemRow[head]
-                      ) : (
-                        <input
-                          type="checkbox"
-                          defaultChecked={itemRow[head]}
-                          onClick={(e) => handleChecked(head, e)}
-                        />
-                      )}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
+          {tableData.length > 0 &&
+            tableData.map((item, index) => {
+              let arr = [];
+              table_head.map((head) => arr.push(item[head]));
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              const [checkedState, setCheckedState] = useState(arr);
+
+              // when tableData's items are changing
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              useEffect(() => {
+                table_head.map((head) => arr.push(item[head]));
+                setCheckedState(arr);
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+              }, [item]);
+
+              const handleSelect = (position, head, e, menu) => {
+                const updatedChecked = checkedState.map((state, p) =>
+                  p === position ? !state : state
+                );
+                setCheckedState(updatedChecked);
+
+                const row = item;
+                Object.keys(row).forEach((key) => {
+                  if (key === head) {
+                    row[key] = e.target.checked;
+                  }
+                });
+                const updatedData = tableData.map((d) =>
+                  d.menu === menu ? row : d
+                );
+                setTableData(updatedData);
+              };
+
+              const handleSelectAll = (e, menu) => {
+                const updatedChecked = new Array(table_head.length).fill(
+                  e.target.checked
+                );
+                setCheckedState(updatedChecked);
+
+                const row = item;
+                Object.keys(row).forEach((key) => {
+                  if (typeof row[key] !== "string") {
+                    row[key] = e.target.checked;
+                  }
+                });
+                const updatedData = tableData.map((d) =>
+                  d.menu === menu ? row : d
+                );
+                setTableData(updatedData);
+              };
+
+              return (
+                <tr key={"item" + index}>
+                  <td className={`${defaultCellStyle} border-b text-center`}>
+                    <input
+                      type="checkbox"
+                      name="checkall"
+                      checked={checkedState.every((value) => value === true)}
+                      onChange={(e) => handleSelectAll(e, item.menu)}
+                    />
+                  </td>
+                  {table_head.map((head, i) => {
+                    return (
+                      <td
+                        key={"item" + head + index}
+                        className={`${defaultCellStyle} border-b`}
+                      >
+                        {typeof item[head] === "string" ? (
+                          item[head]
+                        ) : (
+                          <input
+                            type="checkbox"
+                            name={"check" + head + index}
+                            checked={checkedState[i]}
+                            onChange={(e) =>
+                              handleSelect(i, head, e, item.menu)
+                            }
+                          />
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
         </tbody>
       </table>
       {/* background table head */}

@@ -36,6 +36,13 @@ const Profile = () => {
                 description="Pilih Jenis Kelamin"
               />
             </FormItem>
+            <FormItem label="Agama" labelType="label-sm" labelWidth="w-1/3">
+              <Selects
+                list={[{ name: "Pria" }, { name: "Wanita" }]}
+                style="w-full"
+                description="Pilih Agama"
+              />
+            </FormItem>
           </div>
           <div className="col-start-6 col-span-4 flex flex-col gap-5">
             <FormItem
@@ -62,7 +69,7 @@ const Profile = () => {
               labelWidth="w-1/3"
             >
               <InputFields
-                type="text"
+                type="date"
                 placeholder="Tanggal lahir"
                 size="w-full"
               />

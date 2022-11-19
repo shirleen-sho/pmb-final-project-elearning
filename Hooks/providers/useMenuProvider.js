@@ -472,6 +472,18 @@ export const useMenuProvider = () => {
         name: "E-Payment",
         title: "E-Payment",
         icon: <RiWallet3Fill size={16} />,
+        subMenu: [
+          {
+            route: "/epayment/jenis_pembayaran",
+            name: "Jenis Pembayaran",
+            title: "Pembayaran",
+          },
+          {
+            route: "/epayment/pembayaran",
+            name: "Transaksi",
+            title: "Pembayaran",
+          },
+        ],
       },
       {
         route: "/raport",

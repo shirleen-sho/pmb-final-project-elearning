@@ -6,21 +6,20 @@
   .custom-box {
     @apply bg-white border-[1.25px] rounded-2xl drop-shadow;
   }
-  input::-webkit-file-upload-button{
+  input::-webkit-file-upload-button {
     display: none;
   }
   .toggle-checkbox:checked {
     right: 0;
-    border-color: #68D391;
+    border-color: #68d391;
   }
   .toggle-checkbox:checked + .toggle-label {
-    background-color: #68D391;
+    background-color: #68d391;
   }
 
   .wrapperClassName {
     @apply inline-flex;
   }
-
 }
 
 @layer base {
@@ -61,7 +60,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
   }
 }

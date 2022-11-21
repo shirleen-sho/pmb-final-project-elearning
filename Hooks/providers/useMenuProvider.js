@@ -496,6 +496,23 @@ export const useMenuProvider = () => {
         name: "Keuangan Sekolah",
         title: "Keuangan Sekolah",
         icon: <RiCurrencyFill size={17} />,
+        subMenu: [
+          {
+            route: "/keuangan_sekolah/pemasukan",
+            name: "Pemasukan",
+            title: "Pemasukan",
+          },
+          {
+            route: "/keuangan_sekolah/pengeluaran",
+            name: "Pengeluaran",
+            title: "Pengeluaran",
+          },
+          {
+            route: "/keuangan_sekolah/laporan",
+            name: "Laporan",
+            title: "Laporan",
+          },
+        ],
       },
       {
         route: "/log_activity",

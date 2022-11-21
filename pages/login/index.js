@@ -108,7 +108,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <Button style="w-full px-auto">Login</Button>
+                <Button style="w-full px-auto" link={"/dashboard"}>Login</Button>
                 <h1 className="flex justify-center text-sm text-gray-500">
                   Develop by Jova Software - 2022
                 </h1>

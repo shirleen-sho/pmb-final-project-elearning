@@ -88,6 +88,9 @@ module.exports = {
         11: "11",
         12: "12",
       },
+      boxShadow: {
+        "md-b": "0 8px 6px -6px rgb(0 0 0 / 0.1)",
+      },
     },
   },
   safelist: [{ pattern: /grid-cols-./ }, { pattern: /col-span-./ }],

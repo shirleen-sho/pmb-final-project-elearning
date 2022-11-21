@@ -4,7 +4,7 @@ import Tabs from "../../../Components/Tabs";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import TableBasic from "../../../Components/Table/TableBasic";
 
-const Settings = () => {
+const ListBank = () => {
   const list = [
     { id: 1, name: "Level Staff", tab: "/level" },
     { id: 2, name: "Pengaturan Otorisasi", tab: "/otorisasi" },
@@ -25,7 +25,7 @@ const Settings = () => {
             buttonAdd
             buttonArchive
             fieldSearch
-            tableTitle="Pengaturan Level Staff"
+            tableTitle="Pengaturan Daftar Bank"
           />
         </div>
       </Tabs>
@@ -33,4 +33,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default ListBank;

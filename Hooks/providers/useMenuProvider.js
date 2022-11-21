@@ -546,18 +546,23 @@ export const useMenuProvider = () => {
       {
         route: "/settings",
         name: "Settings",
-        title: "Settings",
+        title: "Pengaturan",
         icon: <RiSettings5Fill size={18} />,
         subMenu: [
           {
             route: "/settings/level",
             name: "Level Staff",
-            title: "Level Staff",
+            title: "Pengaturan",
           },
           {
             route: "/settings/otorisasi",
-            name: "Pengaturan Otorisasi",
-            title: "Pengaturan Otorisasi",
+            name: "Otorisasi",
+            title: "Pengaturan",
+          },
+          {
+            route: "/settings/list_bank",
+            name: "List Bank",
+            title: "Pengaturan",
           },
         ],
       },

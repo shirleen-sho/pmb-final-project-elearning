@@ -10,6 +10,7 @@ const PengaturanOtorisasi = () => {
   const list = [
     { id: 1, name: "Level Staff", tab: "/level" },
     { id: 2, name: "Pengaturan Otorisasi", tab: "/otorisasi" },
+    { id: 3, name: "List Bank", tab: "/list_bank" },
   ];
 
   const { dummy } = useAppContext();

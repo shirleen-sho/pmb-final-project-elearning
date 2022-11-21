@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../../Components/Layout";
-import Tabs from "../../../Components/Tabs";
-import { useAppContext } from "../../../Hooks/useAppContext";
-import TableBasic from "../../../Components/Table/TableBasic";
+import Layout from "../../../../Components/Layout";
+import Tabs from "../../../../Components/Tabs";
+import { useAppContext } from "../../../../Hooks/useAppContext";
+import TableBasic from "../../../../Components/Table/TableBasic";
 
-const Settings = () => {
+const ArchiveListBank = () => {
   const list = [
     { id: 1, name: "Level Staff", tab: "/level" },
     { id: 2, name: "Pengaturan Otorisasi", tab: "/otorisasi" },
@@ -20,12 +20,10 @@ const Settings = () => {
         <div className="w-full h-full py-3">
           <TableBasic
             data={list_level_staff}
-            actionArchive
-            actionEdit
-            buttonAdd
-            buttonArchive
+            actionUnarchive
+            buttonActive
             fieldSearch
-            tableTitle="Pengaturan Level Staff"
+            tableTitle="Arsipan Pengaturan Daftar Bank"
           />
         </div>
       </Tabs>
@@ -33,4 +31,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default ArchiveListBank;

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Button from "../../../Components/Buttons";
-import Layout from "../../../Components/Layout";
-import InputFields from "../../../Components/InputFields";
-import Link from "next/link";
-import FormItem from "../../../Components/FormItem";
+import Button from "../../../../Components/Buttons";
+import Layout from "../../../../Components/Layout";
+import InputFields from "../../../../Components/InputFields";
+import FormItem from "../../../../Components/FormItem";
 
 const AddLevelStaff = () => {
   return (
@@ -12,13 +11,8 @@ const AddLevelStaff = () => {
         <FormItem label="Fill Level Staff details here!" labelType="banner" />
         <div className="flex flex-col py-5 gap-5">
           {/* KODE LEVEL */}
-          <FormItem label="Kode" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields
-              type="text"
-              placeholder="Kode otomatis"
-              size="w-full"
-              disabled={true}
-            />
+          <FormItem label="Kode Level" labelType="label-sm" labelWidth="w-1/4">
+            <InputFields type="text" size="w-full" disabled={true} />
           </FormItem>
 
           {/* LEVEL STAFF */}
@@ -31,7 +25,7 @@ const AddLevelStaff = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/settings">
+          <Button type="light" link="/settings/level">
             Cancel
           </Button>
           <Button type="primary">Save</Button>

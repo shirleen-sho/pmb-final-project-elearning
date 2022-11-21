@@ -359,6 +359,23 @@ export const useMenuProvider = () => {
         name: "Data Absensi",
         title: "Data Absensi",
         icon: <FaUserCheck size={17} />,
+        subMenu: [
+          {
+            route: "/data_absensi/staff",
+            name: "Staff",
+            title: "Absensi Staff",
+          },
+          {
+            route: "/data_absensi/guru",
+            name: "Guru",
+            title: "Absensi Guru",
+          },
+          {
+            route: "/data_absensi/siswa",
+            name: "Siswa",
+            title: "Absensi Siswa",
+          },
+        ],
       },
       {
         route: "/ujian",

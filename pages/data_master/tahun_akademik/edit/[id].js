@@ -118,7 +118,7 @@ export async function getServerSideProps(ctx) {
   const prevProps = getPreviousProps.props;
 
   // Fetch page's data
-  let id = parseInt(ctx.query.id);
+  let id = ctx.query.id;
   const res = await axios.get(
     `https://api.starling.kotasatelit.com/api/academic-year/${id}`
   );

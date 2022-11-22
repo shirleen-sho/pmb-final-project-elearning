@@ -42,6 +42,7 @@ const JadwalUjian = () => {
           actionDelete
           buttonAdd
           fieldSearch
+          linkToMataPelajaran
         />
       </div>
     </Layout>

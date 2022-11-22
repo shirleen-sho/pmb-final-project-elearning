@@ -39,6 +39,7 @@ const NilaiUjian = () => {
           tableTitle="Daftar Penilaian"
           actionDetail
           fieldSearch
+          linkToMataPelajaran
         />
       </div>
     </Layout>

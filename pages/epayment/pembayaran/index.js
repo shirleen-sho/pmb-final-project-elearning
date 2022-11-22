@@ -31,8 +31,9 @@ const Pembayaran = () => {
         <TableBasic
           data={list_ruangan}
           tableTitle="Daftar Pembayaran"
-          actionDetail
           fieldSearch
+          linkToTransactionPayment
+          linkToTransactionHistory
         />
       </div>
     </Layout>

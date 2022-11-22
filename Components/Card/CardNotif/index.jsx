@@ -4,12 +4,55 @@ import Button from "../../Buttons";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 export default function CardNotif({ type, desc, title }) {
   const { user } = useAppContext();
-  const { setShowLogout } = user;
+  const { setShowLogout, archive, setArchive, unarchive, setUnarchive } = user;
   const location = useRouter();
   const path = location.asPath;
+
+  const handleConfirm = async (e) => {
+    e.preventDefault();
+    if (type === "logout") {
+      console.log("logout");
+    } else if (type === "archive") {
+      try {
+        const res = await axios.post(archive.url);
+        console.log(res);
+        location.reload();
+      } catch (error) {
+        console.log(error);
+        location.reload();
+      }
+    } else if (type === "unarchive") {
+      try {
+        const res = await axios.post(unarchive.url);
+        console.log(res);
+        location.reload();
+      } catch (error) {
+        console.log(error);
+        location.reload();
+      }
+    }
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    if (type === "logout") {
+      setShowLogout(false);
+    } else if (type === "archive") {
+      setArchive({
+        show: false,
+        url: null,
+      });
+    } else if (type === "unarchive") {
+      setUnarchive({
+        show: false,
+        url: null,
+      });
+    }
+  };
 
   return (
     <div className="absolute z-50 backdrop-blur-sm bg-white/30 flex justify-center align-middle items-center w-full h-screen ">
@@ -44,21 +87,14 @@ export default function CardNotif({ type, desc, title }) {
         <div className="w-full flex justify-center items-center px-10">
           {type ? (
             <div className="w-full flex justify-evenly">
-              <Button type="light">
-                {type === "logout" ? "Logout" : "Delete"}
+              <Button type="light" handleClick={(e) => handleConfirm(e)}>
+                {{
+                  logout: "Logout",
+                  archive: "Archive",
+                  unarchive: "Unarchive",
+                }[type] || "Delete"}
               </Button>
-              <Button
-                handleClick={
-                  type === "logout"
-                    ? (e) => {
-                        e.preventDefault();
-                        setShowLogout(false);
-                      }
-                    : ""
-                }
-              >
-                Cancel
-              </Button>
+              <Button handleClick={(e) => handleCancel(e)}>Cancel</Button>
             </div>
           ) : null}
         </div>

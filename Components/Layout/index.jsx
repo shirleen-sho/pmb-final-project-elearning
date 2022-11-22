@@ -8,7 +8,7 @@ import CardNotif from "../Card/CardNotif";
 const Layout = ({ children }) => {
   const { menu, user } = useAppContext();
   const { setSelectedMenu, setSelectedSubmenu, setSelectedActionmenu } = menu;
-  const { showLogout, setShowLogout } = user;
+  const { showLogout, archive, unarchive } = user;
 
   const location = useRouter();
   const path = location.asPath;
@@ -54,6 +54,20 @@ const Layout = ({ children }) => {
           type="logout"
           title="Yakin Ingin Keluar"
           desc="Setelah Logout, Anda Harus Login Kembali"
+        />
+      )}
+      {archive.show && (
+        <CardNotif
+          type="archive"
+          title="Yakin Ingin Mengarsipkan"
+          desc="Data yang diarsip dapat diakses pada menu Archive"
+        />
+      )}
+      {unarchive.show && (
+        <CardNotif
+          type="unarchive"
+          title="Yakin Ingin Mengaktifkan"
+          desc="Data yang diaktifkan dapat dilihat pada menu Active"
         />
       )}
       <div className="flex flex-row gap-10 p-7 w-full">

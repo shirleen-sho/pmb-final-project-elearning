@@ -56,11 +56,12 @@ export async function getServerSideProps() {
   const prevProps = getPreviousProps.props;
 
   // Fetch page's data
-  const res = await axios.get("https://api.starling.kotasatelit.com/api/class");
+  const baseUrl = "https://api.starling.kotasatelit.com/api/class";
+  const res = await axios.get(baseUrl);
   const dataTingkatan = res.data;
 
   // Pass data to the page via props
-  return { props: { ...prevProps, dataTingkatan } };
+  return { props: { ...prevProps, baseUrl, dataTingkatan } };
 }
 
 export default Tingkatan;

@@ -56,13 +56,12 @@ export async function getServerSideProps() {
   const prevProps = getPreviousProps.props;
 
   // Fetch page's data
-  const res = await axios.get(
-    "https://api.starling.kotasatelit.com/api/academic-year"
-  );
+  const baseUrl = "https://api.starling.kotasatelit.com/api/academic-year";
+  const res = await axios.get(baseUrl);
   const dataTahunAkademik = res.data;
 
   // Pass data to the page via props
-  return { props: { ...prevProps, dataTahunAkademik } };
+  return { props: { ...prevProps, baseUrl, dataTahunAkademik } };
 }
 
 export default TahunAkademik;

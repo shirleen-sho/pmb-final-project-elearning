@@ -1,16 +1,10 @@
 import React from "react";
-import Link from "next/link";
-import Button from "../../Buttons";
-import Search from "../../Search";
-import {
-  HiOutlineArchive,
-  HiOutlinePencil,
-  HiOutlineEye,
-  HiOutlineTrash,
-  HiChevronLeft,
-  HiChevronRight,
-} from "react-icons/hi";
 import { useRouter } from "next/router";
+import TableTopNav from "./TableTopNav";
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
+import TableBottomNav from "./TableBottomNav";
+import TableHeadBg from "./TableHeadBg";
 
 const TableBasic = ({
   data,
@@ -56,193 +50,39 @@ const TableBasic = ({
 
   return (
     <div className="relative border border-gray-200 top z-0 bg-white rounded-xl p-6 shadow-lg w-full">
-      {/* top navigation table */}
-      {(fieldSearch || buttonAdd || buttonArchive || buttonActive) && (
-        <div className="mb-5 flex flex-row justify-between items-center">
-          <div className="font-semibold text-xl">{tableTitle || ""}</div>
-          <div className="flex flex-row items-center gap-5">
-            {fieldSearch && <Search />}
-            {buttonArchive ? (
-              <Button type="warning" link={path + "/archive"}>
-                Archive
-              </Button>
-            ) : (
-              buttonActive && (
-                <Button type="warning" handleClick={location.back}>
-                  Active
-                </Button>
-              )
-            )}
-            {buttonAdd && (
-              <Button type="primary" link={path + "/add"}>
-                Add
-              </Button>
-            )}
-          </div>
-        </div>
-      )}
-      <table className={`table-auto text-xs w-full text-justify`}>
-        <thead>
-          <tr className="capitalize">
-            <th className={`${fontHead} ${defaultCellStyle} text-center`}>
-              No
-            </th>
-            {table_head_formatted.map((head) => (
-              <th key={head} className={`${fontHead} ${defaultCellStyle}`}>
-                {head}
-              </th>
-            ))}
-            {(actionDetail ||
-              actionArchive ||
-              actionUnarchive ||
-              actionEdit ||
-              actionDelete) && (
-              <th className={`${fontHead} ${defaultCellStyle} text-center`}>
-                Aksi
-              </th>
-            )}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={"item" + index}>
-              <td className={`${defaultCellStyle} border-b text-center`}>
-                {index + 1}
-              </td>
-              {table_head.map((head) => (
-                <td
-                  key={"item" + head + index}
-                  className={`${defaultCellStyle} border-b`}
-                >
-                  {item[head]}
-                </td>
-              ))}
-              {(actionDetail ||
-                actionArchive ||
-                actionUnarchive ||
-                actionEdit ||
-                actionDelete) && (
-                <td
-                  className={`${defaultCellStyle} border-b flex flex-row justify-center items-center`}
-                >
-                  <div className="flex flex-row items-center">
-                    {actionDetail && (
-                      <Button
-                        type="link"
-                        title="View"
-                        link={path + "/detail/" + item.id}
-                      >
-                        <HiOutlineEye
-                          className="hover:text-primary-600"
-                          size={18}
-                        />
-                      </Button>
-                    )}
-                    {actionArchive && (
-                      <Button type="link" title="Archive">
-                        <HiOutlineArchive
-                          size={18}
-                          className="hover:text-primary-600"
-                        />
-                      </Button>
-                    )}
-                    {actionUnarchive && (
-                      <Button type="link" title="Unarchive">
-                        <HiOutlineArchive
-                          size={18}
-                          className="hover:text-primary-600"
-                        />
-                      </Button>
-                    )}
-                    {actionEdit && (
-                      <Button
-                        type="link"
-                        title="Edit"
-                        link={path + "/edit/" + item.id}
-                      >
-                        <HiOutlinePencil
-                          className="hover:text-primary-600"
-                          size={18}
-                        />
-                      </Button>
-                    )}
-                    {actionDelete && (
-                      <Button type="link" title="Delete">
-                        <HiOutlineTrash
-                          className="hover:text-primary-600"
-                          size={18}
-                        />
-                      </Button>
-                    )}
-                  </div>
-                </td>
-              )}
-            </tr>
-          ))}
-        </tbody>
+      <TableTopNav
+        fieldSearch={fieldSearch}
+        buttonAdd={buttonAdd}
+        buttonArchive={buttonArchive}
+        buttonActive={buttonActive}
+        tableTitle={tableTitle}
+        path={path}
+      />
+      <table className="table-auto text-xs w-full text-justify">
+        <TableHead
+          fontHead={fontHead}
+          defaultCellStyle={defaultCellStyle}
+          table_head_formatted={table_head_formatted}
+          actionDetail={actionDetail}
+          actionArchive={actionArchive}
+          actionUnarchive={actionUnarchive}
+          actionEdit={actionEdit}
+          actionDelete={actionDelete}
+        />
+        <TableBody
+          defaultCellStyle={defaultCellStyle}
+          data={data}
+          table_head={table_head}
+          path={path}
+          actionDetail={actionDetail}
+          actionArchive={actionArchive}
+          actionUnarchive={actionUnarchive}
+          actionEdit={actionEdit}
+          actionDelete={actionDelete}
+        />
       </table>
-      {/* background table head */}
-      <div
-        className={`${colorHead} absolute w-[100%-24px] h-14 left-6 right-6 -z-10 rounded-l-2xl rounded-r-2xl`}
-        id="thead-background"
-      ></div>
-      {/* bottom navigation table */}
-      <div
-        className="flex flex-row justify-between items-center mt-6"
-        id="table-navigation"
-      >
-        <span className="text-xs text-gray-500">
-          Showing data <span className="font-medium text-gray-700">1</span> to{" "}
-          <span className="font-medium text-gray-700">{data.length}</span> of{" "}
-          {data.length} entries
-        </span>
-        {/* pagination */}
-        <div className="flex flex-row items-center gap-4 text-xs h-8">
-          <Link
-            href="/"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
-          >
-            <HiChevronLeft size={14} />
-          </Link>
-          <Link
-            href="/"
-            aria-current="page"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-primary-300 border border-primary-300 text-white"
-          >
-            1
-          </Link>
-          <Link
-            href="/"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
-          >
-            2
-          </Link>
-          <Link
-            href="/"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
-          >
-            3
-          </Link>
-          <Link
-            href="/"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
-          >
-            ...
-          </Link>
-          <Link
-            href="/"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
-          >
-            100
-          </Link>
-          <Link
-            href="/"
-            className="font-medium px-1.5 py-1.5 w-8 h-full flex justify-center items-center rounded bg-gray-100 border border-gray-200 hover:bg-primary-100"
-          >
-            <HiChevronRight size={14} />
-          </Link>
-        </div>
-      </div>
+      <TableHeadBg colorHead={colorHead} />
+      <TableBottomNav data={data} />
     </div>
   );
 };

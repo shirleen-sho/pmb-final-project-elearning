@@ -5,6 +5,8 @@ import TableHead from "./TableHead";
 import TableBody from "./TableBody";
 import TableBottomNav from "./TableBottomNav";
 import TableHeadBg from "./TableHeadBg";
+import Image from "next/image";
+import { HiOutlineXCircle } from "react-icons/hi";
 
 const TableBasic = ({
   data,
@@ -18,22 +20,28 @@ const TableBasic = ({
   buttonArchive,
   buttonActive,
   fieldSearch,
+  linkToMataPelajaran,
+  linkToInputSoal,
+  linkToTransactionPayment,
+  linkToTransactionHistory,
 }) => {
   let table_head = [];
   let table_head_formatted = [];
-  Object.keys(data[0]).forEach((key) => {
-    const splitKey = key.split("_");
-    const formattedKey = splitKey.join(" ");
-    if (
-      key !== "id" &&
-      key !== "created_at" &&
-      key !== "deleted_at" &&
-      key !== "updated_at"
-    ) {
-      table_head.push(key);
-      table_head_formatted.push(formattedKey);
-    }
-  });
+  if (data) {
+    Object.keys(data[0]).forEach((key) => {
+      const splitKey = key.split("_");
+      const formattedKey = splitKey.join(" ");
+      if (
+        key !== "id" &&
+        key !== "created_at" &&
+        key !== "deleted_at" &&
+        key !== "updated_at"
+      ) {
+        table_head.push(key);
+        table_head_formatted.push(formattedKey);
+      }
+    });
+  }
 
   const defaultCellStyle = "px-3 py-3 h-14";
   const fontHead = "font-semibold";
@@ -58,31 +66,50 @@ const TableBasic = ({
         tableTitle={tableTitle}
         path={path}
       />
-      <table className="table-auto text-xs w-full text-justify">
-        <TableHead
-          fontHead={fontHead}
-          defaultCellStyle={defaultCellStyle}
-          table_head_formatted={table_head_formatted}
-          actionDetail={actionDetail}
-          actionArchive={actionArchive}
-          actionUnarchive={actionUnarchive}
-          actionEdit={actionEdit}
-          actionDelete={actionDelete}
-        />
-        <TableBody
-          defaultCellStyle={defaultCellStyle}
-          data={data}
-          table_head={table_head}
-          path={path}
-          actionDetail={actionDetail}
-          actionArchive={actionArchive}
-          actionUnarchive={actionUnarchive}
-          actionEdit={actionEdit}
-          actionDelete={actionDelete}
-        />
-      </table>
-      <TableHeadBg colorHead={colorHead} />
-      <TableBottomNav data={data} />
+      {data ? (
+        <>
+          <table className="table-auto text-xs w-full text-justify">
+            <TableHead
+              fontHead={fontHead}
+              defaultCellStyle={defaultCellStyle}
+              table_head_formatted={table_head_formatted}
+              actionDetail={actionDetail}
+              actionArchive={actionArchive}
+              actionUnarchive={actionUnarchive}
+              actionEdit={actionEdit}
+              actionDelete={actionDelete}
+              linkToMataPelajaran={linkToMataPelajaran}
+              linkToInputSoal={linkToInputSoal}
+              linkToTransactionPayment={linkToTransactionPayment}
+              linkToTransactionHistory={linkToTransactionHistory}
+            />
+            <TableBody
+              defaultCellStyle={defaultCellStyle}
+              data={data}
+              table_head={table_head}
+              path={path}
+              actionDetail={actionDetail}
+              actionArchive={actionArchive}
+              actionUnarchive={actionUnarchive}
+              actionEdit={actionEdit}
+              actionDelete={actionDelete}
+              linkToMataPelajaran={linkToMataPelajaran}
+              linkToInputSoal={linkToInputSoal}
+              linkToTransactionPayment={linkToTransactionPayment}
+              linkToTransactionHistory={linkToTransactionHistory}
+            />
+          </table>
+          <TableHeadBg colorHead={colorHead} />
+          <TableBottomNav data={data} />
+        </>
+      ) : (
+        <div className="flex flex-col justify-center items-center gap-2 h-80">
+          <HiOutlineXCircle size={40} className="text-primary-400" />
+          <span className="text-sm font-medium text-primary-400">
+            Data not found
+          </span>
+        </div>
+      )}
     </div>
   );
 };

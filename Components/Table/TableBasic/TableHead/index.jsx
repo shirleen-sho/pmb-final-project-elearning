@@ -9,6 +9,10 @@ const TableHead = ({
   actionUnarchive,
   actionEdit,
   actionDelete,
+  linkToMataPelajaran,
+  linkToInputSoal,
+  linkToTransactionPayment,
+  linkToTransactionHistory,
 }) => {
   return (
     <thead>
@@ -23,7 +27,11 @@ const TableHead = ({
           actionArchive ||
           actionUnarchive ||
           actionEdit ||
-          actionDelete) && (
+          actionDelete ||
+          linkToMataPelajaran ||
+          linkToInputSoal ||
+          linkToTransactionPayment ||
+          linkToTransactionHistory) && (
           <th className={`${fontHead} ${defaultCellStyle} text-center`}>
             Aksi
           </th>

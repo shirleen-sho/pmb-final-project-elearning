@@ -22,7 +22,8 @@
     "react-dom": "18.2.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-icons": "^4.6.0",
-    "react-images-uploading": "^3.1.7"
+    "react-images-uploading": "^3.1.7",
+    "react-to-print": "^2.14.10"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

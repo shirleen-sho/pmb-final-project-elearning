@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const useDummyProvider = () => {
   const list1 = [
     {
@@ -225,19 +223,19 @@ export const useDummyProvider = () => {
 
   const list_tingkatan = [
     {
-      kode_tingkatan: "JU01",
+      id: "JU01",
       nama_tingkatan: "I",
     },
     {
-      kode_tingkatan: "JU02",
+      id: "JU02",
       nama_tingkatan: "II",
     },
     {
-      kode_tingkatan: "JU03",
+      id: "JU03",
       nama_tingkatan: "III",
     },
     {
-      kode_tingkatan: "JU04",
+      id: "JU04",
       nama_tingkatan: "IV",
     },
   ];

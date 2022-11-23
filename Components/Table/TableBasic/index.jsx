@@ -32,7 +32,6 @@ const TableBasic = ({
       const splitKey = key.split("_");
       const formattedKey = splitKey.join(" ");
       if (
-        key !== "id" &&
         key !== "created_at" &&
         key !== "deleted_at" &&
         key !== "updated_at"

@@ -27,7 +27,7 @@ const TableBasic = ({
 }) => {
   let table_head = [];
   let table_head_formatted = [];
-  if (data) {
+  if (data.length > 0) {
     Object.keys(data[0]).forEach((key) => {
       const splitKey = key.split("_");
       const formattedKey = splitKey.join(" ");
@@ -35,6 +35,7 @@ const TableBasic = ({
         key !== "created_at" &&
         key !== "deleted_at" &&
         key !== "updated_at"
+        // typeof data[0][key] !== "object"
       ) {
         table_head.push(key);
         table_head_formatted.push(formattedKey);
@@ -65,7 +66,7 @@ const TableBasic = ({
         tableTitle={tableTitle}
         path={path}
       />
-      {data ? (
+      {data.length > 0 ? (
         <>
           <table className="table-auto text-xs w-full text-justify">
             <TableHead
@@ -105,7 +106,7 @@ const TableBasic = ({
         <div className="flex flex-col justify-center items-center gap-2 h-80">
           <HiOutlineXCircle size={40} className="text-primary-400" />
           <span className="text-sm font-medium text-primary-400">
-            Data not found
+            No data found
           </span>
         </div>
       )}

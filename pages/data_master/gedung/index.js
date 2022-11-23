@@ -9,7 +9,7 @@ import Notifikasi from "../../../Components/Notifikasi";
 const Gedung = (props) => {
   const { gedung } = useAppContext();
   const { notification, handleShowNotification } = gedung;
-  const { data } = props.dataGedung;
+  const { dataTableGedung } = props;
 
   useEffect(() => {
     if (notification.show) {
@@ -27,7 +27,7 @@ const Gedung = (props) => {
           />
         )}
         <TableBasic
-          data={data}
+          data={dataTableGedung}
           tableTitle="Daftar Gedung"
           actionArchive
           actionEdit
@@ -50,8 +50,17 @@ export async function getServerSideProps() {
   const res = await axios.get(baseUrl);
   const dataGedung = res.data;
 
+  // filter untuk hanya menampilkan data yang diperlukan
+  const dataTableGedung = dataGedung.data.map((gedung) => {
+    const arr = Object.entries(gedung);
+    const filterArr = arr.filter(([key, value]) => key !== "status");
+    const obj = Object.fromEntries(filterArr);
+    const newObj = obj;
+    return newObj;
+  });
+
   // Pass data to the page via props
-  return { props: { ...prevProps, baseUrl, dataGedung } };
+  return { props: { ...prevProps, baseUrl, dataTableGedung } };
 }
 
 export default Gedung;

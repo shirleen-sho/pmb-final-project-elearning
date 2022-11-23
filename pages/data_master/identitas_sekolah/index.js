@@ -11,7 +11,6 @@ import { serverProps } from "../../../lib/serverProps";
 import axios from "axios";
 
 const IdentitasSekolah = (props) => {
-  console.log(props);
   const { identitas_sekolah } = useAppContext();
   const { form, setForm, resetForm, handleSubmitEdit } = identitas_sekolah;
   const { data } = props.dataIdentitasSekolah;
@@ -32,8 +31,21 @@ const IdentitasSekolah = (props) => {
       postal_code: school_data.postal_code,
       province: school_data.province,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [
+    school_data.NPSN,
+    school_data.NSS,
+    school_data.address,
+    school_data.city,
+    school_data.districts,
+    school_data.email,
+    school_data.name,
+    school_data.phone_number,
+    school_data.photo,
+    school_data.postal_code,
+    school_data.province,
+    school_data.website,
+    setForm,
+  ]);
 
   return (
     <Layout>
@@ -181,9 +193,6 @@ const IdentitasSekolah = (props) => {
         </div>
         <div className="border-b border-neutral-2" />
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" handleClick={resetForm}>
-            Back
-          </Button>
           <Button
             type="primary"
             handleClick={(e) => {

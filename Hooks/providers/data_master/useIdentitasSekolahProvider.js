@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { useBasicProvider } from "../useBasicProvider";
 
 export const useIdentitasSekolahProvider = () => {
+  const { notification, setNotification, handleShowNotification } =
+    useBasicProvider();
+
   const router = useRouter();
-  const [notification, setNotification] = useState({
-    show: false,
-    type: "",
-    message: "",
-  });
 
   const [form, setForm] = useState({
     photo: "",
@@ -73,6 +72,6 @@ export const useIdentitasSekolahProvider = () => {
     resetForm,
     handleSubmitEdit,
     notification,
-    setNotification,
+    handleShowNotification,
   };
 };

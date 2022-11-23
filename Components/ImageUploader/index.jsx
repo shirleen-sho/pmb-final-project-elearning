@@ -3,13 +3,16 @@ import ImageUploading from "react-images-uploading";
 import { HiUpload } from "react-icons/hi";
 import Image from "next/image";
 
-const ImageUploader = () => {
-  const [image, setImage] = useState(null);
+const ImageUploader = ({ value, handleValue }) => {
+  const [image, setImage] = useState(value ? value : null);
 
   const handleChangeImage = (currentImage, addUpdateIndex) => {
-    console.log("image", currentImage);
-    console.log("addUpdateIndex", addUpdateIndex);
+    // console.log("image", currentImage);
+    // console.log("addUpdateIndex", addUpdateIndex);
     setImage(currentImage);
+    if (handleValue) {
+      handleValue(currentImage[0].file);
+    }
   };
 
   return (

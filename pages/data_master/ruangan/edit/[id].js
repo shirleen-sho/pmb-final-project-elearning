@@ -175,7 +175,7 @@ export async function getServerSideProps(ctx) {
       ...prevProps,
       dataRuangan,
       pilihan_gedung,
-      selected_gedung,
+      selected_gedung: selected_gedung || null,
     },
   };
 }

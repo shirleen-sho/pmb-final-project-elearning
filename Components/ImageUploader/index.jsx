@@ -7,11 +7,11 @@ const ImageUploader = ({ value, handleValue }) => {
   const [image, setImage] = useState(value ? value : null);
 
   const handleChangeImage = (currentImage, addUpdateIndex) => {
-    // console.log("image", currentImage);
+    console.log("image", currentImage);
     // console.log("addUpdateIndex", addUpdateIndex);
     setImage(currentImage);
     if (handleValue) {
-      handleValue(currentImage[0].file);
+      handleValue(currentImage.length === 0 ? null : currentImage[0].file);
     }
   };
 

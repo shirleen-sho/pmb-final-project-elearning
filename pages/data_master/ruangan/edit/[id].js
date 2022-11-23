@@ -1,41 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../../Components/Buttons";
 import Layout from "../../../../Components/Layout";
 import InputFields from "../../../../Components/InputFields";
 import Selects from "../../../../Components/Selects";
 import FormItem from "../../../../Components/FormItem";
-import { useRouter } from "next/router";
+import { serverProps } from "../../../../lib/serverProps";
+import axios from "axios";
+import { useAppContext } from "../../../../Hooks/useAppContext";
 
-const EditRuangan = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const EditRuangan = (props) => {
+  const { ruangan } = useAppContext();
+  const { form, setForm, resetForm, handleSubmitEdit } = ruangan;
+  const { data } = props.dataRuangan;
 
-  const tahun_akademik = [
-    { name: "Semester Ganjil 2022/2023" },
-    { name: "Semester Genap 2021/2022" },
-    { name: "Semester Ganjil 2021/2022" },
-  ];
+  const { pilihan_gedung, selected_gedung } = props;
 
   const pilihan_status = [
-    { label: "Aktif", value: "aktif" },
-    { label: "Tidak Aktif", value: "nonaktif" },
+    { label: "Aktif", value: 1 },
+    { label: "Tidak Aktif", value: 0 },
   ];
 
-  const [selectedStatus, setSelectedStatus] = useState(null);
-  const handleChangeStatus = (e) => setSelectedStatus(e.target.value);
-
-  const handleUpdateRuangan = (e) => {
-    e.preventDefault();
-    // isi fungsi
-  };
+  useEffect(() => {
+    setForm({
+      room_code: data.id,
+      room_name: data.room_name,
+      maximum_people: data.maximum_people,
+      status: data.status,
+      building_id: data.building_id,
+    });
+  }, [
+    data.building_id,
+    data.id,
+    data.maximum_people,
+    data.room_name,
+    data.status,
+    setForm,
+  ]);
 
   return (
     <Layout>
       <div>
-        <FormItem
-          label={`Edit Ruangan ID ${id} details here!`}
-          labelType="banner"
-        />
+        <FormItem label="Edit Ruangan details here!" labelType="banner" />
         <div className="flex flex-col py-5 gap-5">
           {/* KODE RUANGAN */}
           <FormItem
@@ -45,18 +50,22 @@ const EditRuangan = () => {
           >
             <InputFields
               type="text"
-              placeholder="Kode Ruangan otomatis"
               size="w-full"
               disabled={true}
+              value={form.room_code}
             />
           </FormItem>
 
           {/* NAMA GEDUNG */}
           <FormItem label="Nama Gedung" labelType="label-sm" labelWidth="w-1/4">
             <Selects
-              list={tahun_akademik}
-              style="w-full"
+              list={pilihan_gedung}
+              size="w-full"
               description="Pilih Gedung"
+              value={selected_gedung}
+              handleChange={(item) =>
+                setForm({ ...form, building_id: item.value })
+              }
             />
           </FormItem>
 
@@ -70,6 +79,8 @@ const EditRuangan = () => {
               type="text"
               placeholder="Tulis nama ruangan"
               size="w-full"
+              value={form.room_name}
+              setValue={(e) => setForm({ ...form, room_name: e.target.value })}
             />
           </FormItem>
 
@@ -79,7 +90,15 @@ const EditRuangan = () => {
             labelType="label-sm"
             labelWidth="w-1/4"
           >
-            <InputFields type="number" placeholder="0" size="w-1/3" />
+            <InputFields
+              type="number"
+              placeholder="0"
+              size="w-1/3"
+              value={form.maximum_people}
+              setValue={(e) =>
+                setForm({ ...form, maximum_people: e.target.value })
+              }
+            />
           </FormItem>
 
           {/* STATUS */}
@@ -93,8 +112,10 @@ const EditRuangan = () => {
                   <input
                     type="radio"
                     value={i.value}
-                    checked={selectedStatus === i.value ? true : false}
-                    onClick={handleChangeStatus}
+                    checked={form.status === i.value ? true : false}
+                    onClick={(e) =>
+                      setForm({ ...form, status: parseInt(e.target.value) })
+                    }
                   />
                   <label>{i.label}</label>
                 </div>
@@ -103,10 +124,20 @@ const EditRuangan = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/data_master/ruangan">
+          <Button
+            type="light"
+            link="/data_master/ruangan"
+            handleClick={resetForm}
+          >
             Back
           </Button>
-          <Button type="primary" handleClick={(e) => handleUpdateRuangan(e)}>
+          <Button
+            type="primary"
+            handleClick={(e) => {
+              e.preventDefault();
+              handleSubmitEdit();
+            }}
+          >
             Update
           </Button>
         </div>
@@ -114,5 +145,39 @@ const EditRuangan = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps(ctx) {
+  // Fetch previous data
+  const getPreviousProps = await serverProps();
+  const prevProps = getPreviousProps.props;
+
+  // Fetch page's data
+  let id = ctx.query.id;
+  const res = await axios.get(
+    `https://api.starling.kotasatelit.com/api/room/${id}`
+  );
+  const dataRuangan = res.data;
+
+  const res2 = await axios.get(
+    "https://api.starling.kotasatelit.com/api/building"
+  );
+  const dataPilihanGedung = res2.data.data;
+  const pilihan_gedung = dataPilihanGedung.map((d) => {
+    return { label: d.name, value: d.id };
+  });
+  const selected_gedung = pilihan_gedung.find(
+    (d) => d.value === dataRuangan.data.building_id
+  );
+
+  // Pass data to the page via props
+  return {
+    props: {
+      ...prevProps,
+      dataRuangan,
+      pilihan_gedung,
+      selected_gedung,
+    },
+  };
+}
 
 export default EditRuangan;

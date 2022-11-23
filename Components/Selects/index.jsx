@@ -31,7 +31,9 @@ const Selects = ({ list, size, description, handleChange, value }) => {
                 if (item.label !== selected.label) {
                   setSelected(item);
                   setOpen(false);
-                  // handleChange(item);
+                  if (handleChange) {
+                    handleChange(item);
+                  }
                 }
               }}
             >

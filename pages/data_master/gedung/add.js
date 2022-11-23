@@ -3,21 +3,16 @@ import Button from "../../../Components/Buttons";
 import Layout from "../../../Components/Layout";
 import InputFields from "../../../Components/InputFields";
 import FormItem from "../../../Components/FormItem";
+import { useAppContext } from "../../../Hooks/useAppContext";
 
 const AddGedung = () => {
-  const tahun_akademik = [
-    { name: "Semester Ganjil 2022/2023" },
-    { name: "Semester Genap 2021/2022" },
-    { name: "Semester Ganjil 2021/2022" },
-  ];
+  const { gedung } = useAppContext();
+  const { form, setForm, resetForm, handleSubmitAdd } = gedung;
 
   const pilihan_status = [
-    { label: "Aktif", value: "aktif" },
-    { label: "Tidak Aktif", value: "nonaktif" },
+    { label: "Aktif", value: 1 },
+    { label: "Tidak Aktif", value: 0 },
   ];
-
-  const [selectedStatus, setSelectedStatus] = useState(null);
-  const handleChangeStatus = (e) => setSelectedStatus(e.target.value);
 
   return (
     <Layout>
@@ -26,12 +21,7 @@ const AddGedung = () => {
         <div className="flex flex-col py-5 gap-5">
           {/* KODE GEDUNG */}
           <FormItem label="Kode Gedung" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields
-              type="text"
-              placeholder="Kode Gedung otomatis"
-              size="w-full"
-              disabled={true}
-            />
+            <InputFields type="text" size="w-full" disabled={true} />
           </FormItem>
 
           {/* NAMA GEDUNG */}
@@ -40,6 +30,8 @@ const AddGedung = () => {
               type="text"
               placeholder="Tulis nama gedung"
               size="w-full"
+              value={form.name}
+              setValue={(e) => setForm({ ...form, name: e.target.value })}
             />
           </FormItem>
 
@@ -49,22 +41,48 @@ const AddGedung = () => {
             labelType="label-sm"
             labelWidth="w-1/4"
           >
-            <InputFields type="number" placeholder="0" size="w-1/3" />
+            <InputFields
+              type="number"
+              placeholder="0"
+              size="w-1/3"
+              value={form.number_of_floors}
+              setValue={(e) =>
+                setForm({ ...form, number_of_floors: e.target.value })
+              }
+            />
           </FormItem>
 
           {/* PANJANG */}
           <FormItem label="Panjang" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields type="number" placeholder="0" size="w-1/3" />
+            <InputFields
+              type="number"
+              placeholder="0"
+              size="w-1/3"
+              value={form.long}
+              setValue={(e) => setForm({ ...form, long: e.target.value })}
+            />
           </FormItem>
 
           {/* TINGGI */}
           <FormItem label="Tinggi" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields type="number" placeholder="0" size="w-1/3" />
+            <InputFields
+              type="number"
+              placeholder="0"
+              size="w-1/3"
+              value={form.tall}
+              setValue={(e) => setForm({ ...form, tall: e.target.value })}
+            />
           </FormItem>
 
           {/* LEBAR */}
           <FormItem label="Lebar" labelType="label-sm" labelWidth="w-1/4">
-            <InputFields type="number" placeholder="0" size="w-1/3" />
+            <InputFields
+              type="number"
+              placeholder="0"
+              size="w-1/3"
+              value={form.wide}
+              setValue={(e) => setForm({ ...form, wide: e.target.value })}
+            />
           </FormItem>
 
           {/* STATUS */}
@@ -78,8 +96,10 @@ const AddGedung = () => {
                   <input
                     type="radio"
                     value={i.value}
-                    checked={selectedStatus === i.value ? true : false}
-                    onClick={handleChangeStatus}
+                    checked={form.status === i.value ? true : false}
+                    onClick={(e) =>
+                      setForm({ ...form, status: parseInt(e.target.value) })
+                    }
                   />
                   <label>{i.label}</label>
                 </div>
@@ -88,10 +108,16 @@ const AddGedung = () => {
           </FormItem>
         </div>
         <div className="flex flex-row justify-end gap-5">
-          <Button type="light" link="/data_master/gedung">
+          <Button
+            type="light"
+            link="/data_master/gedung"
+            handleClick={resetForm}
+          >
             Cancel
           </Button>
-          <Button type="primary">Save</Button>
+          <Button type="primary" handleClick={handleSubmitAdd}>
+            Save
+          </Button>
         </div>
       </div>
     </Layout>

@@ -10,7 +10,7 @@ export const useIdentitasSekolahProvider = () => {
   const router = useRouter();
 
   const [form, setForm] = useState({
-    photo: "",
+    photo: null,
     name: "",
     NPSN: "",
     NSS: "",
@@ -26,7 +26,7 @@ export const useIdentitasSekolahProvider = () => {
 
   const resetForm = () => {
     setForm({
-      photo: "",
+      photo: null,
       name: "",
       NPSN: "",
       NSS: "",
@@ -42,6 +42,7 @@ export const useIdentitasSekolahProvider = () => {
   };
 
   const handleSubmitEdit = async () => {
+    console.log(form);
     try {
       const res = await axios.post(
         "https://api.starling.kotasatelit.com/api/school-identity/1",

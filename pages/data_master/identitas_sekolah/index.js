@@ -9,10 +9,18 @@ import ImageUploader from "../../../Components/ImageUploader";
 import { useAppContext } from "../../../Hooks/useAppContext";
 import { serverProps } from "../../../lib/serverProps";
 import axios from "axios";
+import Notifikasi from "../../../Components/Notifikasi";
 
 const IdentitasSekolah = (props) => {
   const { identitas_sekolah } = useAppContext();
-  const { form, setForm, resetForm, handleSubmitEdit } = identitas_sekolah;
+  const {
+    form,
+    setForm,
+    resetForm,
+    handleSubmitEdit,
+    notification,
+    handleShowNotification,
+  } = identitas_sekolah;
   const { data } = props.dataIdentitasSekolah;
   const { school_data } = data;
 
@@ -47,8 +55,20 @@ const IdentitasSekolah = (props) => {
     setForm,
   ]);
 
+  useEffect(() => {
+    if (notification.show) {
+      handleShowNotification();
+    }
+  }, [handleShowNotification, notification]);
+
   return (
     <Layout>
+      {notification.show && (
+        <Notifikasi
+          type={notification.type}
+          description={notification.message}
+        />
+      )}
       <div className="flex flex-col gap-5">
         <FormItem label="See your School details here!" labelType="banner" />
         <div className="border-b border-neutral-2" />
@@ -58,7 +78,10 @@ const IdentitasSekolah = (props) => {
           </div>
           <div className="col-start-2 col-span-4 flex flex-col gap-5">
             <FormItem label="Foto" labelType="label-sm" labelWidth="w-1/3">
-              <ImageUploader />
+              <ImageUploader
+                value={form.photo}
+                handleValue={(image) => setForm({ ...form, photo: image })}
+              />
             </FormItem>
             <FormItem label="Nama" labelType="label-sm" labelWidth="w-1/3">
               <InputFields

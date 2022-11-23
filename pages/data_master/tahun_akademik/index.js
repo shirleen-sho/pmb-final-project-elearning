@@ -8,24 +8,14 @@ import axios from "axios";
 
 const TahunAkademik = (props) => {
   const { tahun_akademik } = useAppContext();
-  const { notification, setNotification } = tahun_akademik;
+  const { notification, handleShowNotification } = tahun_akademik;
   const { data } = props.dataTahunAkademik;
 
   useEffect(() => {
     if (notification.show) {
-      let timer = setTimeout(
-        () =>
-          setNotification({
-            ...notification,
-            show: false,
-            type: "",
-            message: "",
-          }),
-        4000
-      );
-      return () => clearTimeout(timer);
+      handleShowNotification();
     }
-  }, [notification, setNotification]);
+  }, [handleShowNotification, notification]);
 
   return (
     <Layout>

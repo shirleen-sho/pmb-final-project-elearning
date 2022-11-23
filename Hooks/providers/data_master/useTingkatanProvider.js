@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { useBasicProvider } from "../useBasicProvider";
 
 export const useTingkatanProvider = () => {
+  const { notification, setNotification, handleShowNotification } =
+    useBasicProvider();
+
   const router = useRouter();
-  const [notification, setNotification] = useState({
-    show: false,
-    type: "",
-    message: "",
-  });
 
   const [form, setForm] = useState({
     class_code: null,
@@ -79,6 +78,6 @@ export const useTingkatanProvider = () => {
     handleSubmitAdd,
     handleSubmitEdit,
     notification,
-    setNotification,
+    handleShowNotification,
   };
 };

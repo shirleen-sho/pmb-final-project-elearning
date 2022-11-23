@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { useBasicProvider } from "../useBasicProvider";
 
 export const useTahunAkademikProvider = () => {
+  const { notification, setNotification, handleShowNotification } =
+    useBasicProvider();
+
   const router = useRouter();
-  const [notification, setNotification] = useState({
-    show: false,
-    type: "",
-    message: "",
-  });
 
   const [form, setForm] = useState({
     year_code: "",
@@ -83,6 +82,6 @@ export const useTahunAkademikProvider = () => {
     handleSubmitAdd,
     handleSubmitEdit,
     notification,
-    setNotification,
+    handleShowNotification,
   };
 };

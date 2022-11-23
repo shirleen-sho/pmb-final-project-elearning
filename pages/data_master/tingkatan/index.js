@@ -8,24 +8,14 @@ import axios from "axios";
 
 const Tingkatan = (props) => {
   const { tingkatan } = useAppContext();
-  const { notification, setNotification } = tingkatan;
+  const { notification, handleShowNotification } = tingkatan;
   const { data } = props.dataTingkatan;
 
   useEffect(() => {
     if (notification.show) {
-      let timer = setTimeout(
-        () =>
-          setNotification({
-            ...notification,
-            show: false,
-            type: "",
-            message: "",
-          }),
-        4000
-      );
-      return () => clearTimeout(timer);
+      handleShowNotification();
     }
-  }, [notification, setNotification]);
+  }, [handleShowNotification, notification]);
 
   return (
     <Layout>

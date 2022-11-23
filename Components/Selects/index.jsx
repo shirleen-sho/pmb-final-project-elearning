@@ -3,8 +3,8 @@ import { BiChevronDown } from "react-icons/bi";
 
 const Selects = ({ list, size, description, handleChange, value }) => {
   const [selected, setSelected] = useState({
-    label: value.label || "",
-    value: value.value || "",
+    label: value ? value.label : "",
+    value: value ? value.value : "",
   });
   const [open, setOpen] = useState(false);
 
